@@ -1,6 +1,6 @@
 import '../assets/styles/index.scss'
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
   return <Component {...pageProps} />
 }
 
