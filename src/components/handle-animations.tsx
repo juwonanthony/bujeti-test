@@ -69,6 +69,30 @@ const HandleAnimations = () => {
         }
       }
 
+      const responsiveSize = (sizes: [number | string, number | string]) => {
+        const isLargeScreen = window.innerWidth >= 800;
+
+        if (isLargeScreen) {
+          return sizes[1];
+        }
+
+        return sizes[0];
+      };
+
+      const initialCardAndPhoneAnim = () => {
+        //reduce logo size and make it fixed
+        logo.className = "logo logo--fixed";
+
+        //fade text in
+        gsap.fromTo(followTexts[0], { opacity: 0.6 }, { opacity: 1 });
+
+        //take card out of view
+        gsap.to(card, { y: -1.5 * window.innerHeight, duration: 1.4, ease: Power1.easeInOut, delay: 0.15 });
+
+        //move phone screen up
+        gsap.to(phoneScreen, { y: responsiveSize(["50%", "20%"]), duration: 0.8, ease: Power1.easeOut, delay: 0.15 });
+      };
+
       ScrollTrigger.create({
         trigger: sections[0],
         start: "top bottom-=1",
@@ -78,10 +102,15 @@ const HandleAnimations = () => {
           goToSection(sections[0], () => {
             //bring logo back in normal position
             logo.className = "logo logo--normal";
-
-            gsap.to(card, { y: "-25%", duration: 1, ease: Power1.easeInOut, delay: 0.15 });
-
-            gsap.to(phoneScreen, { y: "52.5%", duration: 0.8, ease: Power1.easeOut, delay: 0.15 });
+            //bring card back in normal position
+            gsap.to(card, { y: responsiveSize(["22%", "-25%"]), duration: 1.4, ease: Power1.easeInOut, delay: 0.15 });
+            //bring phone screen back in normal position
+            gsap.to(phoneScreen, {
+              y: responsiveSize(["67%", "52.5%"]),
+              duration: 0.8,
+              ease: Power1.easeOut,
+              delay: 0.15,
+            });
           }),
       });
 
@@ -89,24 +118,17 @@ const HandleAnimations = () => {
         trigger: sections[1],
         start: "top bottom-=1",
         end: "bottom top+=1",
-        onEnter: () =>
-          goToSection(sections[1], () => {
-            //reduce logo size and make it fixed
-            logo.className = "logo logo--fixed";
-
-            //fade text in
-            gsap.fromTo(followTexts[0], { opacity: 0.6 }, { opacity: 1 });
-
-            gsap.to(card, { y: "-200%", duration: 1, ease: Power1.easeInOut, delay: 0.15 });
-
-            gsap.to(phoneScreen, { y: "20%", duration: 0.8, ease: Power1.easeOut, delay: 0.15 });
-          }),
+        onEnter: () => goToSection(sections[1], initialCardAndPhoneAnim),
         onEnterBack: () =>
           goToSection(sections[1], () => {
             //fade text in
             gsap.fromTo(followTexts[0], { opacity: 0.6 }, { opacity: 1 });
 
+            //hide the card modal screen
             gsap.to(cardModalScreen, { y: "100%" });
+
+            //return phone screen to normal position
+            gsap.to(phoneScreen, { y: responsiveSize(["50%", "20%"]), duration: 0.8, ease: Power1.easeOut });
           }),
       });
 
@@ -119,6 +141,10 @@ const HandleAnimations = () => {
             //fade text in
             gsap.fromTo(followTexts[1], { opacity: 0.6 }, { opacity: 1 });
 
+            //move phone screen up a bit
+            gsap.to(phoneScreen, { y: responsiveSize(["50%", "12%"]), duration: 0.8, ease: Power1.easeOut });
+
+            //bring the card modal screen in view
             gsap.to(cardModalScreen, { y: 0 });
           }),
         onEnterBack: () =>
@@ -126,7 +152,8 @@ const HandleAnimations = () => {
             //fade text in
             gsap.fromTo(followTexts[1], { opacity: 0.6 }, { opacity: 1 });
 
-            gsap.to(transactionsScreen, { opacity: 0 });
+            //hide transactions screen
+            gsap.to(transactionsScreen, { y: "100%" });
           }),
       });
 
@@ -139,14 +166,21 @@ const HandleAnimations = () => {
             // fade text in
             gsap.fromTo(followTexts[2], { opacity: 0.6 }, { opacity: 1 });
 
-            gsap.to(transactionsScreen, { opacity: 1 });
+            // show transactions screen
+            gsap.to(transactionsScreen, { y: 0 });
           }),
         onEnterBack: () =>
           goToSection(sections[3], () => {
             //fade text in
             gsap.fromTo(followTexts[2], { opacity: 0.6 }, { opacity: 1 });
 
-            gsap.to(phoneScreen, { y: "23%", duration: 0.8, ease: Power1.easeOut, delay: 0.15 });
+            //bring phone screen back in full view
+            gsap.to(phoneScreen, {
+              y: responsiveSize(["50%", "12%"]),
+              duration: 0.8,
+              ease: Power1.easeOut,
+              delay: 0.15,
+            });
           }),
       });
 
@@ -156,11 +190,24 @@ const HandleAnimations = () => {
         end: "bottom top+=1",
         onEnter: () =>
           goToSection(sections[4], () => {
-            gsap.to(phoneScreen, { y: "-73%", duration: 0.8, ease: Power1.easeOut, delay: 0.15 });
+            //move phone screen up to only show a part
+            gsap.to(phoneScreen, {
+              y: () => -1 * (0.93 * phoneScreen.clientHeight + (window.innerHeight - phoneScreen.clientHeight)),
+              duration: 0.8,
+              ease: Power1.easeOut,
+              delay: 0.15,
+            });
           }),
         onEnterBack: () =>
           goToSection(sections[4], () => {
-            gsap.to(phoneScreen, { y: "-73%", duration: 0.8, ease: Power1.easeOut, delay: 0.15 });
+            //move phone screen up to only show a part
+            gsap.to(phoneScreen, {
+              y: () => -1 * (0.93 * phoneScreen.clientHeight + (window.innerHeight - phoneScreen.clientHeight)),
+              duration: 0.8,
+              ease: Power1.easeOut,
+              delay: 0.15,
+            });
+            // revert logo to normal color
             logo.className = "logo logo--fixed";
           }),
       });
@@ -171,14 +218,26 @@ const HandleAnimations = () => {
         end: "bottom top+=1",
         onEnter: () =>
           goToSection(sections[5], () => {
-            gsap.to(phoneScreen, { y: "-100%", duration: 0.8, ease: Power1.easeOut, delay: 0.15 });
+            //take phone screen completely out of view
+            gsap.to(phoneScreen, { y: "-200%", duration: 0.8, ease: Power1.easeOut, delay: 0.15 });
+
+            // make logo white
             logo.className = "logo logo--fixed text-white";
           }),
         onEnterBack: () => goToSection(sections[5]),
+        onUpdate: () => {
+          const topDistance = sections[5].getBoundingClientRect().top;
+
+          if (topDistance < -10) {
+            logo.classList.add("opacity-0");
+          } else {
+            logo.classList.remove("opacity-0");
+          }
+        },
       });
 
       learnMoreButton.addEventListener("click", () => {
-        goToSection(sections[1]);
+        goToSection(sections[1], initialCardAndPhoneAnim);
       });
     }
   }, []);

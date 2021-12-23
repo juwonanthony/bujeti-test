@@ -2,7 +2,7 @@ import React from "react";
 
 const EarlyAccessFrom = () => {
   return (
-    <div className="bg-white rounded-[10px] p-6 sm:py-8 sm:px-8 md:py-10 lg:py-12 lg:px-10 lg:min-w-[400px] xl:min-w-[440px]">
+    <div className="bg-white rounded-[10px] p-6 sm:px-8 md:py-8 lg:py-12 lg:px-10 sm:min-w-[360px] lg:min-w-[400px] xl:min-w-[440px]">
       <h1 className="text-black text-xl sm:text-2xl lg:text-[28px] font-medium ">Join early access</h1>
       <form action="" className="flex flex-col mt-8 sm:mt-9 space-y-6 sm:space-y-7.5">
         <div className="">

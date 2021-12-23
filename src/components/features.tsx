@@ -2,8 +2,8 @@ import React from "react";
 
 const Features = () => {
   return (
-    <section className="bg-white section section--hidden">
-      <div className="body-padding pt-32 sm:pt-36 md:pt-44 lg:pt-[200px]">
+    <section className="bg-white section section--hidden flex flex-col">
+      <div className="body-padding pt-32 sm:pt-36 md:pt-44 lg:pt-[200px] flex-1">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 sm:gap-y-12 md:gap-y-20 lg:gap-y-25 md:gap-x-24 lg:gap-x-32">
             {features.map((feature, index) => (

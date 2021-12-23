@@ -2,7 +2,7 @@ const LandingPageHeader = () => {
   return (
     <header className="bg-white section">
       <div className="body-padding pt-25 sm:pt-28 md:pt-32 lg:pt-[140px]">
-        <div className="container">
+        <div className="container relative z-[100]">
           <div>
             <figure className="logo logo--normal" id="logo">
               {/* <img src="/images/logo.svg" alt="Budgeti Logo" className="h-full" /> */}
@@ -27,14 +27,12 @@ const LandingPageHeader = () => {
         id="learn-more"
       >
         <div className="container">
-          <button className="flex items-center md:text-3xl lg:text-4xl text-black font-light">
+          <button className="flex items-center md:text-2xl lg:text-4xl text-black font-light">
             Learn more
             <svg
-              width="24"
-              height="24"
               viewBox="0 0 24 24"
               fill="none"
-              className="ml-2.5 transform transition-transform duration-75 ease-out translate-y-0 group-hover:translate-y-1"
+              className="ml-2.5 transform transition-transform duration-75 ease-out translate-y-0 group-hover:translate-y-1 w-4 lg:w-5"
             >
               <path d="M12 1V23" stroke="black" strokeLinecap="round" strokeLinejoin="round" />
               <path d="M23 12L12 23L1 12" stroke="black" strokeLinecap="round" strokeLinejoin="round" />

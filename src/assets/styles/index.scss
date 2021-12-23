@@ -14,11 +14,11 @@
   }
 
   .logo--fixed {
-    @apply inset-x-[35px] sm:inset-x-12 md:inset-x-14 lg:inset-x-20 xl:inset-x-24 fixed top-9 h-8 sm:h-[35px] z-[999] max-w-[1200px] mx-auto;
+    @apply inset-x-[35px] sm:inset-x-12 md:inset-x-14 lg:inset-x-20 xl:inset-x-24 fixed top-9 h-6 sm:h-8 md:h-[35px] z-[999] max-w-[1200px] mx-auto;
   }
 
   .logo--normal{
-    @apply h-32 sm:h-36 lg:h-40 w-full;
+    @apply h-28 sm:h-32 lg:h-40 w-full;
   }
 }
 
@@ -44,7 +44,7 @@
   }
 };
 
-@mixin md {
+@mixin lg {
   @media screen and (min-width: 1024px) {
     @content
   }
@@ -97,10 +97,18 @@ body {
 .phone-screen{
   position: fixed;
   bottom: 0;
-  right: 0;
-  width: 37vw;
-  transform: translate(17%, 52.5%);
+  max-width: 650px;
   overflow: hidden;
+  left: 50%;
+  width: 100vw;
+  transform: translate(-50%, 67%);
+
+  @include md{
+    left: unset;
+    right: 0;
+    width: 35vw;
+    transform: translate(0%, 52.5%);
+  }
 
   .card-modal-screen{
     position: absolute;
@@ -110,8 +118,8 @@ body {
 
   .transactions-screen{
     position: absolute;
-    opacity: 0;
-    transition: opacity cubic-bezier(0.455, 0.03, 0.515, 0.955) .5s;
+    transform: translateY(100%);
+    transition: transform cubic-bezier(0.455, 0.03, 0.515, 0.955) .5s;
   }
 }
 
@@ -119,6 +127,18 @@ body {
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 24vw;
-  transform: translate(-50%, -25%);
+  width: 70vw;
+  max-width: 400px;
+  transform: translate(17%, 22%);
+  
+  @include md{
+    width: 24vw;
+    transform: translate(-73%, -25%);
+  }
+}
+
+//remove default input field on safari
+input {
+  appearance: none;
+  -webkit-appearance: none;
 }

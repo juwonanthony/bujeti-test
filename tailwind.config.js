@@ -30,7 +30,8 @@ module.exports = {
         bg: "#F9F1EC",
         grey: {
           light: '#E5E5E5',
-          dark: '#606060'
+          dark: '#606060',
+          divider: '#D9DDD5'
         }
       },
       fontSize: {
