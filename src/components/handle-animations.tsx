@@ -21,7 +21,6 @@ const HandleAnimations = () => {
     const intersectionObserver = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          console.log("animation will now mount");
           startAnimation();
         }
       },
