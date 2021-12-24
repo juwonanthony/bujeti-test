@@ -1,7 +1,7 @@
 const LandingPageHeader = () => {
   return (
     <header className="bg-white section">
-      <div className="body-padding pt-25 sm:pt-28 md:pt-32 lg:pt-[140px]">
+      <div className="body-padding pt-[90px] sm:pt-28 md:pt-32 lg:pt-[140px]">
         <div className="container relative z-[100]">
           <div>
             <figure className="logo logo--normal" id="logo">

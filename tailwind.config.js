@@ -15,6 +15,7 @@ module.exports = {
     },
     extend: {
       spacing: {
+        '1.25': '0.3125rem',
         '3.75': '0.9375rem',
         '7.5': '1.875rem',
         '15': '3.75rem',
@@ -32,7 +33,8 @@ module.exports = {
           light: '#E5E5E5',
           dark: '#606060',
           divider: '#D9DDD5'
-        }
+        },
+        support: "#586068"
       },
       fontSize: {
         '1sm': '0.9375rem',

@@ -3,7 +3,7 @@ import React from "react";
 const SectionOne = () => {
   return (
     <section className="bg-bg section section--hidden flex flex-col">
-      <div className="body-padding pt-28 sm:pt-32 md:pt-44 lg:pt-[200px] flex-1">
+      <div className="body-padding pt-24 sm:pt-32 md:pt-44 lg:pt-[200px] flex-1">
         <div className="container">
           <div className="md:max-w-[56vw]">
             <h2 className="text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl tight-spacing">

@@ -1,6 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const EarlyAccessFrom = () => {
+  const [contact, setContact] = useState<string>("email");
+  const [form, setForm] = useState({
+    data: {
+      email: "",
+      name: "",
+      phone: "",
+    },
+    isSubmitting: false,
+    error: "",
+    submitted: false,
+  });
+  const contactIsEmail = contact === "email";
+
+  useEffect(() => {
+    console.log(form);
+  }, [form]);
+
+  const switchContact = (value: string) => {
+    setContact(value);
+  };
+
+  const updateValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    const formCopy = JSON.parse(JSON.stringify(form));
+
+    formCopy.data[name] = value;
+
+    setForm(formCopy);
+  };
+
   return (
     <div className="bg-white rounded-[10px] p-6 sm:px-8 md:py-8 lg:py-12 lg:px-10 sm:min-w-[360px] lg:min-w-[400px] xl:min-w-[440px]">
       <h1 className="text-black text-xl sm:text-2xl lg:text-[28px] font-medium ">Join early access</h1>
@@ -9,13 +40,24 @@ const EarlyAccessFrom = () => {
           <label htmlFor="name" className="text-sm sm:text-1sm mb-3.5 inline-block">
             Full Name
           </label>
-          <InputField name="name" placeholder="Enter Name" />
+          <InputField name="name" placeholder="Enter Name" onChange={updateValue} />
         </div>
         <div className="">
-          <label htmlFor="name" className="text-sm sm:text-1sm mb-3.5 inline-block">
-            Email
-          </label>
-          <InputField name="email" placeholder="Enter email" />
+          <div className="flex items-center mb-3.5 space-x-3.75 text-sm sm:text-1sm ">
+            <SwitchButton value="email" onClick={switchContact} contact={contact}>
+              Email
+            </SwitchButton>
+            <span className="opacity-50">Or</span>
+            <SwitchButton value="phone" onClick={switchContact} contact={contact}>
+              Phone Number
+            </SwitchButton>
+          </div>
+          <InputField
+            name={contactIsEmail ? "email" : "phone"}
+            type={contactIsEmail ? "email" : "tel"}
+            placeholder={`Enter ${contactIsEmail ? "email" : "phone number"}`}
+            onChange={updateValue}
+          />
         </div>
 
         <button className="h-12.5 sm:h-15 bg-accent-green w-full py-3.75 text-lg rounded-[10px] shadow-card font-medium hover:shadow-none transition-all duration-150">
@@ -23,6 +65,25 @@ const EarlyAccessFrom = () => {
         </button>
       </form>
     </div>
+  );
+};
+
+const SwitchButton: React.FC<{ value: string; onClick: (name: string) => void; contact: string }> = ({
+  value,
+  onClick,
+  contact,
+  children,
+}) => {
+  return (
+    <button
+      className={`transition-all duration-150 ease-out pt-2 pb-1.5 px-2.5 rounded-lg ${
+        contact === value ? "text-white bg-black" : "text-support"
+      }`}
+      type="button"
+      onClick={() => onClick(value)}
+    >
+      {children}
+    </button>
   );
 };
 

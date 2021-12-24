@@ -9,6 +9,7 @@ const HandleAnimations = () => {
     gsap.registerPlugin(ScrollToPlugin);
 
     const sections = Array.from(document.querySelectorAll(".section"));
+    let currentSection = 0;
     const container = document.querySelector(".main-container");
     const learnMoreButton = document.querySelector("#learn-more");
     const logo = document.querySelector("#logo");
@@ -54,7 +55,7 @@ const HandleAnimations = () => {
         },
       };
 
-      function goToSection(section: Element, anim?: () => void) {
+      function goToSection(section: Element, index: number, anim?: () => void) {
         if (scrolling.enabled) {
           // skip if a scroll tween is in progress
           scrolling.disable();
@@ -63,6 +64,8 @@ const HandleAnimations = () => {
             onComplete: scrolling.enable,
             duration: 1,
           });
+
+          currentSection = index;
 
           anim && anim();
         }
@@ -78,6 +81,33 @@ const HandleAnimations = () => {
         return sizes[0];
       };
 
+      const positions = [
+        {
+          phone: () => responsiveSize(["67%", "52.5%"]),
+          card: () => responsiveSize(["22%", "-25%"]),
+        },
+        {
+          phone: () => responsiveSize(["50%", "20%"]),
+          card: () => -1.5 * window.innerHeight,
+        },
+        {
+          phone: () => responsiveSize(["50%", "12%"]),
+          card: () => -1.5 * window.innerHeight,
+        },
+        {
+          phone: () => responsiveSize(["50%", "12%"]),
+          card: () => -1.5 * window.innerHeight,
+        },
+        {
+          phone: () => -1 * (0.93 * phoneScreen.clientHeight + (window.innerHeight - phoneScreen.clientHeight)),
+          card: () => -1.5 * window.innerHeight,
+        },
+        {
+          phone: () => "-200%",
+          card: () => -1.5 * window.innerHeight,
+        },
+      ];
+
       const initialCardAndPhoneAnim = () => {
         //reduce logo size and make it fixed
         logo.className = "logo logo--fixed";
@@ -86,26 +116,26 @@ const HandleAnimations = () => {
         gsap.fromTo(followTexts[0], { opacity: 0.6 }, { opacity: 1 });
 
         //take card out of view
-        gsap.to(card, { y: -1.5 * window.innerHeight, duration: 1.4, ease: Power1.easeInOut, delay: 0.15 });
+        gsap.to(card, { y: positions[1].card(), duration: 1.4, ease: Power1.easeInOut, delay: 0.15 });
 
         //move phone screen up
-        gsap.to(phoneScreen, { y: responsiveSize(["50%", "20%"]), duration: 0.8, ease: Power1.easeOut, delay: 0.15 });
+        gsap.to(phoneScreen, { y: positions[1].phone(), duration: 0.8, ease: Power1.easeOut, delay: 0.15 });
       };
 
       ScrollTrigger.create({
         trigger: sections[0],
         start: "top bottom-=1",
         end: "bottom top+=1",
-        onEnter: () => goToSection(sections[0]),
+        onEnter: () => goToSection(sections[0], 0),
         onEnterBack: () =>
-          goToSection(sections[0], () => {
+          goToSection(sections[0], 0, () => {
             //bring logo back in normal position
             logo.className = "logo logo--normal";
             //bring card back in normal position
-            gsap.to(card, { y: responsiveSize(["22%", "-25%"]), duration: 1.4, ease: Power1.easeInOut, delay: 0.15 });
+            gsap.to(card, { y: positions[0].card(), duration: 1.4, ease: Power1.easeInOut, delay: 0.15 });
             //bring phone screen back in normal position
             gsap.to(phoneScreen, {
-              y: responsiveSize(["67%", "52.5%"]),
+              y: positions[0].phone(),
               duration: 0.8,
               ease: Power1.easeOut,
               delay: 0.15,
@@ -117,9 +147,9 @@ const HandleAnimations = () => {
         trigger: sections[1],
         start: "top bottom-=1",
         end: "bottom top+=1",
-        onEnter: () => goToSection(sections[1], initialCardAndPhoneAnim),
+        onEnter: () => goToSection(sections[1], 1, initialCardAndPhoneAnim),
         onEnterBack: () =>
-          goToSection(sections[1], () => {
+          goToSection(sections[1], 1, () => {
             //fade text in
             gsap.fromTo(followTexts[0], { opacity: 0.6 }, { opacity: 1 });
 
@@ -127,7 +157,7 @@ const HandleAnimations = () => {
             gsap.to(cardModalScreen, { y: "100%" });
 
             //return phone screen to normal position
-            gsap.to(phoneScreen, { y: responsiveSize(["50%", "20%"]), duration: 0.8, ease: Power1.easeOut });
+            gsap.to(phoneScreen, { y: positions[1].phone(), duration: 0.8, ease: Power1.easeOut });
           }),
       });
 
@@ -136,18 +166,18 @@ const HandleAnimations = () => {
         start: "top bottom-=1",
         end: "bottom top+=1",
         onEnter: () =>
-          goToSection(sections[2], () => {
+          goToSection(sections[2], 2, () => {
             //fade text in
             gsap.fromTo(followTexts[1], { opacity: 0.6 }, { opacity: 1 });
 
             //move phone screen up a bit
-            gsap.to(phoneScreen, { y: responsiveSize(["50%", "12%"]), duration: 0.8, ease: Power1.easeOut });
+            gsap.to(phoneScreen, { y: positions[2].phone(), duration: 0.8, ease: Power1.easeOut });
 
             //bring the card modal screen in view
             gsap.to(cardModalScreen, { y: 0 });
           }),
         onEnterBack: () =>
-          goToSection(sections[2], () => {
+          goToSection(sections[2], 2, () => {
             //fade text in
             gsap.fromTo(followTexts[1], { opacity: 0.6 }, { opacity: 1 });
 
@@ -161,7 +191,7 @@ const HandleAnimations = () => {
         start: "top bottom-=1",
         end: "bottom top+=1",
         onEnter: () =>
-          goToSection(sections[3], () => {
+          goToSection(sections[3], 3, () => {
             // fade text in
             gsap.fromTo(followTexts[2], { opacity: 0.6 }, { opacity: 1 });
 
@@ -169,13 +199,13 @@ const HandleAnimations = () => {
             gsap.to(transactionsScreen, { y: 0 });
           }),
         onEnterBack: () =>
-          goToSection(sections[3], () => {
+          goToSection(sections[3], 3, () => {
             //fade text in
             gsap.fromTo(followTexts[2], { opacity: 0.6 }, { opacity: 1 });
 
             //bring phone screen back in full view
             gsap.to(phoneScreen, {
-              y: responsiveSize(["50%", "12%"]),
+              y: positions[2].phone(),
               duration: 0.8,
               ease: Power1.easeOut,
               delay: 0.15,
@@ -188,20 +218,20 @@ const HandleAnimations = () => {
         start: "top bottom-=1",
         end: "bottom top+=1",
         onEnter: () =>
-          goToSection(sections[4], () => {
+          goToSection(sections[4], 4, () => {
             //move phone screen up to only show a part
             gsap.to(phoneScreen, {
-              y: () => -1 * (0.93 * phoneScreen.clientHeight + (window.innerHeight - phoneScreen.clientHeight)),
+              y: positions[4].phone(),
               duration: 0.8,
               ease: Power1.easeOut,
               delay: 0.15,
             });
           }),
         onEnterBack: () =>
-          goToSection(sections[4], () => {
+          goToSection(sections[4], 4, () => {
             //move phone screen up to only show a part
             gsap.to(phoneScreen, {
-              y: () => -1 * (0.93 * phoneScreen.clientHeight + (window.innerHeight - phoneScreen.clientHeight)),
+              y: positions[4].phone(),
               duration: 0.8,
               ease: Power1.easeOut,
               delay: 0.15,
@@ -216,14 +246,14 @@ const HandleAnimations = () => {
         start: "top bottom-=1",
         end: "bottom top+=1",
         onEnter: () =>
-          goToSection(sections[5], () => {
+          goToSection(sections[5], 5, () => {
             //take phone screen completely out of view
-            gsap.to(phoneScreen, { y: "-200%", duration: 0.8, ease: Power1.easeOut, delay: 0.15 });
+            gsap.to(phoneScreen, { y: positions[5].phone(), duration: 0.8, ease: Power1.easeOut, delay: 0.15 });
 
             // make logo white
             logo.className = "logo logo--fixed text-white";
           }),
-        onEnterBack: () => goToSection(sections[5]),
+        onEnterBack: () => goToSection(sections[5], 5),
         onUpdate: () => {
           const topDistance = sections[5].getBoundingClientRect().top;
 
@@ -236,7 +266,29 @@ const HandleAnimations = () => {
       });
 
       learnMoreButton.addEventListener("click", () => {
-        goToSection(sections[1], initialCardAndPhoneAnim);
+        goToSection(sections[1], 1, initialCardAndPhoneAnim);
+      });
+
+      window.addEventListener("resize", (e) => {
+        const isLargeScreen = window.innerWidth >= 800;
+
+        const xPositions = [
+          //small screens
+          {
+            card: "17%",
+            phone: "-50%",
+          },
+          //large screens
+          {
+            card: "-73%",
+            phone: 0,
+          },
+        ];
+
+        const xValues = isLargeScreen ? xPositions[1] : xPositions[0];
+
+        gsap.to(phoneScreen, { x: xValues.phone, y: positions[currentSection].phone() });
+        gsap.to(card, { x: xValues.card, y: positions[currentSection].card() });
       });
     }
   }, []);
