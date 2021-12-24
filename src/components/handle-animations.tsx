@@ -87,15 +87,15 @@ const HandleAnimations = () => {
           card: () => responsiveSize(["22%", "-25%"]),
         },
         {
-          phone: () => responsiveSize(["50%", "20%"]),
+          phone: () => responsiveSize(["54%", "20%"]),
           card: () => -1.5 * window.innerHeight,
         },
         {
-          phone: () => responsiveSize(["50%", "12%"]),
+          phone: () => responsiveSize(["54%", "12%"]),
           card: () => -1.5 * window.innerHeight,
         },
         {
-          phone: () => responsiveSize(["50%", "12%"]),
+          phone: () => responsiveSize(["54%", "12%"]),
           card: () => -1.5 * window.innerHeight,
         },
         {
