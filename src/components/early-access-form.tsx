@@ -29,18 +29,54 @@ const EarlyAccessFrom = () => {
 
     formCopy.data[name] = value;
 
-    setForm(formCopy);
+    setForm({ ...formCopy, error: "" });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const { name, email, phone } = form.data;
+
+    //validate inputs
+    const isValidEmail = String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+
+    if (name === "" || (email === "" && contactIsEmail) || (phone === "" && !contactIsEmail)) {
+      setForm({ ...form, error: "Please fill in all fields" });
+      return;
+    } else if (contactIsEmail && !isValidEmail) {
+      setForm({ ...form, error: "Please enter a valid email address" });
+      return;
+    }
+
+    setForm({ ...form, isSubmitting: true, error: "", submitted: false });
+
+    try {
+      const res = await fetch("/api/save-contact", { method: "POST", body: JSON.stringify({ email, phone, name }) });
+
+      if (res.ok) {
+        setForm({ ...form, submitted: true, isSubmitting: false, data: { phone: "", email: "", name: "" } });
+      } else {
+        throw Error();
+      }
+    } catch {
+      setForm({ ...form, error: "Something went wrong! Please try again", isSubmitting: false });
+    }
   };
 
   return (
     <div className="bg-white rounded-[10px] p-6 sm:px-8 md:py-8 lg:py-12 lg:px-10 sm:min-w-[360px] lg:min-w-[400px] xl:min-w-[440px]">
-      <h1 className="text-black text-xl sm:text-2xl lg:text-[28px] font-medium ">Join early access</h1>
-      <form action="" className="flex flex-col mt-8 sm:mt-9 space-y-6 sm:space-y-7.5">
+      <h1 className="text-black text-xl sm:text-2xl lg:text-[28px] font-medium mb-5 sm:mb-7">Join early access</h1>
+      <MessageBadge success message={form.submitted ? "Thank you for joining our waitlist!" : ""} />
+      <MessageBadge message={form.error} />
+      <form className="flex flex-col space-y-6 sm:space-y-7.5" onSubmit={handleSubmit}>
         <div className="">
           <label htmlFor="name" className="text-sm sm:text-1sm mb-3.5 inline-block">
             Full Name
           </label>
-          <InputField name="name" placeholder="Enter Name" onChange={updateValue} />
+          <InputField name="name" placeholder="Enter Name" onChange={updateValue} value={form.data.name} />
         </div>
         <div className="">
           <div className="flex items-center mb-3.5 space-x-3.75 text-sm sm:text-1sm ">
@@ -57,11 +93,17 @@ const EarlyAccessFrom = () => {
             type={contactIsEmail ? "email" : "tel"}
             placeholder={`Enter ${contactIsEmail ? "email" : "phone number"}`}
             onChange={updateValue}
+            value={form.data[contact]}
           />
         </div>
 
-        <button className="h-12.5 sm:h-15 bg-accent-green w-full py-3.75 text-lg rounded-[10px] shadow-card font-medium hover:shadow-none transition-all duration-150">
-          Get early access
+        <button
+          className={`h-12.5 sm:h-15 bg-accent-green w-full py-3.75 text-lg rounded-[10px] font-medium hover:shadow-none transition-all duration-150 ${
+            form.isSubmitting ? "opacity-80 cursor-not-allowed" : "shadow-card"
+          }`}
+          disabled={form.isSubmitting}
+        >
+          {form.isSubmitting ? "Saving..." : "Get early access"}
         </button>
       </form>
     </div>
@@ -87,6 +129,21 @@ const SwitchButton: React.FC<{ value: string; onClick: (name: string) => void; c
   );
 };
 
+const MessageBadge: React.FC<{ message: string; success?: boolean }> = ({ message, success }) => {
+  if (!message) {
+    return null;
+  }
+
+  return (
+    <div
+      className={`flex items-center text-xs px-3.75 pt-2.5 pb-2 rounded-md mb-4  bg-opacity-10 ${
+        success ? "text-green-500 bg-green-500" : "text-red-500 bg-red-500"
+      }`}
+    >
+      {message}
+    </div>
+  );
+};
 interface InputFieldProps
   extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {}
 
