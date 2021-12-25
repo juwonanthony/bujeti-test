@@ -287,8 +287,10 @@ const HandleAnimations = () => {
 
         const xValues = isLargeScreen ? xPositions[1] : xPositions[0];
 
-        gsap.to(phoneScreen, { x: xValues.phone, y: positions[currentSection].phone() });
-        gsap.to(card, { x: xValues.card, y: positions[currentSection].card() });
+        console.log(xValues);
+
+        gsap.to(phoneScreen, { transform: `translate(${xValues.phone}, ${positions[currentSection].phone()})` });
+        gsap.to(card, { transform: `translate(${xValues.card}, ${positions[currentSection].card()})` });
       });
     }
   }, []);
