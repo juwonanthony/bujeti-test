@@ -137,8 +137,8 @@ const MessageBadge: React.FC<{ message: string; success?: boolean }> = ({ messag
 
   return (
     <div
-      className={`flex items-center text-xs px-3.75 pt-2.5 pb-2 rounded-md mb-4  bg-opacity-10 ${
-        success ? "text-green-500 bg-green-500" : "text-red-500 bg-red-500"
+      className={`flex items-center text-xs px-3.75 pt-2.5 pb-2 rounded-md mb-4 ${
+        success ? "text-black bg-accent-green " : "text-red-500 bg-red-500 bg-opacity-10"
       }`}
     >
       {message}

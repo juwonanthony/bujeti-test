@@ -37,7 +37,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({ className, onChange, ...props }
       >
         <span className="inline-block pt-0.5">{selected}</span>
         <svg viewBox="0 0 14 8" fill="none" className="ml-1.25 w-2.5 transform rotate-180">
-          <path d="M13 7L7 1L1 7" stroke="#586068" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M13 7L7 1L1 7" stroke="#586068" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
 
         <div
