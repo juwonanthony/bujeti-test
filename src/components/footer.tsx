@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <section className="bg-black section section--hidden">
       {/* <div className="bg-white h-16 sm:h-20 md:h-25 lg:h-32 w-full"></div> */}
-      <div className="body-padding bg-black py-16 sm:py-20 lg:py-25 xl:py-30 flex-1 min-h-full flex md:items-center">
+      <div className="body-padding bg-black py-16 sm:py-20 lg:py-25 xl:py-30 flex-1 min-h-full flex md:items-center overflow-hidden">
         <div className="container flex flex-col md:flex-row md:items-center justify-between flex-wrap h-full">
           <div className=" mb-8 mt-5 md:mb-0 md:mt-0 md:mr-5 flex-1 lg:min-w-[420px]">
             <h2 className="text-white text-2xl sm:text-3xl md:text-[32px] lg:text-[42px] xl:text-5xl tight-spacing">
