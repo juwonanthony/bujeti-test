@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import InputField from "./form-elements/input-field";
+import PhoneInput from "./form-elements/phone-input";
 
 const EarlyAccessFrom = () => {
   const [contact, setContact] = useState<string>("email");
@@ -14,21 +16,14 @@ const EarlyAccessFrom = () => {
   });
   const contactIsEmail = contact === "email";
 
-  useEffect(() => {
-    console.log(form);
-  }, [form]);
-
   const switchContact = (value: string) => {
     setContact(value);
   };
 
   const updateValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-
     const formCopy = JSON.parse(JSON.stringify(form));
-
     formCopy.data[name] = value;
-
     setForm({ ...formCopy, error: "" });
   };
 
@@ -88,13 +83,19 @@ const EarlyAccessFrom = () => {
               Phone Number
             </SwitchButton>
           </div>
-          <InputField
-            name={contactIsEmail ? "email" : "phone"}
-            type={contactIsEmail ? "email" : "tel"}
-            placeholder={`Enter ${contactIsEmail ? "email" : "phone number"}`}
-            onChange={updateValue}
-            value={form.data[contact]}
-          />
+          {contact === "email" && (
+            <InputField
+              name="email"
+              type="email"
+              placeholder="Enter email"
+              onChange={updateValue}
+              value={form.data.email}
+            />
+          )}
+
+          {contact === "phone" && (
+            <PhoneInput name="phone" placeholder="Enter phone number" onChange={updateValue} value={form.data.phone} />
+          )}
         </div>
 
         <button
@@ -142,18 +143,6 @@ const MessageBadge: React.FC<{ message: string; success?: boolean }> = ({ messag
     >
       {message}
     </div>
-  );
-};
-interface InputFieldProps
-  extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {}
-
-const InputField: React.FC<InputFieldProps> = ({ className, ...props }) => {
-  return (
-    <input
-      type="text"
-      {...props}
-      className="w-full border border-grey-light h-12 sm:h-[50px] rounded-md text-grey-dark placeholder-grey-dark placeholder-opacity-40 text-1sm p-3.75 focus:border-grey-dark transition-all ease-out duration-150 no-outline focus:placeholder-opacity-25"
-    />
   );
 };
 
