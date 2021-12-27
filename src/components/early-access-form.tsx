@@ -64,14 +64,14 @@ const EarlyAccessFrom = () => {
   return (
     <div className="bg-white rounded-[10px] p-6 sm:px-8 md:py-8 lg:py-12 lg:px-10 sm:min-w-[360px] lg:min-w-[400px] xl:min-w-[440px]">
       <h1 className="text-black text-xl sm:text-2xl lg:text-[28px] font-medium mb-5 sm:mb-7">Join early access</h1>
-      <MessageBadge success message={form.submitted ? "Thank you for joining our waitlist!" : ""} />
+      <MessageBadge success message={form.submitted ? "Thank you for joining our waitlist, you will amongst the first to be notified as soon as we're live!" : ""} />
       <MessageBadge message={form.error} />
       <form className="flex flex-col space-y-6 sm:space-y-7.5" onSubmit={handleSubmit}>
         <div className="">
           <label htmlFor="name" className="text-sm sm:text-1sm mb-3.5 inline-block">
             Full Name
           </label>
-          <InputField name="name" placeholder="Enter Name" onChange={updateValue} value={form.data.name} />
+          <InputField name="name" placeholder="Enter your full name" onChange={updateValue} value={form.data.name} />
         </div>
         <div className="">
           <div className="flex items-center mb-3.5 space-x-3.75 text-sm sm:text-1sm ">
@@ -87,14 +87,14 @@ const EarlyAccessFrom = () => {
             <InputField
               name="email"
               type="email"
-              placeholder="Enter email"
+              placeholder="Enter your email"
               onChange={updateValue}
               value={form.data.email}
             />
           )}
 
           {contact === "phone" && (
-            <PhoneInput name="phone" placeholder="Enter phone number" onChange={updateValue} value={form.data.phone} />
+            <PhoneInput name="phone" placeholder="Enter your phone number" onChange={updateValue} value={form.data.phone} />
           )}
         </div>
 

@@ -10,8 +10,8 @@ const SectionOne = () => {
               Total money control <br /> with targeted budgets
             </h2>
             <p className="text-black text-lg sm:text-xl lg:text-2xl mt-5 sm:mt-7 md:mt-9 max-w-[580px] font-light follow-text">
-              Budgets in Divvy are more than just wishful thinking — they’re a powerful tool to control spend. Set spend
-              limits in Divvy which are directly tied to employee cards. That’s it. No nagging or pleading involved.
+              Budgets in Bujeti are more than just wishful thinking — they’re a powerful tool to control spend. Set spend
+              limits in Bujeti which are directly tied to beneficiaries cards. That’s it. No nagging or pleading involved.
             </p>
           </div>
         </div>

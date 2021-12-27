@@ -78,7 +78,7 @@ const FootCopy: React.FC<{ className: string }> = ({ className }) => {
       <span className="text-1sm inline-block pt-1">© 2021 Bujeti Inc.</span>
       <span>&bull;</span>
       <div className="flex items-center space-x-3.75">
-        <a href="" className="hover:text-accent-green">
+        <a href="https://www.twitter.com/bujetihq/" className="hover:text-accent-green">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path
               d="M18.1648 3.00785C17.4177 3.53487 16.5904 3.93795 15.7149 4.20158C15.245 3.66129 14.6205 3.27834 13.9259 3.10454C13.2313 2.93073 12.5 2.97445 11.8311 3.22978C11.1621 3.48511 10.5877 3.93974 10.1855 4.53217C9.78333 5.1246 9.57281 5.82626 9.58241 6.54224V7.32246C8.21128 7.35801 6.85264 7.05392 5.62749 6.43726C4.40233 5.8206 3.34871 4.91052 2.56044 3.78806C2.56044 3.78806 -0.560438 10.81 6.46153 13.9309C4.85469 15.0216 2.94053 15.5685 1 15.4913C8.02197 19.3924 16.6044 15.4913 16.6044 6.51883C16.6037 6.3015 16.5828 6.08471 16.542 5.87125C17.3383 5.08595 17.9002 4.09447 18.1648 3.00785Z"
@@ -86,7 +86,7 @@ const FootCopy: React.FC<{ className: string }> = ({ className }) => {
             />
           </svg>
         </a>
-        <a href="" className="hover:text-accent-green">
+        <a href="https://www.instagram.com/bujetihq/" className="hover:text-accent-green">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path
               d="M13.5 3H6.5C4.567 3 3 4.567 3 6.5V13.5C3 15.433 4.567 17 6.5 17H13.5C15.433 17 17 15.433 17 13.5V6.5C17 4.567 15.433 3 13.5 3Z"

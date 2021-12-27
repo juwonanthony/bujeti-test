@@ -29,7 +29,7 @@ const features = [
   {
     title: "Targeted budgets for your needs",
     description:
-      "Set up budgets, add beneficiaries to spend directly with our VISA™ virutal cards, no bank account needed.",
+      "Set up budgets, add beneficiaries to spend directly with our VISA™ virtual cards, no bank account needed.",
     icon: (
       <svg width="100%" viewBox="0 0 35 35" fill="none">
         <path
@@ -52,7 +52,7 @@ const features = [
   {
     title: "Total transparency on spendings",
     description:
-      "Set up budgets, add beneficiaries to spend directly with our VISA™ virutal cards, no bank account needed.",
+      "See a full picture of how your money is being spent.",
     icon: (
       <svg width="100%" viewBox="0 0 35 35" fill="none">
         <path
@@ -133,7 +133,7 @@ const features = [
   {
     title: "Manage funds with spending limits",
     description:
-      "Set up budgets, add beneficiaries to spend directly with our VISA™ virutal cards, no bank account needed.",
+      "Have a full control on where and how your funds is spent",
     icon: (
       <svg width="100%" viewBox="0 0 35 35" fill="none">
         <path
@@ -156,7 +156,7 @@ const features = [
   {
     title: "Spend in multiple currency",
     description:
-      "Set up budgets, add beneficiaries to spend directly with our VISA™ virutal cards, no bank account needed.",
+      "Allow your beneficiaries to spend currency agnostic",
     icon: (
       <svg width="100%" viewBox="0 0 35 35" fill="none">
         <path

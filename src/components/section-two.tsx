@@ -10,8 +10,7 @@ const SectionTwo = () => {
               Organized spending with <br /> our VISA™ virtual cards
             </h2>
             <p className="text-black text-lg sm:text-xl lg:text-2xl mt-5 sm:mt-7 md:mt-9 max-w-[580px] font-light follow-text">
-              Budgets in Divvy are more than just wishful thinking — they’re a powerful tool to control spend. Set spend
-              limits in Divvy which are directly tied to employee cards. That’s it. No nagging or pleading involved.
+              Issue Bujeti’s smart virtual cards with individual spending limits. Your beneficiaries can spend and buy what they need, without waiting on you.
             </p>
           </div>
         </div>

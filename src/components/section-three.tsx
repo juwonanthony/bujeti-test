@@ -7,11 +7,10 @@ const SectionThree = () => {
         <div className="container">
           <div className="md:max-w-[56vw]">
             <h2 className="text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl tight-spacing">
-              Full, real-time visibility into <br /> how money is spent.
+              Full, real-time visibility into <br /> how your money is spent.
             </h2>
             <p className="text-black text-lg sm:text-xl lg:text-2xl mt-5 sm:mt-7 md:mt-9 max-w-[580px] font-light follow-text">
-              Budgets in Divvy are more than just wishful thinking — they’re a powerful tool to control spend. Set spend
-              limits in Divvy which are directly tied to employee cards. That’s it. No nagging or pleading involved.
+              You get the details you need on every expense. Something doesn’t look right? You can flag it, pause the beneficiary or if you need, freeze the card.
             </p>
           </div>
         </div>

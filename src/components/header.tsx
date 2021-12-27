@@ -5,7 +5,7 @@ const LandingPageHeader = () => {
         <div className="container relative z-[100]">
           <div>
             <figure className="logo logo--normal" id="logo">
-              {/* <img src="/images/logo.svg" alt="Budgeti Logo" className="h-full" /> */}
+              {/* <img src="/images/logo.svg" alt="Bujeti Logo" className="h-full" /> */}
 
               <svg height="100%" viewBox="0 0 380 159" fill="none">
                 <path
@@ -17,7 +17,7 @@ const LandingPageHeader = () => {
               </svg>
             </figure>
             <h1 className="text-accent-orange text-4xl sm:text-5xl md:text-[53px] lg:text-6xl xl:text-[68px] mt-9 tight-spacing">
-              The only spend <br /> control tool you’d <br /> ever need.
+              The only spending <br /> tool you’d <br /> ever need.
             </h1>
           </div>
         </div>

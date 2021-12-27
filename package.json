@@ -1,5 +1,5 @@
 {
-  "name": "budgeti-web",
+  "name": "bujeti-web",
   "private": true,
   "scripts": {
     "dev": "next dev",
