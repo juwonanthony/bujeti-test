@@ -48,7 +48,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({ className, onChange, ...props }
         </svg>
 
         <div
-          className={`bg-white w-[200px] left-0 absolute top-0 rounded-md transform transition-all duration-200 ease-out max-h-[280px] overflow-y-auto shadow-card border border-grey-light ${
+          className={`bg-white w-[220px] left-0 absolute top-0 rounded-md transform transition-all duration-200 ease-out max-h-[280px] overflow-y-auto shadow-card border border-grey-light ${
             showDropdown ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 translate-y-10"
           }`}
         >
