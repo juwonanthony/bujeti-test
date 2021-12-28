@@ -6,24 +6,34 @@ import LandingPageHeader from "../components/header";
 import SectionOne from "../components/section-one";
 import SectionThree from "../components/section-three";
 import SectionTwo from "../components/section-two";
+import MetaTags from "../components/meta-tags";
 
 const HandleAnimations = dynamic(() => import("../components/handle-animations"), { ssr: false });
 
 const Home = () => {
   return (
-    <main className="">
-      <div className="h-full w-full relative main-container">
-        <LandingPageHeader />
-        <SectionOne />
-        <SectionTwo />
-        <SectionThree />
-        <Features />
-        <Footer />
-        <FixedAssets />
-        <HandleAnimations />
-      </div>
-    </main>
+    <>
+      <MetaTags />
+      <main className="">
+        <div className="h-full w-full relative main-container">
+          <LandingPageHeader />
+          <SectionOne />
+          <SectionTwo />
+          <SectionThree />
+          <Features />
+          <Footer />
+          <FixedAssets />
+          <HandleAnimations />
+        </div>
+      </main>
+    </>
   );
+};
+
+export const getStaticProps = () => {
+  return {
+    props: {},
+  };
 };
 
 export default Home;
