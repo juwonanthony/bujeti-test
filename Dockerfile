@@ -9,7 +9,6 @@ RUN npm install
 COPY . /usr/src/app/
 RUN npx next telemetry disable
 RUN npm run build
-RUN npm run start
 
 
 EXPOSE 3000
