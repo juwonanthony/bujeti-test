@@ -17,7 +17,7 @@ const LandingPageHeader = () => {
               </svg>
             </figure>
             <h1 className="text-accent-orange text-4xl sm:text-5xl md:text-[53px] lg:text-6xl xl:text-[68px] mt-9 tight-spacing">
-              The only spending <br /> tool you’d <br /> ever need.
+              The only spending <br /> tool you’d ever <br /> need.
             </h1>
           </div>
         </div>
