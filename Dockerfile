@@ -7,7 +7,7 @@ COPY package*.json /usr/src/app/
 RUN npm install
 
 COPY . /usr/src/app/
-RUN npm next telemetry disable
+RUN npx next telemetry disable
 RUN npm run build
 
 
