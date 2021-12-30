@@ -28,7 +28,7 @@ const MetaTags = () => {
         content="Bujeti a powerful tool for expense management"
       />
       <meta property="twitter:image" content="link-to-banner-here" />
-      <link rel="icon" href="/favicon.png" type="image/png" sizes="16x16" />
+      <link rel="icon" href="/favicon.ico" type="image/png" sizes="16x16" />
     </Head>
   );
 };
