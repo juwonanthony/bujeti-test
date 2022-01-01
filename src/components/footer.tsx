@@ -75,7 +75,7 @@ const Footer = () => {
 const FootCopy: React.FC<{ className: string }> = ({ className }) => {
   return (
     <div className={`items-center space-x-3.75 text-grey-divider ${className}`}>
-      <span className="text-1sm inline-block pt-1">© 2021 Bujeti Inc.</span>
+      <span className="text-1sm inline-block pt-1">© {new Date().getFullYear()} Bujeti Inc.</span>
       <span>&bull;</span>
       <div className="flex items-center space-x-3.75">
         <a href="https://www.twitter.com/bujetihq/" target="_blank" className="hover:text-accent-green" rel="noreferrer">
