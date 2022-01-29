@@ -1,5 +1,5 @@
 import React from "react";
-import EarlyAccessFrom from "./early-access-form";
+import EarlyAccessFrom from "../early-access-form";
 
 const Footer = () => {
   return (
