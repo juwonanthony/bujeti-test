@@ -22,12 +22,13 @@ const Home = () => {
     // Destropying
     return () => {
       typed.destroy();
+      document.documentElement.classList.remove("full-screen");
     };
   }, []);
 
   return (
     <main className="bg-grey-bg min-h-screen px-5 relative">
-      <div className="h-full w-full relative main-container py-12.5 flex flex-col items-center">
+      <div className="h-full w-full relative new-container py-12.5 flex flex-col items-center">
         <figure className="h-7 sm:h-8 md:h-10 font-medium">
           <svg height="100%" viewBox="0 0 380 159" fill="none">
             <path
