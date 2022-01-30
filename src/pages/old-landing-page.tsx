@@ -6,6 +6,7 @@ import LandingPageHeader from "../components/old-landing-page/header";
 import SectionOne from "../components/old-landing-page/section-one";
 import SectionThree from "../components/old-landing-page/section-three";
 import SectionTwo from "../components/old-landing-page/section-two";
+import EarlyAccessForm from "../components/old-landing-page/early-access-form";
 
 const HandleAnimations = dynamic(() => import("../components/old-landing-page/handle-animations"), { ssr: false });
 

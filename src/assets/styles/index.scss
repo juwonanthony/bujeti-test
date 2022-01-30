@@ -301,3 +301,8 @@ input {
     transform: rotate(-7deg) translateX(0);
   }
 }
+
+.modal-bg{
+  background: rgba(#D9DDD5, .85);
+  backdrop-filter: blur(8px);
+}

@@ -1,8 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
+import EarlyAccessModal from "../components/early-access-modal";
 
 const Home = () => {
   const contentRef = useRef<HTMLSpanElement>(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const typed = new Typed(contentRef.current, {
@@ -49,7 +51,10 @@ const Home = () => {
             in Bujeti which are directly tied to
           </p>
 
-          <button className="bg-black h-12.5 sm:h-15 text-accent-green px-16 sm:px-20 lg:px-25 py-3.75 text-base sm:text-lg rounded-[10px] font-medium hover:shadow-none transition-all duration-150 shadow-card mt-6 sm:mt-8 flex items-center">
+          <button
+            className="bg-black h-12.5 sm:h-15 text-accent-green px-16 sm:px-20 lg:px-25 py-3.75 text-base sm:text-lg rounded-[10px] font-medium hover:shadow-none transition-all duration-150 shadow-card mt-6 sm:mt-8 flex items-center"
+            onClick={() => setShowModal(true)}
+          >
             Get early access
           </button>
         </div>
@@ -65,6 +70,7 @@ const Home = () => {
           <img src="/images/app.png" alt="" className="w-full" />
         </figure>
       </div>
+      <EarlyAccessModal {...{ showModal, setShowModal }} />
     </main>
   );
 };
