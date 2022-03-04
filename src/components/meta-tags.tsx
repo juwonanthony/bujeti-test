@@ -4,11 +4,11 @@ import React from "react";
 const MetaTags = () => {
   return (
     <Head>
-      <title>Bujeti</title>
-      <meta name="title" content="Bujeti" />
+      <title>Bujeti - Budgeting and Expense management tools for Africa</title>
+      <meta name="title" content="Bujeti - Budgeting and Expense management tools for Africa" />
       <meta
         name="description"
-        content="Budgets in Divvy are more than just wishful thinking — they’re a powerful tool to control spend."
+        content="Budgeting and expense management software built for your african realities"
       />
 
       <meta property="og:type" content="website" />
@@ -16,7 +16,7 @@ const MetaTags = () => {
       <meta property="og:title" content="Bujeti" />
       <meta
         property="og:description"
-        content="Budgets in Divvy are more than just wishful thinking — they’re a powerful tool to control spend."
+        content="Budgeting and expense management software built for your african realities"
       />
       <meta property="og:image" content="link-to-banner-here" />
 
@@ -25,7 +25,7 @@ const MetaTags = () => {
       <meta property="twitter:title" content="Bujeti" />
       <meta
         property="twitter:description"
-        content="Budgets in Divvy are more than just wishful thinking — they’re a powerful tool to control spend."
+        content="Budgeting and expense management software built for your african realities"
       />
       <meta property="twitter:image" content="link-to-banner-here" />
       <link rel="icon" href="/favicon.png" type="image/png" sizes="16x16" />
