@@ -53,7 +53,8 @@ const Home = () => {
               needs.
             </h1>
             <p className="mt-6 text-center text-lg sm:text-xl lg:text-2xl max-w-[760px] font-light">
-              Automated expense management - Spendings Control - Automated Reconciliation
+              Automated expense management - Spendings Control 
+              <br></br>Automated Reconciliation - and more...
               
             </p>
 
