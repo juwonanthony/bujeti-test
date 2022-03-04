@@ -9,10 +9,10 @@ const Home = () => {
 
   useEffect(() => {
     const typed = new Typed(contentRef.current, {
-      strings: ["business", "personal", "spending"].map((t) => stringWithHTML(t)), // Strings to display: ;
+      strings: ["business", "finance team", "employees"].map((t) => stringWithHTML(t)), // Strings to display: ;
       startDelay: 500,
-      typeSpeed: 200,
-      backSpeed: 200,
+      typeSpeed: 100,
+      backSpeed: 100,
       backDelay: 350,
       smartBackspace: true,
       loop: true,
@@ -43,16 +43,16 @@ const Home = () => {
             </svg>
           </figure>
           <div className="flex flex-col items-center">
-            <h1 className="mt-8 md:mt-10 lg:mt-12.5 text-[31px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8lg header-text text-center">
-              Simple budgeting tool <br /> for your{" "}
+            <h1 className="mt-8 md:mt-10 lg:mt-12.5 text-[18px] sm:text-5xl md:text-5xl lg:text-6xl xl:text-7lg header-text text-center">
+              Complete expense management tool <br /> for your{" "}
               <span className="relative inline-block" ref={contentRef}>
                 {/* <span className="content inline-block relative z-10" ref={contentRef}></span> */}
               </span>{" "}
               needs.
             </h1>
             <p className="mt-6 text-center text-lg sm:text-xl lg:text-2xl max-w-[760px] font-light">
-              Bujeti helps re more than just wishful thinking— they’re a powerful tool to control spend. Set spend
-              limits in Bujeti which are directly tied to
+              Automated expense management - Spendings Control - Automated Reconciliation
+              
             </p>
 
             <button
