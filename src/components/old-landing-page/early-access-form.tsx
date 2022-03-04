@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
-import InputField from "./form-elements/input-field";
-import PhoneInput from "./form-elements/phone-input";
+import InputField from "../form-elements/input-field";
+import PhoneInput from "../form-elements/phone-input";
 
-interface Props {
-  closeModal: () => void;
-}
-
-const EarlyAccessFrom: React.FC<Props> = ({ closeModal }) => {
+const EarlyAccessFrom = () => {
   const [contact, setContact] = useState<string>("email");
   const [form, setForm] = useState({
     data: {
@@ -57,10 +53,6 @@ const EarlyAccessFrom: React.FC<Props> = ({ closeModal }) => {
 
       if (res.ok) {
         setForm({ ...form, submitted: true, isSubmitting: false, data: { phone: "", email: "", name: "" } });
-
-        setTimeout(() => {
-          closeModal();
-        }, 2000);
       } else {
         throw Error();
       }
@@ -70,11 +62,8 @@ const EarlyAccessFrom: React.FC<Props> = ({ closeModal }) => {
   };
 
   return (
-
-    <div className="">
-      <h1 className="text-black text-xl sm:text-2xl lg:text-[28px] font-medium mb-5 sm:mb-7 text-center">
-        Join early access
-      </h1>
+    <div className="bg-white rounded-[10px] p-6 sm:px-8 md:py-8 lg:py-12 lg:px-10 sm:min-w-[360px] lg:min-w-[400px] xl:min-w-[440px]">
+      <h1 className="text-black text-xl sm:text-2xl lg:text-[28px] font-medium mb-5 sm:mb-7">Join early access</h1>
       <MessageBadge success message={form.submitted ? "Thank you for joining our waitlist!" : ""} />
       <MessageBadge message={form.error} />
       <form className="flex flex-col space-y-6 sm:space-y-7.5" onSubmit={handleSubmit}>
@@ -82,7 +71,7 @@ const EarlyAccessFrom: React.FC<Props> = ({ closeModal }) => {
           <label htmlFor="name" className="text-sm sm:text-1sm mb-3.5 inline-block">
             Full Name
           </label>
-          <InputField name="name" placeholder="Enter your full name" onChange={updateValue} value={form.data.name} />
+          <InputField name="name" placeholder="Enter Name" onChange={updateValue} value={form.data.name} />
         </div>
         <div className="">
           <div className="flex items-center mb-3.5 space-x-3.75 text-sm sm:text-1sm ">
@@ -98,14 +87,14 @@ const EarlyAccessFrom: React.FC<Props> = ({ closeModal }) => {
             <InputField
               name="email"
               type="email"
-              placeholder="Enter your email"
+              placeholder="Enter email"
               onChange={updateValue}
               value={form.data.email}
             />
           )}
 
           {contact === "phone" && (
-            <PhoneInput name="phone" placeholder="Enter your phone number" onChange={updateValue} value={form.data.phone} />
+            <PhoneInput name="phone" placeholder="Enter phone number" onChange={updateValue} value={form.data.phone} />
           )}
         </div>
 
@@ -148,7 +137,7 @@ const MessageBadge: React.FC<{ message: string; success?: boolean }> = ({ messag
 
   return (
     <div
-      className={`flex items-center text-xs px-3.75 pt-2.5 pb-2 rounded-md mb-4 text-center justify-center ${
+      className={`flex items-center text-xs px-3.75 pt-2.5 pb-2 rounded-md mb-4 text-center ${
         success ? "text-black bg-accent-green " : "text-red-500 bg-red-500 bg-opacity-10"
       }`}
     >

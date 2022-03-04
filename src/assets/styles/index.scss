@@ -57,8 +57,29 @@ body {
   font-weight: 400;
   font-family: "Caravel", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.full-screen{
+  height: -webkit-fill-available;
+
+  body{
+    height: 100vh;
+    height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+  }
+
+  #__next, main{
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: hidden;
+  }
 }
 
 * {
@@ -141,4 +162,147 @@ body {
 input {
   appearance: none;
   -webkit-appearance: none;
+}
+
+.new-container{
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header-text {
+  line-height: 1.2;
+}
+
+.display-text{
+  &::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 12.5%;
+    width: 100%;
+    height: 25%;
+    background: #BFFF0B;
+  }
+}
+
+.typed-cursor{
+  font-weight: 100 !important;
+  font-size: 0.4em;
+  display: inline-block;
+  transform: translateY(-20%) scale(1, 2.5);
+  position: relative;
+  z-index: 10;
+}
+
+.fixed-stuff{
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  max-width: 1000px;
+  height: 32vh;
+
+  @include lg{
+    height: 33.5vh;
+  }
+
+  figure{
+    position: absolute;
+  }
+
+  .app{
+    right: 5%;
+    width: 70%;
+    top: -7%;
+    transform: translateY(100%);
+    animation: app-display 1s 0.5s ease-out forwards;
+
+    @include sm{
+      display: none;
+    }
+
+    @include lg{
+      display: block;
+      width: 22%;
+      top: 25%;
+      right: 0;
+    }
+    // top: 25%;
+  }
+
+  .dashboard{
+    display: none;
+    filter: drop-shadow(0px 35px 50px rgba(0, 0, 0, 0.07));
+
+    @include sm{
+      display: block;
+      width: 80%;
+      right: 0;
+    }
+
+    @include md{
+      width: 75%;
+    }
+
+    @include lg{
+      width: 72%;
+      left: 12.5%;
+    }
+  }
+
+  .card-fixed{
+    width: 40%;
+    top: 18%;
+    left: 0;
+    opacity: 0;
+    transform: translateX(25%);
+    animation: card-display 1.2s 1.5s ease-out forwards;
+
+    @include sm{
+      width: 25%;
+      top: 22%;
+      left: 5%;
+    }
+
+    @include lg{
+      width: 22%;
+      top: 25%;
+      left: 0;
+    }
+  }
+}
+
+@keyframes app-display {
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes card-display {
+  10% {
+    opacity: 1;
+  }
+
+  50%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  70%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(-7deg) translateX(0);
+  }
+}
+
+.modal-bg{
+  background: rgba(#D9DDD5, .85);
+  backdrop-filter: blur(8px);
 }
