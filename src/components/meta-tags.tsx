@@ -5,11 +5,11 @@ const MetaTags = () => {
   return (
     <Head>
       <title>Bujeti - Budgeting and Expense management tools for Africa</title>
-      <meta name="title" content="Bujeti - Budgeting and Expense management tools for Africa" />
+      <meta name="title" content="Bujeti - Budgeting and Expense management tools for Africans by Africans" />
       <meta
         name="description"
 
-        content="Budgeting and expense management software built for your african realities"
+        content="Budgeting and expense management software built for your african realities. It empowers your people to do more. It combines credit cards, payments, expenses, and cash into one experience powered by premium Visa Cards, dedicated NUBANs, Mobile Wallets and Faster Payments."
       />
 
       <meta property="og:type" content="website" />
@@ -18,7 +18,7 @@ const MetaTags = () => {
       <meta
         property="og:description"
 
-        content="Budgeting and expense management software built for your african realities"
+        content="Budgeting and expense management software built for your african realities. It empowers your people to do more. It combines credit cards, payments, expenses, and cash into one experience powered by premium Visa Cards, dedicated NUBANs, Mobile Wallets and Faster Payments."
       />
       <meta property="og:image" content="link-to-banner-here" />
 
@@ -27,7 +27,7 @@ const MetaTags = () => {
       <meta property="twitter:title" content="Bujeti" />
       <meta
         property="twitter:description"
-        content="Budgeting and expense management software built for your african realities"
+        content="Budgeting and expense management software built for your african realities. It empowers your people to do more. It combines credit cards, payments, expenses, and cash into one experience powered by premium Visa Cards, dedicated NUBANs, Mobile Wallets and Faster Payments."
       />
       <meta property="twitter:image" content="link-to-banner-here" />
       <link rel="icon" href="/favicon.ico" type="image/png" sizes="16x16" />

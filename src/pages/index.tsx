@@ -46,15 +46,15 @@ const Home = () => {
           </figure>
           <div className="flex flex-col items-center">
             <h1 className="mt-8 md:mt-10 lg:mt-12.5 text-[18px] sm:text-5xl md:text-5xl lg:text-6xl xl:text-7lg header-text text-center">
-              Complete expense management tool <br /> for your{" "}
+              Complete expense management  <br />tool for your{" "}
               <span className="relative inline-block" ref={contentRef}>
                 {/* <span className="content inline-block relative z-10" ref={contentRef}></span> */}
               </span>{" "}
               needs.
             </h1>
             <p className="mt-6 text-center text-lg sm:text-xl lg:text-2xl max-w-[760px] font-light">
-              Automated expense management - Spendings Control 
-              <br></br>Automated Reconciliation - and more...
+              Automated Expense Management - Spending Control
+              <br />Automated Reconciliation - and more...
               
             </p>
 
@@ -71,7 +71,7 @@ const Home = () => {
             <img src="/images/card.png" alt="" className="w-full" />
           </figure>
           <figure className="dashboard bg-grey-light rounded-[5px]">
-            <img src="/images/dashboard.png" alt="" className="w-full" />
+            <img src="/images/overview.png" alt="" className="w-full" />
           </figure>
           <figure className="app">
             <img src="/images/app.png" alt="" className="w-full" />
