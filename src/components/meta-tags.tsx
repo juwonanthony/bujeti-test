@@ -4,7 +4,7 @@ import React from "react";
 const MetaTags = () => {
   return (
     <Head>
-      <title>Bujeti - Budgeting and Expense management tools for Africa</title>
+      <title>Bujeti - Budgeting and Expense management tools for Africans by Africans</title>
       <meta name="title" content="Bujeti - Budgeting and Expense management tools for Africans by Africans" />
       <meta
         name="description"
