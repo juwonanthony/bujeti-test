@@ -185,12 +185,6 @@ input {
   line-height: 1.2;
 }
 
-.cta {
-  @include mmd{
-    margin-top: 5rem !important;
-  }
-}
-
 .display-text{
   &::after{
     content: "";
@@ -279,6 +273,7 @@ input {
     @include lg{
       width: 72%;
       left: 12.5%;
+      bottom: initial;
     }
   }
 
