@@ -33,7 +33,7 @@ const Home = () => {
       <MetaTags />
 
       <main className="bg-grey-bg min-h-screen px-5 relative">
-        <div className="h-full w-full relative new-container py-12.5 flex flex-col items-center">
+        <div className="h-full w-full relative new-container py-10 flex flex-col items-center">
           <figure className="h-7 sm:h-8 md:h-10 font-medium">
             <svg height="100%" viewBox="0 0 380 159" fill="none">
               <path
@@ -45,21 +45,21 @@ const Home = () => {
             </svg>
           </figure>
           <div className="flex flex-col items-center">
-            <h1 className="mt-8 md:mt-10 lg:mt-12.5 text-[18px] sm:text-5xl md:text-5xl lg:text-6xl xl:text-7lg header-text text-center">
+            <h1 className="mt-6 md:mt-8 lg:mt-10.5 text-[18px] sm:text-5xl md:text-5xl lg:text-6xl xl:text-7lg header-text text-center">
               Complete expense management  <br />tool for your{" "}
               <span className="relative inline-block" ref={contentRef}>
                 {/* <span className="content inline-block relative z-10" ref={contentRef}></span> */}
               </span>{" "}
               needs.
             </h1>
-            <p className="mt-6 text-center text-lg sm:text-xl lg:text-2xl max-w-[760px] font-light">
+            <p className="mt-4 text-center text-lg sm:text-xl lg:text-2xl max-w-[760px] font-light">
               Automated Expense Management - Spending Control
               <br />Automated Reconciliation - and more...
-              
+
             </p>
 
             <button
-              className="bg-black h-12.5 sm:h-15 text-accent-green px-16 sm:px-20 lg:px-25 py-3.75 text-base sm:text-lg rounded-[10px] font-medium hover:shadow-none transition-all duration-150 shadow-card mt-6 sm:mt-8 flex items-center"
+              className="cta bg-black h-12.5 sm:h-15 text-accent-green px-16 sm:px-20 lg:px-25 py-3.75 text-base sm:text-lg rounded-[10px] font-medium hover:shadow-none transition-all duration-150 shadow-card mt-4 sm:mt-4 flex items-center"
               onClick={() => setShowModal(true)}
             >
               Get early access
