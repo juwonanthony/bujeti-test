@@ -1,5 +1,5 @@
 
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 import EarlyAccessModal from "../components/early-access-modal";
 import MetaTags from "../components/meta-tags";
@@ -79,6 +79,18 @@ const Home = () => {
         </div>
         <EarlyAccessModal {...{ showModal, setShowModal }} />
       </main>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-215833243-1" />
+      <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-215833243-1');
+            `,
+          }}
+      />
     </>
   );
 };
