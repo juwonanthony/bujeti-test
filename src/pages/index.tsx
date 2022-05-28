@@ -53,9 +53,9 @@ const Home = () => {
               needs.
             </h1>
             <p className="mt-4 text-center text-lg xsm:text-lg sm:text-xl lg:text-2xl max-w-[720px] font-light">
-              Automated Expense Management tailored SMBs<br />
-              Take control over your finance
-              <br />Built for your African realities - and more...
+              Automated Expense Management tailored for SMBs<br />
+              Take control over and supercharge your finance
+              <br />Built for your African realities
 
             </p>
 

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="999cf9e3-c54c-4514-bb18-272b42860217" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/index.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +131,7 @@
       <workItem from="1646591837320" duration="3038000" />
       <workItem from="1646956211773" duration="947000" />
       <workItem from="1651479012431" duration="616000" />
-      <workItem from="1653751177769" duration="2139000" />
+      <workItem from="1653751177769" duration="2329000" />
     </task>
     <task id="LOCAL-00001" summary="change favicon.ico">
       <created>1640823453591</created>
