@@ -32,6 +32,12 @@
 // 'xl': '1280px',
 // '2xl': '1536px',
 
+@mixin xsm {
+  @media screen and (max-width: 1300px) and (max-height: 800px) {
+    @content
+  }
+};
+
 @mixin sm {
   @media screen and (min-width: 520px) {
     @content
@@ -183,6 +189,10 @@ input {
 
 .header-text {
   line-height: 1.2;
+
+  @include xsm{
+    font-size: 3rem !important;
+  }
 }
 
 .display-text{
@@ -206,6 +216,12 @@ input {
   z-index: 10;
 }
 
+.text-block {
+  @include xsm{
+    margin-bottom: 10px;
+  }
+}
+
 .fixed-stuff{
   display: block;
   position: fixed;
@@ -215,6 +231,10 @@ input {
   width: 95%;
   max-width: 1000px;
   height: 32vh;
+
+  @include xsm{
+    max-height: 42.5vh !important;
+  }
 
   @include lg{
     height: 46.5vh;
@@ -253,6 +273,12 @@ input {
   .dashboard{
     display: none;
     filter: drop-shadow(0px 35px 50px rgba(0, 0, 0, 0.07));
+
+    @include xsm{
+      display: block;
+      width: 60%;
+      right: 0;
+    }
 
     @include sm{
       display: block;
