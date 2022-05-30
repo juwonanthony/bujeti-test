@@ -12,7 +12,8 @@ const EarlyAccessFrom: React.FC<Props> = ({ closeModal }) => {
     data: {
       email: "",
       name: "",
-      phone: "",
+      company: "",
+      website: "",
     },
     isSubmitting: false,
     error: "",
@@ -33,7 +34,7 @@ const EarlyAccessFrom: React.FC<Props> = ({ closeModal }) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { name, email, phone } = form.data;
+    const { name, email, company, website } = form.data;
 
     //validate inputs
     const isValidEmail = String(email)
@@ -42,10 +43,10 @@ const EarlyAccessFrom: React.FC<Props> = ({ closeModal }) => {
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
 
-    if (name === "" || (email === "" && contactIsEmail) || (phone === "" && !contactIsEmail)) {
+    if (name && name.trim() === "" || (email && email.trim() === "") || (company && company.trim() === "") || (website && website.trim() === "")) {
       setForm({ ...form, error: "Please fill in all fields" });
       return;
-    } else if (contactIsEmail && !isValidEmail) {
+    } else if (!isValidEmail) {
       setForm({ ...form, error: "Please enter a valid email address" });
       return;
     }
@@ -53,10 +54,10 @@ const EarlyAccessFrom: React.FC<Props> = ({ closeModal }) => {
     setForm({ ...form, isSubmitting: true, error: "", submitted: false });
 
     try {
-      const res = await fetch("/api/save-contact", { method: "POST", body: JSON.stringify({ email, phone, name }) });
+      const res = await fetch("/api/save-contact", { method: "POST", body: JSON.stringify({ email, company, website, name }) });
 
       if (res.ok) {
-        setForm({ ...form, submitted: true, isSubmitting: false, data: { phone: "", email: "", name: "" } });
+        setForm({ ...form, submitted: true, isSubmitting: false, data: { website: "", company: "", email: "", name: "" } });
 
         setTimeout(() => {
           closeModal();
@@ -75,7 +76,7 @@ const EarlyAccessFrom: React.FC<Props> = ({ closeModal }) => {
       <h1 className="text-black text-xl sm:text-2xl lg:text-[28px] font-medium mb-5 sm:mb-7 text-center">
         Join early access
       </h1>
-      <MessageBadge success message={form.submitted ? "Thank you for joining our waitlist!" : ""} />
+      <MessageBadge success message={form.submitted ? "Thank you for joining our beta list, we will reach out to you very soon.!" : ""} />
       <MessageBadge message={form.error} />
       <form className="flex flex-col space-y-6 sm:space-y-7.5" onSubmit={handleSubmit}>
         <div className="">
@@ -86,13 +87,9 @@ const EarlyAccessFrom: React.FC<Props> = ({ closeModal }) => {
         </div>
         <div className="">
           <div className="flex items-center mb-3.5 space-x-3.75 text-sm sm:text-1sm ">
-            <SwitchButton value="email" onClick={switchContact} contact={contact}>
-              Email
-            </SwitchButton>
-            <span className="opacity-50">Or</span>
-            <SwitchButton value="phone" onClick={switchContact} contact={contact}>
-              Phone Number
-            </SwitchButton>
+            <label htmlFor="email" >
+              Your work email
+            </label>
           </div>
           {contact === "email" && (
             <InputField
@@ -103,10 +100,18 @@ const EarlyAccessFrom: React.FC<Props> = ({ closeModal }) => {
               value={form.data.email}
             />
           )}
-
-          {contact === "phone" && (
-            <PhoneInput name="phone" placeholder="Enter your phone number" onChange={updateValue} value={form.data.phone} />
-          )}
+        </div>
+        <div className="">
+          <label htmlFor="company" className="text-sm sm:text-1sm mb-3.5 inline-block">
+            Your company's name
+          </label>
+          <InputField name="company" placeholder="Enter your company's name" onChange={updateValue} value={form.data.company} />
+        </div>
+        <div className="">
+          <label htmlFor="website" className="text-sm sm:text-1sm mb-3.5 inline-block">
+            Your company's website
+          </label>
+          <InputField name="website" placeholder="Enter your company's website" onChange={updateValue} value={form.data.website} />
         </div>
 
         <button
@@ -115,7 +120,7 @@ const EarlyAccessFrom: React.FC<Props> = ({ closeModal }) => {
           }`}
           disabled={form.isSubmitting}
         >
-          {form.isSubmitting ? "Saving..." : "Get early access"}
+          {form.isSubmitting ? "Saving..." : "Join the beta"}
         </button>
       </form>
     </div>
