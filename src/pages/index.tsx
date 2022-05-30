@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 import EarlyAccessModal from "../components/early-access-modal";
 import MetaTags from "../components/meta-tags";
+import Image from "next/image";
 
 const Home = () => {
   const contentRef = useRef<HTMLSpanElement>(null);
@@ -69,13 +70,13 @@ const Home = () => {
         </div>
         <div className="fixed-stuff">
           <figure className="card-fixed">
-            <img src="/images/card.png" alt="" className="w-full" />
+            <Image src="/images/card.png" alt="" className="w-full" />
           </figure>
           <figure className="dashboard bg-grey-light rounded-[5px]">
-            <img src="/images/overview.png" alt="" className="w-full" />
+            <Image src="/images/overview.png" alt="" className="w-full" />
           </figure>
           <figure className="app">
-            <img src="/images/app.png" alt="" className="w-full" />
+            <Image src="/images/app.png" alt="" className="w-full" />
           </figure>
         </div>
         <EarlyAccessModal {...{ showModal, setShowModal }} />
