@@ -74,7 +74,7 @@ const EarlyAccessFrom: React.FC<Props> = ({ closeModal }) => {
 
     <div className="">
       <h1 className="text-black text-xl sm:text-2xl lg:text-[28px] font-medium mb-5 sm:mb-7 text-center">
-        Join early access
+        Become one the first
       </h1>
       <MessageBadge success message={form.submitted ? "Thank you for joining our beta list, we will reach out to you very soon.!" : ""} />
       <MessageBadge message={form.error} />
