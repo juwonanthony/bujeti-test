@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 import EarlyAccessModal from "../components/early-access-modal";
@@ -45,18 +44,20 @@ const Home = () => {
             </svg>
           </figure>
           <div className="flex flex-col items-center text-block">
-            <h1 className="mt-6 md:mt-8 lg:mt-10.5 text-[18px] xsm:text-3xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7lg header-text text-center">
-              Complete expense management  <br />tool for your{" "}
+            <h1 className="mt-6 md:mt-8 lg:mt-10.5 text-[30px] sm:text-5xl md:text-5xl lg:text-6xl xl:text-7lg text-center">
+              Complete expense management <br />
+              tool for your{" "}
               <span className="relative inline-block" ref={contentRef}>
                 {/* <span className="content inline-block relative z-10" ref={contentRef}></span> */}
               </span>{" "}
               needs.
             </h1>
             <p className="mt-4 text-center text-lg xsm:text-lg sm:text-xl lg:text-2xl max-w-[720px] font-light">
-              Automated Expense Management tailored for SMBs<br />
+              Automated Expense Management tailored for SMBs
+              <br />
               Take control over and supercharge your finance
-              <br />Built for your African realities
-
+              <br />
+              Built for your African realities
             </p>
 
             <button
@@ -82,20 +83,19 @@ const Home = () => {
       </main>
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-215833243-1" />
       <script
-          dangerouslySetInnerHTML={{
-            __html: `
+        dangerouslySetInnerHTML={{
+          __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
 
               gtag('config', 'UA-215833243-1');
             `,
-          }}
+        }}
       />
     </>
   );
 };
-
 
 const stringWithHTML = (text: string) => {
   return `<span class='relative display-text inline-block'><span class='font-medium relative z-10 inline-block'>${text}</span></span>`;
