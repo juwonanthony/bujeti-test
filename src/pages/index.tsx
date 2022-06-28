@@ -53,17 +53,14 @@ const Home = () => {
               needs.
             </h1>
             <p className="mt-4 text-center text-lg xsm:text-lg sm:text-xl lg:text-2xl max-w-[720px] font-light">
-              Automated Expense Management tailored for SMBs<br />
-              Take control over and supercharge your finance
-              <br />Built for your African realities
-
+                Take control and supercharge your finances with Bujeti's automated expense management app built for African SMBs
             </p>
 
             <button
               className="cta bg-black h-12.5 sm:h-15 text-accent-green px-16 sm:px-20 lg:px-25 py-3.75 text-base sm:text-lg rounded-[10px] font-medium hover:shadow-none transition-all duration-150 shadow-card mt-4 sm:mt-4 flex items-center"
               onClick={() => setShowModal(true)}
             >
-              Try our beta
+              Try it today
             </button>
           </div>
         </div>

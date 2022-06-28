@@ -74,8 +74,11 @@ const EarlyAccessFrom: React.FC<Props> = ({ closeModal }) => {
 
     <div className="">
       <h1 className="text-black text-xl sm:text-2xl lg:text-[28px] font-medium mb-5 sm:mb-7 text-center">
-        Become one the first
+        Take control of your finances
       </h1>
+      <h4 className="text-black lg:text-[18px] font-small mb-5 sm:mb-7 text-center">
+        Take control of your finances
+      </h4>
       <MessageBadge success message={form.submitted ? "Thank you for joining our beta list, we will reach out to you very soon.!" : ""} />
       <MessageBadge message={form.error} />
       <form className="flex flex-col space-y-6 sm:space-y-7.5" onSubmit={handleSubmit}>
