@@ -2,9 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="999cf9e3-c54c-4514-bb18-272b42860217" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/pages" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Content.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Navbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/footer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/header.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/snacknar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/API/api-dev.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/API/api-prod.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/API/api.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/Button.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/Image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/banner-graphic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/budget-graphic-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/budget-graphic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/card-graphic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/direction-brand.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/direction-brand2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/direction-brand3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/direction-brand4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/direction-brand5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/direction-brand6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/engineering-tol-graphic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/engineering-toll-graphic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/flexible-cash-graphic.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/footer-graphic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/footer-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/fully-integrate-graphic.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/instagram-graphic.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/linkdin-graphic.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/multi-currency.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/overview-graphic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/skype-graphic.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/try-to-bujeti-graphic-mobile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/try-to-bujeti-graphic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/twitter.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Footer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/team.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/setupTests.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sidebarmain.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/auth.util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/loader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/localstore.util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/user.util.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/early-access-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/early-access-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reportWebVitals.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +118,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -133,6 +193,7 @@
       <workItem from="1646956211773" duration="947000" />
       <workItem from="1651479012431" duration="616000" />
       <workItem from="1653751177769" duration="4975000" />
+      <workItem from="1657401799814" duration="1887000" />
     </task>
     <task id="LOCAL-00001" summary="change favicon.ico">
       <created>1640823453591</created>
