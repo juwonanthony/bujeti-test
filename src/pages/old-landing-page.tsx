@@ -1,3 +1,4 @@
+// @ts-ignore
 import dynamic from "next/dynamic";
 import Features from "../components/old-landing-page/features";
 import FixedAssets from "../components/old-landing-page/fixed-assets";

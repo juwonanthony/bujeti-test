@@ -111,7 +111,7 @@ const EarlyAccessFrom = () => {
   );
 };
 
-const SwitchButton: React.FC<{ value: string; onClick: (name: string) => void; contact: string }> = ({
+const SwitchButton: React.FC<{ value: string; onClick: (name: string) => void; contact: string, children: any }> = ({
   value,
   onClick,
   contact,
