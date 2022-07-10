@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="999cf9e3-c54c-4514-bb18-272b42860217" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/early-access-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/early-access-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/meta-tags.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/meta-tags.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/old-landing-page/early-access-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/old-landing-page/early-access-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/old-landing-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/old-landing-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +133,7 @@
       <workItem from="1646956211773" duration="947000" />
       <workItem from="1651479012431" duration="616000" />
       <workItem from="1653751177769" duration="4975000" />
-      <workItem from="1657401799814" duration="3980000" />
+      <workItem from="1657401799814" duration="4882000" />
     </task>
     <task id="LOCAL-00001" summary="change favicon.ico">
       <created>1640823453591</created>
