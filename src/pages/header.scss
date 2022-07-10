@@ -41,6 +41,7 @@
 
 .modal-content {
     padding: 40px 75px;
+    border: none;
 }
 
 .modal-footer {
@@ -69,6 +70,8 @@
 .show {
     display: flex !important;
     align-items: center;
+    backdrop-filter: blur(8px);
+    background: rgb(217 221 213 / 42%);
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {

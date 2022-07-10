@@ -12,7 +12,7 @@ function App() {
       <Router >
         {/* <Router> */}
         <>
-          <div className='website'>
+          <div className='dahboard-main'>
 
             <div className="h-100 w-100  ">
               <Header />
@@ -25,7 +25,6 @@ function App() {
             </div>
           </div>
         </>
-
 
       </Router>
     </div>

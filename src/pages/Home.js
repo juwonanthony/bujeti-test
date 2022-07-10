@@ -29,9 +29,9 @@ import logo from '../../src/image/logo.svg';
 import Modal from 'react-bootstrap/Modal';
 import { addErrorMessage, addLoader, addSuccessMessage, removeLoader } from '../utils/loader';
 const axios = require("axios").default;
-const { API } = require('../config/API/api.config');
 
 const Home = () => {
+
   const [show, setShow] = useState(false);
   const [info, setinfo] = useState({})
   const [errors, setError] = useState({});
@@ -104,17 +104,17 @@ const Home = () => {
     let errors = {};
     let formIsValid = true;
     if (!info.firstName) {
-
+      console.log("DDDDDDDDDDDD")
       formIsValid = false;
       errors["firstName"] = "First Name is required";
     }
     if (!info.lastName) {
-
+      console.log("DDDDDDDDDDDD")
       formIsValid = false;
       errors["lastName"] = "Last Name is required";
     }
     if (!info.email) {
-
+      console.log("DDDDDDDDDDDD")
       formIsValid = false;
       errors["email"] = "Email is required";
     }
@@ -123,19 +123,19 @@ const Home = () => {
       errors["email"] = "Invalid Email";
     }
     if (!info.company) {
-
+      console.log("DDDDDDDDDDDD")
       formIsValid = false;
       errors["company"] = "Company is required";
     }
     if (!info.companySize) {
-
+      console.log("DDDDDDDDDDDD")
       formIsValid = false;
       errors["companySize"] = "Company Size is required";
     }
     setError(errors);
     return formIsValid;
   }
-  const handleOnChange = (e) => {
+  const handleonChange = (e) => {
     console.log(e.target)
     let { name, value } = e.target;
     setinfo((prevState) => ({
@@ -145,27 +145,41 @@ const Home = () => {
   }
 
   const save = () => {
-    //
+    // 
+    console.log("aaaa")
     if (validateForm()) {
       addLoader()
-      const payload = { firstName: info.firstName, lastName: info.lastName, email: info.email, company: info.company, companySize: info.companySize }
+      var accountData1 = { firstName: info.firstName, lastName: info.lastName, email: info.email, company: info.company, companySize: info.companySize }
       axios
-        .post(`${API.apiUrl}/${API.endpoint}`, payload, {
+        .post("https://api-dev.bujeti.com/demo/request", accountData1, {
           headers: {
-            authorization: `Bearer ${API.token}`
+            authorization: "Bearer demo_f4924c56016b3bcbd680fc97a87d6cbb"
           }
         })
         .then((responseJson) => {
+          console.log(responseJson)
+          // resolve(responseJson);
           removeLoader()
-          addSuccessMessage("Request set successfully");
+          addSuccessMessage("Request Send successfully")
           handleClose()
         })
         .catch((error) => {
+          console.log(error)
           addErrorMessage(error.message)
           removeLoader()
         });
+      // ApiPost("accountandstatutory/addaccount_and_statutory", accountData1)
+      //     .then(async (res) => {
+      //         console.log("res", res);
+      //         if (res.status == 200) {
+      //             uploaddoc(res.data.data[0].id)
+      //         }
+      //     }).catch((err) => {
+      //         console.log(err)
+      //         removeLoader();
+      //     });
     }
-    //
+    // 
   }
 
 
@@ -545,7 +559,7 @@ const Home = () => {
             <div class="mb-1">
               <label class="form-label">First Name</label>
               <input type="email" class="form-control" name="firstName"
-                value={info?.firstName} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Your first name'></input>
+                value={info?.firstName} onChange={handleonChange} aria-describedby="emailHelp" placeholder='First Name'></input>
             </div>
             <span
               style={{
@@ -562,7 +576,7 @@ const Home = () => {
             <div class="mb-1">
               <label class="form-label">Last Name</label>
               <input type="email" class="form-control" name="lastName"
-                value={info?.lastName} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Your last name'></input>
+                value={info?.lastName} onChange={handleonChange} aria-describedby="emailHelp" placeholder='Last Name'></input>
             </div>
             <span
               style={{
@@ -579,7 +593,7 @@ const Home = () => {
             <div class="mb-1">
               <label class="form-label">Work email</label>
               <input type="email" class="form-control" name="email"
-                value={info?.email} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Enter your work email'></input>
+                value={info?.email} onChange={handleonChange} aria-describedby="emailHelp" placeholder='Enter work email address'></input>
             </div>
             <span
               style={{
@@ -596,7 +610,7 @@ const Home = () => {
             <div class="mb-1">
               <label class="form-label">Company</label>
               <input type="email" class="form-control" name="company"
-                value={info?.company} onChange={handleOnChange} aria-describedby="emailHelp" placeholder="Enter your company's name"></input>
+                value={info?.company} onChange={handleonChange} aria-describedby="emailHelp" placeholder='Enter company name'></input>
             </div>
             <span
               style={{
@@ -611,10 +625,10 @@ const Home = () => {
           </div>
           <div className='col-12 mb-2'>
             <div class="mb-1">
-              <label for="Select" class="form-label">Company size</label>
+              <label for="Select" class="form-label">Disabled select menu</label>
               <select id="Select" class="form-select form-control" name="companySize"
-                value={info?.companySize} onChange={handleOnChange}>
-                <option selected>Choose your company size</option>
+                value={info?.companySize} onChange={handleonChange}>
+                <option selected>Select Company Size</option>
                 <option value="1-10">1-10</option>
                 <option value="11-50">11-50</option>
                 <option value="51-200">51-200</option>

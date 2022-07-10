@@ -103,8 +103,8 @@ body {
 }
 
 .banner-graphic {
-    background: url(image/banner-graphic.png);
     position: relative;
+	background: url(image/banner-graphic.svg);
     top: -330px;
     z-index: 996;
     height: 650px;
@@ -175,8 +175,8 @@ body {
 
         .card-graphics {
             position: absolute;
-            background: url(image/engineering-toll-graphic.png);
             bottom: -3px;
+			background: url(image/engineering-tol-graphic.svg);
             height: 100%;
             width: calc(100% - 68px);
             background-repeat: no-repeat !important;
@@ -616,4 +616,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+.b-rad-dot-8 {
+    border-radius: 0.8em;
 }

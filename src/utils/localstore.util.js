@@ -16,6 +16,10 @@ const localStoreUtil = {
     return true;
   },
 
+  remove_all: () => {
+    localStorage.clear();
+    return true;
+  },
 };
 
 export default localStoreUtil;

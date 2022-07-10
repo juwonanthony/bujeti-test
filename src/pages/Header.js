@@ -34,17 +34,17 @@ const Header = () => {
     let errors = {};
     let formIsValid = true;
     if (!info.firstName) {
-        
+        console.log("DDDDDDDDDDDD")
         formIsValid = false;
         errors["firstName"] = "First Name is required";
     }
     if (!info.lastName) {
-      
+      console.log("DDDDDDDDDDDD")
       formIsValid = false;
       errors["lastName"] = "Last Name is required";
   }
   if (!info.email) {
-    
+    console.log("DDDDDDDDDDDD")
     formIsValid = false;
     errors["email"] = "Email is required";
 }
@@ -53,19 +53,19 @@ if (!emailReg.test(info.email)) {
   errors["email"] = "Invalid Email";
 }
 if (!info.company) {
-  
+  console.log("DDDDDDDDDDDD")
   formIsValid = false;
   errors["company"] = "Company is required";
 }
 if (!info.companySize) {
-  
+  console.log("DDDDDDDDDDDD")
   formIsValid = false;
   errors["companySize"] = "Company Size is required";
 }
     setError(errors);
     return formIsValid;
 }
-  const handleOnChange = (e) => {
+  const handleonChange = (e) => {
     console.log(e.target)
     let { name, value } = e.target;
     setinfo((prevState) => ({
@@ -141,7 +141,7 @@ const save = () => {
             <div class="mb-1">
               <label  class="form-label">First Name</label>
               <input type="email" class="form-control" name="firstName"
-                                value={info?.firstName} onChange={handleOnChange}  aria-describedby="emailHelp" placeholder='First Name'></input>
+                                value={info?.firstName} onChange={handleonChange}  aria-describedby="emailHelp" placeholder='First Name'></input>
             </div>
             <span
                             style={{
@@ -158,7 +158,7 @@ const save = () => {
             <div class="mb-1">
               <label  class="form-label">Last Name</label>
               <input type="email" class="form-control"  name="lastName"
-                                value={info?.lastName} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Last Name'></input>
+                                value={info?.lastName} onChange={handleonChange} aria-describedby="emailHelp" placeholder='Last Name'></input>
             </div>
             <span
                             style={{
@@ -175,7 +175,7 @@ const save = () => {
             <div class="mb-1">
               <label  class="form-label">Work email</label>
               <input type="email" class="form-control"  name="email"
-                                value={info?.email} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Enter work email address'></input>
+                                value={info?.email} onChange={handleonChange} aria-describedby="emailHelp" placeholder='Enter work email address'></input>
             </div>
             <span
                             style={{
@@ -192,7 +192,7 @@ const save = () => {
             <div class="mb-1">
               <label  class="form-label">Company</label>
               <input type="email" class="form-control"  name="company"
-                                value={info?.company} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Enter company name'></input>
+                                value={info?.company} onChange={handleonChange} aria-describedby="emailHelp" placeholder='Enter company name'></input>
             </div>
             <span
                             style={{
@@ -209,7 +209,7 @@ const save = () => {
             <div class="mb-1">
               <label for="Select" class="form-label">Disabled select menu</label>
               <select id="Select" class="form-select form-control" name="companySize"
-                                value={info?.companySize} onChange={handleOnChange}>
+                                value={info?.companySize} onChange={handleonChange}>
                                   <option selected>Select Company Size</option>
                 <option value="1-10">1-10</option>
                 <option value="11-50">11-50</option>
