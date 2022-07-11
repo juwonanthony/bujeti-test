@@ -4,8 +4,7 @@ WORKDIR /usr/src/app/
 
 COPY package*.json /usr/src/app/
 
-RUN npm install yarn
-RUN yarn install
+RUN npm install --legacy-peer-deps
 
 COPY . /usr/src/app/
 RUN npx next telemetry disable
