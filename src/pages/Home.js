@@ -544,7 +544,7 @@ const Home = () => {
             <div className="mb-1">
               <label className="form-label">First Name</label>
               <input type="email" className="form-control" name="firstName"
-                value={info?.firstName} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Your first name'></input>
+    value={info?.firstName} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Your first name'/>
             </div>
             <span
               style={{
