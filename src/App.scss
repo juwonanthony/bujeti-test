@@ -103,7 +103,7 @@ body {
 }
 
 .banner-graphic {
-    background: url(image/banner-graphic.png);
+    background: url(image/banner-graphic.svg);
     position: relative;
     top: -330px;
     z-index: 996;
@@ -162,7 +162,7 @@ body {
 
         .card-graphic {
             position: absolute;
-            background: url(image/budget-graphic-2.png);
+            background: url(image/budget-graphic.svg);
             bottom: -3px;
             height: 100%;
             width: calc(100% - 68px);
@@ -175,7 +175,7 @@ body {
 
         .card-graphics {
             position: absolute;
-            background: url(image/engineering-toll-graphic.png);
+            background: url(image/engineering-tol-graphic.svg);
             bottom: -3px;
             height: 100%;
             width: calc(100% - 68px);
@@ -189,17 +189,39 @@ body {
 
 
         .card-graphic-card {
-            background: url(image/card-graphic.png);
+            background: url(image/card-graphic.svg);
             width: 100%;
             right: 0;
             background-size: contain !important;
         }
 
         .card-graphic-over-view {
-            background: url(image/overview-graphic.png);
+            background: url(image/overview-graphic.svg);
             width: 100%;
             right: 0;
-            background-size: cover !important;
+            background-size: 100%;
+        }
+        .reimbursement-graphic {
+            position: absolute;
+            background: url(image/reimbursement.svg);
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            background-repeat: no-repeat !important;
+            background-position-y: bottom !important;
+            background-position-x: center !important;
+            background-size: calc(50% - 10px);
+            border-radius: 5px 5px 0 0;
+        }
+        .payment-graphic {
+            position: absolute;
+            bottom: 0;
+            height: 70%;
+            width: 100%;
+            background-repeat: no-repeat !important;
+            background: url(image/payment.svg) center;
+            background-size: 38%;
+            border-radius: 5px 5px 0 0;
         }
     }
 }
@@ -616,4 +638,8 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.b-rad-dot-8 {
+    border-radius: 0.8em;
 }

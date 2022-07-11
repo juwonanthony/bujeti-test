@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import Integerated from '../../src/image/fully-integrate-graphic.svg';
 import MultiCurrence from '../../src/image/multi-currency.svg';
 import FlexibleCash from '../../src/image/flexible-cash-graphic.svg';
-import bujeti from '../../src/image/try-to-bujeti-graphic.png';
-import bujetimobile from '../../src/image/try-to-bujeti-graphic-mobile.png';
+import bujeti from '../../src/image/try-to-bujeti-graphic.svg';
+import bujetimobile from '../../src/image/try-to-bujeti-graphic-mobile.svg';
 import FooterGraphic from '../../src/image/footer-graphic.png';
 import FooterLogo from '../../src/image/footer-logo.svg';
 import twitter from '../../src/image/twitter.svg';
 import instagram from '../../src/image/instagram-graphic.svg';
-import linkdin from '../../src/image/linkdin-graphic.svg';
+import linkedin from '../../src/image/linkedin-graphic.svg';
 import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import TinySlider from "tiny-slider-react";
@@ -135,7 +135,6 @@ const Home = () => {
     return formIsValid;
   }
   const handleOnChange = (e) => {
-    console.log(e.target)
     let { name, value } = e.target;
     setinfo((prevState) => ({
       ...prevState,
@@ -209,13 +208,13 @@ const Home = () => {
           <div className='col-12 col-md-6'>
             <div className='finance-platform-card'>
               <div className='card-title'>
-                Budgeting
-              </div>
-              <div className='card-sub-tittle'>
                 Expense Management
               </div>
+              <div className='card-sub-tittle'>
+                Strategic Budgeting
+              </div>
               <div className='card-pera'>
-                Total control over all business expenses. Boost finance teams by providing a powerful decision support tool.
+                Streamline your cash management with budget forecasts. Allocate funds to your different departments and projects and track how they are spent in real time.
               </div>
               <div className='card-graphic'></div>
             </div>
@@ -229,7 +228,7 @@ const Home = () => {
                 Corporate Cards
               </div>
               <div className='card-pera'>
-                Empower your teams by giving a safe and secure access to company funds through virtual and physical cards.
+                Empower your teams by giving a safe and secure access to company funds through virtual and physical cards. Generate as many virtual cards as your teams need.
               </div>
               <div className='card-graphic card-graphic-card'>
 
@@ -245,23 +244,50 @@ const Home = () => {
                 Team mobile app
               </div>
               <div className='card-pera'>
-                Manage your budgets and track your transactions directly from your smatphone.
+                Manage your budgets and track your transactions directly from your smartphone. Pay and manage your teams and expenses on-the-go.
               </div>
-              <div className='card-graphic card-graphic-over-view'></div>
+              <div className='card-graphic card-graphic-over-view'/>
             </div>
           </div>
           <div className='col-12 col-md-6'>
             <div className='finance-platform-card'>
               <div className='card-title'>
-                Budgeting
+                Business Intelligence
               </div>
               <div className='card-sub-tittle'>
-                Expense Management
+                Reporting & Insights
               </div>
               <div className='card-pera'>
-                Total control over all business expenses. Boost finance teams by providing a powerful decision support tool.
+                Leverage a powerful decision support tool. Keep an eye on all your expenses in real time and generate periodic reports to take the pulse of your business.
               </div>
-              <div className='card-graphics'></div>
+              <div className='card-graphics'/>
+            </div>
+          </div>
+          <div className='col-12 col-md-6'>
+            <div className='finance-platform-card'>
+              <div className='card-title'>
+                Quick & Efficient
+              </div>
+              <div className='card-sub-tittle'>
+                Reimbursement Request
+              </div>
+              <div className='card-pera'>
+                Reimburse out of pocket spending in a few clicks. Employees snap their receipt and submit the request. You simply approve or decline.</div>
+              <div className='reimbursement-graphic'/>
+            </div>
+          </div>
+          <div className='col-12 col-md-6'>
+            <div className='finance-platform-card'>
+              <div className='card-title'>
+                Unified payments
+              </div>
+              <div className='card-sub-tittle'>
+                Bank Transfer Payment
+              </div>
+              <div className='card-pera'>
+                Pay instantly by bank transfer directly from your dashboard. Categorize your payments by budget and industry.
+              </div>
+              <div className='payment-graphic'/>
             </div>
           </div>
         </div>
@@ -270,11 +296,8 @@ const Home = () => {
     <section className='sec-our-product'>
       <div className='container'>
         <div className='sec-our-product-box'>
-          <div className='card-title text-center'>
-            Coming soon
-          </div>
           <div className='sec-sub-title text-center'>
-            Our product roadmap
+            Why do you need Bujeti?
           </div>
           <div className='carousel-main'>
             <TinySlider settings={top20Settings} >
@@ -283,30 +306,11 @@ const Home = () => {
                 <div className="row">
                   <div className="col-12">
                     <div className="carousel-card">
-                      <p className='card-title'>Integrations</p>
-                      <h3 className="card-sub-title">Direct connection to your favourite accounting tools.
+                      {/*<p className='card-title'>Integrations</p>*/}
+                      <h3 className="card-sub-title">No more cumbersome expenses management operations
                       </h3>
                       <div className='row justify-content-between'>
-                        <div className='col-auto'>
-                          <img src={Integearationbrand} className='img-fluid card-icon'></img>
-                        </div>
-                        <div className='col-auto'>
-                          <img src={Integearationbrand1} className='img-fluid card-icon'></img>
-                        </div>
-                        <div className='col-auto'>
-                          <img src={Integearationbrand2} className='img-fluid card-icon'></img>
-                        </div>
-                      </div>
-                      <div className='row justify-content-between mt-20'>
-                        <div className='col-auto'>
-                          <img src={Integearationbrand3} className='img-fluid card-icon'></img>
-                        </div>
-                        <div className='col-auto'>
-                          <img src={Integearationbrand4} className='img-fluid card-icon'></img>
-                        </div>
-                        <div className='col-auto'>
-                          <img src={Integearationbrand5} className='img-fluid card-icon'></img>
-                        </div>
+                        Automated and streamline your expenses management processes. Cut out redundant administrative tasks that distract your employees from their core business.
                       </div>
                     </div>
                   </div>
@@ -316,10 +320,10 @@ const Home = () => {
                 <div className="row">
                   <div className="col-12">
                     <div className="carousel-card">
-                      <p className='card-title'>capital</p>
-                      <h3 className="card-sub-title">Instant cash advance, better than any loan or overdraft.
+                      {/*<p className='card-title'>capital</p>*/}
+                      <h3 className="card-sub-title">No more time-consuming reimbursement processes
                       </h3>
-                      <div className='row justify-content-center'>
+                      {/*<div className='row justify-content-center'>
                         <div className='col-12'>
                           <div className='integeration-highlight'>
                             <div className='row align-items-end'>
@@ -362,8 +366,10 @@ const Home = () => {
                           </div>
                         </div>
 
+                      </div>*/}
+                      <div className='row justify-content-center'>
+                        Stop filling out paper expense reports and chasing receipts. Pay directly by corporate card or bank transfer. Out of pocket expenses? Request reimbursement online from your mobile phone.
                       </div>
-
                     </div>
                   </div>
                 </div>
@@ -372,9 +378,13 @@ const Home = () => {
                 <div className="row">
                   <div className="col-12">
                     <div className="carousel-card">
-                      <p className='card-title'>Invoicing</p>
-                      <h3 className="card-sub-title">Digitise your invoices and pay them directly with Bujeti
+                      {/*<p className='card-title'>Invoicing</p>*/}
+                      <h3 className="card-sub-title">Say goodbye to errors and fraud
                       </h3>
+                      <div className='row justify-content-center'>
+                        Define your spending policy and enforce it with automated spending limits and expense validation processes. Nothing will fall through the cracks.
+                      </div>
+{/*
                       <div className='row justify-content-center'>
                         <div className='col-12'>
                           <div className='integeration-highlight'>
@@ -425,6 +435,72 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
+*/}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div key={4} style={{ position: "relative" }}>
+                <div className="row">
+                  <div className="col-12">
+                    <div className="carousel-card">
+                      <h3 className="card-sub-title">No more hazardous and risky cash management
+                      </h3>
+                      <div className='row justify-content-center'>
+                        Leverage accurate, real-time data on the state of your expenses. Make informed decisions based on a sharp vision of your finances.
+                      </div>
+{/*
+                      <div className='row justify-content-center'>
+                        <div className='col-12'>
+                          <div className='integeration-highlight'>
+                            <div className='row align-items-center justify-content-between'>
+                              <div className='col-8 col-md-8'>
+                                <div className='row'>
+                                  <div className='col-12'>
+                                    <div className='sec-pera'>Invoice from Robotlabz</div>
+                                  </div>
+                                  <div className='col-auto'>
+                                    <div className='sec-title mt-2 mb-2'> <span className='text-line'>N</span>24,380.00 </div>
+                                  </div>
+                                  <div className='sec-pera'>Due on 21 May 2022</div>
+                                </div>
+                              </div>
+                              <div className='col-auto'>
+                                <button className='btn-green'>
+                                  Pay Now
+                                </button>
+                              </div>
+                            </div>
+                            <div className='line'/>
+                            <div className='row justify-content-between'>
+                              <div className='col-auto'>
+                                <div className='sec-pera'>Robert Server box</div>
+                              </div>
+                              <div className='col-auto'>
+                                <div className='sec-pera'> <span className='text-line'>N</span>24,000.00</div>
+                              </div>
+                            </div>
+                            <div className='row justify-content-between mt-10'>
+                              <div className='col-auto'>
+                                <div className='sec-pera'>Vat</div>
+                              </div>
+                              <div className='col-auto'>
+                                <div className='sec-pera'> <span className='text-line'>N</span>500.00</div>
+                              </div>
+                            </div>
+                            <div className='line'/>
+                            <div className='row justify-content-between'>
+                              <div className='col-auto'>
+                                <div className='sec-pera'>Total Due</div>
+                              </div>
+                              <div className='col-auto'>
+                                <div className='sec-pera'> <span className='text-line'>N</span>24,500</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+*/}
                     </div>
                   </div>
                 </div>
@@ -513,7 +589,7 @@ const Home = () => {
           <div className='col-auto'>
             <div className='icon d-block d-md-none '>
               <a><span className='ml-18'><img src={twitter} className='img-fluid'></img></span></a>
-              <a> <span className='ml-18'><img src={linkdin} className='img-fluid'></img></span></a>
+              <a> <span className='ml-18'><img src={linkedin} className='img-fluid'></img></span></a>
               <a><span className='ml-18'><img src={instagram} className='img-fluid'></img></span></a>
             </div>
           </div>
@@ -522,7 +598,7 @@ const Home = () => {
               <span>© Bujeti Ltd. 2022,</span>  All Rights Reserved
               <div className='icon d-none d-md-block'>
                 <a><span className='ml-18'><img src={twitter} className='img-fluid'></img></span></a>
-                <a> <span className='ml-18'><img src={linkdin} className='img-fluid'></img></span></a>
+                <a> <span className='ml-18'><img src={linkedin} className='img-fluid'></img></span></a>
                 <a><span className='ml-18'><img src={instagram} className='img-fluid'></img></span></a>
               </div>
             </div>
@@ -533,7 +609,7 @@ const Home = () => {
         <img src={FooterGraphic} className='img-fluid'></img>
       </div>
     </section>
-    <Modal show={show} onHide={handleClose}>
+    <Modal show={show} onHide={handleClose} dialogClassName='b-rad-dot-8'>
       <Modal.Header >
         <Modal.Title><span>Schedule a demo  <br></br></span>
           with our team today</Modal.Title>
@@ -561,7 +637,7 @@ const Home = () => {
             <div className="mb-1">
               <label className="form-label">Last Name</label>
               <input type="email" className="form-control" name="lastName"
-                value={info?.lastName} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Your last name'></input>
+                value={info?.lastName} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Your last name'/>
             </div>
             <span
               style={{
@@ -578,7 +654,7 @@ const Home = () => {
             <div className="mb-1">
               <label className="form-label">Work email</label>
               <input type="email" className="form-control" name="email"
-                value={info?.email} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Enter your work email'></input>
+                value={info?.email} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Enter your work email'/>
             </div>
             <span
               style={{
@@ -595,7 +671,7 @@ const Home = () => {
             <div className="mb-1">
               <label className="form-label">Company</label>
               <input type="email" className="form-control" name="company"
-                value={info?.company} onChange={handleOnChange} aria-describedby="emailHelp" placeholder="Enter your company's name"></input>
+                value={info?.company} onChange={handleOnChange} aria-describedby="emailHelp" placeholder="Enter your company's name"/>
             </div>
             <span
               style={{

@@ -19,7 +19,7 @@ const Header = () => {
   let phonenoReg = /^[0-9]/;
   const emailReg =
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  const handleClose = () =>{ setError({}) 
+  const handleClose = () =>{ setError({})
   setinfo({})
   setShow(false)
 }
@@ -34,17 +34,17 @@ const Header = () => {
     let errors = {};
     let formIsValid = true;
     if (!info.firstName) {
-        
+
         formIsValid = false;
         errors["firstName"] = "First Name is required";
     }
     if (!info.lastName) {
-      
+
       formIsValid = false;
       errors["lastName"] = "Last Name is required";
   }
   if (!info.email) {
-    
+
     formIsValid = false;
     errors["email"] = "Email is required";
 }
@@ -53,12 +53,12 @@ if (!emailReg.test(info.email)) {
   errors["email"] = "Invalid Email";
 }
 if (!info.company) {
-  
+
   formIsValid = false;
   errors["company"] = "Company is required";
 }
 if (!info.companySize) {
-  
+
   formIsValid = false;
   errors["companySize"] = "Company Size is required";
 }
@@ -75,7 +75,7 @@ if (!info.companySize) {
 }
 
 const save = () => {
-  // 
+  //
   console.log("aaaa")
   if (validateForm()) {
     console.log("bbb")
@@ -87,11 +87,11 @@ const save = () => {
     }})
       .then((responseJson) => {
         console.log(responseJson)
-        
+
         removeLoader()
         addSuccessMessage("Request Send successfully")
         handleClose()
-       
+
         // resolve(responseJson);
       })
       .catch((error) => {
@@ -110,7 +110,7 @@ const save = () => {
       //         removeLoader();
       //     });
   }
-  // 
+  //
 }
   return <div className='home w-100' >
     <section className="header-main ">
@@ -138,10 +138,12 @@ const save = () => {
       <Modal.Body>
         <div className='row'>
           <div className='col-6 mb-2'>
-            <div class="mb-1">
-              <label  class="form-label">First Name</label>
-              <input type="email" class="form-control" name="firstName"
-                                value={info?.firstName} onChange={handleOnChange}  aria-describedby="emailHelp" placeholder='First Name'></input>
+            <div className="mb-1">
+              <label  className="form-label">First Name</label>
+              <input type="email" className="form-control" name="firstName"
+                                value={info?.firstName}
+                     onChange={handleOnChange}  aria-describedby="emailHelp"
+                     placeholder='Your first Name'/>
             </div>
             <span
                             style={{
@@ -155,10 +157,14 @@ const save = () => {
                         </span>
           </div>
           <div className='col-6 mb-2'>
-            <div class="mb-1">
-              <label  class="form-label">Last Name</label>
-              <input type="email" class="form-control"  name="lastName"
-                                value={info?.lastName} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Last Name'></input>
+            <div className="mb-1">
+              <label  className="form-label">Last Name</label>
+              <input type="email"
+                     className="form-control"
+                     name="lastName"
+                     value={info?.lastName}
+                     onChange={handleOnChange} aria-describedby="emailHelp"
+                     placeholder='Your last Name'/>
             </div>
             <span
                             style={{
@@ -172,10 +178,12 @@ const save = () => {
                         </span>
           </div>
           <div className='col-12 mb-2'>
-            <div class="mb-1">
-              <label  class="form-label">Work email</label>
-              <input type="email" class="form-control"  name="email"
-                                value={info?.email} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Enter work email address'></input>
+            <div className="mb-1">
+              <label  className="form-label">Work email</label>
+              <input type="email" className="form-control"  name="email"
+                                value={info?.email}
+                     onChange={handleOnChange} aria-describedby="emailHelp"
+                     placeholder='Enter your work email'/>
             </div>
             <span
                             style={{
@@ -189,10 +197,10 @@ const save = () => {
                         </span>
           </div>
           <div className='col-12 mb-2'>
-            <div class="mb-1">
-              <label  class="form-label">Company</label>
-              <input type="email" class="form-control"  name="company"
-                                value={info?.company} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Enter company name'></input>
+            <div className="mb-1">
+              <label  className="form-label">Company</label>
+              <input type="email" className="form-control"  name="company"
+                                value={info?.company} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Enter your company name'></input>
             </div>
             <span
                             style={{
@@ -206,11 +214,11 @@ const save = () => {
                         </span>
           </div>
           <div className='col-12 mb-2'>
-            <div class="mb-1">
-              <label for="Select" class="form-label">Disabled select menu</label>
-              <select id="Select" class="form-select form-control" name="companySize"
+            <div className="mb-1">
+              <label for="Select" className="form-label">Company size</label>
+              <select id="Select" className="form-select form-control" name="companySize"
                                 value={info?.companySize} onChange={handleOnChange}>
-                                  <option selected>Select Company Size</option>
+                                  <option selected>Select your company size</option>
                 <option value="1-10">1-10</option>
                 <option value="11-50">11-50</option>
                 <option value="51-200">51-200</option>
