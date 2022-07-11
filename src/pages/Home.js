@@ -12,7 +12,6 @@ import instagram from '../../src/image/instagram-graphic.svg';
 import linkdin from '../../src/image/linkdin-graphic.svg';
 import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
 import TinySlider from "tiny-slider-react";
 import 'tiny-slider/dist/tiny-slider.css';
 import Integearationbrand from '../../src/image/direction-brand.png';
@@ -281,8 +280,8 @@ const Home = () => {
             <TinySlider settings={top20Settings} >
 
               <div key={0} style={{ position: "relative" }}>
-                <div class="row">
-                  <div class="col-12">
+                <div className="row">
+                  <div className="col-12">
                     <div className="carousel-card">
                       <p className='card-title'>Integrations</p>
                       <h3 className="card-sub-title">Direct connection to your favourite accounting tools.
@@ -313,9 +312,9 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div key={0} style={{ position: "relative" }}>
-                <div class="row">
-                  <div class="col-12">
+              <div key={1} style={{ position: "relative" }}>
+                <div className="row">
+                  <div className="col-12">
                     <div className="carousel-card">
                       <p className='card-title'>capital</p>
                       <h3 className="card-sub-title">Instant cash advance, better than any loan or overdraft.
@@ -369,9 +368,9 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div key={0} style={{ position: "relative" }}>
-                <div class="row">
-                  <div class="col-12">
+              <div key={3} style={{ position: "relative" }}>
+                <div className="row">
+                  <div className="col-12">
                     <div className="carousel-card">
                       <p className='card-title'>Invoicing</p>
                       <h3 className="card-sub-title">Digitise your invoices and pay them directly with Bujeti
@@ -542,9 +541,9 @@ const Home = () => {
       <Modal.Body>
         <div className='row'>
           <div className='col-6 mb-2'>
-            <div class="mb-1">
-              <label class="form-label">First Name</label>
-              <input type="email" class="form-control" name="firstName"
+            <div className="mb-1">
+              <label className="form-label">First Name</label>
+              <input type="email" className="form-control" name="firstName"
                 value={info?.firstName} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Your first name'></input>
             </div>
             <span
@@ -559,9 +558,9 @@ const Home = () => {
             </span>
           </div>
           <div className='col-6 mb-2'>
-            <div class="mb-1">
-              <label class="form-label">Last Name</label>
-              <input type="email" class="form-control" name="lastName"
+            <div className="mb-1">
+              <label className="form-label">Last Name</label>
+              <input type="email" className="form-control" name="lastName"
                 value={info?.lastName} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Your last name'></input>
             </div>
             <span
@@ -576,9 +575,9 @@ const Home = () => {
             </span>
           </div>
           <div className='col-12 mb-2'>
-            <div class="mb-1">
-              <label class="form-label">Work email</label>
-              <input type="email" class="form-control" name="email"
+            <div className="mb-1">
+              <label className="form-label">Work email</label>
+              <input type="email" className="form-control" name="email"
                 value={info?.email} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Enter your work email'></input>
             </div>
             <span
@@ -593,9 +592,9 @@ const Home = () => {
             </span>
           </div>
           <div className='col-12 mb-2'>
-            <div class="mb-1">
-              <label class="form-label">Company</label>
-              <input type="email" class="form-control" name="company"
+            <div className="mb-1">
+              <label className="form-label">Company</label>
+              <input type="email" className="form-control" name="company"
                 value={info?.company} onChange={handleOnChange} aria-describedby="emailHelp" placeholder="Enter your company's name"></input>
             </div>
             <span
@@ -610,9 +609,9 @@ const Home = () => {
             </span>
           </div>
           <div className='col-12 mb-2'>
-            <div class="mb-1">
-              <label for="Select" class="form-label">Company size</label>
-              <select id="Select" class="form-select form-control" name="companySize"
+            <div className="mb-1">
+              <label for="Select" className="form-label">Company size</label>
+              <select id="Select" className="form-select form-control" name="companySize"
                 value={info?.companySize} onChange={handleOnChange}>
                 <option selected>Choose your company size</option>
                 <option value="1-10">1-10</option>
