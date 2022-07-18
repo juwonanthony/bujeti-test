@@ -45,19 +45,23 @@ const Header = () => {
   if (!info.email) {
     formIsValid = false;
     errors["email"] = "Email is required";
-}
-if (!emailReg.test(info.email)) {
-  formIsValid = false;
-  errors["email"] = "Invalid Email";
-}
-if (!info.company) {
-  formIsValid = false;
-  errors["company"] = "Company is required";
-}
-if (!info.companySize) {
-  formIsValid = false;
-  errors["companySize"] = "Company Size is required";
-}
+    }
+    if (!emailReg.test(info.email)) {
+      formIsValid = false;
+      errors["email"] = "Invalid Email";
+    }
+    if (!info.company) {
+      formIsValid = false;
+      errors["company"] = "Company is required";
+    }
+    if (!info.companySize) {
+      formIsValid = false;
+      errors["companySize"] = "Company Size is required";
+    }
+      if (!info.position) {
+          formIsValid = false;
+          errors["position"] = "Kindly tell us your position at the company";
+      }
     setError(errors);
     return formIsValid;
 }
@@ -191,7 +195,48 @@ const save = () => {
                             {errors["company"]}
                         </span>
           </div>
-          <div className='col-12 mb-2'>
+            <div className='col-12 mb-2'>
+                <div className="mb-1">
+                    <label className="form-label">Company website</label>
+                    <input type="email" className="form-control" name="website"
+                           value={info?.website} onChange={handleOnChange} aria-describedby="emailHelp" placeholder="Enter your company's website"/>
+                </div>
+                <span
+                    style={{
+                        color: "red",
+
+                        top: "2px",
+                        fontSize: "10px",
+                    }}
+                >
+              {errors["company"]}
+            </span>
+            </div>
+            <div className='col-12 mb-2'>
+                <div className="mb-1">
+                    <label htmlFor="position" className="form-label">Your position</label>
+                    <select id="position" className="form-select form-control" name="position"
+                            value={info?.position} onChange={handleOnChange}>
+                        <option selected>Choose your position at the company</option>
+                        <option value="ceo-coo">CEO/COO</option>
+                        <option value="cfo-finance-team">CFO/Finance team</option>
+                        <option value="hr">HR</option>
+                        <option value="management">Upper management</option>
+                        <option value="employee">Employee</option>
+                    </select>
+                </div>
+                <span
+                    style={{
+                        color: "red",
+
+                        top: "2px",
+                        fontSize: "10px",
+                    }}
+                >
+              {errors["companySize"]}
+            </span>
+            </div>
+            <div className='col-12 mb-2'>
             <div className="mb-1">
               <label for="Select" className="form-label">Company size</label>
               <select id="Select" className="form-select form-control" name="companySize"
@@ -216,19 +261,11 @@ const save = () => {
           </div>
           <div className='col-12 mb-2'>
             <button className='btn-main w-100 mt-3' onClick={save} >
-              Book my demo
+                Request access
             </button>
           </div>
         </div>
       </Modal.Body>
-      {/* <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Close
-        </Button>
-        <Button variant="primary" onClick={handleClose}>
-          Save Changes
-        </Button>
-      </Modal.Footer> */}
     </Modal>
   </div>;
 };

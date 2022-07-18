@@ -32,17 +32,21 @@ const axios = require("axios").default;
 const Home = () => {
 
   const [show, setShow] = useState(false);
-  const [info, setinfo] = useState({})
+  const [ask, setAsk] = useState(2);
+  const [info, setInfo] = useState({})
   const [errors, setError] = useState({});
   let phonenoReg = /^[0-9]/;
   const emailReg =
     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const handleClose = () => {
     setError({})
-    setinfo({})
+    setInfo({})
     setShow(false)
   }
-  const handleShow = () => setShow(true);
+  const handleShow = (ask) => {
+    setAsk(ask);
+    setShow(true);
+  }
   const History = useHistory();
   const [index, setIndex] = useState(0);
   const top20Settings = {
@@ -78,17 +82,14 @@ const Home = () => {
     let errors = {};
     let formIsValid = true;
     if (!info.firstName) {
-      console.log("DDDDDDDDDDDD")
       formIsValid = false;
       errors["firstName"] = "First Name is required";
     }
     if (!info.lastName) {
-      console.log("DDDDDDDDDDDD")
       formIsValid = false;
       errors["lastName"] = "Last Name is required";
     }
     if (!info.email) {
-      console.log("DDDDDDDDDDDD")
       formIsValid = false;
       errors["email"] = "Email is required";
     }
@@ -97,21 +98,23 @@ const Home = () => {
       errors["email"] = "Invalid Email";
     }
     if (!info.company) {
-      console.log("DDDDDDDDDDDD")
       formIsValid = false;
       errors["company"] = "Company is required";
     }
     if (!info.companySize) {
-      console.log("DDDDDDDDDDDD")
       formIsValid = false;
       errors["companySize"] = "Company Size is required";
+    }
+    if (ask === 1&& !info.position) {
+      formIsValid = false;
+      errors["position"] = "Kindly tell us your position at the company";
     }
     setError(errors);
     return formIsValid;
   }
   const handleOnChange = (e) => {
     let { name, value } = e.target;
-    setinfo((prevState) => ({
+    setInfo((prevState) => ({
       ...prevState,
       [name]: value,
     }));
@@ -170,12 +173,12 @@ const Home = () => {
             </div>
             <div className='row mt-30'>
               <div className='col-auto'>
-                <button className='btn-main' onClick={handleShow}>
+                <button className='btn-main' onClick={() => handleShow(1)}>
                   Try it today
                 </button>
               </div>
               <div className='col-auto'>
-                <button className='btn-main btn-white' onClick={handleShow}>
+                <button className='btn-main btn-white' onClick={() => handleShow(2)}>
                   Schedule demo
                 </button>
               </div>
@@ -458,8 +461,8 @@ const Home = () => {
     </section>
     <Modal show={show} onHide={handleClose} dialogClassName='b-rad-dot-8'>
       <Modal.Header >
-        <Modal.Title><span>Schedule a demo  <br/></span>
-          with our team today</Modal.Title>
+        <Modal.Title><span>{ ask === 2 ? "Schedule a demo" : "Want to try it today?" } <br/></span>
+          { ask === 2 ? "with our team today" : "tell us about yourself" }</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div className='row'>
@@ -533,15 +536,9 @@ const Home = () => {
           </div>
           <div className='col-12 mb-2'>
             <div className="mb-1">
-              <label for="Select" className="form-label">Company size</label>
-              <select id="Select" className="form-select form-control" name="companySize"
-                value={info?.companySize} onChange={handleOnChange}>
-                <option selected>Choose your company size</option>
-                <option value="1-10">1-10</option>
-                <option value="11-50">11-50</option>
-                <option value="51-200">51-200</option>
-                <option value="200+">200+</option>
-              </select>
+              <label className="form-label">Company website</label>
+              <input type="email" className="form-control" name="website"
+                value={info?.website} onChange={handleOnChange} aria-describedby="emailHelp" placeholder="Enter your company's website"/>
             </div>
             <span
               style={{
@@ -551,24 +548,69 @@ const Home = () => {
                 fontSize: "10px",
               }}
             >
-              {errors["companySize"]}
+              {errors["company"]}
             </span>
           </div>
           <div className='col-12 mb-2'>
+            <div className="row">
+
+              { ask === 1 ?<div className='col-6'>
+                <div className="mb-1">
+                  <label htmlFor="position" className="form-label">Your position</label>
+                  <select id="position" className="form-select form-control" name="position"
+                          value={info?.position} onChange={handleOnChange}>
+                    <option >Choose your position at the company</option>
+                    <option value="ceo-coo">CEO/COO</option>
+                    <option value="cfo-finance-team">CFO/Finance team</option>
+                    <option value="hr">HR</option>
+                    <option value="management">Upper management</option>
+                    <option value="employee">Employee</option>
+                  </select>
+                </div>
+                <span
+                    style={{
+                      color: "red",
+
+                      top: "2px",
+                      fontSize: "10px",
+                    }}
+                >
+              {errors["companySize"]}
+            </span>
+              </div> : null}
+              <div className={ask === 1 ? "col-6" : "col-12"}>
+              <div className="mb-1">
+                <label htmlFor="Select" className="form-label">Company size</label>
+                <select id="Select" className="form-select form-control" name="companySize"
+                  value={info?.companySize} onChange={handleOnChange}>
+                  <option >Choose your company size</option>
+                  <option value="1-10">1-10</option>
+                  <option value="11-50">11-50</option>
+                  <option value="51-200">51-200</option>
+                  <option value="200+">200+</option>
+                </select>
+              </div>
+              <span
+                style={{
+                  color: "red",
+
+                  top: "2px",
+                  fontSize: "10px",
+                }}
+              >
+                {errors["companySize"]}
+              </span>
+            </div>
+            </div>
+
+          </div>
+          <div className='col-12 mb-2'>
             <button className='btn-main w-100 mt-3' onClick={save} >
-              Book my demo
+              { ask === 2 ? "Book my demo" : "Request access" }
             </button>
           </div>
         </div>
       </Modal.Body>
-      {/* <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Close
-        </Button>
-        <Button variant="primary" onClick={handleClose}>
-          Save Changes
-        </Button>
-      </Modal.Footer> */}
     </Modal>
 
   </>;
