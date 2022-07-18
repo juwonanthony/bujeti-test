@@ -53,8 +53,9 @@ const Home = () => {
     autoWith: true,
     lazyload: true,
     nav: true,
+    rewind: true,
     mouseDrag: true,
-    loop: true,
+    loop: false,
     items: 1,
     gutter: 20,
     responsive: {
@@ -67,10 +68,10 @@ const Home = () => {
 
       },
       600: {
-        items: 2.5,
+        items: 2.1,
       },
       900: {
-        items: 3.5
+        items: 3
       }
     }
 
@@ -202,7 +203,7 @@ const Home = () => {
                 <div className="row">
                   <div className="col-12">
                     <div className="carousel-card">
-                      <h3 className="card-sub-title">No more cumbersome expenses tracking
+                      <h3 className="card-sub-title">No more cumbersome expenses tracking operations
                       </h3>
                       <div>
                         Automated and streamline your expenses management processes. Cut out redundant administrative tasks that distract your employees from their core business.
