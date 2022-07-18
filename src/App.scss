@@ -90,7 +90,7 @@ body {
         color: #000000;
     }
 
-    .sec-pera {
+    .sec-description {
         font-weight: 400;
         font-size: 24px;
         line-height: 35px;
@@ -106,6 +106,7 @@ body {
     position: relative;
 	background: url(image/banner-graphic.svg);
     top: -330px;
+    margin-bottom: -320px;
     z-index: 996;
     height: 650px;
     width: 100%;
@@ -115,14 +116,13 @@ body {
 }
 
 .sec-finance-platform {
-    position: relative;
-    margin-top: -300px;
+    margin-top: 10px;
 
     .sec-title {
         font-weight: 700;
-        font-size: 58px;
+        font-size: 48px;
         line-height: 70px;
-        text-align: center;
+        text-align: left;
         letter-spacing: -0.03em;
         color: #000000;
         margin-bottom: 80px;
@@ -162,7 +162,7 @@ body {
 
         .card-graphic {
             position: absolute;
-            background: url(image/budget-graphic-2.png);
+            background: url(image/budget-graphic.svg);
             bottom: -3px;
             height: 100%;
             width: calc(100% - 68px);
@@ -189,36 +189,62 @@ body {
 
 
         .card-graphic-card {
-            background: url(image/card-graphic.png);
+            background: url(image/card-graphic.svg);
             width: 100%;
             right: 0;
             background-size: contain !important;
         }
 
         .card-graphic-over-view {
-            background: url(image/overview-graphic.png);
+            background: url(image/overview-graphic.svg);
             width: 100%;
             right: 0;
-            background-size: cover !important;
+            background-size: 100%;
+        }
+        .reimbursement-graphic {
+            position: absolute;
+            bottom: -3px;
+            background: url(image/reimbursement.svg);
+            height: 100%;
+            width: calc(100% - 68px);
+            background-repeat: no-repeat !important;
+            background-position-y: bottom !important;
+            background-position-x: center !important;
+            background-size: 100%;
+            border-radius: 5px 5px 0 0;
+        }
+        .payment-graphic {
+            position: absolute;
+            bottom: -3px;
+            background: url(image/payment.svg);
+            height: 100%;
+            width: calc(100% - 68px);
+            background-repeat: no-repeat !important;
+            background-position-y: bottom !important;
+            background-position-x: center !important;
+            background-size: 100%;
+            border-radius: 5px 5px 0 0;
         }
     }
 }
 
 .sec-our-product {
-    .sec-sub-title {
+    .sec-title {
         font-weight: 700;
-        font-size: 34px;
+        font-size: 52px;
         line-height: 50px;
-        text-align: center;
+        text-align: left;
         letter-spacing: -0.03em;
         color: #000000;
         margin-bottom: 50px;
+
+        .orange {
+            color: #D28B28;
+        }
     }
 
     .sec-our-product-box {
-        padding: 60px 0 120px 50px;
-        background-color: #F9F1EC;
-        border: 2px solid #F9F1EC;
+        padding: 60px 0 120px 0;
         border-radius: 8px;
     }
 
@@ -234,12 +260,12 @@ body {
 .carousel-main {
     .carousel-card {
         width: 100%;
-        padding: 40px 40px;
-        background: #FFFFFF;
+        padding: 20px;
+        background: #FCFAF8;
         border: 1px solid #E6E8E3;
         box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
         border-radius: 16px;
-        height: 460px;
+        height: 280px;
     }
 
     .tns-outer {
@@ -307,7 +333,7 @@ body {
 
         }
 
-        .sec-pera {
+        .sec-description {
             font-weight: 400;
             font-size: 9px;
             line-height: 11px;
@@ -382,7 +408,7 @@ body {
         letter-spacing: -0.02em;
         color: #000000;
         margin-top: 10px;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
 
 }
@@ -392,7 +418,7 @@ body {
 
     .sec-title {
         font-weight: 700;
-        font-size: 58px;
+        font-size: 52px;
         line-height: 70px;
         text-align: center;
         letter-spacing: -0.03em;
@@ -434,7 +460,7 @@ body {
         margin-bottom: 20px;
     }
 
-    .sec-pera {
+    .sec-description {
         font-weight: 400;
         font-size: 24px;
         line-height: 35px;
@@ -473,6 +499,28 @@ body {
         margin-left: 18px;
     }
 
+    .contact {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.01em;
+        color: #BFC6B9;
+        display: flex;
+        span {
+            font-weight: 600;
+            a {
+                text-decoration: none;
+                color: #BFC6B9;
+                &:after {
+                    content: "\A";
+                    background-color: #FFFFFF;
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
     .copyright {
         font-weight: 400;
         font-size: 12px;
@@ -480,7 +528,10 @@ body {
         letter-spacing: 0.01em;
         color: #BFC6B9;
         display: flex;
-
+        a {
+            text-decoration: none;
+            color: #BFC6B9;
+        }
         .span {
             font-weight: 600;
         }
@@ -584,7 +635,7 @@ body {
             line-height: 45px;
         }
 
-        .sec-pera {
+        .sec-description {
             font-size: 20px;
             line-height: 30px;
             margin-bottom: 30px;

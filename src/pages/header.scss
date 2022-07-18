@@ -5,6 +5,10 @@
     color: #242628;
     text-decoration: none;
     margin-right: 30px;
+    &:hover {
+        text-decoration: none;
+        color: #242628;
+    }
 }
 
 .navbar {

@@ -1,16 +1,6 @@
-const protocol = "http";
-const host = "45.80.152.23:4553/api";
-const port = "";
-const trailUrl = "";
-// https://api.loginvm.com http://45.80.152.23:4553/api/
-const hostUrl = `${protocol}://${host}${port ? ":" + port : ""}/`;
-const endpoint = `${protocol}://${host}${port ? ":" + port : ""}${trailUrl}`;
 
 export default {
-  protocol: protocol,
-  host: host,
-  port: port,
-  apiUrl: trailUrl,
-  endpoint: endpoint,
-  hostUrl: hostUrl,
+  apiUrl: 'https://api-dev.bujeti.com/demo/request',
+  dashboardUrl: 'https://dashboard.bujeti.com',
+  token: 'demo_f4924c56016b3bcbd680fc97a87d6cbb',
 };

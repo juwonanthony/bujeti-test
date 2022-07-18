@@ -41,9 +41,9 @@ export function addSuccessMessage(message) {
     <CustomSnackbar
       message={message}
       color="success"
-      renderElement={document.getElementById("alertmessage")}
+      renderElement={document.getElementById("alertMessage")}
     />,
-    document.getElementById("alertmessage")
+    document.getElementById("alertMessage")
   );
 }
 export function addErrorMessage(message) {
@@ -51,8 +51,8 @@ export function addErrorMessage(message) {
     <CustomSnackbar
       message={message}
       color="error"
-      renderElement={document.getElementById("alertmessage")}
+      renderElement={document.getElementById("alertMessage")}
     />,
-    document.getElementById("alertmessage")
+    document.getElementById("alertMessage")
   );
 }

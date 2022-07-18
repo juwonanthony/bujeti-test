@@ -11,6 +11,7 @@ import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
 import Home from './Home';
 import { addErrorMessage, addLoader, addSuccessMessage, removeLoader } from '../utils/loader';
+import {API} from "../config/API/api.config";
 const axios = require("axios").default;
 const Header = () => {
   const [show, setShow] = useState(false);
@@ -19,7 +20,7 @@ const Header = () => {
   let phonenoReg = /^[0-9]/;
   const emailReg =
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  const handleClose = () =>{ setError({}) 
+  const handleClose = () =>{ setError({})
   setinfo({})
   setShow(false)
 }
@@ -34,17 +35,14 @@ const Header = () => {
     let errors = {};
     let formIsValid = true;
     if (!info.firstName) {
-        console.log("DDDDDDDDDDDD")
         formIsValid = false;
         errors["firstName"] = "First Name is required";
     }
     if (!info.lastName) {
-      console.log("DDDDDDDDDDDD")
       formIsValid = false;
       errors["lastName"] = "Last Name is required";
   }
   if (!info.email) {
-    console.log("DDDDDDDDDDDD")
     formIsValid = false;
     errors["email"] = "Email is required";
 }
@@ -53,20 +51,17 @@ if (!emailReg.test(info.email)) {
   errors["email"] = "Invalid Email";
 }
 if (!info.company) {
-  console.log("DDDDDDDDDDDD")
   formIsValid = false;
   errors["company"] = "Company is required";
 }
 if (!info.companySize) {
-  console.log("DDDDDDDDDDDD")
   formIsValid = false;
   errors["companySize"] = "Company Size is required";
 }
     setError(errors);
     return formIsValid;
 }
-  const handleonChange = (e) => {
-    console.log(e.target)
+  const handleOnChange = (e) => {
     let { name, value } = e.target;
     setinfo((prevState) => ({
         ...prevState,
@@ -75,42 +70,25 @@ if (!info.companySize) {
 }
 
 const save = () => {
-  // 
-  console.log("aaaa")
+  //
   if (validateForm()) {
-    console.log("bbb")
       addLoader()
-      var accountData1 = { firstName: info.firstName, lastName: info.lastName, email: info.email, company: info.company, companySize:info.companySize}
+      var payload = { firstName: info.firstName, lastName: info.lastName, email: info.email, company: info.company, companySize:info.companySize}
       axios
-      .post("https://api-dev.bujeti.com/demo/request", accountData1, { headers: {
-        authorization: "Bearer demo_f4924c56016b3bcbd680fc97a87d6cbb"
+      .post(API.apiUrl, payload, { headers: {
+        authorization: `Bearer ${API.token}`
     }})
       .then((responseJson) => {
-        console.log(responseJson)
-        
+
         removeLoader()
         addSuccessMessage("Request Send successfully")
         handleClose()
-       
-        // resolve(responseJson);
       })
       .catch((error) => {
-        console.log(error)
         addErrorMessage(error.message)
         removeLoader()
       });
-      // ApiPost("accountandstatutory/addaccount_and_statutory", accountData1)
-      //     .then(async (res) => {
-      //         console.log("res", res);
-      //         if (res.status == 200) {
-      //             uploaddoc(res.data.data[0].id)
-      //         }
-      //     }).catch((err) => {
-      //         console.log(err)
-      //         removeLoader();
-      //     });
   }
-  // 
 }
   return <div className='home w-100' >
     <section className="header-main ">
@@ -118,9 +96,9 @@ const save = () => {
         <div className="container">
 
           <a className="navbar-brand">
-            <img src={logo} className='img-fluid logo-icon'></img>
+            <img src={logo} className='img-fluid logo-icon'/>
           </a>
-          <div className='d-flex-main'> <span ><a className="header-title d-none d-md-block"  >Sign In</a></span><span><button className='btn-main' onClick={handleShow}>
+          <div className='d-flex-main'> <span ><a className="header-title d-none d-md-block" href={API.dashboardUrl} >Sign In</a></span><span><button className='btn-main' onClick={handleShow}>
             Try it today
           </button></span> </div>
 
@@ -132,16 +110,18 @@ const save = () => {
 
     <Modal show={show} onHide={handleClose}>
       <Modal.Header >
-        <Modal.Title><span>Schedule a demo  <br></br></span>
+        <Modal.Title><span>Schedule a demo  <br/></span>
           with our team today</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div className='row'>
           <div className='col-6 mb-2'>
-            <div class="mb-1">
-              <label  class="form-label">First Name</label>
-              <input type="email" class="form-control" name="firstName"
-                                value={info?.firstName} onChange={handleonChange}  aria-describedby="emailHelp" placeholder='First Name'></input>
+            <div className="mb-1">
+              <label  className="form-label">First Name</label>
+              <input type="email" className="form-control" name="firstName"
+                                value={info?.firstName}
+                     onChange={handleOnChange}  aria-describedby="emailHelp"
+                     placeholder='Your first Name'/>
             </div>
             <span
                             style={{
@@ -155,10 +135,14 @@ const save = () => {
                         </span>
           </div>
           <div className='col-6 mb-2'>
-            <div class="mb-1">
-              <label  class="form-label">Last Name</label>
-              <input type="email" class="form-control"  name="lastName"
-                                value={info?.lastName} onChange={handleonChange} aria-describedby="emailHelp" placeholder='Last Name'></input>
+            <div className="mb-1">
+              <label  className="form-label">Last Name</label>
+              <input type="email"
+                     className="form-control"
+                     name="lastName"
+                     value={info?.lastName}
+                     onChange={handleOnChange} aria-describedby="emailHelp"
+                     placeholder='Your last Name'/>
             </div>
             <span
                             style={{
@@ -172,10 +156,12 @@ const save = () => {
                         </span>
           </div>
           <div className='col-12 mb-2'>
-            <div class="mb-1">
-              <label  class="form-label">Work email</label>
-              <input type="email" class="form-control"  name="email"
-                                value={info?.email} onChange={handleonChange} aria-describedby="emailHelp" placeholder='Enter work email address'></input>
+            <div className="mb-1">
+              <label  className="form-label">Work email</label>
+              <input type="email" className="form-control"  name="email"
+                                value={info?.email}
+                     onChange={handleOnChange} aria-describedby="emailHelp"
+                     placeholder='Enter your work email'/>
             </div>
             <span
                             style={{
@@ -189,10 +175,10 @@ const save = () => {
                         </span>
           </div>
           <div className='col-12 mb-2'>
-            <div class="mb-1">
-              <label  class="form-label">Company</label>
-              <input type="email" class="form-control"  name="company"
-                                value={info?.company} onChange={handleonChange} aria-describedby="emailHelp" placeholder='Enter company name'></input>
+            <div className="mb-1">
+              <label  className="form-label">Company</label>
+              <input type="email" className="form-control"  name="company"
+    value={info?.company} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Enter your company name'/>
             </div>
             <span
                             style={{
@@ -206,11 +192,11 @@ const save = () => {
                         </span>
           </div>
           <div className='col-12 mb-2'>
-            <div class="mb-1">
-              <label for="Select" class="form-label">Disabled select menu</label>
-              <select id="Select" class="form-select form-control" name="companySize"
-                                value={info?.companySize} onChange={handleonChange}>
-                                  <option selected>Select Company Size</option>
+            <div className="mb-1">
+              <label for="Select" className="form-label">Company size</label>
+              <select id="Select" className="form-select form-control" name="companySize"
+                                value={info?.companySize} onChange={handleOnChange}>
+                                  <option selected>Select your company size</option>
                 <option value="1-10">1-10</option>
                 <option value="11-50">11-50</option>
                 <option value="51-200">51-200</option>

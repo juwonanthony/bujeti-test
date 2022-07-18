@@ -3,8 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="999cf9e3-c54c-4514-bb18-272b42860217" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/banner-graphic.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/banner-graphic.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/linkdin-graphic.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/linkedin-graphic.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/overview-graphic.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/image/overview-graphic.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
+>>>>>>> beta-non-responsive
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
