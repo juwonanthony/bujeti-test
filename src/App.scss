@@ -104,7 +104,7 @@ body {
 
 .banner-graphic {
     position: relative;
-	background: url(image/banner-graphic.svg);
+    background: url(image/banner-graphic.svg);
     top: -330px;
     margin-bottom: -320px;
     z-index: 996;
@@ -176,7 +176,7 @@ body {
         .card-graphics {
             position: absolute;
             bottom: -3px;
-			background: url(image/engineering-tol-graphic.svg);
+            background: url(image/engineering-tol-graphic.svg);
             height: 100%;
             width: calc(100% - 68px);
             background-repeat: no-repeat !important;
@@ -201,6 +201,7 @@ body {
             right: 0;
             background-size: 100%;
         }
+
         .reimbursement-graphic {
             position: absolute;
             bottom: -3px;
@@ -213,6 +214,7 @@ body {
             background-size: 100%;
             border-radius: 5px 5px 0 0;
         }
+
         .payment-graphic {
             position: absolute;
             bottom: -3px;
@@ -506,11 +508,14 @@ body {
         letter-spacing: 0.01em;
         color: #BFC6B9;
         display: flex;
+
         span {
             font-weight: 600;
+
             a {
                 text-decoration: none;
                 color: #BFC6B9;
+
                 &:after {
                     content: "\A";
                     background-color: #FFFFFF;
@@ -521,6 +526,7 @@ body {
             }
         }
     }
+
     .copyright {
         font-weight: 400;
         font-size: 12px;
@@ -528,13 +534,21 @@ body {
         letter-spacing: 0.01em;
         color: #BFC6B9;
         display: flex;
+
         a {
             text-decoration: none;
             color: #BFC6B9;
         }
+
         .span {
             font-weight: 600;
         }
+    }
+}
+
+.tns-controls {
+    button {
+        color: rgba(255, 0, 0, 0) !important;
     }
 }
 
@@ -560,6 +574,10 @@ body {
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
+    .btn-main {
+        padding: 15px 23px;
+    }
+
     .banner {
         padding: 60px 0 270px 0;
 
@@ -575,16 +593,18 @@ body {
         width: 100%;
         background-repeat: no-repeat;
         right: 0;
+        height: 500px;
         background-position-x: right;
     }
 
     .sec-finance-platform {
-        margin-top: -430px;
-        margin-bottom: 50px;
+        padding: 100px 0 0;
 
         .sec-title {
             font-size: 38px;
             line-height: 45px;
+            margin-bottom: 40px;
+            text-align: center;
         }
 
         .finance-platform-card {
@@ -594,7 +614,14 @@ body {
 
     .sec-our-product {
         .sec-our-product-box {
-            padding: 15px 0 85px 15px;
+            padding: 0;
+        }
+
+        .sec-title {
+            font-size: 38px;
+            line-height: 45px;
+            margin-bottom: 40px;
+            text-align: center;
         }
 
         .carousel-card {
@@ -615,7 +642,7 @@ body {
     }
 
     .next-level-finance {
-        padding: 100px 0 80px;
+        padding: 50px 0;
 
         .sec-title {
             font-size: 38px;
@@ -668,6 +695,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 .b-rad-dot-8 {
     border-radius: 0.8em;
 }

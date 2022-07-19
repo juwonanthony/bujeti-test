@@ -59,15 +59,15 @@ const Home = () => {
     gutter: 20,
     responsive: {
       0: {
-        items: 1,
+        items: 1.2,
 
       },
       300: {
-        items: 2,
+        items: 1.2,
 
       },
       600: {
-        items: 2.5,
+        items: 2,
       },
       900: {
         items: 3.5
@@ -105,7 +105,7 @@ const Home = () => {
       formIsValid = false;
       errors["companySize"] = "Company Size is required";
     }
-    if (ask === 1&& !info.position) {
+    if (ask === 1 && !info.position) {
       formIsValid = false;
       errors["position"] = "Kindly tell us your position at the company";
     }
@@ -164,7 +164,7 @@ const Home = () => {
     <section className='banner'>
       <div className='container'>
         <div className='row'>
-          <div className='col-lg-10'>
+          <div className='col-lg-10 col-12'>
             <div className='sec-title'>
               Easy to use solution for your business expenses.
             </div>
@@ -263,83 +263,85 @@ const Home = () => {
         <div className='row'>
           <div className='col-12 col-xl-8'>
             <div className='sec-title'>
-              Your finances at your fingertips<br/>
+              Your finances at your fingertips<br />
               everywhere you go
             </div>
           </div>
-          <div className='row justify-content-center'>
-            <div className='col-12 col-md-6'>
-              <div className='finance-platform-card'>
-                <div className='card-title'>
-                  Expense Management
-                </div>
-                <div className='card-sub-tittle'>
-                  Strategic Budgeting
-                </div>
-                <div className='card-pera'>
-                  Streamline your cash management with budget forecasts. Allocate funds to your different departments and projects and track how they are spent in real time.
-                </div>
-                <div className='card-graphic'/>
-              </div>
-            </div>
-            <div className='col-12 col-md-6'>
-              <div className='finance-platform-card'>
-                <div className='card-title'>
-                  Smart spending
-                </div>
-                <div className='card-sub-tittle'>
-                  Corporate Cards
-                </div>
-                <div className='card-pera'>
-                  Empower your teams by giving a safe and secure access to company funds through virtual and physical cards. Generate as many virtual cards as your teams need.
-                </div>
-                <div className='card-graphic card-graphic-card'>
 
-                </div>
+        </div>
+        <div className='row justify-content-center'>
+          <div className='col-12 col-md-6'>
+            <div className='finance-platform-card'>
+              <div className='card-title'>
+                Expense Management
+              </div>
+              <div className='card-sub-tittle'>
+                Strategic Budgeting
+              </div>
+              <div className='card-pera'>
+                Streamline your cash management with budget forecasts. Allocate funds to your different departments and projects and track how they are spent in real time.
+              </div>
+              <div className='card-graphic' />
+            </div>
+          </div>
+          <div className='col-12 col-md-6'>
+            <div className='finance-platform-card'>
+              <div className='card-title'>
+                Smart spending
+              </div>
+              <div className='card-sub-tittle'>
+                Corporate Cards
+              </div>
+              <div className='card-pera'>
+                Empower your teams by giving a safe and secure access to company funds through virtual and physical cards. Generate as many virtual cards as your teams need.
+              </div>
+              <div className='card-graphic card-graphic-card'>
+
               </div>
             </div>
-            <div className='col-12 col-md-6'>
-              <div className='finance-platform-card'>
-                <div className='card-title'>
-                  On the go
-                </div>
-                <div className='card-sub-tittle'>
-                  Team mobile app
-                </div>
-                <div className='card-pera'>
-                  Manage your budgets and track your transactions directly from your smartphone. Pay and manage your teams and expenses on-the-go.
-                </div>
-                <div className='card-graphic card-graphic-over-view'/>
+          </div>
+          <div className='col-12 col-md-6'>
+            <div className='finance-platform-card'>
+              <div className='card-title'>
+                On the go
               </div>
-            </div>
-            <div className='col-12 col-md-6'>
-              <div className='finance-platform-card'>
-                <div className='card-title'>
-                  Business Intelligence
-                </div>
-                <div className='card-sub-tittle'>
-                  Reporting & Insights
-                </div>
-                <div className='card-pera'>
-                  Leverage a powerful decision support tool. Keep an eye on all your expenses in real time and generate periodic reports to take the pulse of your business.
-                </div>
-                <div className='card-graphics'/>
+              <div className='card-sub-tittle'>
+                Team mobile app
               </div>
-            </div>
-            <div className='col-12 col-md-6'>
-              <div className='finance-platform-card'>
-                <div className='card-title'>
-                  Quick & Efficient
-                </div>
-                <div className='card-sub-tittle'>
-                  Reimbursement Request
-                </div>
-                <div className='card-pera'>
-                  Reimburse out of pocket spending in a few clicks. Employees snap their receipt and submit the request. You simply approve or decline.</div>
-                <div className='reimbursement-graphic'/>
+              <div className='card-pera'>
+                Manage your budgets and track your transactions directly from your smartphone. Pay and manage your teams and expenses on-the-go.
               </div>
+              <div className='card-graphic card-graphic-over-view' />
             </div>
-            <div className='col-12 col-md-6'>
+          </div>
+          <div className='col-12 col-md-6'>
+            <div className='finance-platform-card'>
+              <div className='card-title'>
+                Business Intelligence
+              </div>
+              <div className='card-sub-tittle'>
+                Reporting & Insights
+              </div>
+              <div className='card-pera'>
+                Leverage a powerful decision support tool. Keep an eye on all your expenses in real time and generate periodic reports to take the pulse of your business.
+              </div>
+              <div className='card-graphics' />
+            </div>
+          </div>
+          <div className='col-12 col-md-6'>
+            <div className='finance-platform-card'>
+              <div className='card-title'>
+                Quick & Efficient
+              </div>
+              <div className='card-sub-tittle'>
+                Reimbursement Request
+              </div>
+              <div className='card-pera'>
+                Reimburse out of pocket spending in a few clicks. Employees snap their receipt and submit the request. You simply approve or decline.</div>
+              <div className='reimbursement-graphic' />
+            </div>
+          </div>
+          <div className='col-12 col-md-6'>
             <div className='finance-platform-card'>
               <div className='card-title'>
                 Unified payments
@@ -350,9 +352,8 @@ const Home = () => {
               <div className='card-pera'>
                 Pay instantly by bank transfer directly from your dashboard. Categorize your payments by budget and industry.
               </div>
-              <div className='payment-graphic'/>
+              <div className='payment-graphic' />
             </div>
-          </div>
           </div>
         </div>
       </div>
@@ -370,7 +371,7 @@ const Home = () => {
           <div className='col-10 col-md-4'>
             <div className='row justify-content-center'>
               <div className='col-auto'>
-                <img src={Integerated} className='img-fluid logo-icon'/>
+                <img src={Integerated} className='img-fluid logo-icon' />
               </div>
             </div>
             <div className='sec-sub-title'>Fully integrated suites of  expense management tools</div>
@@ -378,7 +379,7 @@ const Home = () => {
           <div className='col-10 col-md-4'>
             <div className='row justify-content-center'>
               <div className='col-auto'>
-                <img src={MultiCurrence} className='img-fluid logo-icon'/>
+                <img src={MultiCurrence} className='img-fluid logo-icon' />
               </div>
             </div>
             <div className='sec-sub-title'>Multi-currency payment cards usable anywhere in the world.</div>
@@ -386,7 +387,7 @@ const Home = () => {
           <div className='col-10 col-md-4'>
             <div className='row justify-content-center'>
               <div className='col-auto'>
-                <img src={FlexibleCash} className='img-fluid logo-icon'/>
+                <img src={FlexibleCash} className='img-fluid logo-icon' />
               </div>
             </div>
             <div className='sec-sub-title'>Flexible cash advance to keep your business going.</div>
@@ -422,8 +423,8 @@ const Home = () => {
           </div>
         </div>
         <div className='sec-graphic'>
-          <img src={bujeti} className='img-fluid d-none d-md-block'/>
-          <img src={bujetimobile} className='img-fluid d-block d-md-none'/>
+          <img src={bujeti} className='img-fluid d-none d-md-block' />
+          <img src={bujetimobile} className='img-fluid d-block d-md-none' />
         </div>
       </div>
     </section>
@@ -431,38 +432,38 @@ const Home = () => {
       <div className='container'>
         <div className='row justify-content-between'>
           <div className='col-auto'>
-            <img src={FooterLogo} className='img-fluid'/>
+            <img src={FooterLogo} className='img-fluid' />
             <div className='copyright'>
               <span>© Bujeti Ltd. 2022,</span>  All Rights Reserved
             </div>
           </div>
           <div className='col-auto'>
             <div className='icon d-block d-md-none '>
-              <a><span className='ml-18'><img src={twitter} className='img-fluid'/></span></a>
-              <a> <span className='ml-18'><img src={linkedin} className='img-fluid'/></span></a>
-              <a><span className='ml-18'><img src={instagram} className='img-fluid'/></span></a>
+              <a><span className='ml-18'><img src={twitter} className='img-fluid' /></span></a>
+              <a> <span className='ml-18'><img src={linkedin} className='img-fluid' /></span></a>
+              <a><span className='ml-18'><img src={instagram} className='img-fluid' /></span></a>
             </div>
           </div>
           <div className='col-12 col-md-auto'>
             <div className='contact'>
               <span><a href="mailto:support@bujeti.com" target="_blank">Contact us &nbsp; &nbsp; •</a></span>
               <div className='icon d-none d-md-block'>
-                <a><span className='ml-18'><img src={twitter} className='img-fluid'/></span></a>
-                <a> <span className='ml-18'><img src={linkedin} className='img-fluid'/></span></a>
-                <a><span className='ml-18'><img src={instagram} className='img-fluid'/></span></a>
+                <a><span className='ml-18'><img src={twitter} className='img-fluid' /></span></a>
+                <a> <span className='ml-18'><img src={linkedin} className='img-fluid' /></span></a>
+                <a><span className='ml-18'><img src={instagram} className='img-fluid' /></span></a>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className='sec-graphic'>
-        <img src={FooterGraphic} className='img-fluid'/>
+        <img src={FooterGraphic} className='img-fluid' />
       </div>
     </section>
     <Modal show={show} onHide={handleClose} dialogClassName='b-rad-dot-8'>
       <Modal.Header >
-        <Modal.Title><span>{ ask === 2 ? "Schedule a demo" : "Want to try it today?" } <br/></span>
-          { ask === 2 ? "with our team today" : "tell us about yourself" }</Modal.Title>
+        <Modal.Title><span>{ask === 2 ? "Schedule a demo" : "Want to try it today?"} <br /></span>
+          {ask === 2 ? "with our team today" : "tell us about yourself"}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div className='row'>
@@ -470,7 +471,7 @@ const Home = () => {
             <div className="mb-1">
               <label className="form-label">First Name</label>
               <input type="email" className="form-control" name="firstName"
-    value={info?.firstName} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Your first name'/>
+                value={info?.firstName} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Your first name' />
             </div>
             <span
               style={{
@@ -487,7 +488,7 @@ const Home = () => {
             <div className="mb-1">
               <label className="form-label">Last Name</label>
               <input type="email" className="form-control" name="lastName"
-                value={info?.lastName} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Your last name'/>
+                value={info?.lastName} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Your last name' />
             </div>
             <span
               style={{
@@ -504,7 +505,7 @@ const Home = () => {
             <div className="mb-1">
               <label className="form-label">Work email</label>
               <input type="email" className="form-control" name="email"
-                value={info?.email} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Enter your work email'/>
+                value={info?.email} onChange={handleOnChange} aria-describedby="emailHelp" placeholder='Enter your work email' />
             </div>
             <span
               style={{
@@ -521,7 +522,7 @@ const Home = () => {
             <div className="mb-1">
               <label className="form-label">Company</label>
               <input type="email" className="form-control" name="company"
-                value={info?.company} onChange={handleOnChange} aria-describedby="emailHelp" placeholder="Enter your company's name"/>
+                value={info?.company} onChange={handleOnChange} aria-describedby="emailHelp" placeholder="Enter your company's name" />
             </div>
             <span
               style={{
@@ -538,7 +539,7 @@ const Home = () => {
             <div className="mb-1">
               <label className="form-label">Company website</label>
               <input type="email" className="form-control" name="website"
-                value={info?.website} onChange={handleOnChange} aria-describedby="emailHelp" placeholder="Enter your company's website"/>
+                value={info?.website} onChange={handleOnChange} aria-describedby="emailHelp" placeholder="Enter your company's website" />
             </div>
             <span
               style={{
@@ -554,11 +555,11 @@ const Home = () => {
           <div className='col-12 mb-2'>
             <div className="row">
 
-              { ask === 1 ?<div className='col-6'>
+              {ask === 1 ? <div className='col-6'>
                 <div className="mb-1">
                   <label htmlFor="position" className="form-label">Your position</label>
                   <select id="position" className="form-select form-control" name="position"
-                          value={info?.position} onChange={handleOnChange}>
+                    value={info?.position} onChange={handleOnChange}>
                     <option >Choose your position at the company</option>
                     <option value="ceo-coo">CEO/COO</option>
                     <option value="cfo-finance-team">CFO/Finance team</option>
@@ -568,45 +569,45 @@ const Home = () => {
                   </select>
                 </div>
                 <span
-                    style={{
-                      color: "red",
+                  style={{
+                    color: "red",
 
-                      top: "2px",
-                      fontSize: "10px",
-                    }}
+                    top: "2px",
+                    fontSize: "10px",
+                  }}
                 >
-              {errors["companySize"]}
-            </span>
+                  {errors["companySize"]}
+                </span>
               </div> : null}
               <div className={ask === 1 ? "col-6" : "col-12"}>
-              <div className="mb-1">
-                <label htmlFor="Select" className="form-label">Company size</label>
-                <select id="Select" className="form-select form-control" name="companySize"
-                  value={info?.companySize} onChange={handleOnChange}>
-                  <option >Choose your company size</option>
-                  <option value="1-10">1-10</option>
-                  <option value="11-50">11-50</option>
-                  <option value="51-200">51-200</option>
-                  <option value="200+">200+</option>
-                </select>
-              </div>
-              <span
-                style={{
-                  color: "red",
+                <div className="mb-1">
+                  <label htmlFor="Select" className="form-label">Company size</label>
+                  <select id="Select" className="form-select form-control" name="companySize"
+                    value={info?.companySize} onChange={handleOnChange}>
+                    <option >Choose your company size</option>
+                    <option value="1-10">1-10</option>
+                    <option value="11-50">11-50</option>
+                    <option value="51-200">51-200</option>
+                    <option value="200+">200+</option>
+                  </select>
+                </div>
+                <span
+                  style={{
+                    color: "red",
 
-                  top: "2px",
-                  fontSize: "10px",
-                }}
-              >
-                {errors["companySize"]}
-              </span>
-            </div>
+                    top: "2px",
+                    fontSize: "10px",
+                  }}
+                >
+                  {errors["companySize"]}
+                </span>
+              </div>
             </div>
 
           </div>
           <div className='col-12 mb-2'>
             <button className='btn-main w-100 mt-3' onClick={save} >
-              { ask === 2 ? "Book my demo" : "Request access" }
+              {ask === 2 ? "Book my demo" : "Request access"}
             </button>
           </div>
         </div>
