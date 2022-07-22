@@ -27,6 +27,7 @@ import logo from '../../src/image/logo.svg';
 // import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { addErrorMessage, addLoader, addSuccessMessage, removeLoader } from '../utils/loader';
+import {API} from "../config/API/api.config";
 const axios = require("axios").default;
 
 const Home = () => {
@@ -99,11 +100,15 @@ const Home = () => {
     }
     if (!info.company) {
       formIsValid = false;
-      errors["company"] = "Company is required";
+      errors["company"] = "Please enter your company name";
     }
     if (!info.companySize) {
       formIsValid = false;
-      errors["companySize"] = "Company Size is required";
+      errors["companySize"] = "Please enter your company size";
+    }
+    if (!info.website) {
+      formIsValid = false;
+      errors["website"] = "Please enter your website URL";
     }
     if (ask === 1 && !info.position) {
       formIsValid = false;
@@ -125,37 +130,29 @@ const Home = () => {
     console.log("aaaa")
     if (validateForm()) {
       addLoader()
-      var accountData1 = { firstName: info.firstName, lastName: info.lastName, email: info.email, company: info.company, companySize: info.companySize }
+      const payload = {
+        firstName: info.firstName,
+        lastName: info.lastName,
+        email: info.email,
+        company: info.company,
+        website: info.website,
+        companySize: info.companySize,
+        ...(info.position && { position: info.position })
+      }
       axios
-        .post("https://api-dev.bujeti.com/demo/request", accountData1, {
-          headers: {
-            authorization: "Bearer demo_f4924c56016b3bcbd680fc97a87d6cbb"
-          }
-        })
+          .post(API.apiUrl, payload, { headers: {
+              authorization: `Bearer ${API.token}`
+            }})
         .then((responseJson) => {
-          console.log(responseJson)
-          // resolve(responseJson);
           removeLoader()
           addSuccessMessage("Request Send successfully")
           handleClose()
         })
         .catch((error) => {
-          console.log(error)
           addErrorMessage(error.message)
           removeLoader()
         });
-      // ApiPost("accountandstatutory/addaccount_and_statutory", accountData1)
-      //     .then(async (res) => {
-      //         console.log("res", res);
-      //         if (res.status == 200) {
-      //             uploaddoc(res.data.data[0].id)
-      //         }
-      //     }).catch((err) => {
-      //         console.log(err)
-      //         removeLoader();
-      //     });
     }
-    //
   }
 
 
@@ -166,11 +163,11 @@ const Home = () => {
         <div className='row'>
           <div className='col-lg-10 col-12'>
             <div className='sec-title'>
-              Easy to use solution for your business expenses.
+              Take control of your<br/>
+              finances today.
             </div>
             <div className='sec-description'>
-              Take control and supercharge your finance, empower your teams and track the pulse of your business with an end-to-end expense management platform tailored for African businesses.
-            </div>
+              We save you time and money on expenses, reimbursements, invoices, budgeting and so much more.</div>
             <div className='row mt-30'>
               <div className='col-auto'>
                 <button className='btn-main' onClick={() => handleShow(1)}>
@@ -401,8 +398,7 @@ const Home = () => {
           <div className='col-12 col-md-6'>
             <div className='sec-title'>Want to try Bujeti?</div>
             <div className='sec-main'>
-              Take control of your
-              finances today.
+              Easy to use solution for your business expenses.
             </div>
             <div className='sec-description'>
               Join our exclusive first users or schedule a demo
