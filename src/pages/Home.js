@@ -167,7 +167,7 @@ const Home = () => {
               finances today.
             </div>
             <div className='sec-description'>
-              We save you time and money on expenses, reimbursements, invoices, budgeting and so much more.</div>
+              We save you time and money on expenses, reimbursements, bank payments, invoices, budgeting and so much more.</div>
             <div className='row mt-30'>
               <div className='col-auto'>
                 <button className='btn-main' onClick={() => handleShow(1)}>
@@ -270,6 +270,19 @@ const Home = () => {
           <div className='col-12 col-md-6'>
             <div className='finance-platform-card'>
               <div className='card-title'>
+                Quick & Efficient
+              </div>
+              <div className='card-sub-tittle'>
+                Reimbursement Request
+              </div>
+              <div className='card-pera'>
+                Reimburse out of pocket spending in a few clicks. Employees snap their receipt and submit the request. You simply approve or decline.</div>
+              <div className='reimbursement-graphic' />
+            </div>
+          </div>
+          <div className='col-12 col-md-6'>
+            <div className='finance-platform-card'>
+              <div className='card-title'>
                 Expense Management
               </div>
               <div className='card-sub-tittle'>
@@ -279,6 +292,20 @@ const Home = () => {
                 Streamline your cash management with budget forecasts. Allocate funds to your different departments and projects and track how they are spent in real time.
               </div>
               <div className='card-graphic' />
+            </div>
+          </div>
+          <div className='col-12 col-md-6'>
+            <div className='finance-platform-card'>
+              <div className='card-title'>
+                Unified payments
+              </div>
+              <div className='card-sub-tittle'>
+                Bank Transfer Payment
+              </div>
+              <div className='card-pera'>
+                Pay instantly by bank transfer directly from your dashboard. Categorize your payments by budget and industry.
+              </div>
+              <div className='payment-graphic' />
             </div>
           </div>
           <div className='col-12 col-md-6'>
@@ -323,33 +350,6 @@ const Home = () => {
                 Leverage a powerful decision support tool. Keep an eye on all your expenses in real time and generate periodic reports to take the pulse of your business.
               </div>
               <div className='card-graphics' />
-            </div>
-          </div>
-          <div className='col-12 col-md-6'>
-            <div className='finance-platform-card'>
-              <div className='card-title'>
-                Quick & Efficient
-              </div>
-              <div className='card-sub-tittle'>
-                Reimbursement Request
-              </div>
-              <div className='card-pera'>
-                Reimburse out of pocket spending in a few clicks. Employees snap their receipt and submit the request. You simply approve or decline.</div>
-              <div className='reimbursement-graphic' />
-            </div>
-          </div>
-          <div className='col-12 col-md-6'>
-            <div className='finance-platform-card'>
-              <div className='card-title'>
-                Unified payments
-              </div>
-              <div className='card-sub-tittle'>
-                Bank Transfer Payment
-              </div>
-              <div className='card-pera'>
-                Pay instantly by bank transfer directly from your dashboard. Categorize your payments by budget and industry.
-              </div>
-              <div className='payment-graphic' />
             </div>
           </div>
         </div>
