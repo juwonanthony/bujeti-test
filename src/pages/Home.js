@@ -108,7 +108,7 @@ const Home = () => {
     }
     if (ask === 1 && !info.position) {
       formIsValid = false;
-      errors["position"] = "Kindly tell us your position at the company";
+      errors["position"] = "Kindly tell us your role at the company";
     }
     setError(errors);
     return formIsValid;
@@ -193,45 +193,44 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
-      <section className="banner-graphic"></section>
-      <section className="sec-our-product">
-        <div className="container">
-          <div className="sec-our-product-box">
-            <div className="sec-title">
-              Why your business{" "}
-              <p>
-                needs <span className="orange">Bujeti</span>
-              </p>
-            </div>
-            <div className="carousel-main">
-              <TinySlider settings={top20Settings}>
-                <div key={0} style={{ position: "relative" }}>
-                  <div className="row">
-                    <div className="col-12">
-                      <div className="carousel-card">
-                        <h3 className="card-sub-title">No more cumbersome expenses tracking</h3>
-                        <div>
-                          Automated and streamline your expenses management processes. Cut out redundant administrative
-                          tasks that distract your employees from their core business.
-                        </div>
+    </section>
+    <section className='banner-graphic'>
+    </section>
+    <section className='sec-our-product'>
+      <div className='container'>
+        <div className='sec-our-product-box'>
+          <div className='sec-title'>
+            Why your business <p>needs <span className="orange">Bujeti</span></p>
+          </div>
+          <div className='carousel-main'>
+            <TinySlider settings={top20Settings} >
+
+              <div key={0} style={{ position: "relative" }}>
+                <div className="row">
+                  <div className="col-12">
+                    <div className="carousel-card">
+                      <h3 className="card-sub-title">No more spreadsheets for your expenses tracking
+                      </h3>
+                      <div>
+                        Automated and streamline your expenses management processes. Cut out redundant administrative tasks that distract your employees from their core business.
                       </div>
                     </div>
                   </div>
                 </div>
-                <div key={1} style={{ position: "relative" }}>
-                  <div className="row">
-                    <div className="col-12">
-                      <div className="carousel-card">
-                        {/*<p className='card-title'>capital</p>*/}
-                        <h3 className="card-sub-title">Easy-to-use and transparent reimbursement processes</h3>
-                        <div>
-                          Stop filling out spreadsheets, Google forms and chasing receipts. Receive and approve
-                          reimbursement online or from your mobile phone.
-                        </div>
+              </div>
+              <div key={1} style={{ position: "relative" }}>
+                <div className="row">
+                  <div className="col-12">
+                    <div className="carousel-card">
+                      {/*<p className='card-title'>capital</p>*/}
+                      <h3 className="card-sub-title">Easy-to-use and transparent reimbursement processes
+                      </h3>
+                      <div>
+                        Stop filling out Google forms and chasing receipts. Receive, decline or approve reimbursement online or from your mobile phone.
                       </div>
                     </div>
                   </div>
+                </div>
                 </div>
                 <div key={3} style={{ position: "relative" }}>
                   <div className="row">
@@ -482,7 +481,7 @@ const Home = () => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="row">
+        <div className="row">
             <div className="col-6 mb-2">
               <div className="mb-1">
                 <label className="form-label">First Name</label>

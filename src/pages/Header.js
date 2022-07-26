@@ -67,7 +67,7 @@ const Header = () => {
     }
       if (!info.position) {
           formIsValid = false;
-          errors["position"] = "Kindly tell us your position at the company";
+          errors["position"] = "Kindly tell us your role at the company";
       }
     setError(errors);
     return formIsValid;
@@ -228,10 +228,10 @@ const tracker = useAnalyticsEventTracker('Header');
 
                           <div className='col-6'>
                               <div className="mb-1">
-                                  <label htmlFor="position" className="form-label">Your position</label>
+                                  <label htmlFor="position" className="form-label">Your role</label>
                                   <select id="position" className="form-select form-control" name="position"
                                           value={info?.position} onChange={handleOnChange}>
-                                      <option >Choose your position at the company</option>
+                                      <option >Your role at the company</option>
                                       <option value="ceo-coo">CEO/COO</option>
                                       <option value="cfo-finance-team">CFO/Finance team</option>
                                       <option value="hr">HR</option>
