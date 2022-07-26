@@ -241,7 +241,7 @@ const Home = () => {
                   <div className="col-12">
                     <div className="carousel-card">
                       <h3 className="card-sub-title">
-                        No more hazardous and risky cash management
+                        Forget hazardous and risky cash management
                       </h3>
                       <div>
                         Leverage accurate, real-time data on the state of your expenses. Make informed decisions based on a sharp vision of your finances.
