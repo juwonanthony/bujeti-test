@@ -127,7 +127,6 @@ const Home = () => {
   }
 
   const save = () => {
-    if (validateForm()) {
       addLoader()
       const payload = {
         firstName: info.firstName,
@@ -151,7 +150,6 @@ const Home = () => {
           addErrorMessage(error.message)
           removeLoader();
         });
-    }
   }
 
   const tracker = useAnalyticsEventTracker('Hero');
@@ -450,9 +448,9 @@ const Home = () => {
             <div className='contact'>
               <span onClick={() =>  tracker('contact-us') }><a href="mailto:support@bujeti.com" target="_blank">Contact us &nbsp; &nbsp; •</a></span>
               <div className='icon d-none d-md-block' onClick={() =>  tracker('social-media') }>
-                <a href="https://www.linkedin.com/company/bujeti"><span className='ml-18'><img src={twitter} className='img-fluid' /></span></a>
-                <a href="https://twitter.com/bujetiHQ"> <span className='ml-18'><img src={linkedin} className='img-fluid' /></span></a>
-                <a href="https://instagram.com/bujetihq" target="_blank"> <span classclassName='ml-18'><img src={instagram} className='img-fluid' /></span></a>
+                <a href="https://www.linkedin.com/company/bujeti"><span className='ml-18'><img src={linkedin} className='img-fluid' alt={"Linkedin"}/></span></a>
+                <a href="https://twitter.com/bujetiHQ"><span className='ml-18'><img src={twitter} className='img-fluid' alt={"Twitter"}/></span></a>
+                <a href="https://instagram.com/bujetihq" target="_blank"><span className='ml-18'><img src={instagram} className='img-fluid' alt={"Instagram"}/></span></a>
               </div>
             </div>
           </div>
@@ -609,8 +607,10 @@ const Home = () => {
           </div>
           <div className='col-12 mb-2'>
             <button className='btn-main w-100 mt-3' onClick={() => {
-              save();
-              tracker('submit-form');
+              if (validateForm()) {
+                save();
+                tracker('submit-form');
+              }
             }} >
               {ask === 2 ? "Book my demo" : "Request access"}
             </button>
