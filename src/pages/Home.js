@@ -113,7 +113,7 @@ const Home = () => {
     }
     if (ask === 1 && !info.position) {
       formIsValid = false;
-      errors["position"] = "Kindly tell us your position at the company";
+      errors["position"] = "Kindly tell us your role at the company";
     }
     setError(errors);
     return formIsValid;
@@ -165,7 +165,7 @@ const Home = () => {
               finances today.
             </div>
             <div className='sec-description'>
-              We save you time and money on expenses, reimbursements, bank payments, invoices, budgeting and so much more.</div>
+              We save you time and money on expenses tracking, reimbursements, bank payments, invoices, budgeting, virtual or physical corporate cards, and so much more.</div>
             <div className='row mt-30'>
               <div className='col-auto'>
                 <button className='btn-main' onClick={() => {
@@ -203,7 +203,7 @@ const Home = () => {
                 <div className="row">
                   <div className="col-12">
                     <div className="carousel-card">
-                      <h3 className="card-sub-title">No more cumbersome expenses tracking
+                      <h3 className="card-sub-title">No more spreadsheets for your expenses tracking
                       </h3>
                       <div>
                         Automated and streamline your expenses management processes. Cut out redundant administrative tasks that distract your employees from their core business.
@@ -220,7 +220,7 @@ const Home = () => {
                       <h3 className="card-sub-title">Easy-to-use and transparent reimbursement processes
                       </h3>
                       <div>
-                        Stop filling out spreadsheets, Google forms and chasing receipts. Receive and approve reimbursement online or from your mobile phone.
+                        Stop filling out Google forms and chasing receipts. Receive, decline or approve reimbursement online or from your mobile phone.
                       </div>
                     </div>
                   </div>
@@ -557,10 +557,10 @@ const Home = () => {
 
               {ask === 1 ? <div className='col-6'>
                 <div className="mb-1">
-                  <label htmlFor="position" className="form-label">Your position</label>
+                  <label htmlFor="position" className="form-label">Your role</label>
                   <select id="position" className="form-select form-control" name="position"
                     value={info?.position} onChange={handleOnChange}>
-                    <option >Choose your position at the company</option>
+                    <option >Your role at the company</option>
                     <option value="ceo-coo">CEO/COO</option>
                     <option value="cfo-finance-team">CFO/Finance team</option>
                     <option value="hr">HR</option>
