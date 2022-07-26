@@ -125,7 +125,7 @@ const Home = () => {
       [name]: value,
     }));
   }
-
+  
   const save = () => {
       addLoader()
       const payload = {
@@ -460,7 +460,8 @@ const Home = () => {
         <img src={FooterGraphic} className='img-fluid' />
       </div>
     </section>
-    <Modal show={show} onHide={handleClose} dialogClassName='b-rad-dot-8'>
+    
+    <Modal show={show} onHide={handleClose} dialogClassName='b-rad-dot-8 modal-p'>
       <Modal.Header >
         <Modal.Title><span>{ask === 2 ? "Schedule a demo" : "Want to try it today?"} <br /></span>
           {ask === 2 ? "with our team today" : "tell us about yourself"}</Modal.Title>
@@ -549,7 +550,7 @@ const Home = () => {
                 fontSize: "10px",
               }}
             >
-              {errors["company"]}
+              {errors["website"]}
             </span>
           </div>
           <div className='col-12 mb-2'>
@@ -576,7 +577,7 @@ const Home = () => {
                     fontSize: "10px",
                   }}
                 >
-                  {errors["companySize"]}
+                  {errors["position"]}
                 </span>
               </div> : null}
               <div className={ask === 1 ? "col-6" : "col-12"}>
