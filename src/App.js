@@ -5,6 +5,12 @@ import Home from './pages/Home';
 import Header from "./pages/Header";
 import Footer from "./pages/Footer";
 import Team from "./pages/team";
+import ReactGA from 'react-ga';
+import {API} from "./config/API/api.config";
+
+if (API.GA_ID) {
+  ReactGA.initialize(API.GA_ID);
+}
 
 function App() {
   return (

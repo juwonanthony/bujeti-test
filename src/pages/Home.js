@@ -28,6 +28,7 @@ import logo from '../../src/image/logo.svg';
 import Modal from 'react-bootstrap/Modal';
 import { addErrorMessage, addLoader, addSuccessMessage, removeLoader } from '../utils/loader';
 import {API} from "../config/API/api.config";
+import useAnalyticsEventTracker from "../analyticsTracker";
 const axios = require("axios").default;
 
 const Home = () => {
@@ -47,6 +48,8 @@ const Home = () => {
   const handleShow = (ask) => {
     setAsk(ask);
     setShow(true);
+    const event = ask === 1 ? 'try-out' : 'demo';
+    useAnalyticsEventTracker('Hero')(event);
   }
   const History = useHistory();
   const [index, setIndex] = useState(0);
@@ -126,8 +129,7 @@ const Home = () => {
   }
 
   const save = () => {
-    //
-    console.log("aaaa")
+    useAnalyticsEventTracker('Hero')('submit-form');
     if (validateForm()) {
       addLoader()
       const payload = {
@@ -147,10 +149,13 @@ const Home = () => {
           removeLoader()
           addSuccessMessage("Request Send successfully")
           handleClose()
+          useAnalyticsEventTracker('Hero')('successful-submission');
+
         })
         .catch((error) => {
           addErrorMessage(error.message)
-          removeLoader()
+          removeLoader();
+          useAnalyticsEventTracker('Hero')('failed-submission');
         });
     }
   }
@@ -442,11 +447,11 @@ const Home = () => {
           </div>
           <div className='col-12 col-md-auto'>
             <div className='contact'>
-              <span><a href="mailto:support@bujeti.com" target="_blank">Contact us &nbsp; &nbsp; •</a></span>
-              <div className='icon d-none d-md-block'>
-                <a><span className='ml-18'><img src={twitter} className='img-fluid' /></span></a>
-                <a> <span className='ml-18'><img src={linkedin} className='img-fluid' /></span></a>
-                <a><span className='ml-18'><img src={instagram} className='img-fluid' /></span></a>
+              <span onClick={() =>  useAnalyticsEventTracker('Hero')('contact-us') }><a href="mailto:support@bujeti.com" target="_blank">Contact us &nbsp; &nbsp; •</a></span>
+              <div className='icon d-none d-md-block' onClick={() =>  useAnalyticsEventTracker('Hero')('social-media') }>
+                <a href="https://www.linkedin.com/company/bujeti"><span className='ml-18'><img src={twitter} className='img-fluid' /></span></a>
+                <a href="https://twitter.com/bujetiHQ"> <span className='ml-18'><img src={linkedin} className='img-fluid' /></span></a>
+                <a href="https://instagram.com/bujetihq" target="_blank"> <span classclassName='ml-18'><img src={instagram} className='img-fluid' /></span></a>
               </div>
             </div>
           </div>

@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import Home from './Home';
 import { addErrorMessage, addLoader, addSuccessMessage, removeLoader } from '../utils/loader';
 import {API} from "../config/API/api.config";
+import useAnalyticsEventTracker from "../analyticsTracker";
 const axios = require("axios").default;
 const Header = () => {
   const [show, setShow] = useState(false);
@@ -24,7 +25,10 @@ const Header = () => {
   setinfo({})
   setShow(false)
 }
-  const handleShow = () => setShow(true);
+  const handleShow = () => {
+      setShow(true);
+      useAnalyticsEventTracker('Header')('try-out');
+  }
   const History = useHistory();
   const handleLogout = () => {
     localStorage.clear()
@@ -79,6 +83,7 @@ const Header = () => {
 
 const save = () => {
   //
+    useAnalyticsEventTracker('Header')('submit-form');
   if (validateForm()) {
       addLoader()
       const payload = {
@@ -97,12 +102,13 @@ const save = () => {
       .then((responseJson) => {
         removeLoader()
         addSuccessMessage("Request sent successfully")
-        handleClose()
+        handleClose();
+        useAnalyticsEventTracker('Header')('successful-submission');
       })
       .catch((error) => {
-          console.log(error);
         addErrorMessage(error.message)
-        removeLoader()
+        removeLoader();
+          useAnalyticsEventTracker('Header')('failed-submission');
       });
   }
 }
