@@ -1,88 +1,94 @@
 .header-title {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    color: #242628;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #242628;
+  text-decoration: none;
+  margin-right: 30px;
+  &:hover {
     text-decoration: none;
-    margin-right: 30px;
-    &:hover {
-        text-decoration: none;
-        color: #242628;
-    }
+    color: #242628;
+  }
 }
 
 .navbar {
-    background: #F9F1EC;
-    padding: 15px 0;
+  background: #f9f1ec;
+  padding: 15px 0;
 }
 
 .modal-dialog {
-    max-width: 600px;
-
-
+  max-width: 600px;
 }
 
 .modal-header {
-    text-align: center;
-    border: none;
-    justify-content: center;
-
+  text-align: center;
+  border: none;
+  justify-content: center;
 }
 
 .modal-title {
-    font-weight: 400;
-    font-size: 35px;
-    line-height: 40px;
-    text-align: center;
-    color: #000000;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 40px;
+  text-align: center;
+  color: #000000;
 
-
-    span {
-        font-weight: 700;
-    }
-
+  span {
+    font-weight: 700;
+  }
 }
 
 .modal-content {
-    padding: 25px 75px;
-    border: none;
+  padding: 25px 75px;
+  border: none;
 }
 
 .modal-footer {
-    border: none;
+  border: none;
 }
 
 .form-label {
-    margin-bottom: 15px;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 20px;
-    letter-spacing: 0.01em;
-    color: #000000;
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  color: #000000;
 }
 
 .form-control {
-    height: 50px;
-    border: 1px solid #E5E5E5;
-    border-radius: 5px;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 20px;
-    color: #606060;
+  height: 50px;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #606060;
 }
 
 .show {
-    display: flex !important;
-    align-items: center;
-    backdrop-filter: blur(8px);
-    background: rgb(217 221 213 / 42%);
+  // display: flex !important;
+  // align-items: center;
+  backdrop-filter: blur(8px);
+  background: rgb(217 221 213 / 42%);
 }
 
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-40px, 30px);
+    font-size: 20px;
+}
+
+.close-btn{
+    
+}
 @media screen and (min-width: 320px) and (max-width: 767px) {
-    .modal-title {
-        font-size: 32px;
-    }
-    .try-it-btn {
-        display: none;
-    }
+  .modal-title {
+    font-size: 32px;
+  }
+  .try-it-btn {
+    display: none;
+  }
 }

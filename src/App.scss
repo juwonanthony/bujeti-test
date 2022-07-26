@@ -69,6 +69,23 @@ body {
   color: #ffffff;
   border: none !important;
 }
+.close-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 25px;
+  gap: 8px;
+  min-width: 146px;
+  height: 50px;
+  background: #fff;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000;
+  border: rgb(120, 120, 120) 1px solid !important;
+}
 
 .btn-white {
   background-color: #fff !important;
@@ -565,6 +582,10 @@ body {
     padding: 15px 23px;
   }
 
+  .close-btn {
+    padding: 15px 23px;
+  }
+
   .banner {
     padding: 60px 0 270px 0;
 
@@ -684,11 +705,4 @@ body {
 
 .b-rad-dot-8 {
   border-radius: 0.8em;
-}
-
-@media (max-width: 1024px) {
-  .modal-p {
-    padding-top: 12rem;
-    padding-bottom: 1rem;
-  }
 }
