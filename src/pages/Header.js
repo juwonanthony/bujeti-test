@@ -27,7 +27,6 @@ const Header = () => {
 }
   const handleShow = () => {
       setShow(true);
-      useAnalyticsEventTracker('Header')('try-out');
   }
   const History = useHistory();
   const handleLogout = () => {
@@ -102,15 +101,15 @@ const save = () => {
         removeLoader()
         addSuccessMessage("Request sent successfully")
         handleClose();
-        useAnalyticsEventTracker('Header')('successful-submission');
       })
       .catch((error) => {
         addErrorMessage(error.message)
         removeLoader();
-          useAnalyticsEventTracker('Header')('failed-submission');
       });
   }
 }
+const tracker = useAnalyticsEventTracker('Header');
+
   return <div className='home w-100' >
     <section className="header-main ">
       <nav className="navbar navbar-expand-lg navbar-light">
@@ -122,7 +121,10 @@ const save = () => {
           <div className='d-flex-main'>
 {/*              <span ><a className="header-title d-md-block" href={API.dashboardUrl} >Sign In</a>
               </span>*/}
-              <span className="try-it-btn"><button className='btn-main' onClick={handleShow}>
+              <span className="try-it-btn"><button className='btn-main' onClick={() => {
+                  tracker('try-out');
+                  handleShow();
+              }}>
             Try it today
           </button></span> </div>
 
@@ -278,7 +280,7 @@ const save = () => {
                   </div>
                   <div className='col-12 mb-2'>
                       <button className='btn-main w-100 mt-3' onClick={() => {
-                          useAnalyticsEventTracker('Header')('submit-form');
+                          tracker('submit-form');
                           save();
                       }} >
                           {"Request access"}

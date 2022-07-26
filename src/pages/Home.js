@@ -154,6 +154,7 @@ const Home = () => {
     }
   }
 
+  const tracker = useAnalyticsEventTracker('Hero');
 
   return <>
 
@@ -170,7 +171,7 @@ const Home = () => {
             <div className='row mt-30'>
               <div className='col-auto'>
                 <button className='btn-main' onClick={() => {
-                  useAnalyticsEventTracker('Hero')('try-out');
+                  tracker('try-out');
                   handleShow(1);
                 }}>
                   Try it today
@@ -178,7 +179,7 @@ const Home = () => {
               </div>
               <div className='col-auto'>
                 <button className='btn-main btn-white' onClick={() => {
-                  useAnalyticsEventTracker('Hero')('demo');
+                  tracker('demo');
                   handleShow(2);
                 }}>
                   Schedule demo
@@ -447,8 +448,8 @@ const Home = () => {
           </div>
           <div className='col-12 col-md-auto'>
             <div className='contact'>
-              <span onClick={() =>  useAnalyticsEventTracker('Hero')('contact-us') }><a href="mailto:support@bujeti.com" target="_blank">Contact us &nbsp; &nbsp; •</a></span>
-              <div className='icon d-none d-md-block' onClick={() =>  useAnalyticsEventTracker('Hero')('social-media') }>
+              <span onClick={() =>  tracker('contact-us') }><a href="mailto:support@bujeti.com" target="_blank">Contact us &nbsp; &nbsp; •</a></span>
+              <div className='icon d-none d-md-block' onClick={() =>  tracker('social-media') }>
                 <a href="https://www.linkedin.com/company/bujeti"><span className='ml-18'><img src={twitter} className='img-fluid' /></span></a>
                 <a href="https://twitter.com/bujetiHQ"> <span className='ml-18'><img src={linkedin} className='img-fluid' /></span></a>
                 <a href="https://instagram.com/bujetihq" target="_blank"> <span classclassName='ml-18'><img src={instagram} className='img-fluid' /></span></a>
@@ -609,7 +610,7 @@ const Home = () => {
           <div className='col-12 mb-2'>
             <button className='btn-main w-100 mt-3' onClick={() => {
               save();
-              useAnalyticsEventTracker('Hero')('submit-form');
+              tracker('submit-form');
             }} >
               {ask === 2 ? "Book my demo" : "Request access"}
             </button>
