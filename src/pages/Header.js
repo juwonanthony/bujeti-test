@@ -83,7 +83,6 @@ const Header = () => {
 
 const save = () => {
   //
-    useAnalyticsEventTracker('Header')('submit-form');
   if (validateForm()) {
       addLoader()
       const payload = {
@@ -278,7 +277,10 @@ const save = () => {
 
                   </div>
                   <div className='col-12 mb-2'>
-                      <button className='btn-main w-100 mt-3' onClick={save} >
+                      <button className='btn-main w-100 mt-3' onClick={() => {
+                          useAnalyticsEventTracker('Header')('submit-form');
+                          save();
+                      }} >
                           {"Request access"}
                       </button>
                   </div>

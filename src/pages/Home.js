@@ -48,8 +48,6 @@ const Home = () => {
   const handleShow = (ask) => {
     setAsk(ask);
     setShow(true);
-    const event = ask === 1 ? 'try-out' : 'demo';
-    useAnalyticsEventTracker('Hero')(event);
   }
   const History = useHistory();
   const [index, setIndex] = useState(0);
@@ -129,7 +127,6 @@ const Home = () => {
   }
 
   const save = () => {
-    useAnalyticsEventTracker('Hero')('submit-form');
     if (validateForm()) {
       addLoader()
       const payload = {
@@ -149,13 +146,10 @@ const Home = () => {
           removeLoader()
           addSuccessMessage("Request Send successfully")
           handleClose()
-          useAnalyticsEventTracker('Hero')('successful-submission');
-
         })
         .catch((error) => {
           addErrorMessage(error.message)
           removeLoader();
-          useAnalyticsEventTracker('Hero')('failed-submission');
         });
     }
   }
@@ -175,12 +169,18 @@ const Home = () => {
               We save you time and money on expenses, reimbursements, bank payments, invoices, budgeting and so much more.</div>
             <div className='row mt-30'>
               <div className='col-auto'>
-                <button className='btn-main' onClick={() => handleShow(1)}>
+                <button className='btn-main' onClick={() => {
+                  useAnalyticsEventTracker('Hero')('try-out');
+                  handleShow(1);
+                }}>
                   Try it today
                 </button>
               </div>
               <div className='col-auto'>
-                <button className='btn-main btn-white' onClick={() => handleShow(2)}>
+                <button className='btn-main btn-white' onClick={() => {
+                  useAnalyticsEventTracker('Hero')('demo');
+                  handleShow(2);
+                }}>
                   Schedule demo
                 </button>
               </div>
@@ -607,7 +607,10 @@ const Home = () => {
 
           </div>
           <div className='col-12 mb-2'>
-            <button className='btn-main w-100 mt-3' onClick={save} >
+            <button className='btn-main w-100 mt-3' onClick={() => {
+              save();
+              useAnalyticsEventTracker('Hero')('submit-form');
+            }} >
               {ask === 2 ? "Book my demo" : "Request access"}
             </button>
           </div>
