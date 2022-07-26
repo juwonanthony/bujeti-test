@@ -116,7 +116,7 @@ const save = () => {
           </a>
           <div className='d-flex-main'>
 {/*              <span ><a className="header-title d-md-block" href={API.dashboardUrl} >Sign In</a>
-              </span>*/}s
+              </span>*/}
               <span className="try-it-btn"><button className='btn-main' onClick={handleShow}>
             Try it today
           </button></span> </div>
