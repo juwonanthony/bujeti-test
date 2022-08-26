@@ -98,7 +98,7 @@ const save = () => {
     }})
       .then((responseJson) => {
         removeLoader()
-        addSuccessMessage("Request sent successfully")
+        addSuccessMessage("Request sent successfully. Now you can book a slot!")
         handleClose();
       })
       .catch((error) => {
