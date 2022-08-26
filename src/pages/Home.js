@@ -140,7 +140,7 @@ const Home = () => {
       })
       .then((responseJson) => {
         removeLoader();
-        addSuccessMessage("Request Send successfully");
+        addSuccessMessage("Request sent successfully. Now you can book a slot!");
         handleClose();
       })
       .catch((error) => {

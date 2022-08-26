@@ -45,6 +45,7 @@ export function addSuccessMessage(message) {
     />,
     document.getElementById("alertMessage")
   );
+  setTimeout(() => window.open('https://calendly.com/demo-bujeti/book-a-demo', '_blank'), 2000);
 }
 export function addErrorMessage(message) {
   reactDom.render(
