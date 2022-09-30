@@ -117,8 +117,8 @@ const tracker = useAnalyticsEventTracker('Header');
             <img src={logo} className='img-fluid logo-icon'/>
           </a>
           <div className='d-flex-main'>
-{/*              <span ><a className="header-title d-md-block" href={API.dashboardUrl} >Sign In</a>
-              </span>*/}
+{              <span ><a className="header-title d-md-block" href={API.dashboardUrl} >Sign In</a>
+              </span>}
               <span className="try-it-btn"><button className='btn-main' onClick={() => {
                   tracker('try-out');
                   handleShow();
