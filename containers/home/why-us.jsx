@@ -31,7 +31,7 @@ const WhyUs = () => {
     <section className="bg-[#1C1917]">
       <div className="flex flex-col items-center">
         <div className="grid grid-cols-2 gap-4 justify-center">
-          <div className="p-28 max-w-4xl ">
+          <div className="px-28 py-37 max-w-4xl ">
             <SmallHeading color="#BFFF0B" svg={why_us} title="Why us?" />
             <h1 className="text-5xl text-white mb-4 leading-tight">
               Best-in-class, fully integrated and easy-to-use accounting and expense management solution for ambitious
@@ -41,7 +41,7 @@ const WhyUs = () => {
               Get your finances right with <span className="text-accent-green">Bujeti</span> today.
             </h1>
           </div>
-          <div className="space-y-4 p-28">
+          <div className="space-y-4 px-28 py-37">
             {listwhy.map(({ svg, title, description }, index) => (
               <ListItems key={index} title={title} description={description} svg={svg} />
             ))}

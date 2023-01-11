@@ -3,6 +3,8 @@ export { default as sleep } from "./sleep.png";
 export { default as webflow } from "./webflow.png";
 export { default as usecase } from "./usecase.jpeg";
 export { default as olumide } from "./olumide.jpeg";
+export { default as raap } from "./raap.jpeg";
+export { default as raap_lady } from "./raap_lady.jpeg";
 export { default as CardPhone } from "./card_phone.png";
 export { default as phone_card } from "./phone_card.svg";
 export { default as corporate_card } from "./corporate_card.svg";

@@ -32,7 +32,7 @@ const Navbar = ({ bg }) => {
   const textColor = color === "bg-white" ? "text-gray-800" : "text-white";
   const textColorInactive = color === "bg-white" ? "text-gray-600" : "text-white";
   const buttonBg = color === "bg-white" ? "bg-black" : "bg-white";
-  const buttonText = color === "bg-white" ? "text-white" : "text-gray-900";
+  const buttonText = color === "bg-white" ? "text-white" : "text-accent-gray";
 
   const NavItem = ({ href, text }) => {
     useEffect(() => {

@@ -6,7 +6,7 @@ import { integrations } from "../../assets/image";
 const Integration = () => {
   return (
     <section className="bg-[#F5F5F4]">
-      <div className="container mx-auto flex flex-col items-center text-center px-5 pt-24 relative">
+      <div className="container mx-auto flex flex-col items-center text-center px-5 pt-37 relative">
         <div className="flex gap-2 justify-center items-center mb-4">
           <Image src={integration_svg} alt={integration_svg}/>
           <h6 className="font-medium text-accent-orange">Integration</h6>

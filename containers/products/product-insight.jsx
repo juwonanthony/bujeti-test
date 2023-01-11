@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProductInsight = () => {
   return (
-     <section className="w-full bg-grey-warm-900 py-40">
+     <section className="w-full bg-grey-warm-900 py-37">
       <div className="container mx-auto ">
         <div className="flex justify-between">
           <div className="w-[580px]">

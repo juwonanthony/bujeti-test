@@ -6,7 +6,7 @@ const SolutionCard = ({ svg, highlighted, text }) => {
     <div className="flex gap-2 items-baseline">
       <Image src={svg} alt={svg} />
       <p className="text-accent-orange font-medium md:w-4/6">
-        {highlighted} <span className="text-gray-900">{text}</span>
+        {highlighted} <span className="text-accent-gray">{text}</span>
       </p>
     </div>
   );

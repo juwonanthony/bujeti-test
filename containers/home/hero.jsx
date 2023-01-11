@@ -4,12 +4,12 @@ import Playicon from "../../assets/icons/play.svg";
 
 const Hero = () => {
   return (
-    <section className="container mx-auto flex px-5 py-24 items-center justify-center flex-col min-h-[610px]">
+    <section className="container mx-auto flex px-5 py-32 items-center justify-center flex-col ">
       <div className="text-center max-w-3xl w-full">
-        <h1 className="title-font lg:text-7xl sm:text-4xl text-3xl mb-4 font-normal text-gray-900">
+        <h1 className="title-font lg:text-7xl sm:text-4xl text-3xl mb-4 font-normal text-accent-gray">
           Take control of your business <span className="text-accent-orange font-bold">expensing.</span>
         </h1>
-        <p className="mb-8 md:text-xl font-light text-gray-900 leading-relaxed">
+        <p className="mb-8 md:text-xl font-light text-accent-gray leading-relaxed">
           Supercharge your finance, empower your teams and track the pulse of your business with an end-to-end expense
           management platform tailored for African SMBs.
         </p>

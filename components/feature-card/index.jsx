@@ -13,7 +13,7 @@ const FeatureCard = ({ title, description, link, index, image }) => {
       >
         <div className={`${textPosition}`}>
           <h3 className="font-bold text-lg">{title}</h3>
-          <p className="md:text-base text-sm text-gray-900 mt-3">{description}</p>
+          <p className="md:text-base text-sm text-accent-gray mt-3">{description}</p>
           <Link href="/" className="flex text-sm font-semibold text-accent-brown items-center group mt-5">
             <span className="mr-2">Discover more </span>{" "}
             <Image

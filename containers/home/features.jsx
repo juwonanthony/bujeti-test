@@ -34,7 +34,7 @@ const features = [
 ];
 const Features = () => {
   return (
-    <section className="py-24 px-0">
+    <section className="py-37 px-0">
       <div className="w-full h-full grid md:grid-cols-4">
         {features?.map(({ title, description, link, image }, index) => (
           <FeatureCard

@@ -19,4 +19,5 @@ export { default as ProductSolution } from './products/product-solution';
 export { default as IndustryHero } from './industries/industry-hero';
 
 //customers
-export { default as Faqs } from './customers/faqs';
+export { default as Faqs } from './products/faqs';
+export { default as ProductFeatures } from './products/product-features';

@@ -27,7 +27,7 @@ const features = [
 
 const ProductSolution = () => {
   return (
-    <section className="container mx-auto py-40">
+    <section className="container mx-auto py-37">
         {features.map((feature, i) => {
           return (
             <>

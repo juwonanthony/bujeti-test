@@ -2,7 +2,7 @@ import React from 'react'
 
 const BusinessExpense = () => {
   return (
-    <section className="bg-grey-warm py-40">
+    <section className="bg-grey-warm py-37">
     <div className="container mx-auto">
       <h1 className="text-center text-5xl font-normal">
         <b>Centralize your business</b> <br />
