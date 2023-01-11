@@ -4,35 +4,35 @@
 
 /* Variable fonts usage: */
 :root {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 @supports (font-variation-settings: normal) {
   :root {
-    font-family: "InterVar", sans-serif;
+    font-family: 'InterVar', sans-serif;
     font-optical-sizing: auto;
   }
 }
 @font-face {
-  font-family: "InterVar";
+  font-family: 'InterVar';
   font-weight: 100 900;
   font-display: swap;
   font-style: normal;
-  font-named-instance: "Regular";
-  src: url("../assets/fonts/interv/Inter.var.woff2?v=3.19") format("woff2-variations"),
-    url("../assets/fonts/interv/Inter.var.woff2?v=3.19") format("woff2");
+  font-named-instance: 'Regular';
+  src: url('../assets/fonts/interv/Inter.var.woff2?v=3.19') format('woff2-variations'),
+    url('../assets/fonts/interv/Inter.var.woff2?v=3.19') format('woff2');
 }
 @font-face {
-  font-family: "InterVar";
+  font-family: 'InterVar';
   font-weight: 100 900;
   font-display: swap;
   font-style: italic;
-  font-named-instance: "Italic";
-  src: url("../assets/fonts/interv/Inter-italic.var.woff2?v=3.19") format("woff2-variations"),
-    url("../assets/fonts/interv/Inter-italic.var.woff2?v=3.19") format("woff2");
+  font-named-instance: 'Italic';
+  src: url('../assets/fonts/interv/Inter-italic.var.woff2?v=3.19') format('woff2-variations'),
+    url('../assets/fonts/interv/Inter-italic.var.woff2?v=3.19') format('woff2');
 }
 
 body {
-  font-family: "InterVar", sans-serif !important;
+  font-family: 'InterVar', sans-serif !important;
 }
 
 .gradient__bg {
@@ -76,4 +76,87 @@ body {
     rgba(255, 255, 255, 0) 100%
   );
   background-blend-mode: overlay;
+}
+
+.swiper-button-disabled {
+  @apply bg-gray-200;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 400px;
+}
+
+.swiper-slide img {
+  display: block;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.swiper-slide-active {
+  display: block;
+  width: 100% !important;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.swiper-slide-next {
+  display: block;
+  width: 100% !important;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.swiper-pagination {
+  position: unset !important;
+  display: block;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  border: 2px solid #1354dc !important;
+  background: unset !important;
+  opacity: 1;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  background: #1354dc !important;
+}
+
+@media screen and (max-width: 767px) {
+  .swiper-slide-active {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .swiper-slide-next {
+    display: block;
+    width: 100% !important;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+  .resize {
+    width: calc(100vw / 2 - -40px) !important;
+    height: calc((100vw / 2 - 40px) * 1.34) !important;
+    border-radius: 16px;
+  }
 }

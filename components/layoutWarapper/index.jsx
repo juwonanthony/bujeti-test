@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 // import { useTheme } from 'next-themes';
 import cn from "classnames";
+import "swiper/css/bundle";
 
 import Navbar from "../navbar";
 import Footer from "../footer";
