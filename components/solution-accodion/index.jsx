@@ -3,15 +3,33 @@ import React, { useEffect, useRef, useState } from 'react';
 import { minus_circle, plus_circle } from '../../assets/icons';
 import MoreArrow from '../../assets/icons/more-arrow.svg';
 
-const SolutionAccodion = ({ solution, active, onToggle, length, index, defaultItem }) => {
+const opacity = {
+  0: 'opacity-0	',
+  5: 'opacity-5',
+  10: 'opacity-10',
+  20: 'opacity-20',
+  25: 'opacity-25',
+  30: 'opacity-30',
+  40: 'opacity-40',
+  50: 'opacity-50',
+  60: 'opacity-60',
+  70: 'opacity-70',
+  75: 'opacity-75',
+  80: 'opacity-80',
+  90: 'opacity-90',
+  95: 'opacity-95',
+  100: 'opacity-100',
+};
+const SolutionAccodion = ({ solution, active, onToggle, length, percent }) => {
   const { title, description } = solution;
   const contentEl = useRef();
-  const [scrollHeight, setScrollHeight] = useState()
-  
+  const [scrollHeight, setScrollHeight] = useState();
+
   useEffect(() => {
-   setScrollHeight(contentEl.current?.scrollHeight)
+    setScrollHeight(contentEl.current?.scrollHeight);
   }, [active]);
 
+  console.log(opacity[percent])
   return (
     <div>
       <div className={`${active ? 'space-y-4' : ''} `}>
@@ -20,15 +38,18 @@ const SolutionAccodion = ({ solution, active, onToggle, length, index, defaultIt
             className={`items-center flex my-4 cursor-pointer ${
               active
                 ? ' font-semibold text-accent-brown mb-0 md:text-5xl'
-                : 'text-gray-700 font-medium text-3xl group hover:text-accent-brown hover:font-semibold hover:md:text-5xl transition-all ease-in-out duration-300'
+                : `text-gray-700 font-medium text-3xl group hover:text-accent-brown hover:font-semibold hover:md:text-5xl transition-all ease-in-out duration-300 ${opacity[percent]} hover:opacity-100 `
             }`}
+            // style={{ opacity: percent }}
           >
-            {title}{' '}
-            {active ? (
-              <Image src={MoreArrow} alt={MoreArrow} className="ml-3 h-7 w-7" />
-            ) : (
-              <Image src={MoreArrow} alt={MoreArrow} className="ml-3 h-7 w-7 group-hover:block hidden " />
-            )}
+            {title}
+
+            <Image
+              src={MoreArrow}
+              alt={MoreArrow}
+              className={`ml-3 h-7 w-7 ${active ? 'block' : 'group-hover:block hidden'}`}
+            />
+
             {/* <MoreArrow className="ml-3 h-7 w-7" /> */}
           </h1>
         </div>

@@ -63,15 +63,14 @@ const Industry = () => {
             <div className="mt-8">
               {theIndustry.map((solution, index) => {
                 const number = (index + 1) * 10;
-                const percent = 100 - number + '%';
+                const percent = 100 - number;
                 return (
                   <SolutionAccodion
                     solution={solution}
-                    index={index}
                     length={theIndustry.length}
                     onToggle={() => handleToggle(index)}
                     active={clicked === index}
-                    defaultItem={clicked}
+                    percent={percent}
                     key={index}
                   />
                 );
