@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  BusinessExpense,
-  CtaBanner, Partners,
-  ProductHero,
-  ProductInsight
-} from "../containers";
+import { BusinessExpense, CtaBanner, Partners, ProductHero, ProductInsight, ProductSolution } from "../containers";
 
 import LayoutWarpper from "../components/layoutWarapper";
-import ProductSolution from "../containers/products/product-solution";
 
 const Product = () => {
   return (

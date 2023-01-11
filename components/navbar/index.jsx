@@ -56,8 +56,8 @@ const Navbar = ({ bg }) => {
             <nav className="flex flex-row space-x-8 items-center text-black font-normal lg:text-base text-sm">
               <NavItem href="/why-bujeti" text="Why Bujeti" />
               <NavItem href="/products" text="Products" />
-              <NavItem href="/" text="Pricing" />
-              <NavItem href="/" text="Company" />
+              <NavItem href="/customers" text="Pricing" />
+              <NavItem href="/industries" text="Company" />
               {/* <Link className={`cursor-pointer ${textColor}`} to="/" onClick={handleNavClick}>
                 
               </Link>
