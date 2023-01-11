@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AccodionItems from '../components/faq/AccodionItems';
+import { Accodion } from '../../components';
 
 const FaqQuest = [
   {
@@ -51,7 +51,7 @@ const Faqs = () => {
           </div>
           <div className="basis-4/5 space-y-6 w-full">
             {FaqQuest.map((faq, index) => (
-              <AccodionItems faq={faq} onToggle={() => handleToggle(index)} active={clicked === index} key={index} />
+              <Accodion faq={faq} onToggle={() => handleToggle(index)} active={clicked === index} key={index} />
             ))}
           </div>
         </div>

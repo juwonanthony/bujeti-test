@@ -15,5 +15,5 @@ export { default as world_svg } from "./world.svg";
 export { default as statics_svg } from "./statics.svg";
 export { default as cup_svg } from "./cup.svg";
 export { default as mobile_svg } from "./mobile.svg";
-export { default as minues_circle } from "./minues_circle.svg";
+export { default as minus_circle } from "./minus_circle.svg";
 export { default as plus_circle } from "./minues_circle.svg";
