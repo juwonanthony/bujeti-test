@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { usecase } from '../../assets/image';
+import { usecase, usecase_two } from '../../assets/image';
 import MoreArrow from '../../assets/icons/more-arrow.svg';
 import { SmallHeading, SolutionAccodion } from '../../components';
 import { case_svg } from '../../assets/icons';
@@ -14,7 +14,7 @@ const theIndustry = [
   {
     title: 'Financial Services',
     description: ' Create a plan that works for your unique needs and goals with our easy-to-use budgeting structure.',
-    image: usecase,
+    image: usecase_two,
   },
   {
     title: 'Travel & Hospitality',
@@ -24,7 +24,7 @@ const theIndustry = [
   {
     title: 'Technology',
     description: ' Create a plan that works for your unique needs and goals with our easy-to-use budgeting structure.',
-    image: usecase,
+    image: usecase_two,
   },
   {
     title: 'Healthcare',
@@ -34,7 +34,7 @@ const theIndustry = [
   {
     title: 'Marketing',
     description: ' Create a plan that works for your unique needs and goals with our easy-to-use budgeting structure.',
-    image: usecase,
+    image: usecase_two,
   },
   {
     title: 'Non-Profit',
@@ -43,22 +43,17 @@ const theIndustry = [
   },
 ];
 const Industry = () => {
-  const [clicked, setClicked] = useState('0');
-  const [imageIndex, setImageIndex] = useState(0);
+  const [clicked, setClicked] = useState(0);
   const handleToggle = (index) => {
-    setImageIndex(index);
-    if (clicked === index) {
-      return setClicked('0');
-    }
     setClicked(index);
   };
 
-  let changeImage = theIndustry[imageIndex];
+  let changeImage = theIndustry[clicked];
 
   return (
     <section className="pt-37 px-0">
-      <div className="bg-accent-light_yellow flex flex-wrap h-full w-full">
-        <div className="flex flex-wrap lg:w-7/12 sm:w-2/3 content-start sm:pr-10">
+      <div className="bg-accent-light_yellow grid grid-cols-2 h-full w-full">
+        <div className="flex flex-wrap content-start sm:pr-10">
           <div className="w-full sm:pl-28 sm:pr-20 px-4 pt-36 mb-6">
             <SmallHeading color="#AF7421" svg={case_svg} title="Use Cases" />
             <h1 className="leading-tight font-normal text-5xl my-4 text-accent-gray">
@@ -72,7 +67,7 @@ const Industry = () => {
                 return (
                   <SolutionAccodion
                     solution={solution}
-                    index={index + 1}
+                    index={index}
                     length={theIndustry.length}
                     onToggle={() => handleToggle(index)}
                     active={clicked === index}
@@ -84,7 +79,7 @@ const Industry = () => {
             </div>
           </div>
         </div>
-        <div className="lg:w-5/12 sm:w-1/3 w-full h-full flex overflow-hidden ">
+        <div className=" w-full h-full flex overflow-hidden ">
           <Image src={changeImage.image} className="w-fit h-fit ml-auto " alt="" />
         </div>
       </div>

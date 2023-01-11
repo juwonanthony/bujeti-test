@@ -2,6 +2,7 @@ export { default as antler } from "./antler.png";
 export { default as sleep } from "./sleep.png";
 export { default as webflow } from "./webflow.png";
 export { default as usecase } from "./usecase.jpeg";
+export { default as usecase_two } from "./usecase_two.jpeg";
 export { default as olumide } from "./olumide.jpeg";
 export { default as raap } from "./raap.jpeg";
 export { default as raap_lady } from "./raap_lady.jpeg";

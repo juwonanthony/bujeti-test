@@ -1,12 +1,17 @@
 import Image from 'next/image';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { minus_circle, plus_circle } from '../../assets/icons';
 import MoreArrow from '../../assets/icons/more-arrow.svg';
 
 const SolutionAccodion = ({ solution, active, onToggle, length, index, defaultItem }) => {
   const { title, description } = solution;
   const contentEl = useRef();
+  const [scrollHeight, setScrollHeight] = useState()
   
+  useEffect(() => {
+   setScrollHeight(contentEl.current?.scrollHeight)
+  }, [active]);
+
   return (
     <div>
       <div className={`${active ? 'space-y-4' : ''} `}>
@@ -29,7 +34,7 @@ const SolutionAccodion = ({ solution, active, onToggle, length, index, defaultIt
         </div>
         <div
           ref={contentEl}
-          style={active ? { height: contentEl?.current?.scrollHeight } : { height: '0px' }}
+          style={active ? { height: scrollHeight } : { height: '0px' }}
           className="h-0 overflow-hidden transition-all ease-in-out duration-200 "
         >
           <p className="leading-relaxed md:w-10/12 w-full text-gray-500 mb-7">{description}</p>
