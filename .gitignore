@@ -31,3 +31,6 @@ yarn-error.log*
 .idea/*
 .idea/*/**.xml
 >>>>>>> beta-non-responsive
+
+# Local Netlify folder
+.netlify

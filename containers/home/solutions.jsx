@@ -13,7 +13,7 @@ const solutionList = [
 const Solutions = () => {
   return (
     <section className="container mx-auto flex flex-col px-5 pb-36">
-      <h1 className="text-6xl font-normal max-w-[46rem] w-full mb-16">
+      <h1 className="text-6xl font-normal max-w-2xl w-full mb-16">
         Total expense solutions, <span className="font-semibold">all in one place.</span>
       </h1>
       <div className="grid grid-cols-3 gap-8">
