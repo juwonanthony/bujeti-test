@@ -1,19 +1,60 @@
-import React from "react";
-import { usecase } from "../../assets/image";
-import MoreArrow from "../../assets/icons/more-arrow.svg";
-import { SmallHeading } from "../../components";
-import { case_svg } from "../../assets/icons";
-import Image from "next/image";
+import React, { useState } from 'react';
+import { usecase } from '../../assets/image';
+import MoreArrow from '../../assets/icons/more-arrow.svg';
+import { SmallHeading, SolutionAccodion } from '../../components';
+import { case_svg } from '../../assets/icons';
+import Image from 'next/image';
 
 const theIndustry = [
-  "Financial Services",
-  "Travel & Hospitality",
-  "Technology",
-  "Healthcare",
-  "Marketing",
-  "Non-Profit",
+  {
+    title: 'Startups',
+    description: ' Create a plan that works for your unique needs and goals with our easy-to-use budgeting structure.',
+    image: usecase,
+  },
+  {
+    title: 'Financial Services',
+    description: ' Create a plan that works for your unique needs and goals with our easy-to-use budgeting structure.',
+    image: usecase,
+  },
+  {
+    title: 'Travel & Hospitality',
+    description: 'Create a plan that works for your unique needs and goals with our easy-to-use budgeting structure.',
+    image: usecase,
+  },
+  {
+    title: 'Technology',
+    description: ' Create a plan that works for your unique needs and goals with our easy-to-use budgeting structure.',
+    image: usecase,
+  },
+  {
+    title: 'Healthcare',
+    description: ' Create a plan that works for your unique needs and goals with our easy-to-use budgeting structure.',
+    image: usecase,
+  },
+  {
+    title: 'Marketing',
+    description: ' Create a plan that works for your unique needs and goals with our easy-to-use budgeting structure.',
+    image: usecase,
+  },
+  {
+    title: 'Non-Profit',
+    description: ' Create a plan that works for your unique needs and goals with our easy-to-use budgeting structure.',
+    image: usecase,
+  },
 ];
 const Industry = () => {
+  const [clicked, setClicked] = useState('0');
+  const [imageIndex, setImageIndex] = useState(0);
+  const handleToggle = (index) => {
+    setImageIndex(index);
+    if (clicked === index) {
+      return setClicked('0');
+    }
+    setClicked(index);
+  };
+
+  let changeImage = theIndustry[imageIndex];
+
   return (
     <section className="pt-37 px-0">
       <div className="bg-accent-light_yellow flex flex-wrap h-full w-full">
@@ -23,28 +64,28 @@ const Industry = () => {
             <h1 className="leading-tight font-normal text-5xl my-4 text-accent-gray">
               The expense solution <br /> <span className="font-semibold">for every industry</span>
             </h1>
-            <h1 className="font-semibold text-5xl text-accent-brown flex items-center mt-12 mb-4">
-              Startups <Image src={MoreArrow} alt={MoreArrow} className="ml-3 h-7 w-7" />
-              {/* <MoreArrow className="ml-3 h-7 w-7" /> */}
-            </h1>
-            <p className=" leading-relaxed md:w-10/12 w-full text-gray-500">
-              Create a plan that works for your unique needs and goals with our easy-to-use budgeting structure.
-            </p>
+
             <div className="mt-8">
-              {theIndustry.map((item, index) => {
+              {theIndustry.map((solution, index) => {
                 const number = (index + 1) * 10;
-                const percent = 100 - number + "%";
+                const percent = 100 - number + '%';
                 return (
-                  <h4 key={index} className="text-gray-700 font-medium text-3xl mb-5" style={{ opacity: percent }}>
-                    {item}
-                  </h4>
+                  <SolutionAccodion
+                    solution={solution}
+                    index={index + 1}
+                    length={theIndustry.length}
+                    onToggle={() => handleToggle(index)}
+                    active={clicked === index}
+                    defaultItem={clicked}
+                    key={index}
+                  />
                 );
               })}
             </div>
           </div>
         </div>
         <div className="lg:w-5/12 sm:w-1/3 w-full h-full flex overflow-hidden ">
-          <Image src={usecase} className="w-fit h-fit ml-auto " alt="" />
+          <Image src={changeImage.image} className="w-fit h-fit ml-auto " alt="" />
         </div>
       </div>
     </section>
@@ -52,3 +93,11 @@ const Industry = () => {
 };
 
 export default Industry;
+//  <h4
+//                   key={index}
+//                   onClick={() => handleClick(index)}
+//                   className="text-gray-700 font-medium text-3xl mb-5"
+//                   style={{ opacity: percent }}
+//                 >
+//                   {title}
+//                 </h4>
