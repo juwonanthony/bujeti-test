@@ -10,7 +10,7 @@ const Customers = () => {
     <LayoutWarpper>
       <CustomerHero />
 
-      <ProductSolution />
+      {/* <ProductSolution /> */}
       <Industry />
       <Testimonials />
       <section className="py-40">
