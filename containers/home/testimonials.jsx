@@ -81,7 +81,7 @@ const Testimonials = () => {
         <h1 className="text-5xl font-semibold text-gray-900">Here’s what they say {'"'}</h1>
       </div>
 
-      <div className="grid md:grid-cols-2 items-center bg-[#FBF5EC] rounded-3xl">
+      <div className="grid md:grid-cols-2 items-center bg-[#FBF5EC] rounded-3xl relative overflow-hidden">
         {/* <div className="min-h-full w-full"> */}
         <Swiper
           {...params}
@@ -95,7 +95,7 @@ const Testimonials = () => {
               <Image
                 src={items.imgSrc}
                 alt=""
-                className="object-cover w-full max-w-xl rounded-t-3xl h-full md:rounded-none md:rounded-l-3xl"
+                className="object-cover w-full max-w-xl rounded-t-3xl h-fit md:rounded-none md:rounded-l-3xl static"
               />
             </SwiperSlide>
           ))}
