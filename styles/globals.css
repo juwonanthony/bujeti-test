@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variable fonts usage: */
+:root {
+  font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: "InterVar", sans-serif;
+    font-optical-sizing: auto;
+  }
+}
+@font-face {
+  font-family: "InterVar";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url("../assets/fonts/interv/Inter.var.woff2?v=3.19") format("woff2-variations"),
+    url("../assets/fonts/interv/Inter.var.woff2?v=3.19") format("woff2");
+}
+@font-face {
+  font-family: "InterVar";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  font-named-instance: "Italic";
+  src: url("../assets/fonts/interv/Inter-italic.var.woff2?v=3.19") format("woff2-variations"),
+    url("../assets/fonts/interv/Inter-italic.var.woff2?v=3.19") format("woff2");
+}
+
+body {
+  font-family: "InterVar", sans-serif !important;
+}
+
+.gradient__bg {
+  /* ff 3.6+ */
+  background: -moz-radial-gradient(
+    91.98% 76.81% at -2.29% 19.78%,
+    rgba(191, 255, 11, 0.960701) 14.42%,
+    rgba(191, 255, 11, 0.180131) 65.13%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-radial-gradient(
+    91.98% 76.81% at -2.29% 19.78%,
+    rgba(191, 255, 11, 0.960701) 14.42%,
+    rgba(191, 255, 11, 0.180131) 65.13%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  /* opera 11.10+ */
+  background: -o-radial-gradient(
+    91.98% 76.81% at -2.29% 19.78%,
+    rgba(191, 255, 11, 0.960701) 14.42%,
+    rgba(191, 255, 11, 0.180131) 65.13%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  /* ie 10+ */
+  background: -ms-radial-gradient(
+    91.98% 76.81% at -2.29% 19.78%,
+    rgba(191, 255, 11, 0.960701) 14.42%,
+    rgba(191, 255, 11, 0.180131) 65.13%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  /* global 92%+ browsers support */
+  background: radial-gradient(
+    91.98% 76.81% at -2.29% 19.78%,
+    rgba(191, 255, 11, 0.960701) 14.42%,
+    rgba(191, 255, 11, 0.180131) 65.13%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-blend-mode: overlay;
+}
