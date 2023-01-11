@@ -87,6 +87,3 @@ module.exports = withBundleAnalyzer({
 });
 // const withImages = require("next-images");
 // module.exports = withImages();
-module.exports = {
-  distDir: "out",
-};
