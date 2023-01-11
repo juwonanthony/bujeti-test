@@ -5,7 +5,6 @@ import MoreArrow from "../../assets/icons/more-arrow.svg";
 
 const FeatureCard = ({ title, description, link, index, image }) => {
   const textPosition = index % 2 === 0 ? "mt-auto" : "mb-auto";
-  console.log(image);
   return (
     <div className="w-full h-[500px]">
       <div
