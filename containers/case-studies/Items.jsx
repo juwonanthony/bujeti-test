@@ -7,7 +7,7 @@ const Items = ({ data, type }) => {
       <Image src={data.logo} className="w-14" alt="logo" />
       <section className="mt-10 cursor-pointer">
         {type === 'case-study' ? (
-          <Image src={data.image} className="w-full rounded-xl" />
+          <Image src={data.image} alt={data.image} className="w-full rounded-xl" />
         ) : (
           <div className="relative w-full">
             <Image src={data.image} className="w-full rounded-xl" alt={data.image} />
