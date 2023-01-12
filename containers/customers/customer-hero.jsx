@@ -1,14 +1,14 @@
-import React from "react";
-import HeroWithImages from "../../components/hero-with-image";
-import SpiralImage from "../../assets/image/spiralsvg.png";
+import React from 'react'
+import HeroWithImages from '../../components/hero-with-image'
+import SpiralImage from '../../assets/image/spiralsvg.png'
 
 const CustomerHero = () => {
   return (
     <HeroWithImages
       slug="For startup"
       title={
-        <h1 className="text-6xl py-4">
-         Growing together,
+        <h1 className="py-4 text-6xl">
+          Growing together,
           <br /> <b>happily.</b>
         </h1>
       }
@@ -17,7 +17,7 @@ const CustomerHero = () => {
       image={SpiralImage}
       bg="grey-warm-800"
     />
-  );
-};
+  )
+}
 
-export default CustomerHero;
+export default CustomerHero

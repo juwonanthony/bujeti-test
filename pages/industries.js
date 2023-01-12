@@ -1,12 +1,19 @@
-import React from 'react';
-import LayoutWarpper from '../components/layoutWarapper';
-import { CtaBanner, Industry, IndustryHero, Partners, ProductSolution, Testimonials } from '../containers';
+import React from 'react'
+import LayoutWarpper from '../components/layoutWarapper'
+import {
+  CtaBanner,
+  Industry,
+  IndustryHero,
+  Partners,
+  ProductSolution,
+  Testimonials,
+} from '../containers'
 
-import BujetiExpenses from "../assets/image/bujeti-expenses.png";
-import BujetiOverview from "../assets/image/bujeti-overview.png";
-import Cards from '../assets/image/cards.png';
-import SupportImage from '../assets/image/Support-Image.png';
-import PricingSection from '../containers/industries/Pricing';
+import BujetiExpenses from '../assets/image/bujeti-expenses.png'
+import BujetiOverview from '../assets/image/bujeti-overview.png'
+import Cards from '../assets/image/cards.png'
+import SupportImage from '../assets/image/Support-Image.png'
+import PricingSection from '../containers/industries/Pricing'
 
 const Industries = () => {
   const features = [
@@ -46,13 +53,13 @@ const Industries = () => {
       ],
       image: SupportImage,
     },
-  ];
+  ]
 
   return (
     <LayoutWarpper>
       <IndustryHero />
 
-      <ProductSolution data={features}/>
+      <ProductSolution data={features} />
       <PricingSection />
       <Industry />
       <Testimonials />
@@ -61,7 +68,7 @@ const Industries = () => {
       </section>
       <CtaBanner />
     </LayoutWarpper>
-  );
-};
+  )
+}
 
-export default Industries;
+export default Industries

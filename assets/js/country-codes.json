@@ -1,9 +1,11 @@
-[{
+[
+  {
     "name": "Nigeria",
     "dial_code": "+234",
     "code": "NG",
     "emoji": "🇳🇬"
-  }, {
+  },
+  {
     "name": "Afghanistan",
     "dial_code": "+93",
     "code": "AF",

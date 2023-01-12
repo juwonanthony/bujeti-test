@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from 'next/image'
+import Link from 'next/link'
 
 const Items = ({ data, type }) => {
   return (
@@ -10,8 +10,8 @@ const Items = ({ data, type }) => {
           <Image src={data.image} className="w-full rounded-xl" />
         ) : (
           <div className="relative w-full">
-            <Image src={data.image} className="w-full rounded-xl" />
-            <div className="absolute rounded-xl top-0 w-full h-full bg-black opacity-30"></div>
+            <Image src={data.image} className="w-full rounded-xl" alt={data.image} />
+            <div className="absolute top-0 h-full w-full rounded-xl bg-black opacity-30"></div>
             <svg
               width="80"
               height="80"
@@ -31,13 +31,21 @@ const Items = ({ data, type }) => {
         )}
 
         <div className="mt-15">
-          <h4 className="text-textBaseColor text-3xl">{data.title}</h4>
-          <p className="text-grey-deep font-normal text-2xl leading-8 pt-2 pb-8">{data.description}</p>
+          <h4 className="text-3xl text-textBaseColor">{data.title}</h4>
+          <p className="pt-2 pb-8 text-2xl font-normal leading-8 text-grey-deep">
+            {data.description}
+          </p>
         </div>
-        <Link href={data.link} className="text-accent-brown text-2xl flex items-center gap-2">
+        <Link href={data.link} className="flex items-center gap-2 text-2xl text-accent-brown">
           {data.link_tag}{' '}
           <span>
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 d="M5 15H25M25 15L17.5 7.5M25 15L17.5 22.5"
                 stroke="#AF7421"
@@ -50,7 +58,7 @@ const Items = ({ data, type }) => {
         </Link>
       </section>
     </section>
-  );
-};
+  )
+}
 
-export default Items;
+export default Items

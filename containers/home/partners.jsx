@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { antler, sleep, webflow } from "../../assets/image";
-import { PartnerLogo } from "../../components";
+import React, { useEffect, useState } from 'react'
+import { antler, sleep, webflow } from '../../assets/image'
+import { PartnerLogo } from '../../components'
 
 const partners = [
   { image: [antler, sleep, webflow, antler, sleep] },
   { image: [antler, sleep, webflow, antler, sleep, webflow] },
-];
+]
 const Partners = () => {
   return (
     <section className="container mx-auto flex flex-col items-center px-5">
-      <div className="text-center max-w-3xl w-full mb-10">
-        <h1 className="title-font lg:text-5xl sm:text-4xl text-3xl mb-4 font-semibold text-accent-gray">
+      <div className="mb-10 w-full max-w-3xl text-center">
+        <h1 className="title-font mb-4 text-3xl font-semibold text-accent-gray sm:text-4xl lg:text-5xl">
           Powering Africa’s industry leaders
         </h1>
-        <p className="mb-8 md:text-sm font-light text-accent-gray leading-relaxed">
-          {" "}
+        <p className="mb-8 font-light leading-relaxed text-accent-gray md:text-sm">
+          {' '}
           From ambitious new-generation to leading edge enterprise
         </p>
       </div>
@@ -24,7 +24,7 @@ const Partners = () => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Partners;
+export default Partners

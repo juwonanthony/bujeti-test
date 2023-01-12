@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   BusinessExpense,
   CtaBanner,
@@ -8,12 +8,12 @@ import {
   ProductHero,
   ProductInsight,
   ProductSolution,
-} from '../containers';
+} from '../containers'
 
-import LayoutWarpper from '../components/layoutWarapper';
+import LayoutWarpper from '../components/layoutWarapper'
 
-import BujetiExpenses from '../assets/image/bujeti-expenses.png';
-import BujetiOverview from '../assets/image/bujeti-overview.png';
+import BujetiExpenses from '../assets/image/bujeti-expenses.png'
+import BujetiOverview from '../assets/image/bujeti-overview.png'
 
 const features = [
   {
@@ -34,14 +34,14 @@ const features = [
     links: [{ name: 'Start using spend limits', to: '/budgets' }],
     image: BujetiExpenses,
   },
-];
+]
 const Product = () => {
   return (
     <LayoutWarpper>
       <ProductHero />
       <BusinessExpense />
-      <ProductSolution data={features}/>
-      <ProductInsight  />
+      <ProductSolution data={features} />
+      <ProductInsight />
       <Faqs />
       <ProductFeatures />
       <section className="py-40">
@@ -49,7 +49,7 @@ const Product = () => {
       </section>
       <CtaBanner />
     </LayoutWarpper>
-  );
-};
+  )
+}
 
-export default Product;
+export default Product

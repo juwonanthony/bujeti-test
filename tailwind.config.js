@@ -1,8 +1,12 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   // mode: "jit",
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './containers/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './containers/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     screens: {
       sm: '520px',
@@ -23,7 +27,7 @@ module.exports = {
         15: '3.75rem',
         25: '6.25rem',
         30: '7.5rem',
-        37:'9.375rem'
+        37: '9.375rem',
       },
       colors: {
         accent: {
@@ -45,7 +49,7 @@ module.exports = {
           'warm-900': '#1C1917',
           semi: '#E5E8E3',
           accent: '#44403C',
-          stroke: "#D7D3D0",
+          stroke: '#D7D3D0',
         },
         blue: {
           light: '#242628',
@@ -65,4 +69,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+}
