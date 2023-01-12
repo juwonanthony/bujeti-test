@@ -35,11 +35,12 @@ const Navbar = ({ bg }) => {
   const buttonText = color === 'bg-white' ? 'text-white' : 'text-accent-gray'
 
   const NavItem = ({ href, text }) => {
+    const router = useRouter()
+
     useEffect(() => {
       getColorByPathname(router.asPath)
     }, [href, router.asPath])
 
-    const router = useRouter()
     const isActive = router.asPath === href
 
     return (
