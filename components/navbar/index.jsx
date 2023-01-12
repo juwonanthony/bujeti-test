@@ -47,7 +47,7 @@ const Navbar = ({ bg }) => {
         href={href}
         className={cn(
           isActive ? `font-semibold ${textColor} ` : `font-normal ${textColorInactive} `,
-          "hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200  transition-all"
+          "hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg   transition-all"
         )}
       >
         <span className="">{text}</span>

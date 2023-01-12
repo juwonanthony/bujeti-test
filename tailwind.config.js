@@ -45,6 +45,7 @@ module.exports = {
           'warm-900': '#1C1917',
           semi: '#E5E8E3',
           accent: '#44403C',
+          stroke: "#D7D3D0",
         },
         blue: {
           light: '#242628',
