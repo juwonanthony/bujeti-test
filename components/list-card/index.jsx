@@ -17,9 +17,9 @@ const ListCard = ({ data }) => {
                     <path
                       d="M5 15H25M25 15L17.5 7.5M25 15L17.5 22.5"
                       stroke={i === 0 ? "#AF7421" : "#586068"}
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
                 </span>
