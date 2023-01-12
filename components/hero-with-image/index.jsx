@@ -15,7 +15,7 @@ const HeroWithImages = ({ slug, title, body, image, bg }) => {
           Contact Sales
         </button>
       </div>
-      <div className="flex-1" >
+      <div className="flex-1">
         <Image src={image} className="w-full h-full" alt="Bujeti dashboard" />
       </div>
     </section>
