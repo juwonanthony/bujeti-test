@@ -60,5 +60,16 @@
     "*.+(js|jsx|ts|tsx|json|css)": [
       "prettier --write"
     ]
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
