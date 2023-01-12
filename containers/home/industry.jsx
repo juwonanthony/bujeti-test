@@ -56,9 +56,9 @@ const Industry = () => {
   let changeImage = theIndustry[imageIndex];
 
   return (
-    <section className="px-0">
-      <div className="bg-accent-light_yellow flex flex-wrap h-full w-full">
-        <div className="flex flex-wrap lg:w-7/12 sm:w-2/3 content-start sm:pr-10">
+    <section className="pt-37 px-0">
+      <div className="bg-accent-light_yellow grid grid-cols-2 h-full w-full">
+        <div className="flex flex-wrap content-start sm:pr-10">
           <div className="w-full sm:pl-28 sm:pr-20 px-4 pt-36 mb-6">
             <SmallHeading color="#AF7421" svg={case_svg} title="Use Cases" />
             <h1 className="leading-tight font-normal text-5xl my-4 text-accent-gray">

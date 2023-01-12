@@ -31,3 +31,9 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
+
+# next.js
+/.next/
+/out/
+public/sitemap.xml
+.vercel
