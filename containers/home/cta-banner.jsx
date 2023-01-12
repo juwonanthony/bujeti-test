@@ -9,7 +9,6 @@ function CtaBanner() {
         <div className="container mx-auto flex md:flex-row flex-col items-start px-5 pt-10 relative">
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 static -mt-40">
             <Image src={phone_card} alt={phone_card} />
-            {/* <img className="object-cover object-center" alt="hero" src={CardPhone} /> */}
           </div>
           <div className="lg:flex-grow  md:w-1/2 lg:pl-24 md:pl-16 pt-14 flex flex-col md:items-start md:text-left items-start text-center max-w-3xl">
             <h1 className="sm:text-6xl text-3xl mb-4 font-bold text-accent-gray">
