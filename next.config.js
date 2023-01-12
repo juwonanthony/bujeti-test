@@ -1,27 +1,8 @@
-/**
- * @type {import('next').NextConfig}
- */
-module.exports = {
-  reactStrictMode: true,
-  images: {
-    domains: [
-      'pbs.twimg.com', // Twitter Profile Picture
-    ],
-  },
-  experimental: {
-    fontLoaders: [{ loader: '@next/font/google', options: { subsets: ['latin'] } }],
-  },
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: securityHeaders,
-      },
-    ];
-  },
-};
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
-// https://nextjs.org/docs/advanced-features/security-headers
+// You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
     default-src 'self';
     script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com;
@@ -31,6 +12,7 @@ const ContentSecurityPolicy = `
     media-src 'none';
     connect-src *;
     font-src 'self';
+    frame-src giscus.app
 `;
 
 const securityHeaders = [
@@ -42,7 +24,7 @@ const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
   {
     key: 'Referrer-Policy',
-    value: 'origin-when-cross-origin',
+    value: 'strict-origin-when-cross-origin',
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
   {
@@ -62,7 +44,7 @@ const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
   {
     key: 'Strict-Transport-Security',
-    value: 'max-age=31536000; includeSubDomains; preload',
+    value: 'max-age=31536000; includeSubDomains',
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy
   {
@@ -70,3 +52,39 @@ const securityHeaders = [
     value: 'camera=(), microphone=(), geolocation=()',
   },
 ];
+
+module.exports = withBundleAnalyzer({
+  reactStrictMode: true,
+  pageExtensions: ['js', 'jsx', 'md', 'mdx'],
+  eslint: {
+    dirs: ['pages', 'components', 'containers'],
+  },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: securityHeaders,
+      },
+    ];
+  },
+  // webpack: (config, { dev, isServer }) => {
+  //   config.module.rules.push({
+  //     test: /\.svg$/,
+  //     use: ['@svgr/webpack'],
+  //   })
+
+  //   if (!dev && !isServer) {
+  //     // Replace React with Preact only in client production build
+  //     Object.assign(config.resolve.alias, {
+  //       'react/jsx-runtime.js': 'preact/compat/jsx-runtime',
+  //       react: 'preact/compat',
+  //       'react-dom/test-utils': 'preact/test-utils',
+  //       'react-dom': 'preact/compat',
+  //     })
+  //   }
+
+  //   return config
+  // },
+});
+// const withImages = require("next-images");
+// module.exports = withImages();
