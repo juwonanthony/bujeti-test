@@ -93,11 +93,3 @@ const Industry = () => {
 };
 
 export default Industry;
-//  <h4
-//                   key={index}
-//                   onClick={() => handleClick(index)}
-//                   className="text-gray-700 font-medium text-3xl mb-5"
-//                   style={{ opacity: percent }}
-//                 >
-//                   {title}
-//                 </h4>
