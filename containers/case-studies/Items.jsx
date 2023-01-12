@@ -7,10 +7,10 @@ const Items = ({ data, type }) => {
       <Image src={data.logo} className="w-14" alt="logo" />
       <section className="mt-10 cursor-pointer">
         {type === 'case-study' ? (
-          <Image src={data.image} className="w-full rounded-xl" />
+          <Image src={data.image} className="w-full rounded-xl h-[460px] object-cover" />
         ) : (
           <div className="relative w-full">
-            <Image src={data.image} className="w-full rounded-xl" />
+            <Image src={data.image} className="w-full rounded-xl h-[460px] object-cover" />
             <div className="absolute rounded-xl top-0 w-full h-full bg-black opacity-30"></div>
             <svg
               width="80"
@@ -18,7 +18,7 @@ const Items = ({ data, type }) => {
               viewBox="0 0 80 80"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="absolute top-0 left-0 right-0 mx-auto mt-[50%]"
+              className="absolute top-0 left-0 right-0 mx-auto mt-[35%]"
             >
               <path
                 opacity="0.5"
@@ -36,7 +36,7 @@ const Items = ({ data, type }) => {
         </div>
         <Link href={data.link} className="text-accent-brown text-2xl flex items-center gap-2">
           {data.link_tag}{' '}
-          <span>
+          <span className=''>
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M5 15H25M25 15L17.5 7.5M25 15L17.5 22.5"

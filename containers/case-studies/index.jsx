@@ -33,7 +33,7 @@ const CaseStudies = ({ title, slug, bg, type, data }) => {
           </span>
           <h1 className="leading-[100px] text-6xl mt-2">{title}</h1>
         </header>
-        <main className="flex gap-[110px] items-center mt-20">
+        <main className="flex justify-between items-center mt-20">
           {data?.map((datum) => {
             return (
               <div className="w-[550px]">
