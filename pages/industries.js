@@ -56,7 +56,7 @@ const Industries = () => {
       <PricingSection />
       <Industry />
       <Testimonials />
-      <section className="py-40">
+      <section className="pb-40">
         <Partners />
       </section>
       <CtaBanner />
