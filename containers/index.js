@@ -14,10 +14,11 @@ export { default as BusinessExpense } from './products/business-expense';
 export { default as ProductHero } from './products/product-hero';
 export { default as ProductInsight } from './products/product-insight';
 export { default as ProductSolution } from './products/product-solution';
+export { default as Faqs } from './products/faqs';
+export { default as ProductFeatures } from './products/product-features';
 
 // Industry
 export { default as IndustryHero } from './industries/industry-hero';
 
 //customers
-export { default as Faqs } from './products/faqs';
-export { default as ProductFeatures } from './products/product-features';
+export { default as ShowMoreButton } from './customers/show-more-button';

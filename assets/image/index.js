@@ -14,4 +14,4 @@ export { default as transfer } from "./transfer.svg";
 export { default as reimbursement } from "./reimbursment.svg";
 export { default as integrations } from "./integrations.svg";
 export {default as sozoLogo} from './sozo-logo.png'
-export {default as fliqpayLogo} from './Fliqpay-logo.png'
+export {default as fliqpayLogo} from './Fliqpay-Logo.png'

@@ -6,7 +6,6 @@ import CaseStudies from '../containers/case-studies';
 
 import { chevron_left, chevron_right, partner_svg, raap_logo, voltron_svg } from '../assets/icons';
 import { olumide, CardPhone, raap, raap_lady, fliqpayLogo, sozoLogo } from '../assets/image';
-import ShowMoreButton from '../containers/customers/ShowMoreButton';
 
 const caseStudyData = [
   {

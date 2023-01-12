@@ -1,4 +1,4 @@
-import ShowMoreButton from '../customers/ShowMoreButton';
+import ShowMoreButton from '../customers/show-more-button';
 import Items from './Items';
 
 const CaseStudies = ({ title, slug, bg, type, data }) => {
