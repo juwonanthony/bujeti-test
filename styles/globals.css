@@ -79,7 +79,7 @@ body {
 }
 
 .swiper-button-disabled {
-  @apply disabled  cursor-not-allowed bg-gray-200;
+  @apply cursor-not-allowed  bg-gray-200 disabled:cursor-pointer;
 }
 
 .swiper {

@@ -82,7 +82,7 @@ const Customers = () => {
 
       <Industry />
       <Testimonials />
-      <section className="py-40">
+      <section className="disabled py-40">
         <Partners />
       </section>
       <CtaBanner />
