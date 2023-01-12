@@ -6,6 +6,7 @@ import CaseStudies from '../containers/case-studies';
 
 import { chevron_left, chevron_right, partner_svg, raap_logo, voltron_svg } from '../assets/icons';
 import { olumide, CardPhone, raap, raap_lady, fliqpayLogo, sozoLogo } from '../assets/image';
+import ShowMoreButton from '../containers/customers/ShowMoreButton';
 
 const caseStudyData = [
   {
@@ -15,7 +16,7 @@ const caseStudyData = [
     title: 'Flawless automation for our business operation with Bujeti.',
     description: 'Create a plan that works for your unique needs and goals with our easy-to-use budgeting structure.',
     link: '/blog/voltron',
-    link_tag: "See case study"
+    link_tag: 'See case study',
   },
   {
     id: 1,
@@ -24,7 +25,7 @@ const caseStudyData = [
     title: 'Providing a seamless, personalized expense experience for',
     description: 'Create a plan that works for your unique needs and goals with our easy-to-use budgeting structure.',
     link: '/blog/voltron',
-    link_tag: "See case study"
+    link_tag: 'See case study',
   },
 ];
 
@@ -36,7 +37,7 @@ const customerStoriesData = [
     title: 'Flawless automation for our business operation with Bujeti.',
     description: 'Create a plan that works for your unique needs and goals with our easy-to-use budgeting structure.',
     link: '/blog/voltron',
-    link_tag: "Continue Watching"
+    link_tag: 'Continue Watching',
   },
   {
     id: 1,
@@ -45,7 +46,7 @@ const customerStoriesData = [
     title: 'Flawless automation for our business operation with Bujeti.',
     description: 'Create a plan that works for your unique needs and goals with our easy-to-use budgeting structure.',
     link: '/blog/voltron',
-    link_tag: "Continue Watching"
+    link_tag: 'Continue Watching',
   },
 ];
 
@@ -75,6 +76,7 @@ const Customers = () => {
         }
         data={customerStoriesData}
       />
+
       <Industry />
       <Testimonials />
       <section className="py-40">

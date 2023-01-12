@@ -1,3 +1,4 @@
+import ShowMoreButton from '../customers/ShowMoreButton';
 import Items from './Items';
 
 const CaseStudies = ({ title, slug, bg, type, data }) => {
@@ -41,8 +42,9 @@ const CaseStudies = ({ title, slug, bg, type, data }) => {
             );
           })}
         </main>
-          <div className='bg-stroke h-[1px] w-full'></div>
+          <div className='bg-grey-stroke h-[1px] w-full mt-20 mb-12'></div>
       </section>
+      <ShowMoreButton title={`More ${slug}`} />
     </section>
   );
 };
