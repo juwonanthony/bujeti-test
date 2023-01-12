@@ -79,7 +79,7 @@ body {
 }
 
 .swiper-button-disabled {
-  @apply bg-gray-200;
+  @apply disabled bg-gray-200;
 }
 
 .swiper {
