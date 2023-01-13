@@ -1,7 +1,5 @@
 // import { Inter } from "@next/font/google";
-import { fetchHome } from 'lib/api'
-import { useComponent } from 'lib/hooks/utils'
-import LayoutWarpper from '../components/layoutWarapper'
+import { LayoutWrapper } from 'components/index'
 import {
   CtaBanner,
   Features,
@@ -12,7 +10,9 @@ import {
   Solution,
   Testimonials,
   WhyUs,
-} from '../containers'
+} from 'containers/index'
+import { fetchHome } from 'lib/api'
+import { useComponent } from 'lib/hooks/utils'
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +20,7 @@ export default function Home(home) {
   const { body } = home.content
 
   return (
-    <LayoutWarpper>
+    <LayoutWrapper>
       <Hero hero={useComponent(body, 'hero')} />
       <Features features={useComponent(body, 'Features')} />
       <Partners hero={useComponent(body, 'hero')} />
@@ -30,7 +30,7 @@ export default function Home(home) {
       <Testimonials hero={useComponent(body, 'hero')} />
       <Solution hero={useComponent(body, 'hero')} />
       <CtaBanner hero={useComponent(body, 'hero')} />
-    </LayoutWarpper>
+    </LayoutWrapper>
   )
 }
 

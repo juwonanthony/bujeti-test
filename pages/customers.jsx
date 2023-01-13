@@ -1,11 +1,9 @@
-import React from 'react'
-import LayoutWarpper from '../components/layoutWarapper'
-import { CtaBanner, Industry, Partners, Testimonials } from '../containers'
-import CaseStudies from '../containers/case-studies'
-import CustomerHero from '../containers/customers/customer-hero'
-
-import { raap_logo } from '../assets/icons'
-import { fliqpayLogo, olumide, raap_lady, sozoLogo } from '../assets/image'
+import { raap_logo } from 'assets/icons'
+import { fliqpayLogo, olumide, raap_lady, sozoLogo } from 'assets/image'
+import { LayoutWrapper } from 'components/index'
+import CaseStudies from 'containers/case-studies'
+import CustomerHero from 'containers/customers/customer-hero'
+import { CtaBanner, Industry, Partners, Testimonials } from 'containers/index'
 
 const caseStudyData = [
   {
@@ -55,7 +53,7 @@ const customerStoriesData = [
 
 const Customers = () => {
   return (
-    <LayoutWarpper>
+    <LayoutWrapper>
       <CustomerHero />
       <CaseStudies
         slug="Case Study"
@@ -86,7 +84,7 @@ const Customers = () => {
         <Partners />
       </section>
       <CtaBanner />
-    </LayoutWarpper>
+    </LayoutWrapper>
   )
 }
 

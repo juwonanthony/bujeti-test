@@ -1,5 +1,4 @@
-import React from 'react'
-import LayoutWarpper from '../components/layoutWarapper'
+import { LayoutWrapper } from 'components/index'
 import {
   CtaBanner,
   Industry,
@@ -7,8 +6,7 @@ import {
   Partners,
   ProductSolution,
   Testimonials,
-} from '../containers'
-
+} from 'containers/index'
 import BujetiExpenses from '../assets/image/bujeti-expenses.png'
 import BujetiOverview from '../assets/image/bujeti-overview.png'
 import Cards from '../assets/image/cards.png'
@@ -56,7 +54,7 @@ const Industries = () => {
   ]
 
   return (
-    <LayoutWarpper>
+    <LayoutWrapper>
       <IndustryHero />
 
       <ProductSolution data={features} />
@@ -67,7 +65,7 @@ const Industries = () => {
         <Partners />
       </section>
       <CtaBanner />
-    </LayoutWarpper>
+    </LayoutWrapper>
   )
 }
 

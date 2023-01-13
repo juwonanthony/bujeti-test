@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   BusinessExpense,
   CtaBanner,
@@ -8,12 +7,10 @@ import {
   ProductHero,
   ProductInsight,
   ProductSolution,
-} from '../containers'
-
-import LayoutWarpper from '../components/layoutWarapper'
-
+} from 'containers/index'
 import BujetiExpenses from '../assets/image/bujeti-expenses.png'
 import BujetiOverview from '../assets/image/bujeti-overview.png'
+import LayoutWrapper from '../components/layout-wrapper'
 
 const features = [
   {
@@ -37,7 +34,7 @@ const features = [
 ]
 const Product = () => {
   return (
-    <LayoutWarpper>
+    <LayoutWrapper>
       <ProductHero />
       <BusinessExpense />
       <ProductSolution data={features} />
@@ -48,7 +45,7 @@ const Product = () => {
         <Partners />
       </section>
       <CtaBanner />
-    </LayoutWarpper>
+    </LayoutWrapper>
   )
 }
 

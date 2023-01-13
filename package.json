@@ -10,8 +10,7 @@
     "test": "jest --watch",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir components --dir containers --dir assets --dir styles --dir lib",
-    "prepare": "husky install",
-    "sanity-start": "sanity start"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^13.1.1",

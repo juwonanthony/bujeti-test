@@ -8,7 +8,7 @@ import 'swiper/css/bundle'
 import Navbar from '../navbar'
 import Footer from '../footer'
 
-const LayoutWarpper = (props) => {
+const LayoutWrapper = (props) => {
   const [mounted, setMounted] = useState(false)
   //   const { resolvedTheme, setTheme } = useTheme();
 
@@ -54,4 +54,4 @@ const LayoutWarpper = (props) => {
   )
 }
 
-export default LayoutWarpper
+export default LayoutWrapper
