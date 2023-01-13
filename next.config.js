@@ -56,7 +56,7 @@ module.exports = withBundleAnalyzer({
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx'],
   eslint: {
-    dirs: ['pages', 'components', 'containers', 'styles'],
+    dirs: ['pages', 'components', 'containers', 'styles', 'lib'],
   },
   async headers() {
     return [

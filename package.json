@@ -9,12 +9,15 @@
     "format": "yarn prettier --write .",
     "test": "jest --watch",
     "analyze": "cross-env ANALYZE=true next build",
-    "lint": "next lint --fix --dir pages --dir components --dir containers --dir assets --dir styles",
-    "prepare": "husky install"
+    "lint": "next lint --fix --dir pages --dir components --dir containers --dir assets --dir styles --dir lib",
+    "prepare": "husky install",
+    "sanity-start": "sanity start"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^13.1.1",
     "@next/font": "13.1.1",
+    "@storyblok/react": "^2.0.3",
+    "axios": "^1.2.2",
     "classnames": "^2.3.2",
     "googleapis": "^110.0.0",
     "html-react-parser": "^3.0.7",

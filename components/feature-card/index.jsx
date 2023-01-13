@@ -10,7 +10,7 @@ const FeatureCard = ({ title, description, link, index, image }) => {
       <div
         className="relative flex h-full flex-col overflow-hidden bg-contain bg-no-repeat px-6 py-10"
         style={{
-          background: `url(${image.src})`,
+          background: `url(${image.filename})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
         }}
@@ -19,7 +19,7 @@ const FeatureCard = ({ title, description, link, index, image }) => {
           <h3 className="text-lg font-bold">{title}</h3>
           <p className="mt-3 text-sm text-accent-gray md:text-base">{description}</p>
           <Link
-            href="/"
+            href={link.url}
             className="group mt-5 flex items-center text-sm font-semibold text-accent-brown"
           >
             <span className="mr-2">Discover more </span>{' '}

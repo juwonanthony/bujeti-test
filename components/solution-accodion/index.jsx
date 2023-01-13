@@ -29,7 +29,6 @@ const SolutionAccodion = ({ solution, active, onToggle, length, percent }) => {
     setScrollHeight(contentEl.current?.scrollHeight)
   }, [active])
 
-  console.log(opacity[percent])
   return (
     <div>
       <div className={`${active ? 'space-y-4' : ''} `}>
