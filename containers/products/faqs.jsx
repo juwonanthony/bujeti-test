@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import React, { useState } from 'react';
-import { faq_svg, question_avatar } from '../../assets/icons';
-import { Accodion, SmallHeading } from '../../components';
+import Image from 'next/image'
+import React, { useState } from 'react'
+import { faq_svg, question_avatar } from '../../assets/icons'
+import { Accodion, SmallHeading } from '../../components'
 
 const FaqQuest = [
   {
@@ -20,28 +20,28 @@ const FaqQuest = [
     question: 'Do I have the option to choose the type of car that I want?',
     answer: `Yes, but this is from a list of cars that we have available at the time your application was processed.`,
   },
-];
+]
 
 const Faqs = () => {
-  const [clicked, setClicked] = useState('0');
+  const [clicked, setClicked] = useState('0')
   const handleToggle = (index) => {
     if (clicked === index) {
-      return setClicked('0');
+      return setClicked('0')
     }
-    setClicked(index);
-  };
+    setClicked(index)
+  }
 
   return (
-    <section className="bg-accent-light_yellow w-full">
+    <section className="w-full bg-accent-light_yellow">
       <div className="container mx-auto flex px-5 py-37">
         <div className=" w-full">
-          <div className="w-full mb-25">
+          <div className="mb-25 w-full">
             <SmallHeading color="#AF7421" svg={faq_svg} title="Frequently Asked" />
-            <h1 className="leading-tight font-semibold text-5xl my-4 text-accent-gray max-w-xl">
+            <h1 className="my-4 max-w-xl text-5xl font-semibold leading-tight text-accent-gray">
               Everything other details you need to know.
             </h1>
           </div>
-          <div className="flex md:flex-row flex-col gap-4 mb-25">
+          <div className="mb-25 flex flex-col gap-4 md:flex-row">
             <div className="w-full">
               {FaqQuest.map((faq, index) => (
                 <Accodion
@@ -56,17 +56,19 @@ const Faqs = () => {
             </div>
           </div>
           <div className="w-full text-center">
-            <h1 className="font-bold text-3xl mb-6">Still have questions?</h1>
-            <p className="text-grey-deep text-3xl mb-6">Our friendly team are always ready to help.</p>
-            <Image src={question_avatar} alt={question_avatar} className="mb-8 m-auto" />
-            <button className="inline-flex text-white bg-accent-gray py-2 px-6 focus:outline-none rounded-lg font-semibold text-base">
+            <h1 className="mb-6 text-3xl font-bold">Still have questions?</h1>
+            <p className="mb-6 text-3xl text-grey-deep">
+              Our friendly team are always ready to help.
+            </p>
+            <Image src={question_avatar} alt={question_avatar} className="m-auto mb-8" />
+            <button className="inline-flex rounded-lg bg-accent-gray py-2 px-6 text-base font-semibold text-white focus:outline-none">
               See Integrations
             </button>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Faqs;
+export default Faqs

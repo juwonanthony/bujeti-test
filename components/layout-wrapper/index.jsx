@@ -1,29 +1,29 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { useState, useEffect } from 'react'
 // import { useTheme } from 'next-themes';
-import cn from "classnames";
-import "swiper/css/bundle";
+import cn from 'classnames'
+import 'swiper/css/bundle'
 
-import Navbar from "../navbar";
-import Footer from "../footer";
+import Navbar from '../navbar'
+import Footer from '../footer'
 
-const LayoutWarpper = (props) => {
-  const [mounted, setMounted] = useState(false);
+const LayoutWrapper = (props) => {
+  const [mounted, setMounted] = useState(false)
   //   const { resolvedTheme, setTheme } = useTheme();
 
   // After mounting, we have access to the theme
-  useEffect(() => setMounted(true), []);
+  useEffect(() => setMounted(true), [])
 
-  const { children, ...customMeta } = props;
-  const router = useRouter();
+  const { children, ...customMeta } = props
+  const router = useRouter()
   const meta = {
-    title: "Bujeti - Budgeting and Expense Management software for Africans by Africans",
+    title: 'Bujeti - Budgeting and Expense Management software for Africans by Africans',
     description: `Budgeting and expense management software built for your African realities. It empowers your people to do more. It combines virtual, smart physical credit cards, payments and expenses into one experience powered by Visa Cards, dedicated NUBANs, Mobile Wallets and Faster Payments.`,
-    image: "https://bujeti.com/images/bujeti_banner.png",
-    type: "website",
+    image: 'https://bujeti.com/images/bujeti_banner.png',
+    type: 'website',
     ...customMeta,
-  };
+  }
 
   return (
     <div>
@@ -45,13 +45,13 @@ const LayoutWarpper = (props) => {
         <meta name="twitter:image" content={meta.image} />
         {meta.date && <meta property="article:published_time" content={meta.date} />}
       </Head>
-      <Navbar bg={"white"} />
+      <Navbar bg={'white'} />
       <main id="skip">
         {children}
         <Footer />
       </main>
     </div>
-  );
-};
+  )
+}
 
-export default LayoutWarpper;
+export default LayoutWrapper

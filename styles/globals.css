@@ -79,7 +79,7 @@ body {
 }
 
 .swiper-button-disabled {
-  @apply bg-gray-200;
+  @apply cursor-not-allowed  bg-gray-200 disabled:cursor-pointer;
 }
 
 .swiper {
@@ -165,7 +165,7 @@ body {
   background-color: white !important;
 }
 .progress {
-  width:0%;
+  width: 0%;
   -webkit-transition: 'width 1s ease-in-out';
   -moz-transition: width 1s ease-in-out;
   -o-transition: width 1s ease-in-out;

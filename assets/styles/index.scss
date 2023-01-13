@@ -1,28 +1,26 @@
-@import "./caravel";
+@import './caravel';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-  .body-padding{
+  .body-padding {
     @apply px-[35px] sm:px-12 md:px-14 lg:px-20 xl:px-24;
   }
 
   .container {
-    @apply max-w-[1200px] mx-auto;
+    @apply mx-auto max-w-[1200px];
   }
 
   .logo--fixed {
-    @apply inset-x-[35px] sm:inset-x-12 md:inset-x-14 lg:inset-x-20 xl:inset-x-24 fixed top-9 h-6 sm:h-8 md:h-[35px] z-[999] max-w-[1200px] mx-auto;
+    @apply fixed inset-x-[35px] top-9 z-[999] mx-auto h-6 max-w-[1200px] sm:inset-x-12 sm:h-8 md:inset-x-14 md:h-[35px] lg:inset-x-20 xl:inset-x-24;
   }
 
-  .logo--normal{
-    @apply h-28 sm:h-32 lg:h-40 w-full;
+  .logo--normal {
+    @apply h-28 w-full sm:h-32 lg:h-40;
   }
 }
-
-
 
 //MIXINS
 
@@ -34,54 +32,54 @@
 
 @mixin xsm {
   @media screen and (max-width: 1300px) and (max-height: 800px) {
-    @content
+    @content;
   }
-};
+}
 
 @mixin sm {
   @media screen and (min-width: 520px) {
-    @content
+    @content;
   }
-};
+}
 @mixin ssm {
   @media screen and (min-width: 520px) and (max-height: 1024px) {
-    @content
+    @content;
   }
-};
+}
 
 @mixin md {
   @media screen and (min-width: 800px) {
-    @content
+    @content;
   }
-};
+}
 
 @mixin mmd {
   @media screen and (min-width: 800px) and (max-height: 1200px) {
-    @content
+    @content;
   }
-};
+}
 
 @mixin lg {
   @media screen and (min-width: 1024px) {
-    @content
+    @content;
   }
-};
+}
 
 html,
 body {
   padding: 0;
   margin: 0;
   font-weight: 400;
-  font-family: "Caravel", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Caravel', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-html.full-screen{
+html.full-screen {
   height: -webkit-fill-available;
 
-  body{
+  body {
     height: 100vh;
     height: -webkit-fill-available;
     display: flex;
@@ -89,7 +87,8 @@ html.full-screen{
     overflow-y: hidden;
   }
 
-  #__next, main{
+  #__next,
+  main {
     flex: 1;
     height: 100%;
     display: flex;
@@ -103,36 +102,35 @@ html.full-screen{
   box-sizing: border-box;
 }
 
-
-.tight-spacing{
+.tight-spacing {
   letter-spacing: 0px;
 }
 
-.no-outline{
+.no-outline {
   outline: none !important;
 }
 
-.section{
+.section {
   transition: transform cubic-bezier(0.455, 0.03, 0.515, 0.955) 400ms;
   height: 100vh;
   width: 100%;
   position: relative;
 }
 
-.logo{
+.logo {
   transition: all 500ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
 }
 
-.follow-text{
+.follow-text {
   transition: opacity ease-out 2s;
   opacity: 0.3;
 
-  &--visible{
+  &--visible {
     opacity: 1;
   }
 }
 
-.phone-screen{
+.phone-screen {
   position: fixed;
   bottom: 0;
   max-width: 650px;
@@ -141,27 +139,27 @@ html.full-screen{
   width: 100vw;
   transform: translate(-50%, 67%);
 
-  @include md{
+  @include md {
     left: unset;
     right: 0;
     width: 35vw;
     transform: translate(0%, 52.5%);
   }
 
-  .card-modal-screen{
+  .card-modal-screen {
     position: absolute;
     transform: translateY(100%);
-    transition: transform cubic-bezier(0.455, 0.03, 0.515, 0.955) .5s;
+    transition: transform cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.5s;
   }
 
-  .transactions-screen{
+  .transactions-screen {
     position: absolute;
     transform: translateY(100%);
-    transition: transform cubic-bezier(0.455, 0.03, 0.515, 0.955) .5s;
+    transition: transform cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.5s;
   }
 }
 
-.card{
+.card {
   position: fixed;
   bottom: 0;
   right: 0;
@@ -169,7 +167,7 @@ html.full-screen{
   max-width: 400px;
   transform: translate(17%, 22%);
 
-  @include md{
+  @include md {
     width: 24vw;
     transform: translate(-73%, -25%);
   }
@@ -181,7 +179,7 @@ input {
   -webkit-appearance: none;
 }
 
-.new-container{
+.new-container {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
@@ -190,24 +188,24 @@ input {
 .header-text {
   line-height: 1.2;
 
-  @include xsm{
+  @include xsm {
     font-size: 3rem !important;
   }
 }
 
-.display-text{
-  &::after{
-    content: "";
+.display-text {
+  &::after {
+    content: '';
     position: absolute;
     left: 0;
     bottom: 12.5%;
     width: 100%;
     height: 25%;
-    background: #BFFF0B;
+    background: #bfff0b;
   }
 }
 
-.typed-cursor{
+.typed-cursor {
   font-weight: 100 !important;
   font-size: 0.4em;
   display: inline-block;
@@ -217,12 +215,12 @@ input {
 }
 
 .text-block {
-  @include xsm{
+  @include xsm {
     margin-bottom: 10px;
   }
 }
 
-.fixed-stuff{
+.fixed-stuff {
   display: block;
   position: fixed;
   bottom: 0;
@@ -232,36 +230,36 @@ input {
   max-width: 1000px;
   height: 32vh;
 
-  @include xsm{
+  @include xsm {
     max-height: 42.5vh !important;
   }
 
-  @include lg{
+  @include lg {
     height: 46.5vh;
   }
 
-  figure{
+  figure {
     position: absolute;
   }
 
-  .app{
+  .app {
     right: 5%;
     width: 70%;
     top: -7%;
     transform: translateY(100%);
     animation: app-display 1s 0.5s ease-out forwards;
 
-    @include sm{
+    @include sm {
       display: none;
     }
-    @include mmd{
+    @include mmd {
       display: block;
       width: 20%;
       top: 25%;
       right: 1%;
     }
 
-    @include lg{
+    @include lg {
       display: block;
       width: 22%;
       top: 15%;
@@ -270,40 +268,40 @@ input {
     // top: 25%;
   }
 
-  .dashboard{
+  .dashboard {
     display: none;
     filter: drop-shadow(0px 35px 50px rgba(0, 0, 0, 0.07));
 
-    @include xsm{
+    @include xsm {
       display: block;
       width: 60%;
       right: 0;
     }
 
-    @include sm{
+    @include sm {
       display: block;
       width: 80%;
       right: 0;
     }
 
-    @include md{
+    @include md {
       width: 75%;
     }
 
-    @include mmd{
+    @include mmd {
       width: 70%;
       left: 15.5%;
       bottom: 0;
     }
 
-    @include lg{
+    @include lg {
       width: 72%;
       left: 12.5%;
       bottom: initial;
     }
   }
 
-  .card-fixed{
+  .card-fixed {
     width: 40%;
     top: 18%;
     left: 0;
@@ -311,18 +309,18 @@ input {
     transform: translateX(25%);
     animation: card-display 1.2s 1.5s ease-out forwards;
 
-    @include sm{
+    @include sm {
       width: 25%;
       top: 22%;
       left: 5%;
     }
-    @include mmd{
+    @include mmd {
       width: 15%;
       top: 50%;
       left: 0;
     }
 
-    @include lg{
+    @include lg {
       width: 15%;
       top: 35%;
       left: -2%;
@@ -341,12 +339,12 @@ input {
     opacity: 1;
   }
 
-  50%{
+  50% {
     opacity: 1;
     transform: translateX(0);
   }
 
-  70%{
+  70% {
     opacity: 1;
     transform: translateX(0);
   }
@@ -357,7 +355,7 @@ input {
   }
 }
 
-.modal-bg{
-  background: rgba(#D9DDD5, .85);
+.modal-bg {
+  background: rgba(#d9ddd5, 0.85);
   backdrop-filter: blur(8px);
 }

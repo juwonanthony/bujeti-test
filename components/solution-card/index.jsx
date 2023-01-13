@@ -1,15 +1,15 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
 
 const SolutionCard = ({ svg, highlighted, text }) => {
   return (
-    <div className="flex gap-2 items-baseline">
+    <div className="flex items-baseline gap-2">
       <Image src={svg} alt={svg} />
-      <p className="text-accent-orange font-medium md:w-4/6">
+      <p className="font-medium text-accent-orange md:w-4/6">
         {highlighted} <span className="text-accent-gray">{text}</span>
       </p>
     </div>
-  );
-};
+  )
+}
 
-export default SolutionCard;
+export default SolutionCard

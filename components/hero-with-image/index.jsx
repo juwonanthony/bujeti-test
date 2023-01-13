@@ -1,25 +1,25 @@
-import Image from "next/image";
+import Image from 'next/image'
 
 const HeroWithImages = ({ slug, title, body, image, bg }) => {
-  const color = bg === "white" ? "text-black bg-white" : `text-white bg-${bg}`;
+  const color = bg === 'white' ? 'text-black bg-white' : `text-white bg-${bg}`
   return (
-    <section className={`mx-auto items-center flex ${color}`}>
-      <div className="pb-[100px] pt-20 pl-28 pr-30 flex-1">
-        <span className="uppercase text-accent-orange font-semibold">{slug}</span>
+    <section className={`mx-auto flex items-center ${color}`}>
+      <div className="flex-1 pb-[100px] pt-20 pl-28 pr-30">
+        <span className="font-semibold uppercase text-accent-orange">{slug}</span>
         {title}
-        <p className="text-xl pr-20 pb-10">{body}</p>
-        <button className="inline-flex text-white bg-accent-orange border-0 py-3 px-6 focus:outline-none hover:bg-black rounded-lg font-semibold text-base">
+        <p className="pr-20 pb-10 text-xl">{body}</p>
+        <button className="inline-flex rounded-lg border-0 bg-accent-orange py-3 px-6 text-base font-semibold text-white hover:bg-black focus:outline-none">
           Start Now
         </button>
-        <button className="ml-4 inline-flex text-gray-700 items-center bg-white border-2 border-gray-200 py-3 px-6 focus:outline-none hover:bg-gray-200 rounded-lg font-semibold text-base">
+        <button className="ml-4 inline-flex items-center rounded-lg border-2 border-gray-200 bg-white py-3 px-6 text-base font-semibold text-gray-700 hover:bg-gray-200 focus:outline-none">
           Contact Sales
         </button>
       </div>
       <div className="flex-1">
-        <Image src={image} className="w-full h-full" alt="Bujeti dashboard" />
+        <Image src={image} className="h-full w-full" alt="Bujeti dashboard" />
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default HeroWithImages;
+export default HeroWithImages
