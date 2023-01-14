@@ -56,7 +56,16 @@ module.exports = withBundleAnalyzer({
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx'],
   eslint: {
-    dirs: ['pages', 'components', 'containers', 'styles', 'lib'],
+    dirs: ['pages', 'components', 'containers', 'styles', 'lib', 'assets'],
+  },
+
+  images: {
+    loader: 'default',
+    domains: [
+      's3.amazonaws.com',
+      'a.storyblok.com', // Spotify Album Art
+      'pbs.twimg.com', // Twitter Profile Picture
+    ],
   },
   async headers() {
     return [
@@ -66,6 +75,18 @@ module.exports = withBundleAnalyzer({
       },
     ]
   },
+
+  webpack: (config, { isServer }) => {
+    // If client-side, don't polyfill `fs`
+    if (!isServer) {
+      config.resolve.fallback = {
+        fs: false,
+      }
+    }
+
+    return config
+  },
+
   // webpack: (config, { dev, isServer }) => {
   //   config.module.rules.push({
   //     test: /\.svg$/,

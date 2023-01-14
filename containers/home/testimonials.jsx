@@ -79,7 +79,6 @@ const Testimonials = () => {
       disabledClass: 'swiper-button-disabled',
     },
   }
-  console.log(controlledSwiper)
   return (
     <section className="container mx-auto flex flex-col px-5 py-37">
       <div className="mb-20 space-y-3">

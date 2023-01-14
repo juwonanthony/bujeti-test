@@ -6,7 +6,7 @@ import MoreArrow from '../../assets/icons/more-arrow.svg'
 const FeatureCard = ({ title, description, link, index, image }) => {
   const textPosition = index % 2 === 0 ? 'mt-auto' : 'mb-auto'
   return (
-    <div className="h-[500px] w-full">
+    <div className="min-h-[500px] w-full">
       <div
         className="relative flex h-full flex-col overflow-hidden bg-contain bg-no-repeat px-6 py-10"
         style={{

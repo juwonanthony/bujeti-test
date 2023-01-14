@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { usecase, usecase_two } from '../../assets/image'
 import MoreArrow from '../../assets/icons/more-arrow.svg'
 import { SmallHeading, SolutionAccodion } from '../../components'
 import { case_svg } from '../../assets/icons'
+import HTMLReactParser from 'html-react-parser'
 import Image from 'next/image'
+import { useProbeImage } from 'lib/hooks/utils'
+const sizeOf = require('image-size')
+const url = require('url')
+const https = require('https')
 
 const theIndustry = [
   {
@@ -49,26 +54,50 @@ const theIndustry = [
     image: usecase,
   },
 ]
-const Industry = () => {
+const Industry = ({ industry }) => {
+  const { title = '', header = '', header_icon = {}, cases = [] } = industry
   const [clicked, setClicked] = useState(0)
   const handleToggle = (index) => {
     setClicked(index)
   }
 
-  let changeImage = theIndustry[clicked]
+  // const [size, setSize] = useState({})
 
+  const { image: { filename } = {} } = cases[clicked]
+  // const { image: { filename:sc } = {} } = cases[clicked]
+
+  // useEffect(() => {
+  //   useProbeImage(filename).then((result) => setSize(result))
+  // }, [filename])
+
+  // const { image } = useProbeImage(filename)
+
+  // const options = url.parse(header_icon.filename)
+  // console.log(header_icon.filename)
+
+  // https.get(options, function (response) {
+  //   const chunks = []
+  //   response
+  //     .on('data', function (chunk) {
+  //       chunks.push(chunk)
+  //     })
+  //     .on('end', function () {
+  //       const buffer = Buffer.concat(chunks)
+  //       console.log(sizeOf(buffer))
+  //     })
+  // })
   return (
     <section className="px-0 pt-37">
-      <div className="grid h-full w-full grid-cols-2 bg-accent-light_yellow">
+      <div className="grid h-[960px] w-full grid-cols-2 bg-accent-light_yellow">
         <div className="flex flex-wrap content-start sm:pr-10">
-          <div className="mb-6 w-full px-4 pt-36 sm:pl-28 sm:pr-20">
-            <SmallHeading color="#AF7421" svg={case_svg} title="Use Cases" />
+          <div className="mb-6 w-full px-4 pt-37 sm:pl-28 sm:pr-20">
+            <SmallHeading color="#AF7421" svg={header_icon.filename} title={header} url={true} />
             <h1 className="my-4 text-5xl font-normal leading-tight text-accent-gray">
-              The expense solution <br /> <span className="font-semibold">for every industry</span>
+              {HTMLReactParser(title)}
             </h1>
 
             <div className="mt-8">
-              {theIndustry.map((solution, index) => {
+              {cases.map((solution, index) => {
                 const number = (index + 1) * 10
                 const percent = 100 - number
                 return (
@@ -85,8 +114,24 @@ const Industry = () => {
             </div>
           </div>
         </div>
-        <div className=" flex h-full w-full overflow-hidden ">
-          <Image src={changeImage.image} className="ml-auto h-fit w-fit " alt="" />
+        <div className="flex h-full w-full overflow-hidden">
+          <div className="relative flex aspect-square h-full w-full shrink-0">
+            <Image
+              fill
+              objectFit="contain"
+              src={filename}
+              alt={filename}
+              className="ml-auto max-w-fit"
+            />
+          </div>
+
+          {/* <Image
+            src={image.url}
+            className="ml-auto h-fit w-fit"
+            width={image.width}
+            height={image.height}
+            alt=""
+          /> */}
         </div>
       </div>
     </section>

@@ -4,6 +4,8 @@ import { LayoutWrapper } from 'components/index'
 import CaseStudies from 'containers/case-studies'
 import CustomerHero from 'containers/customers/customer-hero'
 import { CtaBanner, Industry, Partners, Testimonials } from 'containers/index'
+import { fetchData } from 'lib/api'
+import { useComponent } from 'lib/hooks/utils'
 
 const caseStudyData = [
   {
@@ -51,9 +53,10 @@ const customerStoriesData = [
   },
 ]
 
-const Customers = () => {
+const Customers = (customer) => {
+  const { body = {} } = customer.content
   return (
-    <LayoutWrapper>
+    <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <CustomerHero />
       <CaseStudies
         slug="Case Study"
@@ -78,7 +81,7 @@ const Customers = () => {
         data={customerStoriesData}
       />
 
-      <Industry />
+      <Industry industry={useComponent(body, 'use_case')} />
       <Testimonials />
       <section className="disabled py-40">
         <Partners />
@@ -89,3 +92,14 @@ const Customers = () => {
 }
 
 export default Customers
+
+export async function getStaticProps() {
+  const data = await fetchData('/customer')
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+  return { props: data }
+}

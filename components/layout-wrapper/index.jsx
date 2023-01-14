@@ -15,7 +15,7 @@ const LayoutWrapper = (props) => {
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), [])
 
-  const { children, ...customMeta } = props
+  const { children, navbar, footer, ...customMeta } = props
   const router = useRouter()
   const meta = {
     title: 'Bujeti - Budgeting and Expense Management software for Africans by Africans',
@@ -24,7 +24,6 @@ const LayoutWrapper = (props) => {
     type: 'website',
     ...customMeta,
   }
-
   return (
     <div>
       <Head>
@@ -45,10 +44,10 @@ const LayoutWrapper = (props) => {
         <meta name="twitter:image" content={meta.image} />
         {meta.date && <meta property="article:published_time" content={meta.date} />}
       </Head>
-      <Navbar bg={'white'} />
+      <Navbar bg={'white'} navbar={navbar} />
       <main id="skip">
         {children}
-        <Footer />
+        <Footer footer={footer} />
       </main>
     </div>
   )
