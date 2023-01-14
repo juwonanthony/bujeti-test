@@ -115,13 +115,14 @@ const Industry = ({ industry }) => {
           </div>
         </div>
         <div className="flex h-full w-full overflow-hidden">
-          <div className="relative flex aspect-square h-full w-full shrink-0">
+          <div className="relative flex aspect-square h-full w-full shrink-0 overflow-hidden">
             <Image
               fill
-              objectFit="contain"
+              objectFit="cover"
               src={filename}
               alt={filename}
-              className="ml-auto max-w-fit"
+              className="ml-auto max-w-full"
+              sizes="100vw"
             />
           </div>
 
