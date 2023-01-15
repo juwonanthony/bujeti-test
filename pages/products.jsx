@@ -1,3 +1,4 @@
+import { LayoutWrapper } from 'components/index'
 import {
   BusinessExpense,
   CtaBanner,
@@ -12,7 +13,6 @@ import { fetchData } from 'lib/api'
 import { useComponent } from 'lib/hooks/utils'
 import BujetiExpenses from '../assets/image/bujeti-expenses.png'
 import BujetiOverview from '../assets/image/bujeti-overview.png'
-import LayoutWrapper from '../components/layout-wrapper'
 
 const features = [
   {

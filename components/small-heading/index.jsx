@@ -1,6 +1,4 @@
-import { useProbeImage } from 'lib/hooks/utils'
 import Image from 'next/image'
-import React from 'react'
 
 const SmallHeading = ({ svg, title, color }) => {
   return (

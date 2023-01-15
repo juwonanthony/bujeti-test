@@ -1,6 +1,5 @@
 import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
-import { minus_circle, plus_circle } from '../../assets/icons'
+import { useEffect, useRef, useState } from 'react'
 import MoreArrow from '../../assets/icons/more-arrow.svg'
 
 const opacity = {

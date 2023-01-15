@@ -1,14 +1,8 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
-import {
-  chevron_left,
-  chevron_right,
-  partner_svg,
-  raap_logo,
-  voltron_svg,
-} from '../../assets/icons'
-import { olumide, CardPhone, raap, raap_lady } from '../../assets/image'
-import { SmallHeading } from '../../components'
+import { chevron_left, chevron_right, partner_svg, raap_logo, voltron_svg } from 'assets/icons'
+import { olumide, CardPhone, raap, raap_lady } from 'assets/image'
+import { SmallHeading } from 'components/index'
 import parse from 'html-react-parser'
 import SwiperCore, { Controller, Autoplay, EffectFade, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'

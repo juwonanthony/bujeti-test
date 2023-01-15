@@ -1,5 +1,5 @@
+import { ListCard } from 'components/index'
 import React from 'react'
-import { ListCard } from '../../components'
 
 const ProductSolution = ({ data }) => {
   return (

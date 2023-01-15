@@ -18,7 +18,7 @@ const Items = ({ data, type }) => {
               viewBox="0 0 80 80"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="absolute top-0 left-0 right-0 mx-auto mt-[50%]"
+              className="absolute top-0 left-0 right-0 mx-auto mt-[35%]"
             >
               <path
                 opacity="0.5"

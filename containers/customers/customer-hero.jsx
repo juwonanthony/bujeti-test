@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroWithImages from '../../components/hero-with-image'
+import HeroWithImages from 'components/hero-with-image'
 import SpiralImage from '../../assets/image/spiralsvg.png'
 
 const CustomerHero = () => {

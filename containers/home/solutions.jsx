@@ -1,13 +1,6 @@
 import React from 'react'
-import {
-  cup_svg,
-  globe_svg,
-  integrate_svg,
-  mobile_svg,
-  statics_svg,
-  world_svg,
-} from '../../assets/icons'
-import { SolutionCard } from '../../components'
+import { cup_svg, globe_svg, integrate_svg, mobile_svg, statics_svg, world_svg } from 'assets/icons'
+import { SolutionCard } from 'components'
 
 const solutionList = [
   {

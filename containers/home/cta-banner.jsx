@@ -1,6 +1,5 @@
+import { phone_card } from 'assets/image'
 import Image from 'next/image'
-import React from 'react'
-import { CardPhone, phone_card } from '../../assets/image'
 
 function CtaBanner() {
   return (

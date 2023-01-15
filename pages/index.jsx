@@ -1,5 +1,5 @@
 // import { Inter } from "@next/font/google";
-import { LayoutWrapper } from 'components/index'
+import { LayoutWrapper } from '../components/index'
 import {
   CtaBanner,
   Features,

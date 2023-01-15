@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { usecase, usecase_two } from '../../assets/image'
+import { usecase, usecase_two } from 'assets/image'
 import MoreArrow from '../../assets/icons/more-arrow.svg'
-import { SmallHeading, SolutionAccodion } from '../../components'
-import { case_svg } from '../../assets/icons'
+import { SmallHeading, SolutionAccodion } from 'components'
+import { case_svg } from 'assets/icons'
 import HTMLReactParser from 'html-react-parser'
 import Image from 'next/image'
 import { useProbeImage } from 'lib/hooks/utils'
-const sizeOf = require('image-size')
-const url = require('url')
-const https = require('https')
 
 const theIndustry = [
   {

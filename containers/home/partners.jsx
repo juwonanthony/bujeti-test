@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { antler, sleep, webflow } from '../../assets/image'
-import { PartnerLogo } from '../../components'
+import { antler, sleep, webflow } from 'assets/image'
+import { PartnerLogo } from 'components'
 
 const partners = [
   { image: [antler, sleep, webflow, antler, sleep] },

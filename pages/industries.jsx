@@ -1,4 +1,4 @@
-import { LayoutWrapper } from 'components/index'
+import { LayoutWrapper } from '../components/index'
 import {
   CtaBanner,
   Industry,
@@ -7,13 +7,13 @@ import {
   ProductSolution,
   Testimonials,
 } from 'containers/index'
-import { fetchData } from 'lib/api'
-import { useComponent } from 'lib/hooks/utils'
 import BujetiExpenses from '../assets/image/bujeti-expenses.png'
 import BujetiOverview from '../assets/image/bujeti-overview.png'
 import Cards from '../assets/image/cards.png'
 import SupportImage from '../assets/image/Support-Image.png'
-import PricingSection from '../containers/industries/Pricing'
+import PricingSection from 'containers/industries/Pricing'
+import { useComponent } from 'lib/hooks/utils'
+import { fetchData } from 'lib/api'
 
 const Industries = (industry) => {
   const { body = {} } = industry.content
