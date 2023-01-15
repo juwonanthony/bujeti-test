@@ -1,7 +1,7 @@
+import { integration_svg } from 'assets/icons'
+import { integrations } from 'assets/image'
 import Image from 'next/image'
 import React from 'react'
-import { integration_svg } from '../../assets/icons'
-import { integrations } from '../../assets/image'
 
 const Integration = () => {
   return (

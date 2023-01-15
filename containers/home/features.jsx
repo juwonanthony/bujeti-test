@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { corporate_card, expense_management, reimbursement, transfer } from '../../assets/image'
-import { FeatureCard } from '../../components'
+import { FeatureCard } from 'components'
 
 // const features = [
 //   {

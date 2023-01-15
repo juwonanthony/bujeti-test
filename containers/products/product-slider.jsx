@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState, useEffect, useRef } from 'react'
-import { chevron_left, chevron_right, raap_logo, voltron_svg } from '../../assets/icons'
-import { olumide, raap, raap_lady, ProductSliderItem1 } from '../../assets/image'
+import { chevron_left, chevron_right, raap_logo, voltron_svg } from 'assets/icons'
+import { olumide, raap, raap_lady, ProductSliderItem1 } from 'assets/image'
 import SwiperCore, { Controller, Autoplay, EffectFade, Navigation } from 'swiper'
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
 
@@ -110,6 +110,7 @@ const ProductSlider = () => {
         {products.map((product, i) => {
           return (
             <span
+              key={i}
               className={`${
                 i === controlledSwiper ? 'text-accent-orange' : 'text-grey-warm-400'
               } image-swiper-button-next cursor-pointer text-xl`}

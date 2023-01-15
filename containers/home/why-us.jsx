@@ -1,8 +1,7 @@
 import React from 'react'
-import { case_svg, fraud, risk, secure, why_us } from '../../assets/icons'
-import ListItems from '../../components/list-items'
-import { analysis } from '../../assets/icons'
-import { SmallHeading } from '../../components'
+import { analysis, case_svg, fraud, risk, secure, why_us } from 'assets/icons'
+import { SmallHeading } from 'components/index'
+import ListItems from 'components/list-items'
 
 const listwhy = [
   {
