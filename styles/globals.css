@@ -170,4 +170,5 @@ body {
   -moz-transition: width 1s ease-in-out;
   -o-transition: width 1s ease-in-out;
   transition: width 1s ease-in-out;
+  scroll-behavior: smooth;
 }

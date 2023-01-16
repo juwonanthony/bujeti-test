@@ -73,7 +73,7 @@ const ProductSlider = () => {
   const params = {
     slidesPerView: 1,
     spaceBetween: 10,
-    loop: false,
+    loop: true,
     modules: [Pagination, Controller, EffectFade, Navigation],
     effect: 'fade',
     navigation: {
@@ -83,26 +83,26 @@ const ProductSlider = () => {
     },
   }
 
-  const startTimer = () => {
-    setInterval(() => {
-      if (count === 105) {
-        clearInterval()
-        setCount(0)
-      } else {
-        setCount(count + 5)
-      }
-    }, 1000)
-  }
+  const [startInterval, setStartInterval] = useState(false)
+  const [start, setStart] = useState(0)
 
   useEffect(() => {
     if (count === 105) {
-      swiperRef.current.swiper.slideNext()
-      clearInterval()
       setCount(0)
-    } else {
-      startTimer()
+      setStart((add) => add + 1)
+      swiperRef.current.swiper.slideNext()
     }
   }, [count])
+
+  const interval = useRef(null)
+  useEffect(() => {
+    interval.current = setInterval(() => {
+      setCount((count) => count + 5)
+    }, 1000)
+    return () => {
+      clearInterval(interval.current)
+    }
+  }, [start])
 
   return (
     <div>
@@ -113,8 +113,8 @@ const ProductSlider = () => {
               key={i}
               className={`${
                 i === controlledSwiper ? 'text-accent-orange' : 'text-grey-warm-400'
-              } image-swiper-button-next cursor-pointer text-xl`}
-              key={i}
+              } cursor-pointer text-xl`}
+              onClick={() => swiperRef.current.swiper.slideTo(i + 1)}
             >
               {product.feature}
             </span>
