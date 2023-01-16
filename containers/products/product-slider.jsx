@@ -73,7 +73,7 @@ const ProductSlider = () => {
   const params = {
     slidesPerView: 1,
     spaceBetween: 10,
-    loop: false,
+    loop: true,
     modules: [Pagination, Controller, EffectFade, Navigation],
     effect: 'fade',
     navigation: {
@@ -83,26 +83,12 @@ const ProductSlider = () => {
     },
   }
 
-  const [startInterval, setStartInterval] = useState(false)
-  const [start, setStart] = useState(0)
-
-  const startTimer = () => {
-    setInterval(() => {
-      // if (count === 105) {
-      //   clearInterval()
-      //   setCount(0)
-      //   swiperRef.current.swiper.slideNext()
-      // } else {
-      //   setCount(count + 5)
-      // }
-      setCount((count) => count + 5)
-    }, 500)
-  }
+  const [startInterval, setStartInterval] = useState(0)
 
   useEffect(() => {
     if (count === 105) {
       setCount(0)
-      setStart((add) => add + 1)
+      setStartInterval((add) => add + 1)
       swiperRef.current.swiper.slideNext()
     }
   }, [count])
@@ -115,7 +101,12 @@ const ProductSlider = () => {
     return () => {
       clearInterval(interval.current)
     }
-  }, [start])
+  }, [startInterval])
+
+  const clickSwipe = (index) => {
+    swiperRef.current.swiper.slideTo(index)
+    // setCount(0)
+  }
 
   return (
     <div>
@@ -124,6 +115,7 @@ const ProductSlider = () => {
           return (
             <span
               key={i}
+              onClick={() => clickSwipe(i + 1)}
               className={`${
                 i === controlledSwiper ? 'text-accent-orange' : 'text-grey-warm-400'
               } cursor-pointer text-xl`}
@@ -184,6 +176,7 @@ const ProductSlider = () => {
           controller={{ control: controlledSwiper }}
           onSlideChange={(e) => {
             setControlledSwiper(e.realIndex)
+            setCount(0)
           }}
           className="flex items-center"
           // effect="fade"
