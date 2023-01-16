@@ -110,7 +110,7 @@ const ProductSlider = () => {
 
   return (
     <div>
-      <div className="product-features-name mb-20 flex gap-[20px]">
+      <div className="product-features-name relative mb-20 flex max-w-7xl gap-[20px]">
         {products.map((product, i) => {
           return (
             <span
@@ -124,6 +124,7 @@ const ProductSlider = () => {
             </span>
           )
         })}
+        <div className="absolute right-0 h-full w-full max-w-sm bg-gradient-to-r from-transparent  via-white to-white" />
       </div>
       <div className="relative grid overflow-hidden rounded-3xl md:grid-cols-2">
         {/* <div className="min-h-full w-full"> */}
@@ -167,7 +168,7 @@ const ProductSlider = () => {
           <div className="mt-[60px] h-[2px] w-full bg-grey-semi">
             <div
               className="progress h-[2px] overflow-hidden bg-black"
-              style={{ width: `${count}%` }}
+              style={{ width: `${count}%`, transition: 'width 1s ease' }}
             ></div>
           </div>
         </div>
