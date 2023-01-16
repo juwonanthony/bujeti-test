@@ -1,6 +1,6 @@
+import { product_svg } from 'assets/icons'
+import { SmallHeading } from 'components/index'
 import React from 'react'
-import { product_svg } from '../../assets/icons'
-import { SmallHeading } from '../../components'
 import ProductSlider from './product-slider'
 
 const ProductFeatures = () => {

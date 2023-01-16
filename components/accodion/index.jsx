@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React, { useRef } from 'react'
-import { minus_circle, plus_circle } from '../../assets/icons'
+import { minus_circle, plus_circle } from 'assets/icons'
 
 const Accodion = ({ faq, active, onToggle, length, index }) => {
   const { question, answer } = faq

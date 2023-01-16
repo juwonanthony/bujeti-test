@@ -1,3 +1,4 @@
+import { LayoutWrapper } from 'components/index'
 import {
   BusinessExpense,
   CtaBanner,
@@ -7,10 +8,11 @@ import {
   ProductHero,
   ProductInsight,
   ProductSolution,
-} from '../containers/index'
+} from 'containers/index'
+import { fetchData } from 'lib/api'
+import { useComponent } from 'lib/hooks/utils'
 import BujetiExpenses from '../assets/image/bujeti-expenses.png'
 import BujetiOverview from '../assets/image/bujeti-overview.png'
-import LayoutWrapper from '../components/layout-wrapper'
 
 const features = [
   {
@@ -32,9 +34,11 @@ const features = [
     image: BujetiExpenses,
   },
 ]
-const Product = () => {
+const Product = (product) => {
+  const { body = {} } = product.content
+
   return (
-    <LayoutWrapper>
+    <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <ProductHero />
       <BusinessExpense />
       <ProductSolution data={features} />
@@ -50,3 +54,14 @@ const Product = () => {
 }
 
 export default Product
+
+export async function getStaticProps() {
+  const data = await fetchData('/product')
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+  return { props: data }
+}

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { faq_svg, question_avatar } from '../../assets/icons'
-import { Accodion, SmallHeading } from '../../components'
+import { faq_svg, question_avatar } from 'assets/icons'
+import { Accodion, SmallHeading } from 'components/index'
 
 const FaqQuest = [
   {

@@ -6,14 +6,18 @@ import {
   Partners,
   ProductSolution,
   Testimonials,
-} from '../containers/index'
+} from 'containers/index'
 import BujetiExpenses from '../assets/image/bujeti-expenses.png'
 import BujetiOverview from '../assets/image/bujeti-overview.png'
 import Cards from '../assets/image/cards.png'
 import SupportImage from '../assets/image/Support-Image.png'
-import PricingSection from '../containers/industries/Pricing'
+import PricingSection from 'containers/industries/Pricing'
+import { useComponent } from 'lib/hooks/utils'
+import { fetchData } from 'lib/api'
 
-const Industries = () => {
+const Industries = (industry) => {
+  const { body = {} } = industry.content
+
   const features = [
     {
       title: 'Automate your expensing',
@@ -54,12 +58,12 @@ const Industries = () => {
   ]
 
   return (
-    <LayoutWrapper>
+    <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <IndustryHero />
 
       <ProductSolution data={features} />
       <PricingSection />
-      <Industry />
+      <Industry industry={useComponent(body, 'use_case')} />
       <Testimonials />
       <section className="pb-40">
         <Partners />
@@ -70,3 +74,14 @@ const Industries = () => {
 }
 
 export default Industries
+
+export async function getStaticProps() {
+  const data = await fetchData('/industry')
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+  return { props: data }
+}
