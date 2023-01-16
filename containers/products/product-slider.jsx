@@ -88,7 +88,6 @@ const ProductSlider = () => {
       if (count === 105) {
         clearInterval()
         setCount(0)
-        swiperRef.current.swiper.slideNext()
       } else {
         setCount(count + 5)
       }
@@ -97,6 +96,7 @@ const ProductSlider = () => {
 
   useEffect(() => {
     if (count === 105) {
+      swiperRef.current.swiper.slideNext()
       clearInterval()
       setCount(0)
     } else {
@@ -113,6 +113,7 @@ const ProductSlider = () => {
               className={`${
                 i === controlledSwiper ? 'text-accent-orange' : 'text-grey-warm-400'
               } image-swiper-button-next cursor-pointer text-xl`}
+              key={i}
             >
               {product.feature}
             </span>
