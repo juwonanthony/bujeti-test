@@ -11,7 +11,7 @@ const Hero = ({ slug, title, body, bg }) => {
           <p className="pr-20 pb-10 pt-[30px] text-xl">{parse(body)}</p>
         </div>
         <div className="flex-1">
-          <div className="rounded-[10px] border-[1px] border-grey-semi bg-white p-[30px] shadow-card">
+          <form className="rounded-[10px] border-[1px] border-grey-semi bg-white p-[30px] shadow-card">
             <div className="mb-[25px] flex items-center justify-between gap-5">
               <div className="flex-1">
                 <Input label="First Name *" placeholder="Enter first name" />
@@ -33,7 +33,7 @@ const Hero = ({ slug, title, body, bg }) => {
                 <Input label="Company name *" placeholder="Enter email address" />
               </div>
               <div className="flex-1">
-                <Input label="Company size *" placeholder="Enter phone number" />
+                <Select label="Company size *" placeholder="Enter phone number" />
               </div>
             </div>
             <div className="mb-[25px] flex items-center justify-between gap-5">
@@ -48,7 +48,7 @@ const Hero = ({ slug, title, body, bg }) => {
                 </button>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </section>
@@ -65,8 +65,25 @@ const Input = ({ type, label, placeholder }) => {
         type={type}
         label={label}
         placeholder={placeholder}
+        required
         className="rounded-lg border-[1px] border-grey-semi py-2 px-3 text-base text-grey-deep shadow-card"
       />
+    </div>
+  )
+}
+
+const Select = ({ label }) => {
+  return (
+    <div className="flex flex-col">
+      <label htmlFor={label} className="mb-2 text-sm font-bold text-grey-deep">
+        {label}
+      </label>
+      <select className="rounded-lg border-[1px] border-grey-semi py-2 px-3 text-base text-grey-deep shadow-card">
+        <option>1-10</option>
+        <option>10-20</option>
+        <option>20-50</option>
+        <option>50-100</option>
+      </select>
     </div>
   )
 }
