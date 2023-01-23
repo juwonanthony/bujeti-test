@@ -1,5 +1,6 @@
 import { raap_logo } from 'assets/icons'
 import { fliqpayLogo, olumide, raap_lady, sozoLogo } from 'assets/image'
+import { spiralPattern } from 'assets/icons'
 import { LayoutWrapper } from 'components/index'
 import CaseStudies from 'containers/case-studies'
 import CustomerHero from 'containers/customers/customer-hero'
@@ -57,7 +58,19 @@ const Customers = (customer) => {
   const { body = {} } = customer.content
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
-      <CustomerHero />
+      <CustomerHero
+        slug="For startup"
+        title={
+          <h1 className="py-4 text-6xl">
+            Get your startup
+            <br /> <b>finances in order.</b>
+          </h1>
+        }
+        body="Supercharge your finance, empower your teams and track the pulse of your
+                business with an end-to-end expense management platform tailored for African SMBs."
+        image={spiralPattern}
+        bg="grey-warm-800"
+      />
       <CaseStudies
         slug="Case Study"
         type="case-study"

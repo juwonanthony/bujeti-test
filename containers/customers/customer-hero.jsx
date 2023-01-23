@@ -1,22 +1,25 @@
 import React from 'react'
-import HeroWithImages from 'components/hero-with-image'
-import SpiralImage from '../../assets/image/spiralsvg.png'
+import Image from 'next/image'
 
-const CustomerHero = () => {
+const CustomerHero = ({ slug, title, body, image, bg }) => {
+  const color = bg === 'white' ? 'text-black bg-white' : `text-white bg-${bg}`
   return (
-    <HeroWithImages
-      slug="For startup"
-      title={
-        <h1 className="py-4 text-6xl">
-          Growing together,
-          <br /> <b>happily.</b>
-        </h1>
-      }
-      body="Supercharge your finance, empower your teams and track the pulse of your
-     business with an end-to-end expense management platform tailored for African SMBs."
-      image={SpiralImage}
-      bg="grey-warm-800"
-    />
+    <section className={`mx-auto flex items-center pt-20 ${color}`}>
+      <div className="flex-1 pb-[100px] pt-20 pl-28 pr-30">
+        <span className="font-semibold uppercase text-accent-orange">{slug}</span>
+        {title}
+        <p className="pr-20 pb-10 text-xl">{body}</p>
+        <button className="inline-flex rounded-lg border-0 bg-accent-orange py-3 px-6 text-base font-semibold text-white hover:bg-black focus:outline-none">
+          Start Now
+        </button>
+        <button className="ml-4 inline-flex items-center rounded-lg border-2 border-gray-200 bg-white py-3 px-6 text-base font-semibold text-gray-700 hover:bg-gray-200 focus:outline-none">
+          Contact Sales
+        </button>
+      </div>
+      <div className="flex-1">
+        <Image src={image} className="h-full w-full" alt="Bujeti dashboard" />
+      </div>
+    </section>
   )
 }
 
