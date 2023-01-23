@@ -172,3 +172,10 @@ body {
   transition: width 1s ease-in-out;
   scroll-behavior: smooth;
 }
+
+.nav-menu:hover .dropdown {
+  display: flex;
+}
+.dropdown:hover {
+  display: none;
+}

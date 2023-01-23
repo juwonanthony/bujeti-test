@@ -108,14 +108,21 @@ const ProductSlider = () => {
     // setCount(0)
   }
 
+  const featuresRef = useRef()
+
   return (
     <div>
-      <div className="product-features-name relative mb-20 flex max-w-7xl gap-[20px]">
+      <div
+        className="product-features-name relative mb-20 flex max-w-7xl gap-[20px] overflow-x-scroll"
+        ref={featuresRef}
+      >
         {products.map((product, i) => {
           return (
             <span
               key={i}
-              onClick={() => clickSwipe(i + 1)}
+              onClick={() => {
+                clickSwipe(i + 1)
+              }}
               className={`${
                 i === controlledSwiper ? 'text-accent-orange' : 'text-grey-warm-400'
               } cursor-pointer text-xl`}
@@ -124,7 +131,7 @@ const ProductSlider = () => {
             </span>
           )
         })}
-        <div className="absolute right-0 h-full w-full max-w-sm bg-gradient-to-r from-transparent  via-white to-white" />
+        <div className="absolute right-0 h-full w-full max-w-[400px] bg-gradient-to-r from-transparent  via-white to-white" />
       </div>
       <div className="relative grid overflow-hidden rounded-3xl md:grid-cols-2">
         {/* <div className="min-h-full w-full"> */}
