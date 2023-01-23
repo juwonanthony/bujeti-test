@@ -105,7 +105,6 @@ const Customers = (customer) => {
 }
 
 export default Customers
-
 export async function getStaticProps() {
   const data = await fetchData('/customer')
 
