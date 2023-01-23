@@ -99,7 +99,11 @@ const Navbar = ({ bg }) => {
 
   const getColorByPathname = (pathname) => {
     let path = pathname.split('/').filter((item) => item !== '')[0]
-    setColor(colorListByPage[path ?? '/'])
+    if (path.includes[('industries', 'products', 'customers', 'about', '/')]) {
+      setColor(colorListByPage[path ?? '/'])
+    } else {
+      setColor(colorListByPage['about'])
+    }
   }
 
   const toggleDropdown = (text) => {
