@@ -2,7 +2,7 @@ import parse from 'html-react-parser'
 import Image from 'next/image'
 import Playicon from '../../assets/icons/play.svg'
 
-import { aboutUs } from 'assets/icons'
+import { spiralPattern } from 'assets/icons'
 
 const AboutHero = ({ hero, bg }) => {
   return (
@@ -15,7 +15,7 @@ const AboutHero = ({ hero, bg }) => {
           </h1>
           <p className="mb-8 font-light leading-[30px] text-support md:text-xl">{hero?.subtitle}</p>
           <div className="mt-20 -mb-10 flex justify-center">
-            <Image src={aboutUs} alt={Playicon} className="h-[400px] object-cover" />{' '}
+            <Image src={spiralPattern} alt={Playicon} className="h-[400px] object-cover" />{' '}
           </div>
         </div>
       </section>
