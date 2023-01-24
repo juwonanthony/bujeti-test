@@ -43,7 +43,6 @@ const features = [
   },
 ]
 const ProductPages = (product) => {
-  console.log({ product })
   const { body = {} } = product.content
 
   const hero = useComponent(body, 'hero')
