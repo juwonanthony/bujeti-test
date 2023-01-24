@@ -1,4 +1,3 @@
-import { GetStaticProps, GetStaticPaths } from 'next'
 import { LayoutWrapper } from 'components/index'
 import {
   BusinessExpense,
