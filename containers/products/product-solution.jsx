@@ -10,6 +10,7 @@ const ProductSolution = ({ data }) => {
             <ListCard data={datum} key={i} />
             {data.length === i + 1 ? null : (
               <div
+                key={datum}
                 className="my-20 w-full bg-slate-50"
                 style={{ height: 2, color: '#D7D3D0' }}
               ></div>
