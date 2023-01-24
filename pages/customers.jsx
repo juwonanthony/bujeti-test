@@ -55,7 +55,7 @@ const customerStoriesData = [
 ]
 
 const Customers = (customer) => {
-  const { body = [] } = customer.content
+  const { body = [] } = customer.content || {}
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <CustomerHero

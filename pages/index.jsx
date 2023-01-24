@@ -17,7 +17,7 @@ import { useComponent } from 'lib/hooks/utils'
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(home) {
-  const { body = [] } = home.content
+  const { body = [] } = home.content || {}
 
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
