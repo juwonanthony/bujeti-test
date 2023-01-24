@@ -2,7 +2,8 @@ import React from 'react'
 import HeroWithImages from '../../components/hero-with-image'
 import BujetiImage from '../../assets/image/bujeti-product.png'
 
-const ProductHero = () => {
+const ProductHero = ({ hero }) => {
+  console.log({ hero })
   return (
     <HeroWithImages
       slug="Expense management"

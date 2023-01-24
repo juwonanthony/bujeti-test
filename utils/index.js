@@ -20,7 +20,7 @@ export const dropdownData = {
     nav_two: {
       title: '',
       link: [
-        { title: 'For Healthcare', to: '/healtcare', isActive: true },
+        { title: 'For Healthcare', to: '/healthcare', isActive: true },
         { title: 'For Marketing', to: '/marketing', isActive: true },
         { title: 'For Restaurants', to: '/restaurants', isActive: true },
         { title: 'For Non-Profit', to: '/non-profits', isActive: true },
@@ -38,20 +38,20 @@ export const dropdownData = {
     nav_one: {
       title: 'Solutions',
       link: [
-        { title: 'Expense Management', to: '/startups', isActive: true },
-        { title: 'Corporate Cards', to: '/employees', isActive: true },
-        { title: 'Bank Payments', to: '/finance', isActive: true },
-        { title: 'Reimbursements', to: '/technology', isActive: true },
-        { title: 'Reporting & Insights ', to: '/hospitality', isActive: true },
+        { title: 'Expense Management', to: '/expense-management', isActive: true },
+        { title: 'Corporate Cards', to: '/corporate-cards', isActive: true },
+        { title: 'Bank Payments', to: '/bank-payments', isActive: true },
+        { title: 'Reimbursements', to: '/reimbursements', isActive: true },
+        { title: 'Reporting & Insights ', to: '/reporting-insights', isActive: true },
       ],
     },
     nav_two: {
       title: 'Coming this year',
       link: [
-        { title: 'Business Credit', to: '/healtcare', isActive: false },
-        { title: 'Payroll', to: '/marketing', isActive: false },
-        { title: 'Invoice Payment', to: '/restaurants', isActive: false },
-        { title: 'Bank Sync', to: '/non-profits', isActive: false },
+        { title: 'Business Credit', to: '/business-credit', isActive: false },
+        { title: 'Payroll', to: '/payroll', isActive: false },
+        { title: 'Invoice Payment', to: '/invoice-payment', isActive: false },
+        { title: 'Bank Sync', to: '/bank-sync', isActive: false },
       ],
     },
   },
@@ -80,3 +80,63 @@ export const dropdownData = {
     },
   },
 }
+
+export const pages = [
+  '/startup',
+  '/finance',
+  '/employees',
+  '/healthcare',
+  '/hospitality',
+  '/technology',
+  '/marketing',
+  '/restaurants',
+  '/non-profits',
+  '/expense-mangement',
+  '/corporate-cards',
+  '/bank-payments',
+  '/reimbursements',
+  '/reporting-insights',
+  '/business-credit',
+  '/payroll',
+  '/invoice-payment',
+  '/bank-sync',
+]
+
+export const terms = [
+  {
+    id: 1,
+    title: 'Introduction',
+    body: ` This website is operated by [Merchant Name]. The terms “we”, “us”, and “our” refer
+    to [Merchant Name]. The use of our website is subject to the following terms and
+    conditions of use, as amended from time to time (the “Terms”). The Terms are to be
+    read together by you with any terms, conditions or disclaimers provided in the
+    pages of our website. Please review the Terms carefully. The Terms apply to all
+    users of our website, including without limitation, users who are browsers,
+    customers, merchants, vendors and/or contributors of content. If you access and
+    use this website, you accept and agree to be bound by and comply with the Terms
+    and our Privacy Policy. If you do not agree to the Terms or our Privacy Policy,
+    you are not authorized to access our website, use any of our website’s services or
+    place an order on our website.`,
+  },
+  {
+    id: 2,
+    title: 'Use of our Website',
+    body: ` This website is operated by [Merchant Name]. The terms “we”, “us”, and “our” refer
+    to [Merchant Name]. The use of our website is subject to the following terms and
+    conditions of use, as amended from time to time (the “Terms”). The Terms are to be
+    read together by you with any terms, conditions or disclaimers provided in the
+    pages of our website. Please review the Terms carefully. The Terms apply to all
+    users of our website, including without limitation, users who are browsers,
+    customers, merchants, vendors and/or contributors of content. If you access and
+    use this website, you accept and agree to be bound by and comply with the Terms
+    and our Privacy Policy. If you do not agree to the Terms or our Privacy Policy,
+    you are not authorized to access our website, use any of our website’s services or
+    place an order on our website.`,
+  },
+  {
+    id: 3,
+    title: 'General Conditions',
+    body: ` We reserve the right to refuse service to anyone, at any time, for any reason. We reserve the right to make any modifications to the website, including terminating, changing, suspending or discontinuing any aspect of the website at any time, without notice. We may impose additional rules or limits on the use of our website. You agree to review the Terms regularly and your continued access or use of our website will mean that you agree to any changes.
+    You agree that we will not be liable to you or any third party for any modification, suspension or discontinuance of our website or for any service, content, feature or product offered through our website.`,
+  },
+]

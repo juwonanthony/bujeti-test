@@ -15,8 +15,9 @@ import PricingSection from 'containers/industries/Pricing'
 import { useComponent } from 'lib/hooks/utils'
 import { fetchData } from 'lib/api'
 
-const Industries = (industry) => {
-  const { body = {} } = industry.content
+const Industries = (data) => {
+  console.log({ data })
+  const { body = {} } = data.content
 
   const features = [
     {
@@ -60,7 +61,6 @@ const Industries = (industry) => {
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <IndustryHero />
-
       <ProductSolution data={features} />
       <PricingSection />
       <Industry industry={useComponent(body, 'use_case')} />
