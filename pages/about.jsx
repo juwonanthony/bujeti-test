@@ -10,7 +10,7 @@ import { CtaBanner } from 'containers/index'
 const About = (home) => {
   const { body = [] } = home.content
   return (
-    <LayoutWrapper navbar={useComponent([], 'navbar')} footer={useComponent(body, 'footer')}>
+    <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <AboutHero
         hero={{
           tag: 'Our Story',
