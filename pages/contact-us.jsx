@@ -6,7 +6,7 @@ import { fetchData } from 'lib/api'
 import { useComponent } from 'lib/hooks/utils'
 
 const Contact = (home) => {
-  const { body = {} } = home.content
+  const { body = [] } = home.content
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <Hero

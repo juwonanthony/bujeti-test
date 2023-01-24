@@ -17,7 +17,7 @@ import { fetchData } from 'lib/api'
 
 const Industries = (data) => {
   console.log({ data })
-  const { body = {} } = data.content
+  const { body = [] } = data.content
 
   const features = [
     {

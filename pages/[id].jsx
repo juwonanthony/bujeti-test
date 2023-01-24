@@ -43,13 +43,13 @@ const features = [
   },
 ]
 const ProductPages = (product) => {
-  const { body = {} } = product.content
+  const { body = [] } = product.content
 
   const hero = useComponent(body, 'hero')
   const industry = useComponent(body, 'use_case')
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
-      <RenderBasedOnSlug type="products" body={body} industry={industry} hero={hero} />
+      <RenderBasedOnSlug type="products" industry={industry} hero={hero} />
       <section className="py-40">
         <Partners />
       </section>
@@ -62,7 +62,7 @@ export default ProductPages
 
 //we would pass a type property in each of the content created on storybloc
 //we have two types - industry/products
-const RenderBasedOnSlug = ({ type, body, industry, hero }) => {
+const RenderBasedOnSlug = ({ type, industry, hero }) => {
   if (type === 'industry') {
     return (
       <>

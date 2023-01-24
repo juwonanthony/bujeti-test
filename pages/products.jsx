@@ -35,7 +35,7 @@ const features = [
   },
 ]
 const Product = (product) => {
-  const { body = {} } = product.content
+  const { body = [] } = product.content
 
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
