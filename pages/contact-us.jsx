@@ -33,5 +33,5 @@ export async function getStaticProps() {
       notFound: true,
     }
   }
-  return { props: data }
+  return { props: data, revalidate: 10 }
 }

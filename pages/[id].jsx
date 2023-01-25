@@ -96,7 +96,7 @@ export async function getStaticProps({ params }) {
       notFound: true,
     }
   }
-  return { props: data }
+  return { props: data, revalidate: 10 }
 }
 
 export async function getStaticPaths() {
