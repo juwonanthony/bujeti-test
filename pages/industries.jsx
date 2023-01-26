@@ -63,11 +63,11 @@ const Industries = (data) => {
       <ProductSolution data={features} />
       <PricingSection />
       <Industry industry={useComponent(body, 'use_case')} />
-      <Testimonials />
+      <Testimonials testimonials={useComponent(body, 'testimonials')} />
       <section className="pb-40">
-        <Partners />
+        <Partners partners={useComponent(body, 'industry_leaders')} />
       </section>
-      <CtaBanner />
+      <CtaBanner ctaBanner={useComponent(body, 'cta')} />
     </LayoutWrapper>
   )
 }

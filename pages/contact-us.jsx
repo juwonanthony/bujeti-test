@@ -18,7 +18,7 @@ const Contact = (home) => {
         bg="grey-warm"
       />
       <DiscoverMore />
-      <CtaBanner />
+      <CtaBanner ctaBanner={useComponent(body, 'cta')} />
     </LayoutWrapper>
   )
 }

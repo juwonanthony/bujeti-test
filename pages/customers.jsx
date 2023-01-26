@@ -95,11 +95,11 @@ const Customers = (customer) => {
       />
 
       <Industry industry={useComponent(body, 'use_case')} />
-      <Testimonials />
+      <Testimonials industry={useComponent(body, 'testimonials')} />
       <section className="disabled py-40">
-        <Partners />
+        <Partners partners={useComponent(body, 'industry_leaders')} />
       </section>
-      <CtaBanner />
+      <CtaBanner ctaBanner={useComponent(body, 'cta')} />
     </LayoutWrapper>
   )
 }

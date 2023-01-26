@@ -18,12 +18,11 @@ import { useComponent } from 'lib/hooks/utils'
 
 export default function Home(home) {
   const { body = [] } = home.content || {}
-
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <Hero hero={useComponent(body, 'hero')} />
       <Features features={useComponent(body, 'Features')} />
-      <Partners partners={useComponent(body, 'hero')} />
+      <Partners partners={useComponent(body, 'industry_leaders')} />
       <Industry industry={useComponent(body, 'use_case')} />
       <WhyUs whyUs={useComponent(body, 'why us')} />
       <Integration integration={useComponent(body, 'integration')} />

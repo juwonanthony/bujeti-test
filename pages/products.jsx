@@ -40,15 +40,15 @@ const Product = (product) => {
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <ProductHero />
-      <BusinessExpense />
-      <ProductSolution data={features} />
-      <ProductInsight />
-      <Faqs />
-      <ProductFeatures />
+      <BusinessExpense businessExpense={useComponent(body, 'use_case')} />
+      <ProductSolution productSolution={useComponent(body, 'features')} />
+      <ProductInsight productInsight={useComponent(body, 'numbers')} />
+      <Faqs faqs={useComponent(body, 'faqs')} />
+      <ProductFeatures productFeatures={useComponent(body, 'products')} />
       <section className="py-40">
-        <Partners />
+        <Partners partners={useComponent(body, 'industry_leaders')} />
       </section>
-      <CtaBanner />
+      <CtaBanner ctaBanner={useComponent(body, 'cta')} />
     </LayoutWrapper>
   )
 }
