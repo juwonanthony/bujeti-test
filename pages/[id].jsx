@@ -31,7 +31,6 @@ const features = [
 
 const ProductPages = (product) => {
   const { body = [] } = product.content || {}
-  console.log(body)
   const hero = useComponent(body, 'hero')
   const industry = useComponent(body, 'use_case')
   const testimonials = useComponent(body, 'testimonials')

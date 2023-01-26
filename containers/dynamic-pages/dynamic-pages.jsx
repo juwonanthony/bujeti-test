@@ -26,8 +26,6 @@ const DynamicPages = ({
   testimonials,
   businessExpense,
 }) => {
-  console.log(productSolution)
-
   return (
     <div>
       {type?.includes('industry') ? (
