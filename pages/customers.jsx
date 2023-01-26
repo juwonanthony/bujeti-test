@@ -95,7 +95,7 @@ const Customers = (customer) => {
       />
 
       <Industry industry={useComponent(body, 'use_case')} />
-      <Testimonials industry={useComponent(body, 'testimonials')} />
+      <Testimonials testimonials={useComponent(body, 'testimonials')} />
       <section className="disabled py-40">
         <Partners partners={useComponent(body, 'industry_leaders')} />
       </section>
