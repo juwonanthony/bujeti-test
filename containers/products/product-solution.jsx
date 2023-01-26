@@ -3,7 +3,6 @@ import React from 'react'
 
 const ProductSolution = ({ data, productSolution }) => {
   const { feature_list = [] } = productSolution || {}
-  console.log(productSolution)
   return (
     <section className="container mx-auto py-37">
       {feature_list.map((list, i) => {

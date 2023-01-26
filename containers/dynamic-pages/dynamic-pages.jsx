@@ -30,7 +30,7 @@ const DynamicPages = ({
     <div>
       {type?.includes('industry') ? (
         <>
-          <IndustryHero />
+          <IndustryHero hero={hero} />
           <ProductSolution productSolution={productSolution} />
           <PricingSection pricing={pricing} />
           <Industry industry={industry} />
@@ -40,7 +40,7 @@ const DynamicPages = ({
         <>
           <ProductHero hero={hero} />
           <BusinessExpense businessExpense={businessExpense} />
-          {/* <ProductSolution data={features} /> */}
+          <ProductSolution productSolution={productSolution} />
           <ProductInsight productInsight={productInsight} />
           <Faqs faqs={faqs} />
           <ProductFeatures productFeatures={productFeatures} />

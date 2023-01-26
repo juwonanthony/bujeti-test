@@ -59,8 +59,8 @@ const Industries = (data) => {
 
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
-      <IndustryHero />
-      <ProductSolution data={features} />
+      <IndustryHero hero={useComponent(body, 'hero')} />
+      <ProductSolution productSolution={useComponent(body, 'features')} />
       <PricingSection />
       <Industry industry={useComponent(body, 'use_case')} />
       <Testimonials testimonials={useComponent(body, 'testimonials')} />

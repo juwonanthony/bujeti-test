@@ -58,31 +58,8 @@ const Industry = ({ industry }) => {
     setClicked(index)
   }
 
-  // const [size, setSize] = useState({})
-
   const { image: { filename } = {} } = cases[clicked]
-  // const { image: { filename:sc } = {} } = cases[clicked]
 
-  // useEffect(() => {
-  //   useProbeImage(filename).then((result) => setSize(result))
-  // }, [filename])
-
-  // const { image } = useProbeImage(filename)
-
-  // const options = url.parse(header_icon.filename)
-  // console.log(header_icon.filename)
-
-  // https.get(options, function (response) {
-  //   const chunks = []
-  //   response
-  //     .on('data', function (chunk) {
-  //       chunks.push(chunk)
-  //     })
-  //     .on('end', function () {
-  //       const buffer = Buffer.concat(chunks)
-  //       console.log(sizeOf(buffer))
-  //     })
-  // })
   return (
     <section className="px-0 pt-37">
       <div className="grid h-[960px] w-full grid-cols-2 bg-accent-light_yellow">

@@ -41,6 +41,8 @@ const ProductPages = (product) => {
   const productInsight = useComponent(body, 'numbers')
   const productSolution = useComponent(body, 'features')
 
+  console.log(productInsight)
+
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <DynamicPages

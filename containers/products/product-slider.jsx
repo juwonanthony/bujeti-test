@@ -13,60 +13,17 @@ import 'swiper/css/autoplay'
 
 // import required modules
 import { Pagination } from 'swiper'
-const products = [
-  {
-    name: 'Olumide Soyombo',
-    postion: 'Co-Founder, Voltron Capital',
-    logo: voltron_svg,
-    title: `Fully control & automate your business expenses.`,
-    body: `Boost your finance teams by providing a powerful decision support tool.`,
-    imgSrc: ProductSliderItem1,
-    feature: 'Corporate Cards',
-  },
-  {
-    name: 'Anthony Daniel',
-    postion: 'Co-Founder, Voltron Capital',
-    logo: raap_logo,
-    title: `Reimbursement for your business expenses.`,
-    body: `Boost your finance teams by providing a powerful decision support tool.`,
-    imgSrc: raap_lady,
-    feature: 'Reimbursement',
-  },
-  {
-    name: 'Olabisi Samson',
-    postion: 'Co-Founder, Voltron Capital',
-    logo: voltron_svg,
-    title: `Credit Card to automate your business expenses.`,
-    body: `Boost your finance teams by providing a powerful decision support tool.`,
-    imgSrc: raap,
-    feature: 'Bank Transfer payments',
-  },
-  {
-    name: 'Olumide Mani',
-    postion: 'Co-Founder, Voltron Capital',
-    logo: voltron_svg,
-    title: `Fully control & automate your business expenses.`,
-    body: `Boost your finance teams by providing a powerful decision support tool.`,
-    imgSrc: olumide,
-    feature: 'Reporting and Insights',
-  },
 
-  {
-    name: 'Olumide Joe',
-    postion: 'Co-Founder, Voltron Capital',
-    logo: raap_logo,
-    title: `Fully control & automate your business expenses.`,
-    body: `Boost your finance teams by providing a powerful decision support tool.`,
-    imgSrc: raap_lady,
-    feature: 'Transactions Approval',
-  },
-]
-
-const ProductSlider = () => {
+const ProductSlider = ({ products }) => {
   const [count, setCount] = useState(0)
   const [controlledSwiper, setControlledSwiper] = useState(0)
   const [activeSlideIndex, setActiveSlideIndex] = useState(0)
+
   let changeText = products[controlledSwiper]
+
+  const { description, image, link, main_link_label, sub_link, sub_link_label, title } =
+    changeText || {}
+
   SwiperCore.use([Autoplay])
   const swiperRef = useRef(null)
 
@@ -127,7 +84,7 @@ const ProductSlider = () => {
                 i === controlledSwiper ? 'text-accent-orange' : 'text-grey-warm-400'
               } cursor-pointer text-xl`}
             >
-              {product.feature}
+              {product.title}
             </span>
           )
         })}
@@ -136,8 +93,8 @@ const ProductSlider = () => {
       <div className="relative grid overflow-hidden rounded-3xl md:grid-cols-2">
         {/* <div className="min-h-full w-full"> */}
         <div className="flex flex-col pr-20">
-          <h5 className="text-[48px] font-semibold text-accent-gray">{changeText.title}</h5>
-          <p className="text-[40px] text-support">{changeText.body}</p>
+          <h5 className="text-[48px] font-semibold text-accent-gray">{title}</h5>
+          <p className="text-[40px] text-support">{description}</p>
           <div className="flex items-center pt-7 pb-20">
             <Link className="text-2xl" href="/">
               Discover more
@@ -190,13 +147,17 @@ const ProductSlider = () => {
           // effect="fade"
           ref={swiperRef}
         >
-          {products.map((items, i) => (
+          {products.map(({ image: { filename } }, i) => (
             <SwiperSlide key={i}>
-              <Image
-                src={items.imgSrc}
-                alt=""
-                className="static h-[560px] w-full max-w-xl rounded-3xl object-cover"
-              />
+              <div className="relative aspect-square h-[560px] w-full   max-w-xl shrink-0 rounded-3xl ">
+                <Image
+                  fill
+                  objectFit="contain"
+                  src={filename}
+                  alt="Bujeti dashboard"
+                  className="h-full w-full rounded-3xl"
+                />
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
