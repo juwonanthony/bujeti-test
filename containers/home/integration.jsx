@@ -29,11 +29,10 @@ const Integration = ({ integration }) => {
             {btn_label}
           </button>
         </div>
-        <div className="flex items-center justify-center pt-24 ">
-          {/* <div className="bg-grey-200 relative aspect-square h-96 w-96 shrink-0 overflow-hidden">
-            <Image fill objectFit="cover" src={image} alt="paris picture" />
-          </div> */}
-          <Image src={integrations} alt={integrations} />
+        <div className="static flex items-center justify-center pt-24 lg:w-full lg:max-w-5xl">
+          <div className="relative aspect-[4/1] h-full w-full shrink-0">
+            <Image fill objectFit="contain" src={image} alt={image} className="w-full" />
+          </div>
         </div>
       </div>
     </section>

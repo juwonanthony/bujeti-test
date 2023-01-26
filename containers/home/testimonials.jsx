@@ -118,11 +118,11 @@ const Testimonials = ({ testimonials }) => {
           ))}
         </Swiper>
 
-        <div className="flex flex-col justify-between pb-20 pt-5 pr-28 leading-normal">
-          <div className="bg-grey-200 relative aspect-square w-40 shrink-0 overflow-hidden">
+        <div className="flex flex-col justify-between py-20  pr-28 leading-normal">
+          <div className="bg-grey-200 relative aspect-[4/1] w-40 shrink-0 overflow-hidden">
             <Image fill src={logo} alt={logo} />
           </div>
-          <h5 className="text-[42px] font-semibold tracking-tighter text-accent-gray">
+          <h5 className="mt-10 text-[42px] font-semibold tracking-tighter text-accent-gray">
             {parse(text)}
           </h5>
           <div className="my-8">

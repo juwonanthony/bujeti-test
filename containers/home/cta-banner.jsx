@@ -16,9 +16,11 @@ function CtaBanner({ ctaBanner }) {
     <>
       <section className="gradient__bg h-full w-full">
         <div className="container relative mx-auto flex flex-col items-start px-5 pt-10 md:flex-row">
-          <div className="static mb-10 -mt-40 w-5/6 md:mb-0 md:w-1/2 lg:w-full lg:max-w-lg">
-            {/* <Image src={filename} alt={filename} fill className="h-fit w-full max-w-xl " /> */}
-            <Image src={filename} alt="" fill className="static h-fit w-full max-w-md" />
+          <div className="static mb-10 -mt-40 w-5/6 md:mb-0 md:w-1/2 lg:w-full lg:max-w-xl">
+            {/* <Image src={phone_card} alt={phone_card} /> */}
+            <div className="relative aspect-square h-full w-full shrink-0">
+              <Image fill objectFit="contain" src={filename} alt={filename} className="w-full" />
+            </div>
           </div>
           <div className="flex  max-w-3xl flex-col items-start pt-14 text-center md:w-1/2 md:items-start md:pl-16 md:text-left lg:flex-grow lg:pl-24">
             <h1 className="mb-4 text-3xl font-bold text-accent-gray sm:text-6xl">
