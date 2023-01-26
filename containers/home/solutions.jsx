@@ -36,7 +36,7 @@ const solutionList = [
   },
 ]
 const Solutions = ({ solution }) => {
-  const { title = '', solutions = [] } = solution
+  const { title = '', solutions = [] } = solution || {}
 
   return (
     <section className="container mx-auto flex flex-col px-5 pb-37">

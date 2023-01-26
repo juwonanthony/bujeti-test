@@ -52,7 +52,7 @@ const theIndustry = [
   },
 ]
 const Industry = ({ industry }) => {
-  const { title = '', header = '', header_icon = {}, cases = [] } = industry
+  const { title = '', header = '', header_icon = {}, cases = [] } = industry || {}
   const [clicked, setClicked] = useState(0)
   const handleToggle = (index) => {
     setClicked(index)

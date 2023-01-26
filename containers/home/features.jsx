@@ -35,7 +35,7 @@ import { FeatureCard } from 'components'
 //   },
 // ]
 const Features = ({ features }) => {
-  const { feature_list } = features
+  const { feature_list } = features || {}
   return (
     <section className="py-37 px-0">
       <div className="grid h-full w-full md:grid-cols-4">

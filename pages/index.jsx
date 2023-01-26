@@ -18,7 +18,7 @@ import { useComponent } from 'lib/hooks/utils'
 
 export default function Home(home) {
   const { body = [] } = home.content || {}
-  console.log(body)
+
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <Hero hero={useComponent(body, 'hero')} />

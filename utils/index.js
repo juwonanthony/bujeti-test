@@ -91,7 +91,7 @@ export const pages = [
   '/marketing',
   '/restaurants',
   '/non-profits',
-  '/expense-mangement',
+  '/expense-management',
   '/corporate-cards',
   '/bank-payments',
   '/reimbursements',

@@ -11,7 +11,8 @@ function CtaBanner({ ctaBanner }) {
     primary_btn_link: { url: primaryLink } = {},
     secondary_btn_label = '',
     secondary_btn_link: { url: secondaryLink } = {},
-  } = ctaBanner
+  } = ctaBanner || {}
+  console.log(ctaBanner)
   return (
     <>
       <section className="gradient__bg h-full w-full">

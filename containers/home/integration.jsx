@@ -14,7 +14,7 @@ const Integration = ({ integration }) => {
     header_icon: { filename: icon } = {},
     title = '',
     image: { filename: image } = {},
-  } = integration
+  } = integration || {}
 
   return (
     <section className="bg-[#F5F5F4]">

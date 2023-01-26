@@ -34,7 +34,7 @@ const WhyUs = ({ whyUs }) => {
     highlighted_title = '',
     main_title = '',
     reasons = [],
-  } = whyUs
+  } = whyUs || {}
 
   return (
     <section className="bg-[#1C1917]">

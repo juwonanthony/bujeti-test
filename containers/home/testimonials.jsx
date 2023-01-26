@@ -78,7 +78,7 @@ const Testimonials = ({ testimonials }) => {
     header_icon: { filename: icon } = {},
     title = '',
     testimony = [],
-  } = testimonials
+  } = testimonials || {}
 
   let changeText = testimony[controlledSwiper]
 

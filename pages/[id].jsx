@@ -1,18 +1,5 @@
 import { LayoutWrapper } from 'components/index'
-import {
-  BusinessExpense,
-  CtaBanner,
-  Faqs,
-  Partners,
-  ProductFeatures,
-  ProductHero,
-  ProductInsight,
-  ProductSolution,
-  Industry,
-  IndustryHero,
-  Testimonials,
-  PricingSection,
-} from 'containers/index'
+import { CtaBanner, DynamicPages, Partners } from 'containers/index'
 
 import { fetchData } from 'lib/api'
 import { useComponent } from 'lib/hooks/utils'
@@ -41,51 +28,43 @@ const features = [
     image: BujetiExpenses,
   },
 ]
+
 const ProductPages = (product) => {
   const { body = [] } = product.content || {}
-
+  console.log(body)
   const hero = useComponent(body, 'hero')
   const industry = useComponent(body, 'use_case')
+  const testimonials = useComponent(body, 'testimonials')
+  const businessExpense = useComponent(body, 'use_case')
+  const faqs = useComponent(body, 'faqs')
+  const pricing = useComponent(body, 'pricing')
+  const productFeatures = useComponent(body, 'products')
+  const productInsight = useComponent(body, 'numbers')
+  const productSolution = useComponent(body, 'features')
+
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
-      <RenderBasedOnSlug type="products" industry={industry} hero={hero} />
+      <DynamicPages
+        type={product?.tag_list}
+        industry={industry}
+        hero={hero}
+        testimonials={testimonials}
+        businessExpense={businessExpense}
+        faqs={faqs}
+        pricing={pricing}
+        productFeatures={productFeatures}
+        productInsight={productInsight}
+        productSolution={productSolution}
+      />
       <section className="py-40">
-        <Partners />
+        <Partners partners={useComponent(body, 'industry_leaders')} />
       </section>
-      <CtaBanner />
+      <CtaBanner ctaBanner={useComponent(body, 'cta')} />
     </LayoutWrapper>
   )
 }
 
 export default ProductPages
-
-//we would pass a type property in each of the content created on storybloc
-//we have two types - industry/products
-const RenderBasedOnSlug = ({ type, industry, hero }) => {
-  if (type === 'industry') {
-    return (
-      <>
-        <IndustryHero />
-        <ProductSolution data={features} />
-        <PricingSection />
-        <Industry industry={industry} />
-        <Testimonials />
-      </>
-    )
-  }
-  if (type === 'products') {
-    return (
-      <>
-        <ProductHero hero={hero} />
-        <BusinessExpense />
-        <ProductSolution data={features} />
-        <ProductInsight />
-        <Faqs />
-        <ProductFeatures />
-      </>
-    )
-  }
-}
 
 //this would be updated to be accept a param
 // then the fetchData would accept a params.id so as to make use of the dynamic links
