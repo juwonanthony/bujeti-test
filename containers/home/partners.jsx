@@ -8,7 +8,6 @@ const partnerss = [
 ]
 const Partners = ({ partners }) => {
   const { subtitle = '', title = '', logos = [] } = partners || {}
-  console.log(partners)
   return (
     <section className="container mx-auto flex flex-col items-center px-5">
       <div className="mb-10 w-full max-w-3xl text-center">
