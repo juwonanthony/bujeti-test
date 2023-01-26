@@ -39,7 +39,7 @@ const Product = (product) => {
 
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
-      <ProductHero />
+      <ProductHero hero={useComponent(body, 'hero')} />
       <BusinessExpense businessExpense={useComponent(body, 'use_case')} />
       <ProductSolution productSolution={useComponent(body, 'features')} />
       <ProductInsight productInsight={useComponent(body, 'numbers')} />
