@@ -57,9 +57,8 @@ const Testi = [
   },
 ]
 
-const Testimonials = () => {
+const Testimonials = ({ testimonials }) => {
   const [controlledSwiper, setControlledSwiper] = useState(0)
-  let changeText = Testi[controlledSwiper]
   SwiperCore.use([Autoplay])
   const params = {
     slidesPerView: 1,
@@ -73,11 +72,28 @@ const Testimonials = () => {
       disabledClass: 'swiper-button-disabled',
     },
   }
+
+  const {
+    header = '',
+    header_icon: { filename: icon } = {},
+    title = '',
+    testimony = [],
+  } = testimonials
+
+  let changeText = testimony[controlledSwiper]
+
+  const {
+    logo: { filename: logo },
+    name,
+    position,
+    text,
+  } = changeText
+
   return (
     <section className="container mx-auto flex flex-col px-5 py-37">
       <div className="mb-20 space-y-3">
-        <SmallHeading svg={partner_svg} title="Partners" color="#D28B28" />
-        <h1 className="text-5xl font-semibold text-accent-gray">Here’s what they say {'"'}</h1>
+        <SmallHeading svg={icon} title={header} color="#D28B28" />
+        <h1 className="text-5xl font-semibold text-accent-gray">{title}</h1>
       </div>
 
       <div className="relative grid items-center overflow-hidden rounded-3xl bg-[#FBF5EC] md:grid-cols-2">
@@ -89,27 +105,29 @@ const Testimonials = () => {
           className="flex items-center"
           // effect="fade"
         >
-          {Testi.map((items, i) => (
+          {testimony.map(({ image: { filename: image } }, i) => (
             <SwiperSlide key={i}>
               <Image
-                src={items.imgSrc}
+                src={image}
                 alt=""
+                fill
+                objectFit="cover"
                 className="static h-fit w-full max-w-xl rounded-t-3xl object-cover md:rounded-none md:rounded-l-3xl"
               />
             </SwiperSlide>
           ))}
         </Swiper>
 
-        <div className="flex flex-col justify-between py-20 pr-28 leading-normal">
-          <Image src={changeText.logo} alt="" className="mb-10" />
-
+        <div className="flex flex-col justify-between pb-20 pt-5 pr-28 leading-normal">
+          <div className="bg-grey-200 relative aspect-square w-40 shrink-0 overflow-hidden">
+            <Image fill src={logo} alt={logo} />
+          </div>
           <h5 className="text-[42px] font-semibold tracking-tighter text-accent-gray">
-            {parse(changeText.para)}
+            {parse(text)}
           </h5>
           <div className="my-8">
             <p className="mb-3 font-semibold text-gray-800 ">
-              {changeText.name} <br />{' '}
-              <span className="mt-2 font-normal">{changeText.postion}</span>
+              {name} <br /> <span className="mt-2 font-normal">{position}</span>
             </p>
           </div>
           <div className="flex gap-4">

@@ -88,7 +88,7 @@ const Industry = ({ industry }) => {
       <div className="grid h-[960px] w-full grid-cols-2 bg-accent-light_yellow">
         <div className="flex flex-wrap content-start sm:pr-10">
           <div className="mb-6 w-full px-4 pt-37 sm:pl-28 sm:pr-20">
-            <SmallHeading color="#AF7421" svg={header_icon.filename} title={header} url={true} />
+            <SmallHeading color="#AF7421" svg={header_icon.filename} title={header} />
             <h1 className="my-4 text-5xl font-normal leading-tight text-accent-gray">
               {HTMLReactParser(title)}
             </h1>
