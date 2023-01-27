@@ -52,43 +52,20 @@ const theIndustry = [
   },
 ]
 const Industry = ({ industry }) => {
-  const { title = '', header = '', header_icon = {}, cases = [] } = industry
+  const { title = '', header = '', header_icon = {}, cases = [] } = industry || {}
   const [clicked, setClicked] = useState(0)
   const handleToggle = (index) => {
     setClicked(index)
   }
 
-  // const [size, setSize] = useState({})
-
   const { image: { filename } = {} } = cases[clicked]
-  // const { image: { filename:sc } = {} } = cases[clicked]
 
-  // useEffect(() => {
-  //   useProbeImage(filename).then((result) => setSize(result))
-  // }, [filename])
-
-  // const { image } = useProbeImage(filename)
-
-  // const options = url.parse(header_icon.filename)
-  // console.log(header_icon.filename)
-
-  // https.get(options, function (response) {
-  //   const chunks = []
-  //   response
-  //     .on('data', function (chunk) {
-  //       chunks.push(chunk)
-  //     })
-  //     .on('end', function () {
-  //       const buffer = Buffer.concat(chunks)
-  //       console.log(sizeOf(buffer))
-  //     })
-  // })
   return (
     <section className="px-0 pt-37">
       <div className="grid h-[960px] w-full grid-cols-2 bg-accent-light_yellow">
         <div className="flex flex-wrap content-start sm:pr-10">
           <div className="mb-6 w-full px-4 pt-37 sm:pl-28 sm:pr-20">
-            <SmallHeading color="#AF7421" svg={header_icon.filename} title={header} url={true} />
+            <SmallHeading color="#AF7421" svg={header_icon.filename} title={header} />
             <h1 className="my-4 text-5xl font-normal leading-tight text-accent-gray">
               {HTMLReactParser(title)}
             </h1>

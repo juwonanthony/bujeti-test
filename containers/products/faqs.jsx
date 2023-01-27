@@ -22,7 +22,7 @@ const FaqQuest = [
   },
 ]
 
-const Faqs = () => {
+const Faqs = ({ faqs }) => {
   const [clicked, setClicked] = useState('0')
   const handleToggle = (index) => {
     if (clicked === index) {
@@ -31,23 +31,35 @@ const Faqs = () => {
     setClicked(index)
   }
 
+  const {
+    faq = [],
+    footer_btn_label = '',
+    footer_btn_link: { url } = {},
+    footer_image: { filename } = {},
+    footer_subtitle = '',
+    footer_title = '',
+    header = '',
+    header_icon: { filename: icon } = {},
+    title = '',
+  } = faqs
+
   return (
     <section className="w-full bg-accent-light_yellow">
       <div className="container mx-auto flex px-5 py-37">
         <div className=" w-full">
           <div className="mb-25 w-full">
-            <SmallHeading color="#AF7421" svg={faq_svg} title="Frequently Asked" />
+            <SmallHeading color="#AF7421" svg={icon} title={header} />
             <h1 className="my-4 max-w-xl text-5xl font-semibold leading-tight text-accent-gray">
-              Everything other details you need to know.
+              {title}
             </h1>
           </div>
           <div className="mb-25 flex flex-col gap-4 md:flex-row">
             <div className="w-full">
-              {FaqQuest.map((faq, index) => (
+              {faq.map((faq, index) => (
                 <Accodion
                   faq={faq}
                   index={index + 1}
-                  length={FaqQuest.length}
+                  length={faq.length}
                   onToggle={() => handleToggle(index)}
                   active={clicked === index}
                   key={index}
@@ -56,13 +68,13 @@ const Faqs = () => {
             </div>
           </div>
           <div className="w-full text-center">
-            <h1 className="mb-6 text-3xl font-bold">Still have questions?</h1>
-            <p className="mb-6 text-3xl text-grey-deep">
-              Our friendly team are always ready to help.
-            </p>
-            <Image src={question_avatar} alt={question_avatar} className="m-auto mb-8" />
+            <h1 className="mb-6 text-3xl font-bold">{footer_title}</h1>
+            <p className="mb-6 text-3xl text-grey-deep">{footer_subtitle}</p>
+            <div className="relative m-auto mb-8 aspect-[4/1] w-40 shrink-0 overflow-hidden">
+              <Image fill src={filename} alt="faq img" className="w-ful h-full" />
+            </div>
             <button className="inline-flex rounded-lg bg-accent-gray py-2 px-6 text-base font-semibold text-white focus:outline-none">
-              See Integrations
+              {footer_btn_label}
             </button>
           </div>
         </div>

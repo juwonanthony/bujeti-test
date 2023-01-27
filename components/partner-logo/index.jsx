@@ -7,8 +7,10 @@ const PartnerLogo = ({ column, image = [] }) => {
       className={`mb-10 grid gap-2`}
       style={{ gridTemplateColumns: `repeat(${column}, minmax(0, 1fr))` }}
     >
-      {image.map((item, index) => (
-        <Image key={index} src={item} alt={item} className="w-ful h-full" />
+      {image.map(({ image: { filename } }, index) => (
+        <div key={index} className="relative aspect-[4/1] w-40 shrink-0 overflow-hidden">
+          <Image fill src={filename} alt={`${filename}-${index}`} className="w-ful h-full" />
+        </div>
       ))}
     </div>
   )

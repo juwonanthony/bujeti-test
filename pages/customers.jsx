@@ -55,7 +55,7 @@ const customerStoriesData = [
 ]
 
 const Customers = (customer) => {
-  const { body = {} } = customer.content
+  const { body = [] } = customer.content || {}
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <CustomerHero
@@ -95,11 +95,11 @@ const Customers = (customer) => {
       />
 
       <Industry industry={useComponent(body, 'use_case')} />
-      <Testimonials />
+      <Testimonials testimonials={useComponent(body, 'testimonials')} />
       <section className="disabled py-40">
-        <Partners />
+        <Partners partners={useComponent(body, 'industry_leaders')} />
       </section>
-      <CtaBanner />
+      <CtaBanner ctaBanner={useComponent(body, 'cta')} />
     </LayoutWrapper>
   )
 }
@@ -113,5 +113,5 @@ export async function getStaticProps() {
       notFound: true,
     }
   }
-  return { props: data }
+  return { props: data, revalidate: 10 }
 }
