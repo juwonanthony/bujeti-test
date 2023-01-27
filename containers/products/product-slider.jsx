@@ -121,12 +121,12 @@ const ProductSlider = ({ products }) => {
             <Image
               src={chevron_left}
               alt=""
-              className="image-swiper-button-prev  swiper-button-disabled flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-full bg-black p-2"
+              className="image-swiper-button-prev flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-full bg-black p-2"
             />
             <Image
               src={chevron_right}
               alt=""
-              className="image-swiper-button-next swiper-button-disabled flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-full bg-black p-2"
+              className="image-swiper-button-next flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-full bg-black p-2"
             />
           </div>
           <div className="mt-[60px] h-[2px] w-full bg-grey-semi">
@@ -149,7 +149,7 @@ const ProductSlider = ({ products }) => {
         >
           {products.map(({ image: { filename } }, i) => (
             <SwiperSlide key={i}>
-              <div className="relative aspect-square h-[560px] w-full   max-w-xl shrink-0 rounded-3xl ">
+              <div className="relative aspect-square w-full   max-w-xl shrink-0 rounded-3xl ">
                 <Image
                   fill
                   objectFit="contain"

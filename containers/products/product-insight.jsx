@@ -19,7 +19,7 @@ const ProductInsight = ({ productInsight }) => {
         <div className="flex justify-between">
           <div className="w-[580px]">
             <SmallHeading title={header} svg={filename} color="#BFFF0B" />
-            <h1 className="py-6 text-6xl font-semibold text-white">{title}</h1>
+            <h1 className="py-6 text-6xl font-semibold text-white">{HTMLReactParser(title)}</h1>
             <p className="text-xl text-white">{HTMLReactParser(sub_title)}</p>
             <button className="mt-[25px] inline-flex rounded-lg border-0 bg-accent-green py-3 px-6 text-base font-semibold text-black focus:outline-none">
               {primary_btn_label}
