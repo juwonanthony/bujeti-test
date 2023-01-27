@@ -90,10 +90,12 @@ const Testimonials = ({ testimonials }) => {
   } = changeText
 
   return (
-    <section className="container mx-auto flex flex-col px-5 py-37">
-      <div className="mb-20 space-y-3">
-        <SmallHeading svg={icon} title={header} color="#D28B28" />
-        <h1 className="text-5xl font-semibold text-accent-gray">{title}</h1>
+    <section className="container mx-auto flex flex-col px-5 py-20 md:py-37 lg:py-37">
+      <div className="mb-4 space-y-3 md:mb-20 lg:mb-20">
+        <SmallHeading svg={partner_svg} title="Partners" color="#D28B28" />
+        <h1 className="text-3xl font-semibold text-accent-gray md:text-5xl lg:text-5xl">
+          Here’s what they say {'"'}
+        </h1>
       </div>
 
       <div className="relative grid items-center overflow-hidden rounded-3xl bg-[#FBF5EC] md:grid-cols-2">
@@ -118,12 +120,12 @@ const Testimonials = ({ testimonials }) => {
           ))}
         </Swiper>
 
-        <div className="flex flex-col justify-between py-20  pr-28 leading-normal">
-          <div className="bg-grey-200 relative aspect-[4/1] w-40 shrink-0 overflow-hidden">
-            <Image fill src={logo} alt={logo} />
-          </div>
-          <h5 className="mt-10 text-[42px] font-semibold tracking-tighter text-accent-gray">
-            {parse(text)}
+        <div className="flex flex-col justify-between py-7 px-4 leading-normal md:py-20 md:pr-28 lg:py-20 lg:pr-28">
+          <Image src={changeText.logo} alt="" className="mb-10" />
+
+          <h5 className="text-base font-semibold tracking-tighter text-accent-gray md:text-[42px] lg:text-[42px]">
+            {console.log(changeText)}
+            {parse(changeText.text)}
           </h5>
           <div className="my-8">
             <p className="mb-3 font-semibold text-gray-800 ">

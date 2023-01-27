@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import cn from 'classnames'
 import Link from 'next/link'
 
-import { navDropdownArrow } from 'assets/icons'
+import { navDropdownArrow, hambuggerWhite, hambuggerBlack } from 'assets/icons'
 
 import { dropdownData } from 'utils'
 
@@ -302,7 +302,7 @@ const Navbar = ({ bg }) => {
               </nav>
             </div>
           </div>
-          <div className="flex flex-row items-center space-x-4 text-sm font-medium lg:text-[14px]">
+          <div className="hidden flex-row items-center space-x-4 text-sm font-medium md:flex lg:text-[14px]">
             <button
               className={`h-11 ${textColor} flex items-center justify-center px-6 font-semibold `}
             >
@@ -315,102 +315,11 @@ const Navbar = ({ bg }) => {
               <Image src={navDropdownArrow} className="rotate-[-45deg]" />
             </button>
           </div>
+          <div className="flex md:hidden">
+            <Image src={hambuggerBlack} alt="show menu" className="" />
+          </div>
         </div>
       </header>
-      {/* <div
-        className={
-          dropdownVisible
-            ? `fixed top-0 left-0 bottom-0 right-0 z-10 h-full w-full overflow-hidden bg-black/50`
-            : 'hidden'
-        }
-        onClick={() => setDropdownVisible(false)}
-      >
-        <div className="z-30 mt-20 h-[400px] w-full bg-[#FDFDFC]">
-          <section className="flex h-full w-full">
-            <section className="lhs max-[475px] w-[475px] bg-grey-warm pl-[115px] pr-15 pt-14">
-              <h1 className="text-3xl font-semibold text-textBaseColor">{dropDownData?.title}</h1>
-              <p className="pt-5 pb-10 text-lg text-grey-deep">{dropDownData?.description}</p>
-
-              <div className="flex flex-col gap-5">
-                {dropDownData?.links.map((link, i) => {
-                  return (
-                    <Link
-                      href={link.to}
-                      key={i}
-                      className="flex items-center font-semibold text-textBaseColor"
-                    >
-                      {link.title}
-                      <Image src={navDropdownArrow} height={12} className="ml-[12px]" />
-                    </Link>
-                  )
-                })}
-              </div>
-            </section>
-            <section className="rhs flex flex-1 pt-14 pl-15">
-              <div className="w-[369px]">
-                <div className="pb-[30px]">
-                  <h1 className=" text-lg text-grey-deep">{dropDownData?.nav_one?.title}</h1>
-                </div>
-                <div className="flex flex-col gap-5">
-                  {dropDownData?.nav_one.link.map((link, i) => {
-                    return link.isActive ? (
-                      <Link
-                        href={link.to}
-                        key={i}
-                        className="flex items-center font-semibold text-textBaseColor"
-                      >
-                        {link.title}
-                        <Image
-                          src={navDropdownArrow}
-                          height={12}
-                          className="ml-[12px]"
-                          alt="dropdown icon"
-                        />
-                      </Link>
-                    ) : (
-                      <span key={i} className="flex items-center font-semibold text-grey-deep">
-                        {link.title}
-                      </span>
-                    )
-                  })}
-                </div>
-              </div>
-              <div className="w-[369px]">
-                <div className="pb-[30px]">
-                  <h1 className="text-lg text-grey-deep">{dropDownData?.nav_two?.title}</h1>
-                </div>
-                <div
-                  className={`${
-                    !dropDownData?.nav_two?.title ? 'pt-[30px]' : ''
-                  } flex flex-col gap-5`}
-                >
-                  {dropDownData?.nav_two.link.map((link, i) => {
-                    return link.isActive ? (
-                      <Link
-                        href={link.to}
-                        key={i}
-                        className="flex items-center font-semibold text-textBaseColor"
-                      >
-                        {link.title}
-                        <Image
-                          src={navDropdownArrow}
-                          height={12}
-                          className="ml-[12px]"
-                          alt="dropdown icon"
-                        />
-                      </Link>
-                    ) : (
-                      <span key={i} className="flex items-center font-semibold text-grey-deep">
-                        {link.title}
-                      </span>
-                    )
-                  })}
-                </div>
-              </div>
-            </section>
-          </section>
-        </div>
-      </div> */}
     </>
   )
 }
