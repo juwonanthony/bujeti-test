@@ -149,7 +149,7 @@ const ProductSlider = ({ products }) => {
         >
           {products.map(({ image: { filename } }, i) => (
             <SwiperSlide key={i}>
-              <div className="relative aspect-square w-full shrink-0 rounded-3xl ">
+              <div className="relative aspect-square h-[560px] w-full shrink-0 rounded-3xl ">
                 <Image
                   fill
                   objectFit="contain"
@@ -167,3 +167,4 @@ const ProductSlider = ({ products }) => {
 }
 
 export default ProductSlider
+//  max-w-xl
