@@ -59,7 +59,7 @@ const Customers = (customer) => {
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <CustomerHero
-        slug="For startup"
+        slug="For startups"
         title={
           <h1 className="py-4 text-6xl">
             Get your startup

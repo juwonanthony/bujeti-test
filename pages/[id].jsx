@@ -1,14 +1,10 @@
 import { LayoutWrapper } from 'components/index'
 import { CtaBanner, DynamicPages, Partners } from 'containers/index'
 
-import PricingSection from 'containers/industries/Pricing'
-
 import { fetchData } from 'lib/api'
 import { useComponent } from 'lib/hooks/utils'
-import BujetiExpenses from '../assets/image/bujeti-expenses.png'
-import BujetiOverview from '../assets/image/bujeti-overview.png'
 
-import { bujetiProducts, industries, pages } from 'utils'
+import { pages } from 'utils'
 
 const ProductPages = (product) => {
   const { body = [] } = product.content || {}
@@ -49,7 +45,6 @@ export default ProductPages
 //this would be updated to be accept a param
 // then the fetchData would accept a params.id so as to make use of the dynamic links
 export async function getStaticProps({ params }) {
-  console.log({ id: params.id })
   const data = await fetchData(`/${params.id}`)
   if (!data) {
     return {
