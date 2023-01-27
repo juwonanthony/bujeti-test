@@ -1,4 +1,3 @@
-import { GetStaticProps, GetStaticPaths } from 'next'
 import { LayoutWrapper } from 'components/index'
 import {
   BusinessExpense,
@@ -12,15 +11,16 @@ import {
   Industry,
   IndustryHero,
   Testimonials,
-  PricingSection,
 } from 'containers/index'
+
+import PricingSection from 'containers/industries/Pricing'
 
 import { fetchData } from 'lib/api'
 import { useComponent } from 'lib/hooks/utils'
 import BujetiExpenses from '../assets/image/bujeti-expenses.png'
 import BujetiOverview from '../assets/image/bujeti-overview.png'
 
-import { pages } from 'utils'
+import { bujetiProducts, industries, pages } from 'utils'
 
 const features = [
   {
@@ -42,15 +42,15 @@ const features = [
     image: BujetiExpenses,
   },
 ]
-const ProductPages = (product) => {
-  console.log({ product })
-  const { body = {} } = product.content
+const ProductPages = (data) => {
+  const slug = data.slug
+  const { body = {} } = data.content
 
   const hero = useComponent(body, 'hero')
   const industry = useComponent(body, 'use_case')
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
-      <RenderBasedOnSlug type="products" body={body} industry={industry} hero={hero} />
+      <RenderBasedOnSlug type={slug} body={body} industry={industry} hero={hero} />
       <section className="py-40">
         <Partners />
       </section>
@@ -61,13 +61,11 @@ const ProductPages = (product) => {
 
 export default ProductPages
 
-//we would pass a type property in each of the content created on storybloc
-//we have two types - industry/products
 const RenderBasedOnSlug = ({ type, body, industry, hero }) => {
-  if (type === 'industry') {
+  if (industries.includes(type)) {
     return (
       <>
-        <IndustryHero />
+        <IndustryHero hero={hero} />
         <ProductSolution data={features} />
         <PricingSection />
         <Industry industry={industry} />
@@ -75,7 +73,7 @@ const RenderBasedOnSlug = ({ type, body, industry, hero }) => {
       </>
     )
   }
-  if (type === 'products') {
+  if (bujetiProducts.includes(type)) {
     return (
       <>
         <ProductHero hero={hero} />
@@ -92,6 +90,7 @@ const RenderBasedOnSlug = ({ type, body, industry, hero }) => {
 //this would be updated to be accept a param
 // then the fetchData would accept a params.id so as to make use of the dynamic links
 export async function getStaticProps({ params }) {
+  console.log({ id: params.id })
   const data = await fetchData(`/${params.id}`)
   if (!data) {
     return {

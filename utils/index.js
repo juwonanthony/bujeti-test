@@ -10,7 +10,7 @@ export const dropdownData = {
     nav_one: {
       title: 'Using Bujeti',
       link: [
-        { title: 'For Startups', to: '/startups', isActive: true },
+        { title: 'For Startups', to: '/startup', isActive: true },
         { title: 'For Employees', to: '/employees', isActive: true },
         { title: 'For Financial Services', to: '/finance', isActive: true },
         { title: 'For Technology', to: '/technology', isActive: true },
@@ -100,6 +100,30 @@ export const pages = [
   '/payroll',
   '/invoice-payment',
   '/bank-sync',
+]
+
+export const industries = [
+  'startup',
+  'finance',
+  'employees',
+  'healthcare',
+  'hospitality',
+  'technology',
+  'marketing',
+  'restaurants',
+  'non-profits',
+]
+
+export const bujetiProducts = [
+  'expense-management',
+  'corporate-cards',
+  'bank-payments',
+  'reimbursements',
+  'reporting-insights',
+  'business-credit',
+  'payroll',
+  'invoice-payment',
+  'bank-sync',
 ]
 
 export const terms = [

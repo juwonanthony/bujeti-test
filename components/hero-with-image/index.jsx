@@ -16,7 +16,7 @@ const HeroWithImages = ({ slug, title, body, image, bg }) => {
         </button>
       </div>
       <div className="flex-1">
-        <Image src={image} className="h-full w-full" alt="Bujeti dashboard" />
+        <Image src={image} className="h-full max-h-full w-full" alt="Bujeti dashboard" />
       </div>
     </section>
   )

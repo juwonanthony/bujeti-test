@@ -1,19 +1,14 @@
 import React from 'react'
 import HeroWithImages from '../../components/hero-with-image'
 import BujetiImage from '../../assets/image/bujeti-product.png'
+import parse from 'html-react-parser'
 
-const IndustryHero = () => {
+const IndustryHero = ({ hero }) => {
   return (
     <HeroWithImages
-      slug="For startup"
-      title={
-        <h1 className="py-4 text-6xl">
-          Get your startup
-          <br /> <b>finances in order.</b>
-        </h1>
-      }
-      body="Supercharge your finance, empower your teams and track the pulse of your
-         business with an end-to-end expense management platform tailored for African SMBs."
+      slug={hero?.small_title}
+      title={<h1 className="py-4 text-6xl">{parse(hero.title)}</h1>}
+      body={hero.subtitle}
       image={BujetiImage}
       bg="secondary-900"
     />

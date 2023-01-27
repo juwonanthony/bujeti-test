@@ -31,7 +31,7 @@ const navItem = [
     id: 3,
     title: 'Pricing',
     hasIcon: false,
-    link: '/customers',
+    link: '/pricing',
     isVisible: false,
   },
   {
