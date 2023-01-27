@@ -1,6 +1,7 @@
 import React from 'react'
 import { cup_svg, globe_svg, integrate_svg, mobile_svg, statics_svg, world_svg } from 'assets/icons'
 import { SolutionCard } from 'components'
+import HTMLReactParser from 'html-react-parser'
 
 const solutionList = [
   {
@@ -34,7 +35,9 @@ const solutionList = [
     text: 'Unique finance platform made by Africans.',
   },
 ]
-const Solutions = () => {
+const Solutions = ({ solution }) => {
+  const { title = '', solutions = [] } = solution || {}
+
   return (
     <section className="container mx-auto flex flex-col px-5 pb-37">
       <h1 className="mb-16 w-full max-w-2xl text-3xl font-normal md:text-6xl lg:text-6xl">

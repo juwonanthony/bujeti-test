@@ -23,3 +23,5 @@ export { default as IndustryHero } from './industries/industry-hero'
 
 //customers
 export { default as ShowMoreButton } from './customers/show-more-button'
+
+export { default as DynamicPages } from './dynamic-pages/dynamic-pages'

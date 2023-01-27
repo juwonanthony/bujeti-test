@@ -17,15 +17,14 @@ import { useComponent } from 'lib/hooks/utils'
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(home) {
-  const { body = {} } = home.content
-
+  const { body = [] } = home.content || {}
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <Hero hero={useComponent(body, 'hero')} />
       <Features features={useComponent(body, 'Features')} />
-      <Partners partners={useComponent(body, 'hero')} />
+      <Partners partners={useComponent(body, 'industry_leaders')} />
       <Industry industry={useComponent(body, 'use_case')} />
-      <WhyUs whyUs={useComponent(body, 'why_us')} />
+      <WhyUs whyUs={useComponent(body, 'why us')} />
       <Integration integration={useComponent(body, 'integration')} />
       <Testimonials testimonials={useComponent(body, 'testimonials')} />
       <Solution solution={useComponent(body, 'solution')} />
@@ -42,5 +41,5 @@ export async function getStaticProps() {
       notFound: true,
     }
   }
-  return { props: data }
+  return { props: data, revalidate: 10 }
 }

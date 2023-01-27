@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 import { minus_circle, plus_circle } from 'assets/icons'
 
 const Accodion = ({ faq, active, onToggle, length, index }) => {
-  const { question, answer } = faq
+  const { description, title } = faq
   const contentEl = useRef()
   return (
     <div>
@@ -18,7 +18,7 @@ const Accodion = ({ faq, active, onToggle, length, index }) => {
               active ? ' font-semibold text-accent-orange' : 'font-medium text-[#A9A29D]'
             }`}
           >
-            {question}
+            {title}
           </h5>
           <span className="ml-auto">
             <Image
@@ -33,7 +33,7 @@ const Accodion = ({ faq, active, onToggle, length, index }) => {
           style={active ? { height: contentEl.current.scrollHeight } : { height: '0px' }}
           className="h-0 overflow-hidden transition-all duration-200 ease-in-out"
         >
-          <p className="text-base text-accent-gray md:max-w-6xl md:text-3xl">{answer}</p>
+          <p className="text-base text-accent-gray md:max-w-6xl md:text-3xl">{description}</p>
         </div>
       </div>
     </div>

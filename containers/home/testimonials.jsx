@@ -57,9 +57,8 @@ const Testi = [
   },
 ]
 
-const Testimonials = () => {
+const Testimonials = ({ testimonials }) => {
   const [controlledSwiper, setControlledSwiper] = useState(0)
-  let changeText = Testi[controlledSwiper]
   SwiperCore.use([Autoplay])
   const params = {
     slidesPerView: 1,
@@ -73,6 +72,23 @@ const Testimonials = () => {
       disabledClass: 'swiper-button-disabled',
     },
   }
+
+  const {
+    header = '',
+    header_icon: { filename: icon } = {},
+    title = '',
+    testimony = [],
+  } = testimonials || {}
+
+  let changeText = testimony[controlledSwiper]
+
+  const {
+    logo: { filename: logo },
+    name,
+    position,
+    text,
+  } = changeText
+
   return (
     <section className="container mx-auto flex flex-col px-5 py-20 md:py-37 lg:py-37">
       <div className="mb-4 space-y-3 md:mb-20 lg:mb-20">
@@ -91,11 +107,13 @@ const Testimonials = () => {
           className="flex items-center"
           // effect="fade"
         >
-          {Testi.map((items, i) => (
+          {testimony.map(({ image: { filename: image } }, i) => (
             <SwiperSlide key={i}>
               <Image
-                src={items.imgSrc}
+                src={image}
                 alt=""
+                fill
+                objectFit="cover"
                 className="static h-fit w-full max-w-xl rounded-t-3xl object-cover md:rounded-none md:rounded-l-3xl"
               />
             </SwiperSlide>
@@ -110,8 +128,7 @@ const Testimonials = () => {
           </h5>
           <div className="my-8">
             <p className="mb-3 font-semibold text-gray-800 ">
-              {changeText.name} <br />{' '}
-              <span className="mt-2 font-normal">{changeText.postion}</span>
+              {name} <br /> <span className="mt-2 font-normal">{position}</span>
             </p>
           </div>
           <div className="flex gap-4">

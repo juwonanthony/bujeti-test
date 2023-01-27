@@ -35,20 +35,20 @@ const features = [
   },
 ]
 const Product = (product) => {
-  const { body = {} } = product.content
+  const { body = [] } = product.content || {}
 
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
-      <ProductHero />
-      <BusinessExpense />
-      <ProductSolution data={features} />
-      <ProductInsight />
-      <Faqs />
-      <ProductFeatures />
+      <ProductHero hero={useComponent(body, 'hero')} />
+      <BusinessExpense businessExpense={useComponent(body, 'use_case')} />
+      <ProductSolution productSolution={useComponent(body, 'features')} />
+      <ProductInsight productInsight={useComponent(body, 'numbers')} />
+      <Faqs faqs={useComponent(body, 'faqs')} />
+      <ProductFeatures productFeatures={useComponent(body, 'products')} />
       <section className="py-40">
-        <Partners />
+        <Partners partners={useComponent(body, 'industry_leaders')} />
       </section>
-      <CtaBanner />
+      <CtaBanner ctaBanner={useComponent(body, 'cta')} />
     </LayoutWrapper>
   )
 }
@@ -63,5 +63,5 @@ export async function getStaticProps() {
       notFound: true,
     }
   }
-  return { props: data }
+  return { props: data, revalidate: 10 }
 }

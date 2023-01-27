@@ -2,6 +2,7 @@ import React from 'react'
 import { analysis, case_svg, fraud, risk, secure, why_us } from 'assets/icons'
 import { SmallHeading } from 'components/index'
 import ListItems from 'components/list-items'
+import HTMLReactParser from 'html-react-parser'
 
 const listwhy = [
   {
@@ -26,7 +27,15 @@ const listwhy = [
     description: 'Define and enforce spending limits. Nothing falls through the cracks.',
   },
 ]
-const WhyUs = () => {
+const WhyUs = ({ whyUs }) => {
+  const {
+    header = '',
+    header_icon: { filename } = {},
+    highlighted_title = '',
+    main_title = '',
+    reasons = [],
+  } = whyUs || {}
+
   return (
     <section className="bg-[#1C1917]">
       <div className="flex flex-col items-center">
