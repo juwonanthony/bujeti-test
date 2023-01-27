@@ -124,7 +124,8 @@ const Testimonials = ({ testimonials }) => {
           <Image src={changeText.logo} alt="" className="mb-10" />
 
           <h5 className="text-base font-semibold tracking-tighter text-accent-gray md:text-[42px] lg:text-[42px]">
-            {parse(changeText.para)}
+            {console.log(changeText)}
+            {parse(changeText.text)}
           </h5>
           <div className="my-8">
             <p className="mb-3 font-semibold text-gray-800 ">
