@@ -6,13 +6,13 @@ import React from 'react'
 const Integration = () => {
   return (
     <section className="bg-[#F5F5F4]">
-      <div className="container relative mx-auto flex flex-col items-center px-5 pt-37 text-center">
+      <div className="container relative mx-auto flex flex-col items-center px-5 pt-20 text-center md:pt-37 lg:pt-37">
         <div className="mb-4 flex items-center justify-center gap-2">
           <Image src={integration_svg} alt={integration_svg} />
           <h6 className="font-medium text-accent-orange">Integration</h6>
         </div>
         <div className="w-full max-w-3xl space-y-6">
-          <h1 className="text-6xl font-bold">
+          <h1 className="md:leading-0 lg:leading-0 text-[32px] font-bold leading-10 md:text-6xl lg:text-6xl">
             Get more value <br />
             <span className="font-normal">from the tools you love.</span>
           </h1>

@@ -37,10 +37,10 @@ const solutionList = [
 const Solutions = () => {
   return (
     <section className="container mx-auto flex flex-col px-5 pb-37">
-      <h1 className="mb-16 w-full max-w-2xl text-6xl font-normal">
+      <h1 className="mb-16 w-full max-w-2xl text-3xl font-normal md:text-6xl lg:text-6xl">
         Total expense solutions, <span className="font-semibold">all in one place.</span>
       </h1>
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3">
         {solutionList.map(({ svg, highlighted, text }, index) => (
           <SolutionCard svg={svg} highlighted={highlighted} text={text} key={index} />
         ))}
