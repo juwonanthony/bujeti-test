@@ -21,7 +21,7 @@ const ProductHero = ({ hero }) => {
       title={<h1 className="py-4 text-6xl">{HTMLReactParser(title)}</h1>}
       body={subtitle}
       image={heroImg}
-      bg="secondary-900"
+     bg={'white'}
       primaryBtnLabel={primary_btn_label}
       primaryBtnLink={secondaryUrl}
       secondaryBtnLabel={secondary_btn_label}
