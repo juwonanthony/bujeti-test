@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import cn from 'classnames'
 import Link from 'next/link'
 
-import { navDropdownArrow } from 'assets/icons'
+import { navDropdownArrow, hambuggerWhite, hambuggerBlack } from 'assets/icons'
 
 import { dropdownData } from 'utils'
 
@@ -434,7 +434,7 @@ const Navbar = ({ bg }) => {
               </nav>
             </div>
           </div>
-          <div className="flex flex-row items-center space-x-4 text-sm font-medium lg:text-[14px]">
+          <div className="hidden flex-row items-center space-x-4 text-sm font-medium md:flex lg:text-[14px]">
             <button
               className={`h-11 ${textColor} flex items-center justify-center px-6 font-semibold `}
             >
@@ -446,6 +446,9 @@ const Navbar = ({ bg }) => {
               Sign In
               <Image src={navDropdownArrow} className="rotate-[-45deg]" />
             </button>
+          </div>
+          <div className="flex md:hidden">
+            <Image src={hambuggerBlack} alt="show menu" className="" />
           </div>
         </div>
       </header>
