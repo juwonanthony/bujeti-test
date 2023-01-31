@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import cn from 'classnames'
 import Link from 'next/link'
 
-import { navDropdownArrow, hambuggerWhite, hambuggerBlack } from 'assets/icons'
+import { navDropdownArrow, whiteUpArrow, hambuggerBlack } from 'assets/icons'
 
 import { dropdownData } from 'utils'
 
@@ -107,7 +107,6 @@ const NavItem = ({
               ? `fixed top-0 left-0 bottom-0 right-0 z-10 h-full w-full overflow-hidden bg-black/50`
               : 'hidden'
           }
-          onClick={() => onClose(text)}
         >
           <div className="z-30 mt-20 h-[400px] w-full bg-[#FDFDFC]">
             <section className="flex h-full w-full">
@@ -303,17 +302,24 @@ const Navbar = ({ bg }) => {
             </div>
           </div>
           <div className="hidden flex-row items-center space-x-4 text-sm font-medium md:flex lg:text-[14px]">
-            <button
+            <Link
+              href="/contact-us"
               className={`h-11 ${textColor} flex items-center justify-center px-6 font-semibold `}
             >
               Contact Sales
-            </button>
-            <button
+            </Link>
+            <Link
+              target="_blank"
+              href="https://dashboard.bujeti.com/login"
               className={`${buttonText} ${buttonBg} flex h-11 items-center justify-center gap-2 rounded-lg px-6 text-center font-semibold`}
             >
+              {console.log(buttonBg)}
               Sign In
-              <Image src={navDropdownArrow} className="rotate-[-45deg]" />
-            </button>
+              <Image
+                src={buttonBg === 'bg-black' ? whiteUpArrow : navDropdownArrow}
+                className="rotate-[-45deg]"
+              />
+            </Link>
           </div>
           <div className="flex md:hidden">
             <Image src={hambuggerBlack} alt="show menu" className="" />

@@ -8,18 +8,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const productLink = [
-  { title: 'Expense Management', link: '/' },
-  { title: 'Corporate Cards', link: '/' },
-  { title: 'Bank Payments', link: '/' },
-  { title: 'Reimbursements', link: '/' },
-  { title: 'Reporting & Insights', link: '/' },
-  { title: 'Pricing', link: '/' },
+  { title: 'Expense Management', link: '/expense-management' },
+  { title: 'Corporate Cards', link: '/corporate-cards' },
+  { title: 'Bank Payments', link: '/bank-payments' },
+  { title: 'Reimbursements', link: '/reimbursements' },
+  { title: 'Reporting & Insights', link: '/reporting' },
+  { title: 'Pricing', link: '/pricing' },
   { title: 'Get Mobile App', link: '/', icon: true },
 ]
 
 const usingBujeti = [
-  { title: 'For Startups', link: '/' },
-  { title: 'For Employees', link: '/' },
+  { title: 'For Startups', link: '/startup' },
+  { title: 'For Employees', link: '/employees' },
   { title: 'For Financial Services', link: '/' },
   { title: 'For Travel & Hospitality', link: '/' },
   { title: 'For Technology', link: '/' },
@@ -76,7 +76,7 @@ const Footer = () => {
               </p>
             </div>
           </div>
-          <div className="mt-10 grid md:mt-0 md:w-8/12 md:grid-cols-3">
+          <div className="mt-10 grid grid-cols-2 md:mt-0 md:w-8/12 md:grid-cols-3">
             <div>
               <h2 className="mb-3 text-sm font-semibold text-black">Products</h2>
               <nav className="mb-10 list-none space-y-2 text-sm font-normal">

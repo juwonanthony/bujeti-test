@@ -43,7 +43,7 @@ const ProductSlider = ({ products }) => {
   const [startInterval, setStartInterval] = useState(0)
 
   useEffect(() => {
-    if (count === 105) {
+    if (count === 110) {
       setCount(0)
       setStartInterval((add) => add + 1)
       swiperRef.current.swiper.slideNext()
@@ -53,7 +53,7 @@ const ProductSlider = ({ products }) => {
   const interval = useRef(null)
   useEffect(() => {
     interval.current = setInterval(() => {
-      setCount((count) => count + 5)
+      setCount((count) => count + 10)
     }, 1000)
     return () => {
       clearInterval(interval.current)

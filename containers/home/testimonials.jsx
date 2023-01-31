@@ -113,7 +113,6 @@ const Testimonials = ({ testimonials }) => {
                 src={image}
                 alt=""
                 fill
-                objectFit="cover"
                 className="static h-fit w-full max-w-xl rounded-t-3xl object-cover md:rounded-none md:rounded-l-3xl"
               />
             </SwiperSlide>
@@ -124,7 +123,6 @@ const Testimonials = ({ testimonials }) => {
           <Image src={changeText.logo} alt="" className="mb-10" />
 
           <h5 className="text-base font-semibold tracking-tighter text-accent-gray md:text-[42px] lg:text-[42px]">
-            {console.log(changeText)}
             {parse(changeText.text)}
           </h5>
           <div className="my-8">
