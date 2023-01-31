@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import cn from 'classnames'
 import Link from 'next/link'
+import { ArrowRightIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid'
 
 import { navDropdownArrow, whiteUpArrow, hambuggerBlack } from 'assets/icons'
 
@@ -91,6 +92,7 @@ const NavItem = ({
   const isActive = router.asPath === href
 
   const rotateIcon = isVisible ? `ease-in-out rotate-180` : ''
+
   if (href === '#') {
     return (
       <span
@@ -103,33 +105,26 @@ const NavItem = ({
       >
         {text}
         {hasIcon && (
-          <span className={rotateIcon}>
-            <svg
-              width="10"
-              height="7"
-              viewBox="0 0 10 7"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9.375 1.25L5 5.625L0.625 1.25"
-                stroke="#242628"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+          <span>
+            {isVisible ? (
+              <ChevronUpIcon className={`ml-[12px] h-4 w-4 ${textColor}`} />
+            ) : (
+              <ChevronDownIcon className={`ml-[12px] h-4 w-4 ${textColor}`} />
+            )}
           </span>
         )}
 
         <div
           className={cn(
-            'fixed top-0 left-0 bottom-0 right-0 z-10 mt-10 hidden  h-fit w-full bg-transparent',
+            'fixed top-0 left-0 bottom-0 right-0 z-10 mt-10 hidden  h-fit w-full bg-transparent transition-all duration-500',
             { ['group-hover:flex']: isVisible }
           )}
         >
-          <div className={`z-30 mt-10 h-fit w-full ${color}`}>
+          <div
+            className={`z-30 mt-10 h-fit w-full !rounded-b-xl shadow-lg shadow-grey-warm-900/10 ${color}`}
+          >
             <section className="flex h-full w-full">
-              <section className="lhs max-[475px] w-[475px] bg-grey-warm py-14 pl-[115px] pr-15">
+              <section className="lhs max-[475px] w-[475px] rounded-bl-xl bg-grey-warm py-14 pl-[115px] pr-15 ">
                 <h1 className="text-3xl font-semibold text-textBaseColor">{dropDownData?.title}</h1>
                 <p className="pt-5 pb-10 text-lg text-grey-deep">{dropDownData?.description}</p>
 
@@ -143,12 +138,7 @@ const NavItem = ({
                         onClick={() => onClick('')}
                       >
                         {link.title}
-                        <Image
-                          src={navDropdownArrow}
-                          height={12}
-                          className="ml-[12px]"
-                          alt="arrow down"
-                        />
+                        <ArrowRightIcon className={`ml-[12px] h-4 w-4 text-black`} />
                       </Link>
                     )
                   })}
@@ -157,7 +147,7 @@ const NavItem = ({
               <section className="rhs flex flex-1 py-14 pl-15">
                 <div className="w-[369px]">
                   <div className="pb-[30px]">
-                    <h1 className=" text-lg text-grey-deep">{dropDownData?.nav_one?.title}</h1>
+                    <h1 className={`text-lg ${textColor}`}>{dropDownData?.nav_one?.title}</h1>
                   </div>
                   <div className="flex flex-col gap-5">
                     {dropDownData?.nav_one.link.map((link, i) => {
@@ -165,19 +155,17 @@ const NavItem = ({
                         <Link
                           href={link.to}
                           key={i}
-                          className="flex items-center font-semibold text-textBaseColor"
+                          className={`flex items-center font-semibold ${textColor}`}
                           onClick={() => onClick('')}
                         >
                           {link.title}
-                          <Image
-                            src={navDropdownArrow}
-                            height={12}
-                            className="ml-[12px]"
-                            alt="dropdown icon"
-                          />
+                          <ArrowRightIcon className={`ml-[12px] h-5 w-5 ${textColor}`} />
                         </Link>
                       ) : (
-                        <span key={i} className="flex items-center font-semibold text-grey-deep">
+                        <span
+                          key={i}
+                          className={`flex items-center font-semibold ${textColorInactive}`}
+                        >
                           {link.title}
                         </span>
                       )
@@ -186,7 +174,7 @@ const NavItem = ({
                 </div>
                 <div className="w-[369px]">
                   <div className="pb-[30px]">
-                    <h1 className="text-lg text-grey-deep">{dropDownData?.nav_two?.title}</h1>
+                    <h1 className={`text-lg ${textColor}`}>{dropDownData?.nav_two?.title}</h1>
                   </div>
                   <div
                     className={`${
@@ -198,19 +186,17 @@ const NavItem = ({
                         <Link
                           href={link.to}
                           key={i}
-                          className="flex items-center font-semibold text-textBaseColor"
+                          className={`flex items-center font-semibold ${textColor}`}
                           onClick={() => onClose(text)}
                         >
                           {link.title}
-                          <Image
-                            src={navDropdownArrow}
-                            height={12}
-                            className="ml-[12px]"
-                            alt="dropdown icon"
-                          />
+                          <ArrowRightIcon className={`ml-[12px] h-5 w-5 ${textColor}`} />
                         </Link>
                       ) : (
-                        <span key={i} className="flex items-center font-semibold text-grey-deep">
+                        <span
+                          key={i}
+                          className={`flex items-center font-semibold ${textColorInactive}`}
+                        >
                           {link.title}
                         </span>
                       )
@@ -221,109 +207,6 @@ const NavItem = ({
             </section>
           </div>
         </div>
-
-        {/* <div
-          className={cn('fixed top-0 left-0 bottom-0 right-0 z-10 mt-20 h-96 w-full bg-black ', {
-            ['flex']: isVisible,
-            ['hidden']: !isVisible,
-          })}
-        ></div> */}
-
-        {/* <div
-          className={isVisible ? `fixed top-0 left-0 bottom-0 right-0 z-10  bg-black/50` : 'hidden'}
-          onClick={() => onClose(text)}
-        >
-          <div className="z-30 mt-20 h-[400px] w-full bg-[#FDFDFC]">
-            <section className="flex h-full w-full">
-              <section className="lhs max-[475px] w-[475px] bg-grey-warm pl-[115px] pr-15 pt-14">
-                <h1 className="text-3xl font-semibold text-textBaseColor">{dropDownData?.title}</h1>
-                <p className="pt-5 pb-10 text-lg text-grey-deep">{dropDownData?.description}</p>
-
-                <div className="flex flex-col gap-5">
-                  {dropDownData?.links.map((link, i) => {
-                    return (
-                      <Link
-                        href={link.to}
-                        key={i}
-                        className="flex items-center font-semibold text-textBaseColor"
-                      >
-                        {link.title}
-                        <Image
-                          src={navDropdownArrow}
-                          height={12}
-                          className="ml-[12px]"
-                          alt="arrow down"
-                        />
-                      </Link>
-                    )
-                  })}
-                </div>
-              </section>
-              <section className="rhs flex flex-1 pt-14 pl-15">
-                <div className="w-[369px]">
-                  <div className="pb-[30px]">
-                    <h1 className=" text-lg text-grey-deep">{dropDownData?.nav_one?.title}</h1>
-                  </div>
-                  <div className="flex flex-col gap-5">
-                    {dropDownData?.nav_one.link.map((link, i) => {
-                      return link.isActive ? (
-                        <Link
-                          href={link.to}
-                          key={i}
-                          className="flex items-center font-semibold text-textBaseColor"
-                        >
-                          {link.title}
-                          <Image
-                            src={navDropdownArrow}
-                            height={12}
-                            className="ml-[12px]"
-                            alt="dropdown icon"
-                          />
-                        </Link>
-                      ) : (
-                        <span key={i} className="flex items-center font-semibold text-grey-deep">
-                          {link.title}
-                        </span>
-                      )
-                    })}
-                  </div>
-                </div>
-                <div className="w-[369px]">
-                  <div className="pb-[30px]">
-                    <h1 className="text-lg text-grey-deep">{dropDownData?.nav_two?.title}</h1>
-                  </div>
-                  <div
-                    className={`${
-                      !dropDownData?.nav_two?.title ? 'pt-[30px]' : ''
-                    } flex flex-col gap-5`}
-                  >
-                    {dropDownData?.nav_two.link.map((link, i) => {
-                      return link.isActive ? (
-                        <Link
-                          href={link.to}
-                          key={i}
-                          className="flex items-center font-semibold text-textBaseColor"
-                        >
-                          {link.title}
-                          <Image
-                            src={navDropdownArrow}
-                            height={12}
-                            className="ml-[12px]"
-                            alt="dropdown icon"
-                          />
-                        </Link>
-                      ) : (
-                        <span key={i} className="flex items-center font-semibold text-grey-deep">
-                          {link.title}
-                        </span>
-                      )
-                    })}
-                  </div>
-                </div>
-              </section>
-            </section>
-          </div>
-        </div> */}
       </span>
     )
   }
@@ -394,7 +277,7 @@ const Navbar = ({ bg }) => {
   return (
     <>
       <header
-        className={`${color} fixed top-0 left-0 right-0 z-50 flex h-20 justify-center py-4 px-6 lg:py-4 lg:px-16`}
+        className={`${color} static top-0 left-0 right-0 z-50 flex h-20 justify-center py-4 px-6 lg:py-4 lg:px-16`}
       >
         <div className="container flex w-screen flex-row items-center justify-between">
           <div className="z-50">

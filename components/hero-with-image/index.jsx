@@ -14,7 +14,7 @@ const HeroWithImages = ({
   const color = bg === 'white' ? 'text-black bg-white' : `text-white bg-${bg}`
   return (
     <section className={`mx-auto flex items-center ${color}`}>
-      <div className="mt-40 flex-1 pb-[100px] pl-28 pr-30">
+      <div className="mt-20 flex-1 pb-[100px] pl-28 pr-30">
         <span className="font-semibold uppercase text-accent-orange">{slug}</span>
         {title}
         <p className="pr-20 pb-10 text-xl">{body}</p>
@@ -29,7 +29,7 @@ const HeroWithImages = ({
         <div className="relative aspect-square h-full w-full shrink-0">
           <Image
             fill
-            objectFit="contain"
+            objectFit="cover"
             src={image}
             alt="Bujeti dashboard"
             className="h-full w-full"
