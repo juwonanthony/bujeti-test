@@ -19,6 +19,9 @@ module.exports = {
       backgroundImage: {
         footer: 'url(../assets/image/footer-lines.svg)',
       },
+      fontFamily: {
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+      },
       spacing: {
         1.25: '0.3125rem',
         3.75: '0.9375rem',

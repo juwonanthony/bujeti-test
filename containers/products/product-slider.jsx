@@ -132,7 +132,7 @@ const ProductSlider = ({ products }) => {
           <div className="mt-[60px] h-[2px] w-full bg-grey-semi">
             <div
               className="progress h-[2px] overflow-hidden bg-black"
-              style={{ width: `${count}%`, transition: 'width 1s ease' }}
+              style={{ width: `${count}%`, transition: 'width .5s ease' }}
             ></div>
           </div>
         </div>
