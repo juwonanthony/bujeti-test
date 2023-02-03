@@ -8,7 +8,9 @@ const BusinessExpense = ({ businessExpense }) => {
   return (
     <section className="bg-grey-warm py-37">
       <div className="container mx-auto">
-        <h1 className="text-center text-5xl font-normal">{HTMLReactParser(title)}</h1>
+        <h1 className="mx-auto w-[775px] text-center text-5xl font-normal">
+          {HTMLReactParser(title)}
+        </h1>
         <div className="grid grid-cols-3 gap-8 pt-15">
           {cases.map(({ description, title, image: { filename } }, index) => (
             <div className="flex flex-col" key={index}>
