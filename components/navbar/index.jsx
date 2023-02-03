@@ -95,119 +95,129 @@ const NavItem = ({
 
   if (href === '#') {
     return (
-      <span
-        onMouseEnter={() => onClick(text)}
-        onMouseLeave={() => onClick('')}
-        className={cn(
-          isActive ? `font-semibold ${textColor} ` : `font-normal ${textColorInactive}`,
-          'group   cursor-pointer items-center gap-2 rounded-lg transition-all sm:py-2 md:flex'
-        )}
-      >
-        {text}
-        {hasIcon && (
-          <span>
-            {isVisible ? (
-              <ChevronUpIcon className={`ml-[12px] h-4 w-4 ${textColor}`} />
-            ) : (
-              <ChevronDownIcon className={`ml-[12px] h-4 w-4 ${textColor}`} />
-            )}
-          </span>
-        )}
-
-        <div
+      <>
+        <span
+          onMouseEnter={() => onClick(text)}
+          onMouseLeave={() => onClick('')}
           className={cn(
-            'fixed top-0 left-0 bottom-0 right-0 z-10 mt-10 hidden  h-fit w-full bg-transparent transition-all duration-500',
-            { ['group-hover:flex']: isVisible }
+            isActive ? `font-semibold ${textColor} ` : `font-normal ${textColorInactive}`,
+            'group   cursor-pointer items-center gap-2 rounded-lg transition-all sm:py-2 md:flex'
           )}
         >
-          <div
-            className={`z-30 mt-10 h-fit w-full !rounded-b-xl shadow-lg shadow-grey-warm-900/10 ${color}`}
-          >
-            <section className="flex h-full w-full">
-              <section className="lhs max-[475px] w-[475px] rounded-bl-xl bg-grey-warm py-14 pl-[115px] pr-15 ">
-                <h1 className="text-3xl font-semibold text-textBaseColor">{dropDownData?.title}</h1>
-                <p className="pt-5 pb-10 text-lg text-grey-deep">{dropDownData?.description}</p>
+          {text}
+          {hasIcon && (
+            <span>
+              {isVisible ? (
+                <ChevronUpIcon className={`ml-[12px] h-4 w-4 ${textColor}`} />
+              ) : (
+                <ChevronDownIcon className={`ml-[12px] h-4 w-4 ${textColor}`} />
+              )}
+            </span>
+          )}
 
-                <div className="flex flex-col gap-5">
-                  {dropDownData?.links.map((link, i) => {
-                    return (
-                      <Link
-                        href={link.to}
-                        key={i}
-                        className="flex items-center font-semibold text-textBaseColor"
-                        onClick={() => onClick('')}
-                      >
-                        {link.title}
-                        <ArrowRightIcon className={`ml-[12px] h-4 w-4 text-black`} />
-                      </Link>
-                    )
-                  })}
-                </div>
-              </section>
-              <section className="rhs flex flex-1 py-14 pl-15">
-                <div className="w-[369px]">
-                  <div className="pb-[30px]">
-                    <h1 className={`text-lg ${textColor}`}>{dropDownData?.nav_one?.title}</h1>
-                  </div>
+          <div
+            className={cn(
+              'fixed top-0 left-0 bottom-0 right-0 z-10 mt-10 hidden  h-fit w-full bg-transparent transition-all duration-500',
+              { ['group-hover:flex']: isVisible }
+            )}
+          >
+            <div
+              className={`z-30 mt-10 h-fit w-full !rounded-b-xl shadow-lg shadow-grey-warm-900/10 ${color}`}
+            >
+              <section className="flex h-full w-full">
+                <section className="lhs max-[475px] w-[475px] rounded-bl-xl bg-grey-warm py-14 pl-[115px] pr-15 ">
+                  <h1 className="text-3xl font-semibold text-textBaseColor">
+                    {dropDownData?.title}
+                  </h1>
+                  <p className="pt-5 pb-10 text-lg text-grey-deep">{dropDownData?.description}</p>
+
                   <div className="flex flex-col gap-5">
-                    {dropDownData?.nav_one.link.map((link, i) => {
-                      return link.isActive ? (
+                    {dropDownData?.links.map((link, i) => {
+                      return (
                         <Link
                           href={link.to}
                           key={i}
-                          className={`flex items-center  font-semibold ${textColor}`}
+                          className="flex items-center font-semibold text-textBaseColor"
                           onClick={() => onClick('')}
                         >
                           {link.title}
-                          <ArrowRightIcon className={`ml-[12px] h-5 w-5 ${textColor}`} />
+                          <ArrowRightIcon className={`ml-[12px] h-4 w-4 text-black`} />
                         </Link>
-                      ) : (
-                        <span
-                          key={i}
-                          className={`flex cursor-not-allowed items-center font-semibold ${textColorInactive}`}
-                        >
-                          {link.title}
-                        </span>
                       )
                     })}
                   </div>
-                </div>
-                <div className="w-[369px]">
-                  <div className="pb-[30px]">
-                    <h1 className={`text-lg ${textColor}`}>{dropDownData?.nav_two?.title}</h1>
+                </section>
+                <section className="rhs flex flex-1 py-14 pl-15">
+                  <div className="w-[369px]">
+                    <div className="pb-[30px]">
+                      <h1 className={`text-lg ${textColor}`}>{dropDownData?.nav_one?.title}</h1>
+                    </div>
+                    <div className="flex flex-col gap-5">
+                      {dropDownData?.nav_one.link.map((link, i) => {
+                        return link.isActive ? (
+                          <Link
+                            href={link.to}
+                            key={i}
+                            className={`flex items-center  font-semibold ${textColor}`}
+                            onClick={() => onClick('')}
+                          >
+                            {link.title}
+                            <ArrowRightIcon className={`ml-[12px] h-5 w-5 ${textColor}`} />
+                          </Link>
+                        ) : (
+                          <span
+                            key={i}
+                            className={`flex cursor-not-allowed items-center font-semibold ${textColorInactive}`}
+                          >
+                            {link.title}
+                          </span>
+                        )
+                      })}
+                    </div>
                   </div>
-                  <div
-                    className={`${
-                      !dropDownData?.nav_two?.title ? 'pt-[30px]' : ''
-                    } flex flex-col gap-5`}
-                  >
-                    {dropDownData?.nav_two.link.map((link, i) => {
-                      return link.isActive ? (
-                        <Link
-                          href={link.to}
-                          key={i}
-                          className={`flex items-center font-semibold ${textColor}`}
-                          onClick={() => onClose(text)}
-                        >
-                          {link.title}
-                          <ArrowRightIcon className={`ml-[12px] h-5 w-5 ${textColor}`} />
-                        </Link>
-                      ) : (
-                        <span
-                          key={i}
-                          className={`flex  cursor-not-allowed  items-center font-semibold ${textColorInactive}`}
-                        >
-                          {link.title}
-                        </span>
-                      )
-                    })}
+                  <div className="w-[369px]">
+                    <div className="pb-[30px]">
+                      <h1 className={`text-lg ${textColor}`}>{dropDownData?.nav_two?.title}</h1>
+                    </div>
+                    <div
+                      className={`${
+                        !dropDownData?.nav_two?.title ? 'pt-[30px]' : ''
+                      } flex flex-col gap-5`}
+                    >
+                      {dropDownData?.nav_two.link.map((link, i) => {
+                        return link.isActive ? (
+                          <Link
+                            href={link.to}
+                            key={i}
+                            className={`flex items-center font-semibold ${textColor}`}
+                            onClick={() => onClose(text)}
+                          >
+                            {link.title}
+                            <ArrowRightIcon className={`ml-[12px] h-5 w-5 ${textColor}`} />
+                          </Link>
+                        ) : (
+                          <span
+                            key={i}
+                            className={`flex  cursor-not-allowed  items-center font-semibold ${textColorInactive}`}
+                          >
+                            {link.title}
+                          </span>
+                        )
+                      })}
+                    </div>
                   </div>
-                </div>
+                </section>
               </section>
-            </section>
+            </div>
           </div>
-        </div>
-      </span>
+        </span>
+        <div
+          className={cn(
+            'fixed inset-0 -z-50 mt-20  h-full w-full -translate-x-8 bg-black opacity-40',
+            isVisible ? 'flex' : 'hidden'
+          )}
+        ></div>
+      </>
     )
   }
   return (
