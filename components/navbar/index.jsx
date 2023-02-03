@@ -100,7 +100,7 @@ const NavItem = ({
         onMouseLeave={() => onClick('')}
         className={cn(
           isActive ? `font-semibold ${textColor} ` : `font-normal ${textColorInactive}`,
-          'group  relative cursor-pointer items-center gap-2 rounded-lg transition-all sm:py-2 md:flex'
+          'group   cursor-pointer items-center gap-2 rounded-lg transition-all sm:py-2 md:flex'
         )}
       >
         {text}
@@ -155,7 +155,7 @@ const NavItem = ({
                         <Link
                           href={link.to}
                           key={i}
-                          className={`flex items-center font-semibold ${textColor}`}
+                          className={`flex items-center  font-semibold ${textColor}`}
                           onClick={() => onClick('')}
                         >
                           {link.title}
@@ -164,7 +164,7 @@ const NavItem = ({
                       ) : (
                         <span
                           key={i}
-                          className={`flex items-center font-semibold ${textColorInactive}`}
+                          className={`flex cursor-not-allowed items-center font-semibold ${textColorInactive}`}
                         >
                           {link.title}
                         </span>
@@ -195,7 +195,7 @@ const NavItem = ({
                       ) : (
                         <span
                           key={i}
-                          className={`flex items-center font-semibold ${textColorInactive}`}
+                          className={`flex  cursor-not-allowed  items-center font-semibold ${textColorInactive}`}
                         >
                           {link.title}
                         </span>
@@ -277,9 +277,9 @@ const Navbar = ({ bg }) => {
   return (
     <>
       <header
-        className={`${color} static top-0 left-0 right-0 z-50 flex h-20 justify-center py-4 px-6 lg:py-4 lg:px-16`}
+        className={`${color} sticky top-0 left-0 right-0 z-50 flex h-20 justify-center py-4 px-6 lg:py-4 lg:px-16`}
       >
-        <div className="container flex w-screen flex-row items-center justify-between">
+        <div className="container relative flex w-screen flex-row items-center justify-between">
           <div className="z-50">
             <NextLink href="/">
               <Image
