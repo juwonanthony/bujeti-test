@@ -3,9 +3,9 @@ import { useComponent } from 'lib/hooks/utils'
 import { fetchData } from 'lib/api'
 import AboutHero from 'containers/about/about-hero'
 import MisionVision from '../containers/about/mission-vission'
-import Values from 'containers/about/values'
 import LearnMore from 'containers/about/learn-more'
 import { CtaBanner } from 'containers/index'
+import Values from 'components/values'
 
 const About = (home) => {
   const { body = [] } = home.content || {}

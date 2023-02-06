@@ -39,6 +39,7 @@ module.exports = {
           brown: '#AF7421',
           light_yellow: '#FBF5EC',
           gray: '#242628',
+          'moss/400': '#86CB3C',
         },
         textBaseColor: '#242628',
         grey: {
