@@ -1,8 +1,8 @@
 const PricingSection = () => {
   return (
-    <section className="bg-grey-warm-900 py-[150px]">
+    <section className="bg-grey-warm-900 px-4 py-20 md:px-0 md:py-37 lg:px-0 lg:py-37">
       <section className="container mx-auto">
-        <div className="w-[580px]">
+        <div className="md:w-[580px] lg:w-[580px]">
           <span className="flex items-center gap-2 text-base font-medium text-accent-green">
             <svg
               width="14"
@@ -18,7 +18,9 @@ const PricingSection = () => {
             </svg>
             Pricing
           </span>
-          <h1 className="py-6 text-6xl font-semibold text-white">Pay fair. Spend less.</h1>
+          <h1 className="py-4 text-2xl font-semibold text-white md:py-6 md:text-6xl lg:py-6 lg:text-6xl">
+            Pay fair. Spend less.
+          </h1>
           <p className="text-xl text-white">
             With over 100 apps available in our directory, your team’s favourite tolls are just a
             click away.
@@ -30,10 +32,10 @@ const PricingSection = () => {
             Contact Sales
           </span>
         </div>
-        <section className="mt-25 flex w-full gap-5">
-          <div className="h-[680px] w-[390px] rounded-lg bg-grey-warm-800"></div>
-          <div className="h-[680px] w-[390px] scale-[1.05] rounded-lg bg-grey-accent"></div>
-          <div className="h-[680px] w-[390px] rounded-lg bg-grey-warm-800"></div>
+        <section className="mt-6 flex w-full flex-col gap-3 md:mt-25 md:flex-row md:gap-5 lg:mt-25 lg:flex-row lg:gap-5">
+          <div className="h-[347px] rounded-lg bg-grey-warm-800 md:h-[680px] md:w-[390px] lg:h-[680px] lg:w-[390px]"></div>
+          <div className="h-[347px] rounded-lg bg-grey-accent md:h-[680px] md:w-[390px] md:scale-[1.05] lg:h-[680px] lg:w-[390px] lg:scale-[1.05]"></div>
+          <div className="h-[347px] rounded-lg bg-grey-warm-800 md:h-[680px] md:w-[390px] lg:h-[680px] lg:w-[390px]"></div>
         </section>
       </section>
     </section>

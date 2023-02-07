@@ -61,7 +61,7 @@ const Industry = ({ industry }) => {
   const { image: { filename } = {} } = cases[clicked]
 
   return (
-    <section className="px-0 pt-12 md:pt-37 lg:pt-37">
+    <section className="px-0">
       <div className="grid w-full grid-cols-1 bg-accent-light_yellow md:h-[960px] md:grid-cols-2 lg:h-[960px] lg:grid-cols-2">
         <div className="flex flex-wrap content-start sm:pr-10">
           <div className="mb-6 w-full px-4 pt-16 sm:pl-28 sm:pr-20 md:pt-37 lg:pt-37">

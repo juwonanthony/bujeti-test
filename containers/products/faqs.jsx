@@ -45,15 +45,15 @@ const Faqs = ({ faqs }) => {
 
   return (
     <section className="w-full bg-accent-light_yellow">
-      <div className="container mx-auto flex px-5 py-37">
+      <div className="mb:px-5 container mx-auto flex px-4 py-16 md:py-37 lg:px-5 lg:py-37">
         <div className=" w-full">
-          <div className="mb-25 w-full">
+          <div className="mb-8 w-full md:mb-25 lg:mb-25">
             <SmallHeading color="#AF7421" svg={icon} title={header} />
-            <h1 className="my-4 max-w-xl text-5xl font-semibold leading-tight text-accent-gray">
+            <h1 className="my-4 max-w-xl text-2xl font-semibold leading-tight text-accent-gray md:text-5xl lg:text-5xl">
               {title}
             </h1>
           </div>
-          <div className="mb-25 flex flex-col gap-4 md:flex-row">
+          <div className="mb-6 flex flex-col gap-4 md:mb-25 md:flex-row lg:mb-25">
             <div className="w-full">
               {faq.map((faq, index) => (
                 <Accodion
@@ -68,10 +68,14 @@ const Faqs = ({ faqs }) => {
             </div>
           </div>
           <div className="w-full text-center">
-            <h1 className="mb-6 text-3xl font-bold">{footer_title}</h1>
-            <p className="mb-6 text-3xl text-grey-deep">{footer_subtitle}</p>
+            <h1 className="mb-[5px] text-base font-bold md:mb-6 md:text-3xl lg:mb-6 lg:text-3xl">
+              {footer_title}
+            </h1>
+            <p className="mb-4 text-base text-grey-deep md:mb-6 md:text-3xl lg:mb-6 lg:text-3xl">
+              {footer_subtitle}
+            </p>
             <div className="relative m-auto mb-8 aspect-[4/1] w-40 shrink-0 overflow-hidden">
-              <Image fill src={filename} alt="faq img" className="w-ful h-full" />
+              <Image fill src={filename} alt="faq img" className="h-full w-full" />
             </div>
             <button className="inline-flex rounded-lg bg-accent-gray py-2 px-6 text-base font-semibold text-white focus:outline-none">
               {footer_btn_label}

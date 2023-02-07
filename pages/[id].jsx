@@ -32,7 +32,7 @@ const ProductPages = (product) => {
         productInsight={productInsight}
         productSolution={productSolution}
       />
-      <section className="py-40">
+      <section className="py-20 md:py-40 lg:py-40">
         <Partners partners={useComponent(body, 'industry_leaders')} />
       </section>
       <CtaBanner ctaBanner={useComponent(body, 'cta')} />
