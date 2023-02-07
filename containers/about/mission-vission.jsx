@@ -13,9 +13,9 @@ const data = [
 
 const MisionVision = () => {
   return (
-    <section className="py-40">
+    <section className="px-4 py-30 md:px-0 md:py-40 lg:px-0 lg:py-40">
       <div className="container mx-auto">
-        <div className="flex items-center justify-between gap-[170px]">
+        <div className="flex flex-col items-center gap-[32px] md:flex-row md:justify-between md:gap-[170px] lg:flex-row lg:justify-between lg:gap-[170px]">
           {data?.map((datum, i) => {
             return (
               <div className="" key={i}>
@@ -34,10 +34,12 @@ const MisionVision = () => {
                   </svg>
                   {datum.type}
                 </span>
-                <h1 className="pt-[10px] pb-[20px] text-4xl font-semibold leading-[44px]">
+                <h1 className="pt-[10px] pb-4 text-lg font-semibold md:pb-[20px] md:text-4xl md:leading-[44px] lg:pb-[20px] lg:text-4xl lg:leading-[44px]">
                   {datum.title}
                 </h1>
-                <p className="text-xl leading-[30px] text-grey-deep">{datum.body}</p>
+                <p className="text-sm text-grey-deep md:text-xl md:leading-[30px] lg:text-xl lg:leading-[30px]">
+                  {datum.body}
+                </p>
               </div>
             )
           })}

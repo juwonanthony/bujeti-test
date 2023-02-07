@@ -14,15 +14,19 @@ const ListCard = ({ data }) => {
   } = data
 
   return (
-    <section className="justify-space-between flex items-center gap-30">
-      <section className="w-1/2">
-        <h1 className="text-3xl font-semibold leading-10 text-textBaseColor">{title}</h1>
-        <p className="pb-7 pt-2 text-2xl text-grey-deep">{description}</p>
-        <div className="flex gap-[30px]">
+    <section className="flex flex-col items-center gap-5 px-4 md:flex-row md:justify-between md:gap-30 md:px-0 lg:flex-row lg:justify-between lg:gap-30 lg:px-0">
+      <section className="w-full md:w-1/2 lg:w-1/2">
+        <h1 className="text-2xl font-semibold leading-10 text-textBaseColor md:text-3xl lg:text-3xl">
+          {title}
+        </h1>
+        <p className="pb-4 pt-2 text-base text-grey-deep md:pb-7 md:text-2xl lg:pb-7 lg:text-2xl">
+          {description}
+        </p>
+        <div className="flex md:gap-[30px] lg:gap-[30px]">
           {main_link_label ? (
             <Link
               href={mainLink}
-              className="flex items-center gap-[10px] text-2xl text-accent-brown"
+              className="flex items-center gap-[10px] text-lg text-accent-brown md:text-2xl lg:text-2xl"
             >
               {main_link_label}
               <span>
@@ -44,7 +48,10 @@ const ListCard = ({ data }) => {
               </span>
             </Link>
           ) : sub_link_label ? (
-            <Link href={subLink} className="flex items-center gap-[10px] text-2xl text-grey-deep">
+            <Link
+              href={subLink}
+              className="flex items-center gap-[10px]  text-lg text-grey-deep md:text-2xl lg:text-2xl"
+            >
               {sub_link_label}
               <span>
                 <svg
@@ -67,7 +74,7 @@ const ListCard = ({ data }) => {
           ) : null}
         </div>
       </section>
-      <section className="w-1/2">
+      <section className="w-full md:w-1/2 lg:w-1/2">
         <div className="relative aspect-square h-full w-full shrink-0">
           <Image fill objectFit="contain" src={filename} alt={filename} className="w-full" />
         </div>

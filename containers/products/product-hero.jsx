@@ -18,7 +18,11 @@ const ProductHero = ({ hero }) => {
   return (
     <HeroWithImages
       slug={small_title}
-      title={<h1 className="py-4 text-6xl">{HTMLReactParser(title)}</h1>}
+      title={
+        <h1 className="md:leading-0 lg:leading-0 py-4 text-[36px] leading-[46px] md:text-6xl lg:text-6xl">
+          {HTMLReactParser(title)}
+        </h1>
+      }
       body={subtitle}
       image={heroImg}
       bg={'white'}

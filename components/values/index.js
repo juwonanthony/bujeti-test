@@ -29,10 +29,10 @@ const data = [
 
 const Values = () => {
   return (
-    <section className="w-full bg-grey-warm-900 py-37">
-      <div className="container mx-auto ">
-        <div className="flex justify-between">
-          <div className="w-[580px]">
+    <section className="w-full bg-grey-warm-900 px-4 py-[52px] md:py-37 md:px-0 lg:py-37 lg:px-0">
+      <div className="container mx-auto">
+        <div className="flex flex-col md:flex-row md:justify-between lg:flex-row lg:justify-between">
+          <div className="w-full md:w-[580px] lg:w-[580px]">
             <span className="flex items-center gap-2 text-base font-medium text-accent-green">
               <svg
                 width="16"
@@ -48,12 +48,14 @@ const Values = () => {
               </svg>
               Values
             </span>
-            <h1 className="py-6 text-5xl text-white">
-              Empowering each other to bring unique perspectives and experiences to work, <br /> and
-              we continually seek new ways to do so.
+            <h1 className="py-6 text-2xl leading-[31px] text-white md:text-5xl md:leading-[60px] lg:text-5xl lg:leading-[60px]">
+              <span className="font-semibold">
+                Empowering each other to bring unique perspectives and experiences to work
+              </span>
+              ,<br /> and we continually seek new ways to do so.
             </h1>
           </div>
-          <div className="w-[420px]">
+          <div className="mb:mt-0 mt-5 w-full md:w-[420px] lg:mt-0 lg:w-[420px]">
             {data.map((datum, i) => {
               return (
                 <div className="flex gap-2 pb-[30px]" key={i}>

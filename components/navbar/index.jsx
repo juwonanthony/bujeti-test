@@ -91,8 +91,6 @@ const NavItem = ({
 
   const isActive = router.asPath === href
 
-  const rotateIcon = isVisible ? `ease-in-out rotate-180` : ''
-
   if (href === '#') {
     return (
       <>
@@ -265,28 +263,12 @@ const Navbar = ({ bg }) => {
     }
   }
 
-  // const toggleDropdown = (text) => {
-  //   const newLink = navLinks.map((navLink) => {
-  //     console.log(text)
-  //     if (navLink.title === text) {
-  //       return {
-  //         ...navLink,
-  //         isVisible: !navLink.isVisible,
-  //       }
-  //     }
-  //     return navLink
-  //   })
-  //   setNavLinks(newLink)
-  //   let path = text.split('/').filter((item) => item !== '')[0]
-  //   console.log(path)
-  //   setDropDownData(dropdownData[path])
-  // }
-
   let dropDownData = dropdownData[active]
 
   return (
     <>
       <header
+       
         className={`${color} sticky top-0 left-0 right-0 z-50 flex h-20 justify-center py-4 px-6 lg:py-4 lg:px-16`}
       >
         <div className="container relative flex w-screen flex-row items-center justify-between">
@@ -357,3 +339,4 @@ const Navbar = ({ bg }) => {
 }
 
 export default Navbar
+// className={`${color} static top-0 left-0 right-0 z-50 flex justify-center py-4 px-6 md:h-20 lg:h-20 lg:py-4 lg:px-16`}

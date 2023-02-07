@@ -70,7 +70,7 @@ const ProductSlider = ({ products }) => {
   return (
     <div>
       <div
-        className="product-features-name relative mb-20 flex max-w-7xl gap-[20px] overflow-x-scroll"
+        className="product-features-name relative mb-8 flex max-w-7xl gap-[20px] overflow-x-scroll md:mb-20 lg:mb-20"
         ref={featuresRef}
       >
         {products.map((product, i) => {
@@ -82,21 +82,23 @@ const ProductSlider = ({ products }) => {
               }}
               className={`${
                 i === controlledSwiper ? 'text-accent-orange' : 'text-grey-warm-400'
-              } cursor-pointer text-xl`}
+              } cursor-pointer md:text-xl lg:text-xl`}
             >
               {product.title}
             </span>
           )
         })}
-        <div className="absolute right-0 h-full w-full max-w-[400px] bg-gradient-to-r from-transparent  via-white to-white" />
+        <div className="absolute right-0 hidden h-full w-full max-w-[400px] bg-gradient-to-r from-transparent via-white to-white  md:flex lg:flex" />
       </div>
       <div className="relative grid overflow-hidden rounded-3xl md:grid-cols-2">
         {/* <div className="min-h-full w-full"> */}
-        <div className="flex flex-col pr-20">
-          <h5 className="text-[48px] font-semibold text-accent-gray">{title}</h5>
-          <p className="text-[40px] text-support">{description}</p>
+        <div className="flex flex-col md:pr-20 lg:pr-20">
+          <h5 className="text-2xl font-semibold text-accent-gray md:text-5xl lg:text-5xl">
+            {title}
+          </h5>
+          <p className="text-2xl text-support md:text-4xl lg:text-4xl">{description}</p>
           <div className="flex items-center pt-7 pb-20">
-            <Link className="text-2xl" href="/">
+            <Link className="text-lg md:text-2xl lg:text-2xl" href="/">
               Discover more
             </Link>
             <span>

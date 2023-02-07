@@ -3,7 +3,7 @@ import Items from './Items'
 
 const CaseStudies = ({ title, slug, bg, type, data }) => {
   return (
-    <section className={`${bg} py-[150px]`}>
+    <section className={`${bg} px-4 py-20 md:px-0 md:py-[150px] lg:px-0 lg:py-[150px]`}>
       <section className="container mx-auto">
         <header>
           <span class="flex items-center gap-2 text-accent-brown">
@@ -43,12 +43,14 @@ const CaseStudies = ({ title, slug, bg, type, data }) => {
             )}{' '}
             {slug}
           </span>
-          <h1 className="mt-2 text-6xl leading-[100px]">{title}</h1>
+          <h1 className="mt-2 text-3xl md:text-6xl md:leading-[100px] lg:text-6xl lg:leading-[100px]">
+            {title}
+          </h1>
         </header>
-        <main className="mt-20 flex items-center gap-[110px]">
+        <main className="mt-8 flex flex-col items-center justify-between gap-[80px] md:mt-20 md:flex-row lg:mt-20 lg:flex-row">
           {data?.map((datum, index) => {
             return (
-              <div className="w-[550px]" key={index}>
+              <div className="max-w-[550px] md:flex-1 lg:flex-1" key={index}>
                 <Items data={datum} type={type} />
               </div>
             )

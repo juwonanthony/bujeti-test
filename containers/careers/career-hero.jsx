@@ -18,7 +18,7 @@ const CareerHero = () => {
     <HeroWithImages
       slug={'Life at Bujeti'}
       title={
-        <h1 className="py-4 text-6xl">
+        <h1 className="py-4 text-3xl md:text-6xl lg:text-6xl ">
           {HTMLReactParser('<b>Grow with us</b><br/> and our partners.')}
         </h1>
       }
