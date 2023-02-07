@@ -250,7 +250,6 @@ const Navbar = ({ bg }) => {
   const buttonText = color === 'bg-white' ? 'text-white' : 'text-accent-gray'
 
   const getColorByPathname = (pathname) => {
-    // console.log(pathname)
     let path = pathname.split('/').filter((item) => item !== '')[0]
     const keys = Object.keys(colorListByPage)
     if (path === undefined) {
@@ -268,7 +267,6 @@ const Navbar = ({ bg }) => {
   return (
     <>
       <header
-       
         className={`${color} sticky top-0 left-0 right-0 z-50 flex h-20 justify-center py-4 px-6 lg:py-4 lg:px-16`}
       >
         <div className="container relative flex w-screen flex-row items-center justify-between">
