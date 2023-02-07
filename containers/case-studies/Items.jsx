@@ -7,10 +7,18 @@ const Items = ({ data, type }) => {
       <Image src={data.logo} className="w-14" alt="logo" />
       <section className="mt-10 cursor-pointer">
         {type === 'case-study' ? (
-          <Image src={data.image} alt={data.image} className="w-full rounded-xl" />
+          <Image
+            src={data.image}
+            alt={data.image}
+            className="h-[550px] w-full rounded-xl object-cover"
+          />
         ) : (
           <div className="relative w-full">
-            <Image src={data.image} className="w-full rounded-xl" alt={data.image} />
+            <Image
+              src={data.image}
+              className="h-[550px] w-full rounded-xl object-cover"
+              alt={data.image}
+            />
             <div className="absolute top-0 h-full w-full rounded-xl bg-black opacity-30"></div>
             <svg
               width="80"
@@ -30,13 +38,18 @@ const Items = ({ data, type }) => {
           </div>
         )}
 
-        <div className="mt-15">
-          <h4 className="text-3xl text-textBaseColor">{data.title}</h4>
-          <p className="pt-2 pb-8 text-2xl font-normal leading-8 text-grey-deep">
+        <div className="mt-4 md:mt-15 lg:mt-15">
+          <h4 className="text-lg font-semibold  text-textBaseColor md:text-3xl lg:text-3xl">
+            {data.title}
+          </h4>
+          <p className="pt-2 pb-8 text-sm font-normal text-grey-deep md:text-2xl md:leading-8 lg:text-2xl lg:leading-8">
             {data.description}
           </p>
         </div>
-        <Link href={data.link} className="flex items-center gap-2 text-2xl text-accent-brown">
+        <Link
+          href={data.link}
+          className="flex items-center gap-2  text-accent-brown md:text-2xl lg:text-2xl"
+        >
           {data.link_tag}{' '}
           <span>
             <svg

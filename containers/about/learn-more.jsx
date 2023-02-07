@@ -23,12 +23,12 @@ const data = [
 
 const LearnMore = () => {
   return (
-    <section className="py-[150px]">
+    <section className="px-4 py-20 md:px-0 md:py-37 lg:px-0 lg:py-37">
       <div className="container mx-auto">
-        <h1 className="pb-20 text-6xl">
+        <h1 className="pb-10 text-3xl md:pb-20 md:text-6xl lg:pb-20 lg:text-6xl">
           <b>Learn more</b> about Us
         </h1>
-        <div className="flex items-center justify-between gap-32">
+        <div className="flex flex-col items-center justify-between gap-10 md:flex-row md:gap-32 lg:flex-row lg:gap-32">
           {data?.map((datum, i) => {
             return (
               <div key={i}>

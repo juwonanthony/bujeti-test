@@ -61,7 +61,7 @@ const Customers = (customer) => {
       <CustomerHero
         slug="For startups"
         title={
-          <h1 className="py-4 text-6xl">
+          <h1 className="py-4 text-3xl md:text-6xl lg:text-6xl">
             Get your startup
             <br /> <b>finances in order.</b>
           </h1>
