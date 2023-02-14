@@ -14,6 +14,7 @@ import 'swiper/css/autoplay'
 
 // import required modules
 import { Pagination } from 'swiper'
+import HTMLReactParser from 'html-react-parser'
 const Testi = [
   {
     name: 'Olumide Soyombo',
@@ -92,9 +93,9 @@ const Testimonials = ({ testimonials }) => {
   return (
     <section className="container mx-auto flex flex-col px-5 py-16 md:py-37 lg:py-37">
       <div className="mb-4 space-y-3 md:mb-20 lg:mb-20">
-        <SmallHeading svg={partner_svg} title="Partners" color="#D28B28" />
+        <SmallHeading svg={icon} title={header} color="#D28B28" />
         <h1 className="text-3xl font-semibold text-accent-gray md:text-5xl lg:text-5xl">
-          Here’s what they say {'"'}
+          {HTMLReactParser(title)}
         </h1>
       </div>
 
