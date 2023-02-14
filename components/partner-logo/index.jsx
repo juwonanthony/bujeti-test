@@ -4,7 +4,7 @@ import React from 'react'
 const PartnerLogo = ({ column, image = [] }) => {
   return (
     <div
-      className={`mb-10 grid gap-2`}
+      className={`mb-10 grid gap-20`}
       style={{ gridTemplateColumns: `repeat(${column}, minmax(0, 1fr))` }}
     >
       {image.map(({ image: { filename } }, index) => (
