@@ -42,7 +42,7 @@ const WhyUs = ({ whyUs }) => {
         <div className="grid justify-center gap-4 md:grid-cols-2 lg:grid-cols-2 ">
           <div className="max-w-4xl px-4 py-12 md:px-28 md:py-37 lg:px-28 lg:py-37">
             <SmallHeading color="#BFFF0B" svg={filename} title={header} />
-            <h1 className="mb-4 mt-6 text-xl leading-tight text-white md:mt-0 md:text-5xl lg:mt-0 lg:text-5xl">
+            <h1 className="mb-4 mt-6 text-xl leading-tight text-white md:mt-0 md:text-5xl lg:mt-4 lg:text-5xl">
               {main_title}
             </h1>
             <h1 className="text-2xl font-semibold leading-tight text-white md:text-5xl lg:text-5xl">
