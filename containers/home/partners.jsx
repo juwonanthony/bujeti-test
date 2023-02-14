@@ -2,10 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { antler, sleep, webflow } from 'assets/image'
 import { PartnerLogo } from 'components'
 
-const partnerss = [
-  { image: [antler, sleep, webflow, antler, sleep] },
-  { image: [antler, sleep, webflow, antler, sleep, webflow] },
-]
 const Partners = ({ partners }) => {
   const { subtitle = '', title = '', logos = [] } = partners || {}
   return (

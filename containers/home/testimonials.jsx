@@ -120,10 +120,16 @@ const Testimonials = ({ testimonials }) => {
         </Swiper>
 
         <div className="flex flex-col justify-between py-7 px-4 leading-normal md:py-20 md:pr-28 lg:py-20 lg:pr-28">
-          <Image src={changeText.logo} alt="" className="mb-10" />
+          {/* <Image src={changeText.logo} alt="" className="mb-10" /> */}
+          <div className="relative mb-10 aspect-[4/1] h-[45px] w-fit shrink-0 overflow-hidden">
+            <Image fill objectFit="contain" src={logo} alt="logo" className="w-full" />
+          </div>
+          {/* <div className="relative mb-10 aspect-square h-[40px] w-full shrink-0 ">
+            <Image fill objectFit="contain" src={logo} alt="logo" className="h-full w-full" />
+          </div> */}
 
-          <h5 className="text-base font-semibold tracking-tighter text-accent-gray md:text-[42px] lg:text-[42px]">
-            {parse(changeText.text)}
+          <h5 className="text-base font-semibold leading-tight tracking-tighter text-accent-gray md:text-[42px] lg:text-[42px]">
+            {parse(text)}
           </h5>
           <div className="my-8">
             <p className="mb-3 font-semibold text-gray-800 ">

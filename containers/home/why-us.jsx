@@ -41,18 +41,17 @@ const WhyUs = ({ whyUs }) => {
       <div className="flex flex-col items-center">
         <div className="grid justify-center gap-4 md:grid-cols-2 lg:grid-cols-2 ">
           <div className="max-w-4xl px-4 py-12 md:px-28 md:py-37 lg:px-28 lg:py-37">
-            <SmallHeading color="#BFFF0B" svg={why_us} title="Why us?" />
+            <SmallHeading color="#BFFF0B" svg={filename} title={header} />
             <h1 className="mb-4 mt-6 text-xl leading-tight text-white md:mt-0 md:text-5xl lg:mt-0 lg:text-5xl">
-              Best-in-class, fully integrated and easy-to-use accounting and expense management
-              solution for ambitious businesses.
+              {main_title}
             </h1>
             <h1 className="text-2xl font-semibold leading-tight text-white md:text-5xl lg:text-5xl">
-              Get your finances right with <span className="text-accent-green">Bujeti</span> today.
+              {HTMLReactParser(highlighted_title)}
             </h1>
           </div>
           <div className="space-y-4 px-4 py-16 md:px-28 md:py-37 lg:px-28 lg:py-37">
-            {listwhy.map(({ svg, title, description }, index) => (
-              <ListItems key={index} title={title} description={description} svg={svg} />
+            {reasons.map(({ image, title, description }, index) => (
+              <ListItems key={index} title={title} description={description} svg={image.filename} />
             ))}
           </div>
         </div>
