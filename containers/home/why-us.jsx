@@ -49,7 +49,7 @@ const WhyUs = ({ whyUs }) => {
               {HTMLReactParser(highlighted_title)}
             </h1>
           </div>
-          <div className="space-y-4 px-4 py-16 md:px-28 md:py-37 lg:px-28 lg:py-37">
+          <div className="space-y-4 py-8 px-4 md:py-37  lg:px-0  lg:py-37">
             {reasons.map(({ image, title, description }, index) => (
               <ListItems key={index} title={title} description={description} svg={image.filename} />
             ))}
