@@ -38,7 +38,7 @@ const Careers = () => {
 //       notFound: true,
 //     }
 //   }
-//   return { props: data, revalidate: 10 }
+//   return { props: data, revalidate: 5 }
 // }
 
 export default Careers

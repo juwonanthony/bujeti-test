@@ -18,6 +18,8 @@ const ProductPages = (product) => {
   const productInsight = useComponent(body, 'numbers')
   const productSolution = useComponent(body, 'features')
 
+  console.log(body)
+
   return (
     <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <DynamicPages
@@ -51,7 +53,7 @@ export async function getStaticProps({ params }) {
       notFound: true,
     }
   }
-  return { props: data, revalidate: 10 }
+  return { props: data, revalidate: 5 }
 }
 
 export async function getStaticPaths() {
