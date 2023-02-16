@@ -12,7 +12,7 @@ const Partners = ({ partners }) => {
         </h1>
         <p className="mb-8 font-light leading-relaxed text-accent-gray md:text-sm">{subtitle}</p>
       </div>
-      <div className="flex flex-col items-center ">
+      <div className="flex flex-col items-center pb-16">
         {logos?.map(({ logo }, index) => (
           <PartnerLogo column={logo.length} image={logo} key={index} />
         ))}
