@@ -90,7 +90,7 @@ const ProductSlider = ({ products }) => {
         })}
         <div className="absolute right-0 hidden h-full w-full max-w-[400px] bg-gradient-to-r from-transparent via-white to-white  md:flex lg:flex" />
       </div>
-      <div className="relative grid overflow-hidden rounded-3xl md:grid-cols-2">
+      <div className="relative grid overflow-hidden rounded-3xl md:grid-cols-2 md:rounded-none">
         {/* <div className="min-h-full w-full"> */}
         <div className="flex flex-col md:pr-20 lg:pr-20">
           <h5 className="text-2xl font-semibold text-accent-gray md:text-5xl lg:text-5xl">

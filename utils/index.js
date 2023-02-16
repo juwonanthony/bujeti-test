@@ -63,17 +63,17 @@ export const dropdownData = {
     nav_one: {
       title: 'Learn',
       link: [
-        { title: 'Blog', to: '/blog', isActive: true },
+        { title: 'Blog', to: '/blog', isActive: false },
         { title: 'Careers', to: '/careers', isActive: true },
-        { title: 'Events', to: '/events', isActive: true },
+        { title: 'Events', to: '/events', isActive: false },
         { title: 'Contact us', to: '/contact-us', isActive: true },
       ],
     },
     nav_two: {
       title: 'Support',
       link: [
-        { title: 'Help Center', to: '/help-center', isActive: true },
-        { title: 'Frequently Asked Questions', to: '/faq', isActive: true },
+        { title: 'Help Center', to: '/help-center', isActive: false },
+        { title: 'Frequently Asked Questions', to: '/faq', isActive: false },
         { title: 'Terms of Use', to: '/terms-of-use', isActive: true },
         { title: 'Privacy Policy', to: '/privacy-policy', isActive: true },
       ],

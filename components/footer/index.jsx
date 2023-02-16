@@ -20,27 +20,27 @@ const productLink = [
 const usingBujeti = [
   { title: 'For Startups', link: '/startup' },
   { title: 'For Employees', link: '/employees' },
-  { title: 'For Financial Services', link: '/' },
-  { title: 'For Travel & Hospitality', link: '/' },
-  { title: 'For Technology', link: '/' },
-  { title: 'For Healthcare', link: '/' },
-  { title: 'For Marketing', link: '/' },
-  { title: 'For Restaurants', link: '/' },
-  { title: 'For Non-Profit', link: '/' },
+  { title: 'For Financial Services', link: '/finance' },
+  { title: 'For Travel & Hospitality', link: '/hospitality' },
+  { title: 'For Technology', link: '/technology' },
+  { title: 'For Healthcare', link: '/healthcare' },
+  { title: 'For Marketing', link: '/marketing' },
+  { title: 'For Restaurants', link: '/restaurants' },
+  { title: 'For Non-Profit', link: '/non-profits' },
 ]
 
 const companyLink = [
-  { title: 'About Us', link: '/' },
+  { title: 'About Us', link: '/about' },
   { title: 'Blog', link: '/' },
-  { title: 'Careers', link: '/' },
-  { title: 'Contact', link: '/' },
+  { title: 'Careers', link: '/careers' },
+  { title: 'Contact', link: '/contact' },
 ]
 
 const resourceLink = [
-  { title: 'Help', link: '/' },
-  { title: 'FAQ', link: '/' },
-  { title: 'Terms of Use', link: '/' },
-  { title: 'Privacy Policy', link: '/' },
+  // { title: 'Help', link: '/' },
+  // { title: 'FAQ', link: '/' },
+  { title: 'Terms of Use', link: '/terms-of-use' },
+  { title: 'Privacy Policy', link: '/privacy-policy' },
 ]
 
 const comingSoon = [
