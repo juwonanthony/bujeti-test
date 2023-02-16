@@ -45,7 +45,7 @@ const LayoutWrapper = (props) => {
         {meta.date && <meta property="article:published_time" content={meta.date} />}
       </Head>
       <Navbar bg={'white'} navbar={navbar} />
-      <main id="skip">
+      <main className="w-full">
         {children}
         <Footer footer={footer} />
       </main>

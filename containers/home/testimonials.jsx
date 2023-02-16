@@ -105,22 +105,26 @@ const Testimonials = ({ testimonials }) => {
           {...params}
           controller={{ control: controlledSwiper }}
           onSlideChange={(e) => setControlledSwiper(e.realIndex)}
-          className="flex items-center"
+          className="hidden min-h-full items-center rounded-l-3xl md:flex"
           // effect="fade"
         >
           {testimony.map(({ image: { filename: image } }, i) => (
             <SwiperSlide key={i}>
-              <Image
-                src={image}
-                alt=""
-                fill
-                className="static h-fit w-full max-w-xl rounded-t-3xl object-cover md:rounded-none md:rounded-l-3xl"
-              />
+              <div className="relative aspect-[4/1] h-full w-full shrink-0 ">
+                <Image
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="center"
+                  src={image}
+                  alt="Bujeti dashboard"
+                  className="h-full w-full"
+                />
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
 
-        <div className="flex flex-col justify-between py-7 px-4 leading-normal md:py-20 md:pr-28 lg:py-20 lg:pr-28">
+        <div className="flex flex-col justify-between py-7 px-4 leading-normal md:py-20 md:pr-28 md:pl-28 lg:py-20">
           {/* <Image src={changeText.logo} alt="" className="mb-10" /> */}
           <div className="relative mb-10 aspect-[4/1] h-[45px] w-fit shrink-0 overflow-hidden">
             <Image fill objectFit="contain" src={logo} alt="logo" className="w-full" />
