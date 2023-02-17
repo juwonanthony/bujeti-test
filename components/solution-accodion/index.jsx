@@ -35,8 +35,8 @@ const SolutionAccodion = ({ solution, active, onToggle, length, percent }) => {
           <h1
             className={`my-4 flex cursor-pointer items-center ${
               active
-                ? ' mb-0 font-semibold text-accent-brown md:text-5xl'
-                : `group text-2xl font-medium text-gray-700 transition-all duration-300 ease-in-out hover:font-semibold hover:text-accent-brown md:text-3xl hover:md:text-5xl lg:text-3xl ${opacity[percent]} hover:opacity-100 `
+                ? ' mb-0 text-3xl font-semibold text-accent-brown xl:text-5xl'
+                : `group text-2xl font-medium text-gray-700 transition-all duration-300 ease-in-out hover:font-semibold hover:text-accent-brown md:text-2xl hover:md:text-3xl xl:text-3xl hover:xl:text-5xl ${opacity[percent]} hover:opacity-100 `
             }`}
             // style={{ opacity: percent }}
           >
@@ -56,7 +56,7 @@ const SolutionAccodion = ({ solution, active, onToggle, length, percent }) => {
           style={active ? { height: scrollHeight } : { height: '0px' }}
           className="h-0 overflow-hidden transition-all duration-200 ease-in-out "
         >
-          <p className="mb-4 w-full leading-relaxed text-gray-500 md:mb-7 md:w-10/12 lg:mb-7">
+          <p className="mb-4 w-full leading-relaxed text-gray-500 md:mb-6 md:w-10/12 lg:mb-6">
             {description}
           </p>
         </div>

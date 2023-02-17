@@ -10,7 +10,7 @@ const PartnerLogo = ({ column, image = [] }) => {
       {image.map(({ image: { filename } }, index) => (
         <div
           key={index}
-          className="grid-item-f relative  aspect-[4/1] w-40 shrink-0 overflow-scroll md:overflow-hidden lg:overflow-hidden"
+          className="grid-item-f scrollbar-none  relative aspect-[4/1] w-40 shrink-0 overflow-scroll md:overflow-hidden lg:overflow-hidden"
         >
           <Image fill src={filename} alt={`${filename}-${index}`} className="w-ful h-full" />
         </div>
