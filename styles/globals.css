@@ -227,3 +227,20 @@ body {
 .place-items-center {
   place-items: center;
 }
+
+.grid-f {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.grid-item-f {
+  flex-basis: calc(20% - 20px);
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .grid-item-f {
+    flex-basis: calc(33.33% - 20px);
+  }
+}

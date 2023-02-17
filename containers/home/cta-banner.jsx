@@ -14,7 +14,7 @@ function CtaBanner({ ctaBanner }) {
   } = ctaBanner || {}
   return (
     <>
-      <section className="gradient__bg h-full w-full">
+      <section className="gradient__bg h-full w-full pb-16 md:pb-0">
         <div className="container relative mx-auto flex flex-col items-start px-5 pt-10 md:flex-row">
           <div className="static mb-0 w-5/6 md:-mt-40 md:mb-0 md:w-1/2 lg:mb-10 lg:-mt-40 lg:w-full lg:max-w-xl">
             {/* <Image src={phone_card} alt={phone_card} /> */}
