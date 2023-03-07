@@ -38,18 +38,18 @@ const WhyUs = ({ whyUs }) => {
 
   return (
     <section className="bg-[#1C1917]">
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center  px-2  sm:px-24 md:px-0  xl:px-0">
         <div className="grid justify-center gap-4 md:grid-cols-2 lg:grid-cols-2 ">
-          <div className="max-w-4xl px-4 py-12 md:px-28 md:py-37 lg:px-28 lg:py-37">
+          <div className="max-w-4xl px-4 py-16 md:px-28 lg:px-28 xl:py-37">
             <SmallHeading color="#BFFF0B" svg={filename} title={header} />
-            <h1 className="mb-4 mt-6 text-xl leading-tight text-white md:mt-0 md:text-5xl lg:mt-4 lg:text-5xl">
+            <h1 className="mb-4 mt-6 text-xl leading-tight text-white md:mt-0 md:text-4xl lg:mt-4 xl:text-5xl">
               {main_title}
             </h1>
             <h1 className="text-2xl font-semibold leading-tight text-white md:text-5xl lg:text-5xl">
               {HTMLReactParser(highlighted_title)}
             </h1>
           </div>
-          <div className="space-y-4 py-8 px-4 md:py-37  lg:px-0  lg:py-37">
+          <div className="space-y-4 px-4 pt-8 pb-16 md:py-16  lg:px-0  xl:py-37">
             {reasons.map(({ image, title, description }, index) => (
               <ListItems key={index} title={title} description={description} svg={image.filename} />
             ))}

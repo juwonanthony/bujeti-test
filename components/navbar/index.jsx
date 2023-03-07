@@ -8,8 +8,9 @@ import { useRouter } from 'next/router'
 import cn from 'classnames'
 import Link from 'next/link'
 import { ArrowRightIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid'
+import { motion } from 'framer-motion'
 
-import { navDropdownArrow, whiteUpArrow, hambuggerBlack } from 'assets/icons'
+import { navDropdownArrow, whiteUpArrow, hambuggerBlack, hambuggerWhite } from 'assets/icons'
 
 import { dropdownData } from 'utils'
 
@@ -264,73 +265,159 @@ const Navbar = ({ bg }) => {
 
   let dropDownData = dropdownData[active]
 
+  const variants = {
+    open: {
+      //   scale: 1,
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+    closed: {
+      //   scale: 0,
+      opacity: 0,
+      y: '-100%',
+      transition: {
+        duration: 0.5,
+      },
+      transitionEnd: {
+        display: 'hidden',
+      },
+    },
+  }
+
   return (
     <>
       <header
-        className={`${color} sticky top-0 left-0 right-0 z-50 flex h-20 justify-center py-4 px-6 lg:py-4 lg:px-16`}
+        className={`${color} !md:hidden fixed top-0 left-0 right-0 z-50 !flex justify-center bg-white py-4 px-6 lg:py-4 lg:px-16`}
       >
-        <div className="container relative flex w-screen flex-row items-center justify-between">
-          <div className="z-50">
+        <nav className="flex w-screen max-w-[110rem] flex-row items-center">
+          <div className="z-50 flex w-full items-center justify-between md:block md:w-fit ">
             <NextLink href="/">
               <Image
                 src={color === 'bg-white' || color === 'bg-grey-warm' ? logo : white_logo}
-                alt=""
+                alt="logo"
               />
             </NextLink>
+            <button className="z-50 block md:hidden" onClick={handleClick}>
+              <Image src={click ? hambuggerBlack : hambuggerBlack} alt="humbu" />
+            </button>
           </div>
-          <div className="z-50 hidden md:flex">
-            <div className="flex md:ml-auto md:mr-auto">
-              <button
-                className="absolute z-50 block -translate-y-4 -translate-x-8 md:hidden"
-                onClick={handleClick}
-              ></button>
-              <nav
-                className={`${textColor} flex flex-row items-center gap-3 space-x-8 text-sm font-normal lg:text-base`}
-              >
-                {navLinks.map((nav) => {
-                  return (
-                    <NavItem
-                      href={nav.link}
-                      text={nav.title}
-                      hasIcon={nav.hasIcon}
-                      key={nav.id}
-                      onClick={setActive}
-                      textColorInactive={textColorInactive}
-                      getColorByPathname={getColorByPathname}
-                      isVisible={active === nav.title}
-                      textColor={textColor}
-                      dropDownData={dropDownData}
-                      color={color}
-                    />
-                  )
-                })}
-              </nav>
+
+          {/* <aside className="w-full"> */}
+          <nav class="hidden flex-wrap items-center justify-center text-base md:ml-auto md:mr-auto md:flex">
+            <div
+              className={`${textColor} flex flex-row items-center  space-x-8 text-sm font-normal lg:text-base`}
+            >
+              {navLinks.map((nav) => {
+                return (
+                  <NavItem
+                    href={nav.link}
+                    text={nav.title}
+                    hasIcon={nav.hasIcon}
+                    key={nav.id}
+                    onClick={setActive}
+                    textColorInactive={textColorInactive}
+                    getColorByPathname={getColorByPathname}
+                    isVisible={active === nav.title}
+                    textColor={textColor}
+                    dropDownData={dropDownData}
+                    color={color}
+                  />
+                )
+              })}
             </div>
-          </div>
-          <div className="hidden flex-row items-center space-x-4 text-sm font-medium md:flex lg:text-[14px]">
+          </nav>
+
+          <div className="hidden flex-row items-center space-x-4 text-xs font-medium md:flex md:text-[14px]">
             <Link
               href="/contact-us"
-              className={`h-11 ${textColor} flex items-center justify-center px-6 font-semibold `}
+              className={`h-11 ${textColor} flex items-center justify-center px-4 font-semibold`}
             >
               Contact Sales
             </Link>
             <Link
               target="_blank"
               href="https://dashboard.bujeti.com/login"
-              className={`${buttonText} ${buttonBg} flex h-11 items-center justify-center gap-2 rounded-lg px-6 text-center font-semibold`}
+              className={`${buttonText} ${buttonBg} flex h-11 items-center justify-center gap-2 rounded-lg px-4 text-center font-semibold`}
             >
               {console.log(buttonBg)}
               Sign In
               <Image
                 src={buttonBg === 'bg-black' ? whiteUpArrow : navDropdownArrow}
                 className="rotate-[-45deg]"
+                alt="sign-in"
               />
             </Link>
           </div>
-          <div className="flex md:hidden">
-            <Image src={hambuggerBlack} alt="show menu" className="" />
+
+          <div>
+            <motion.nav
+              initial={false}
+              animate={click ? 'open' : 'closed'}
+              variants={variants}
+              className={`absolute top-0 left-0 right-0 bottom-0 block min-h-screen bg-white md:hidden`}
+            >
+              <div className="mt-25 flex h-full min-w-full flex-col">
+                <div className="w-full">
+                  <ul className="flex flex-col space-y-10  ">
+                    <li className="relative">
+                      <a
+                        className="flex cursor-pointer items-center justify-between px-6 font-semibold text-black"
+                        href="#eligibility"
+                      >
+                        About us
+                        <ChevronUpIcon className={`ml-[12px] h-4 w-4 ${textColor}`} />
+                      </a>
+                      <div className="mt-5 w-full">
+                        <div className="w-full bg-gray-100 p-6">
+                          <h4 className="text-xl font-semibold">Why us</h4>
+                          <p className="mt-2 mb-3 text-sm">
+                            Best-in-class, fully integrated and easy-to-use accounting and expense
+                            management solution for ambitious businesses.
+                          </p>
+                          <div className="mb-1 text-sm font-semibold">Customers</div>
+                          <div className="text-sm font-semibold">Schedule a demo</div>
+                        </div>
+
+                        <div className="space-y-3 p-6">
+                          <div>Using Bujeti</div>
+                          <ul className="space-y-2 text-sm font-semibold">
+                            <li className="flex items-center">
+                              For Startups
+                              <ArrowRightIcon className={`ml-[12px] h-5 w-5 ${textColor}`} />
+                            </li>
+                            <li className="flex items-center">
+                              For Employees
+                              <ArrowRightIcon className={`ml-[12px] h-5 w-5 ${textColor}`} />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <a className="cursor-pointer" href="#contact">
+                        Contact
+                      </a>
+                    </li>
+                    <li>
+                      <a className="cursor-pointer" href="#testimonial">
+                        Testimonial
+                      </a>
+                    </li>
+                    <li>
+                      <a className="cursor-pointer" href="#ourcar">
+                        Our Cars
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </motion.nav>
+            {/* </aside> */}
           </div>
-        </div>
+        </nav>
       </header>
     </>
   )

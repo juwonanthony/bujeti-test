@@ -91,10 +91,10 @@ const Testimonials = ({ testimonials }) => {
   } = changeText
 
   return (
-    <section className="mx-auto flex max-w-[100rem] flex-col px-5 py-16 md:py-37 lg:py-37">
-      <div className="mb-4 max-w-3xl space-y-3 md:mb-20 lg:mb-20">
+    <section className="mx-auto flex max-w-[100rem] flex-col px-5 py-16 sm:px-24  lg:py-37 xl:px-8">
+      <div className="mb-4 space-y-3 md:mb-20 md:max-w-xl lg:mb-20 xl:max-w-3xl">
         <SmallHeading svg={icon} title={header} color="#D28B28" />
-        <h1 className="text-3xl font-semibold text-accent-gray md:text-5xl lg:text-5xl">
+        <h1 className="text-2xl font-semibold text-accent-gray md:text-4xl xl:text-5xl">
           {HTMLReactParser(title)}
         </h1>
       </div>
@@ -124,7 +124,7 @@ const Testimonials = ({ testimonials }) => {
           ))}
         </Swiper>
 
-        <div className="flex flex-col justify-between py-7 px-4 leading-normal md:py-20 md:pr-28 md:pl-28 lg:py-20">
+        <div className="flex flex-col justify-between py-7 px-4 pr-10 pl-10 leading-normal md:py-20 lg:py-20 xl:pr-28 xl:pl-28">
           {/* <Image src={changeText.logo} alt="" className="mb-10" /> */}
           <div className="relative mb-10 aspect-[4/1] h-[45px] w-fit shrink-0 overflow-hidden">
             <Image fill objectFit="contain" src={logo} alt="logo" className="w-full" />
@@ -133,7 +133,7 @@ const Testimonials = ({ testimonials }) => {
             <Image fill objectFit="contain" src={logo} alt="logo" className="h-full w-full" />
           </div> */}
 
-          <h5 className="text-base font-semibold leading-tight tracking-tighter text-accent-gray md:text-[42px] lg:text-[42px]">
+          <h5 className="text-base font-semibold !leading-tight tracking-tighter text-accent-gray md:text-2xl xl:text-[42px]">
             {parse(text)}
           </h5>
           <div className="my-8">

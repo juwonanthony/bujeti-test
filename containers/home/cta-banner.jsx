@@ -22,12 +22,12 @@ function CtaBanner({ ctaBanner }) {
               <Image fill objectFit="contain" src={filename} alt={filename} className="w-full" />
             </div>
           </div>
-          <div className="flex  max-w-3xl flex-col items-start pt-4 text-center md:w-1/2 md:items-start md:pt-14 md:pl-16 md:text-left lg:flex-grow lg:pt-14 lg:pl-24">
-            <h1 className="mb-4 text-3xl font-bold text-accent-gray sm:text-6xl">
+          <div className="flex  max-w-3xl flex-col items-center pt-4 text-center md:w-1/2 md:items-start md:pt-4 md:pl-6 md:text-left lg:flex-grow xl:pt-14 xl:pl-24">
+            <h1 className="mb-4 text-3xl font-bold text-accent-gray  md:text-3xl xl:text-6xl">
               {HTMLReactParser(title)}
             </h1>
             <p className="mb-8 leading-relaxed">{sub_text}</p>
-            <div className="flex items-center space-x-4 text-sm font-medium md:flex-col lg:flex-row lg:text-[14px]">
+            <div className="flex items-center space-x-4 text-sm font-medium lg:text-[14px] xl:flex-row">
               <button className="flex h-11 items-center justify-center rounded-lg bg-black px-6 text-center font-semibold text-white">
                 {primary_btn_label}
               </button>

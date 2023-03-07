@@ -64,7 +64,7 @@ const Industry = ({ industry }) => {
     <section className="px-0">
       <div className="grid w-full grid-cols-1 overflow-hidden bg-accent-light_yellow md:h-[960px] md:grid-cols-2 lg:h-[960px] lg:grid-cols-2">
         <div className="flex flex-wrap content-start sm:pr-10">
-          <div className="mb-6 w-full px-4 pt-16 sm:pl-28 sm:pr-20 md:pt-37 lg:pt-37">
+          <div className="mb-6 w-full px-4 pt-16 sm:pl-28 sm:pr-20  xl:pt-37">
             <div className="flex justify-center md:justify-start lg:justify-start">
               <SmallHeading color="#AF7421" svg={header_icon.filename} title={header} url={true} />
             </div>

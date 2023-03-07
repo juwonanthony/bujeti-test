@@ -39,8 +39,8 @@ const Solutions = ({ solution }) => {
   const { title = '', solutions = [] } = solution || {}
 
   return (
-    <section className="container mx-auto flex flex-col px-5 pb-37">
-      <h1 className="mb-16 w-full max-w-2xl text-3xl font-normal md:text-6xl lg:text-6xl">
+    <section className="container mx-auto flex flex-col  px-5 py-16 pb-37 sm:px-24 xl:px-8">
+      <h1 className="mb-16 w-full max-w-2xl text-3xl font-normal md:text-5xl xl:text-6xl">
         {HTMLReactParser(title)}
       </h1>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3">

@@ -54,7 +54,7 @@ const Footer = () => {
   const year = new Date()
   return (
     <footer className="bg-no-repeat md:bg-footer">
-      <div className="container mx-auto py-24 px-6 md:px-0">
+      <div className="container mx-auto py-24 px-6 sm:px-16 xl:px-0">
         <div className="flex flex-wrap justify-between">
           <div className="space-y-4 md:w-4/12">
             <Link href="/">
@@ -76,7 +76,7 @@ const Footer = () => {
               </p>
             </div>
           </div>
-          <div className="mt-10 grid grid-cols-2 md:mt-0 md:w-8/12 md:grid-cols-3">
+          <div className="mt-10 grid grid-cols-2 gap-10 md:mt-0 md:w-8/12 md:grid-cols-3">
             <div>
               <h2 className="mb-3 text-sm font-semibold text-black">Products</h2>
               <nav className="mb-10 list-none space-y-2 text-sm font-normal">
