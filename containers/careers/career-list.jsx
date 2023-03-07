@@ -34,7 +34,6 @@ const CareerLists = ({ jobs }) => {
   return (
     <section className="bg-grey-warm py-20 md:py-37 lg:py-37">
       <div className="container mx-auto">
-        {console.log({ currentJob })}
         <Header departments={departments} active={activeJobs} toggleActive={onHandleToggleActive} />
         <JobList current={currentJob} onShowAll={onHandleShowAll} />
       </div>

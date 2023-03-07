@@ -4,7 +4,7 @@ import Playicon from '../../assets/icons/play.svg'
 
 const Hero = ({ hero }) => {
   return (
-    <section className="container mx-auto flex flex-col items-center px-5 pt-25 md:min-h-[40rem] md:justify-center md:pt-20 lg:min-h-[40rem] lg:justify-center xl:pt-30">
+    <section className="container mx-auto flex flex-col items-center px-5 pt-14 md:min-h-[40rem] md:justify-center md:pt-20 lg:min-h-[40rem] lg:justify-center xl:pt-30">
       <div className="w-full max-w-3xl text-center">
         <h1 className="title-font mb-4 text-3xl font-normal text-accent-gray sm:text-4xl lg:text-7xl">
           {parse(hero?.title)}
