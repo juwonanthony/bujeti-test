@@ -7,10 +7,22 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import cn from 'classnames'
 import Link from 'next/link'
-import { ArrowRightIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid'
+import {
+  ArrowRightIcon,
+  Bars3Icon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/solid'
 import { motion } from 'framer-motion'
 
-import { navDropdownArrow, whiteUpArrow, hambuggerBlack, hambuggerWhite } from 'assets/icons'
+import {
+  navDropdownArrow,
+  whiteUpArrow,
+  hambuggerBlack,
+  hambuggerWhite,
+  closeX,
+} from 'assets/icons'
 
 import { dropdownData } from 'utils'
 
@@ -47,7 +59,7 @@ const navItem = [
 
 const colorListByPage = {
   industries: 'bg-secondary-900',
-  startup: 'bg-secondary-900',
+  startups: 'bg-secondary-900',
   finance: 'bg-secondary-900',
   employees: 'bg-secondary-900',
   healthcare: 'bg-secondary-900',
@@ -57,7 +69,7 @@ const colorListByPage = {
   restaurants: 'bg-secondary-900',
   'non-profits': 'bg-secondary-900',
   products: 'bg-white',
-  'expense-mangement': 'bg-white',
+  'expense-management': 'bg-white',
   'corporate-cards': 'bg-white',
   'bank-payments': 'bg-white',
   reimbursements: 'bg-white',
@@ -252,6 +264,8 @@ const Navbar = ({ bg }) => {
 
   const getColorByPathname = (pathname) => {
     let path = pathname.split('/').filter((item) => item !== '')[0]
+    console.log(path)
+
     const keys = Object.keys(colorListByPage)
     if (path === undefined) {
       setColor(colorListByPage['/'])
@@ -261,7 +275,7 @@ const Navbar = ({ bg }) => {
       setColor(colorListByPage['about'])
     }
   }
-
+  console.log(color)
   let dropDownData = dropdownData[active]
 
   const variants = {
@@ -299,7 +313,13 @@ const Navbar = ({ bg }) => {
               />
             </NextLink>
             <button className="z-50 block md:hidden" onClick={handleClick}>
-              <Image src={click ? hambuggerBlack : hambuggerBlack} alt="humburg" />
+              {click ? (
+                <XMarkIcon className={cn('h-6 w-6', textColor)} />
+              ) : (
+                <Bars3Icon className={cn('h-6 w-6', textColor)} />
+              )}
+
+              {/* <Image src={click ? closeX : hambuggerBlack} alt="humburg" /> */}
             </button>
           </div>
 
@@ -354,7 +374,10 @@ const Navbar = ({ bg }) => {
               initial={false}
               animate={click ? 'open' : 'closed'}
               variants={variants}
-              className={`absolute top-0 left-0 right-0 bottom-0 block h-screen bg-white md:hidden`}
+              className={cn(
+                `absolute top-0 left-0 right-0 bottom-0 block h-screen  md:hidden`,
+                color
+              )}
             >
               <div className="mt-25 flex h-full min-w-full flex-col overflow-y-scroll pb-25">
                 <div className="w-full border-b pb-10">
