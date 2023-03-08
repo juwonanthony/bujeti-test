@@ -264,8 +264,6 @@ const Navbar = ({ bg }) => {
 
   const getColorByPathname = (pathname) => {
     let path = pathname.split('/').filter((item) => item !== '')[0]
-    console.log(path)
-
     const keys = Object.keys(colorListByPage)
     if (path === undefined) {
       setColor(colorListByPage['/'])
@@ -275,7 +273,6 @@ const Navbar = ({ bg }) => {
       setColor(colorListByPage['about'])
     }
   }
-  console.log(color)
   let dropDownData = dropdownData[active]
 
   const variants = {
