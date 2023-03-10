@@ -63,7 +63,7 @@ module.exports = withBundleAnalyzer({
     loader: 'default',
     domains: [
       's3.amazonaws.com',
-      'a.storyblok.com', // Spotify Album Art
+      'a.storyblok.com', // stroyblock
       'pbs.twimg.com', // Twitter Profile Picture
     ],
   },

@@ -354,7 +354,7 @@ const Navbar = ({ bg }) => {
             </Link>
             <Link
               target="_blank"
-              href="https://dashboard.bujeti.com/login"
+              href="https://dashboard.bujeti.com"
               className={`${buttonText} ${buttonBg} flex h-11 items-center justify-center gap-2 rounded-lg px-4 text-center font-semibold`}
             >
               Sign In
@@ -411,7 +411,7 @@ const Navbar = ({ bg }) => {
                   <Link
                     onClick={() => setClick(false)}
                     target="_blank"
-                    href="https://dashboard.bujeti.com/login"
+                    href="https://dashboard.bujeti.com"
                     className={`${buttonText} ${buttonBg} flex h-11 items-center justify-center gap-2 rounded-lg border px-4 text-center font-semibold`}
                   >
                     Sign In

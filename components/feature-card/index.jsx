@@ -18,18 +18,19 @@ const FeatureCard = ({ title, description, link, index, image }) => {
         <div className={`${textPosition}`}>
           <h3 className="text-base font-bold xl:text-lg">{title}</h3>
           <p className="mt-3 text-sm text-accent-gray xl:text-base">{description}</p>
-          <Link
-            href={link.url}
-            className="group mt-3 flex items-center text-sm font-semibold text-accent-brown"
-          >
-            <span className="mr-2">Discover more </span>{' '}
-            <Image
-              src={MoreArrow}
-              alt={MoreArrow}
-              className="transition-all duration-700 ease-in-out group-hover:translate-x-1"
-            />
-            {/* <MoreArrow className="group-hover:translate-x-1 ease-in-out duration-700 transition-all" /> */}
-          </Link>
+          {link.url != '/' && (
+            <Link
+              href={link.url}
+              className="group mt-3 flex items-center text-sm font-semibold text-accent-brown"
+            >
+              <span className="mr-2">Discover more </span>{' '}
+              <Image
+                src={MoreArrow}
+                alt={MoreArrow}
+                className="transition-all duration-700 ease-in-out group-hover:translate-x-1"
+              />
+            </Link>
+          )}
         </div>
       </div>
     </div>

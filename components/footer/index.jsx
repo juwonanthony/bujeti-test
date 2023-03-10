@@ -50,8 +50,10 @@ const comingSoon = [
   { title: 'Bank Sync', link: '/' },
 ]
 
-const Footer = () => {
+const Footer = ({ footer }) => {
   const year = new Date()
+
+  const { address = [], contact, copyright, logo: { filename } = {}, socials = [] } = footer
   return (
     <footer className="bg-no-repeat md:bg-footer">
       <div className="container mx-auto py-24 px-6 sm:px-16 xl:px-0">
@@ -61,7 +63,9 @@ const Footer = () => {
               <Image src={logo} alt="logo" />
             </Link>
             <div className="w-8/12 space-y-3 text-sm font-normal text-[#586068] md:space-y-8 lg:w-4/12">
-              <p>7, 7/9 Molade Okoya Thomas Street, Lagos, Lagos, Nigeria</p>
+              {address.map((item, index) => (
+                <p key={index}>{item?.location}</p>
+              ))}
               <p>
                 Talk to a product expert today, use our <span className="text-black">chat box</span>
                 ,{' '}
@@ -148,20 +152,11 @@ const Footer = () => {
             All Right Reserved
           </p>
           <div className="inline-flex w-full justify-center space-x-1 md:w-auto md:justify-start">
-            <Link href="/">
-              {/* <Twitter /> */}
-              <Image src={Twitter} alt={Twitter} />
-            </Link>
-            <Link href="/">
-              <Image src={Linkedin} alt={Linkedin} />
-
-              {/* <Linkedin /> */}
-            </Link>
-            <Link href="/">
-              <Image src={Instagram} alt={Instagram} />
-
-              {/* <Instagram /> */}
-            </Link>
+            {socials.map((item, index) => (
+              <Link href={item?.link?.url} target="_blank" key={index}>
+                <Image src={item?.logo?.filename} alt={item?.filename} height={20} width={20} />
+              </Link>
+            ))}
           </div>
         </div>
       </div>

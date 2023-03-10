@@ -3,6 +3,7 @@ import { integrations } from 'assets/image'
 import { SmallHeading } from 'components/index'
 import HTMLReactParser from 'html-react-parser'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Integration = ({ integration }) => {
@@ -27,9 +28,14 @@ const Integration = ({ integration }) => {
             {HTMLReactParser(title)}
           </h1>
           <p>{HTMLReactParser(description)}</p>
-          <button className="inline-flex rounded-lg border border-gray-200 bg-white py-2 px-6 text-base font-semibold text-black focus:outline-none">
-            {btn_label}
-          </button>
+          {url != '/' && (
+            <Link
+              href={url}
+              className="inline-flex rounded-lg border border-gray-200 bg-white py-2 px-6 text-base font-semibold text-black focus:outline-none"
+            >
+              {btn_label}
+            </Link>
+          )}
         </div>
         <div className="static flex items-center justify-center pt-24 lg:w-full lg:max-w-5xl">
           <div className="relative aspect-[4/1] h-full w-full shrink-0">
