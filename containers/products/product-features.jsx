@@ -15,7 +15,7 @@ const ProductFeatures = ({ productFeatures }) => {
   } = productFeatures
 
   return (
-    <section className="container mx-auto px-4 py-12 md:py-37 md:px-5 lg:py-37 lg:px-5">
+    <section className="container mx-auto px-4 py-12 md:px-5 md:pt-37 lg:px-5 lg:pt-37">
       <div className="mb-25 w-full max-w-xl">
         <SmallHeading color="#AF7421" svg={filename} title={header} />
         <h1 className="my-4 text-2xl font-semibold leading-tight text-accent-gray md:mb-7 md:text-5xl lg:mb-7 lg:text-5xl">

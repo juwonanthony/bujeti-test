@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Playicon from '../../assets/icons/play.svg'
 
 const Hero = ({ hero }) => {
-  console.log(hero)
   return (
     <section className="container mx-auto flex flex-col items-center px-5 pt-14 md:min-h-[25rem] md:justify-center md:pt-20 lg:min-h-[25rem] lg:justify-center xl:pt-30">
       <div className="w-full max-w-3xl text-center">
@@ -29,8 +28,9 @@ const Hero = ({ hero }) => {
             rel="noreferrer"
           >
             {/* <ReactSVG src={Playicon} className="mr-1 p-0.5" /> Demo */}
-            <Image src={Playicon} alt={Playicon} className="mr-1 p-0.5" />{' '}
-            {hero.secondary_btn_label}
+            {/* <Image src={Playicon} alt={Playicon} className="mr-1 p-0.5" />{' '} */}
+            {/* {hero.secondary_btn_label} */}
+            Contact sales
           </a>
         </div>
       </div>

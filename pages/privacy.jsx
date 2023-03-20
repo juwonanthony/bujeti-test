@@ -5,9 +5,11 @@ import { useComponent } from 'lib/hooks/utils'
 import { terms } from 'utils'
 import QuestionBar from 'containers/terms/question-bar'
 
-const Privacy = () => {
+const Privacy = (privacy) => {
+  const { body = [] } = privacy.content || {}
+
   return (
-    <LayoutWrapper navbar={useComponent([], 'navbar')} footer={useComponent([], 'footer')}>
+    <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <section className="pt-40">
         <div className="container mx-auto">
           <div className="flex">
@@ -31,6 +33,17 @@ const Privacy = () => {
       </section>
     </LayoutWrapper>
   )
+}
+
+export async function getStaticProps() {
+  const data = await fetchData('/home')
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+  return { props: data, revalidate: 5 }
 }
 
 export default Privacy

@@ -5,10 +5,12 @@ import { Link } from 'next/link'
 import { terms } from 'utils'
 
 import QuestionBar from 'containers/terms/question-bar'
+import { fetchData } from 'lib/api'
 
-const Terms = () => {
+const Terms = (term) => {
+  const { body = [] } = term.content || {}
   return (
-    <LayoutWrapper navbar={useComponent([], 'navbar')} footer={useComponent([], 'footer')}>
+    <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <section className="pt-40">
         <div className="container mx-auto">
           <div className="flex">
@@ -32,6 +34,17 @@ const Terms = () => {
       </section>
     </LayoutWrapper>
   )
+}
+
+export async function getStaticProps() {
+  const data = await fetchData('/home')
+
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+  return { props: data, revalidate: 5 }
 }
 
 export default Terms

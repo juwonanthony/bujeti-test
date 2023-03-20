@@ -110,7 +110,7 @@ const Testimonials = ({ testimonials }) => {
         >
           {testimony.map(({ image: { filename: image } }, i) => (
             <SwiperSlide key={i}>
-              <div className="relative aspect-[4/1] h-full w-full shrink-0 ">
+              <div className="hide-img relative aspect-[4/1] h-full w-full shrink-0 ">
                 <Image
                   layout="fill"
                   objectFit="cover"
@@ -145,7 +145,7 @@ const Testimonials = ({ testimonials }) => {
             <Image
               src={chevron_left}
               alt=""
-              className="image-swiper-button-prev  swiper-button-disabled flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-black p-2"
+              className="image-swiper-button-prev swiper-button-disabled flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-black p-2"
             />
             <Image
               src={chevron_right}

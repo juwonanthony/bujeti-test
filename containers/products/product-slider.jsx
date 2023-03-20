@@ -82,7 +82,7 @@ const ProductSlider = ({ products }) => {
               }}
               className={`${
                 i === controlledSwiper ? 'text-accent-orange' : 'text-grey-warm-400'
-              } cursor-pointer md:text-xl lg:text-xl`}
+              } cursor-pointer whitespace-nowrap md:text-xl lg:text-xl`}
             >
               {product.title}
             </span>
@@ -90,14 +90,14 @@ const ProductSlider = ({ products }) => {
         })}
         <div className="absolute right-0 hidden h-full w-full max-w-[400px] bg-gradient-to-r from-transparent via-white to-white  md:flex lg:flex" />
       </div>
-      <div className="relative grid overflow-hidden rounded-3xl md:grid-cols-2 md:rounded-none">
+      <div className="relative grid overflow-hidden md:grid-cols-2 md:rounded-none">
         {/* <div className="min-h-full w-full"> */}
-        <div className="flex flex-col md:pr-20 lg:pr-20">
-          <h5 className="text-2xl font-semibold text-accent-gray md:text-5xl lg:text-5xl">
+        <div className="flex flex-col justify-center md:pr-20 lg:pr-20">
+          <h5 className="mb-6 text-2xl font-semibold text-accent-gray md:text-5xl lg:text-5xl">
             {title}
           </h5>
           <p className="text-2xl text-support md:text-4xl lg:text-4xl">{description}</p>
-          <div className="flex items-center pt-7 pb-20">
+          <div className="flex items-center pt-7 pb-10 md:pb-20">
             <Link className="text-lg md:text-2xl lg:text-2xl" href="/">
               Discover more
             </Link>
@@ -119,7 +119,7 @@ const ProductSlider = ({ products }) => {
               </svg>
             </span>
           </div>
-          <div className="flex gap-4">
+          <div className="hidden gap-4 md:flex">
             <Image
               src={chevron_left}
               alt=""
@@ -131,7 +131,7 @@ const ProductSlider = ({ products }) => {
               className="image-swiper-button-next flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-full bg-black p-2"
             />
           </div>
-          <div className="mt-[60px] h-[2px] w-full bg-grey-semi">
+          <div className="mt-[60px] hidden h-[2px] w-full bg-grey-semi md:block">
             <div
               className="progress h-[2px] overflow-hidden bg-black"
               style={{ width: `${count}%`, transition: 'width .5s ease' }}
@@ -145,13 +145,13 @@ const ProductSlider = ({ products }) => {
             setControlledSwiper(e.realIndex)
             setCount(0)
           }}
-          className="flex items-center"
+          className="product-slide flex items-center"
           // effect="fade"
           ref={swiperRef}
         >
           {products.map(({ image: { filename } }, i) => (
             <SwiperSlide key={i}>
-              <div className="relative aspect-square h-[560px] w-full shrink-0 rounded-3xl ">
+              <div className="relative aspect-square h-full  w-full shrink-0 rounded-3xl md:w-10/12">
                 <Image
                   fill
                   objectFit="contain"
@@ -163,6 +163,18 @@ const ProductSlider = ({ products }) => {
             </SwiperSlide>
           ))}
         </Swiper>
+        <div className="mt-6 flex gap-4 md:hidden">
+          <Image
+            src={chevron_left}
+            alt=""
+            className="image-swiper-button-prev flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-full bg-black p-2"
+          />
+          <Image
+            src={chevron_right}
+            alt=""
+            className="image-swiper-button-next flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-full bg-black p-2"
+          />
+        </div>
       </div>
     </div>
   )

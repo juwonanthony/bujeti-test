@@ -18,9 +18,10 @@ const benefits = [
   '& much more',
 ]
 
-const Careers = () => {
+const Careers = (careers) => {
+  const { body = [] } = careers.content || {}
   return (
-    <LayoutWrapper navbar={useComponent([], 'navbar')} footer={useComponent([], 'footer')}>
+    <LayoutWrapper navbar={useComponent(body, 'navbar')} footer={useComponent(body, 'footer')}>
       <CareerHero />
       <CareerUsp />
       <Values />
@@ -30,15 +31,15 @@ const Careers = () => {
   )
 }
 
-// export async function getStaticProps() {
-//   const data = await fetchData('/careers')
+export async function getStaticProps() {
+  const data = await fetchData('/home')
 
-//   if (!data) {
-//     return {
-//       notFound: true,
-//     }
-//   }
-//   return { props: data, revalidate: 5 }
-// }
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+  return { props: data, revalidate: 5 }
+}
 
 export default Careers

@@ -19,12 +19,12 @@ const SideBar = () => {
           Terms of Use
         </Link>
         <Link
-          href="/privacy-policy"
-          className={router.pathname == '/privacy-policy' ? 'font-semibold text-accent-orange' : ''}
+          href="/privacy"
+          className={router.pathname == '/privacy' ? 'font-semibold text-accent-orange' : ''}
         >
           Privacy Policy
         </Link>
-        <Link
+        {/* <Link
           href="/disclaimer"
           className={router.pathname == '/disclaimer' ? 'font-semibold text-accent-orange' : ''}
         >
@@ -41,7 +41,7 @@ const SideBar = () => {
           className={router.pathname == '/security' ? 'font-semibold text-accent-orange' : ''}
         >
           Security
-        </Link>
+        </Link> */}
       </div>
     </section>
   )
