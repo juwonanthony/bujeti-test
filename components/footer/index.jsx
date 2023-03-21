@@ -53,7 +53,7 @@ const comingSoon = [
 const Footer = ({ footer }) => {
   const year = new Date()
 
-  const { address = [], contact, copyright, logo: { filename } = {}, socials = [] } = footer
+  const { address = [], contact, copyright, logo: { filename } = {}, socials = [] } = footer || {}
   return (
     <footer className="bg-no-repeat md:bg-footer">
       <div className="container mx-auto py-24 px-6 sm:px-16 xl:px-0">
@@ -63,7 +63,7 @@ const Footer = ({ footer }) => {
               <Image src={logo} alt="logo" />
             </Link>
             <div className="w-8/12 space-y-3 text-sm font-normal text-[#586068] md:space-y-8 lg:w-4/12">
-              {address.map((item, index) => (
+              {address?.map((item, index) => (
                 <p key={index}>{item?.location}</p>
               ))}
               <p>
@@ -152,7 +152,7 @@ const Footer = ({ footer }) => {
             All Right Reserved
           </p>
           <div className="inline-flex w-full justify-center space-x-1 md:w-auto md:justify-start">
-            {socials.map((item, index) => (
+            {socials?.map((item, index) => (
               <Link href={item?.link?.url} target="_blank" key={index}>
                 <Image src={item?.logo?.filename} alt={item?.filename} height={20} width={20} />
               </Link>
