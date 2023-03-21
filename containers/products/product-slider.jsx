@@ -70,7 +70,7 @@ const ProductSlider = ({ products }) => {
   return (
     <div>
       <div
-        className="product-features-name relative mb-8 flex max-w-7xl gap-[20px] overflow-x-scroll md:mb-20 lg:mb-20"
+        className="product-features-name scrollbar-hide relative mb-8 flex max-w-7xl gap-[20px] overflow-x-scroll md:mb-20 lg:mb-20"
         ref={featuresRef}
       >
         {products.map((product, i) => {

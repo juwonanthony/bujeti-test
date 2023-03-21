@@ -42,17 +42,17 @@ const navItem = [
     isVisible: false,
   },
   {
-    id: 3,
-    title: 'Pricing',
-    hasIcon: false,
-    link: '/pricing',
-    isVisible: false,
-  },
-  {
     id: 4,
     title: 'Company',
     hasIcon: true,
     link: '#',
+    isVisible: false,
+  },
+  {
+    id: 3,
+    title: 'Pricing',
+    hasIcon: false,
+    link: '/pricing',
     isVisible: false,
   },
 ]
