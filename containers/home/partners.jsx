@@ -12,7 +12,7 @@ const Partners = ({ partners }) => {
         </h1>
         <p className="mb-8 font-light leading-relaxed text-accent-gray md:text-sm">{subtitle}</p>
       </div>
-      <div className="scrollbar-none flex flex-col items-center overflow-scroll ">
+      <div className="scrollbar-hide flex flex-col items-center overflow-scroll">
         {logos?.map(({ logo }, index) => (
           <PartnerLogo column={logo.length} image={logo} key={index} />
         ))}
