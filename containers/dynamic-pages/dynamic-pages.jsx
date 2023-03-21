@@ -34,7 +34,7 @@ const DynamicPages = ({
           <ProductSolution productSolution={productSolution} />
           <PricingSection pricing={pricing} />
           <Industry industry={industry} />
-          <Testimonials testimonials={testimonials} />
+          {/* <Testimonials testimonials={testimonials} /> */}
         </>
       ) : type?.includes('product') ? (
         <>

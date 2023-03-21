@@ -26,7 +26,7 @@ export default function Home(home) {
       <Industry industry={useComponent(body, 'use_case')} />
       <WhyUs whyUs={useComponent(body, 'why us')} />
       <Integration integration={useComponent(body, 'integration')} />
-      <Testimonials testimonials={useComponent(body, 'testimonials')} />
+      {/* <Testimonials testimonials={useComponent(body, 'testimonials')} /> */}
       <Solution solution={useComponent(body, 'solution')} />
       <CtaBanner ctaBanner={useComponent(body, 'cta')} />
     </LayoutWrapper>
