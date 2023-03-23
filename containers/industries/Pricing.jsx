@@ -1,3 +1,54 @@
+import { checkPricing } from 'assets/icons'
+import classNames from 'classnames'
+import HTMLReactParser from 'html-react-parser'
+import Image from 'next/image'
+
+const price = [
+  {
+    name: 'Starter plan',
+    cost: '0',
+    currency: '₦',
+    users: 'Basic features for up to 5 users.',
+    aboutFeature: 'All the benefits of our <span className="font-semibold">Starter plan....</span>',
+    features: [
+      'Access to basic features',
+      'Basic reporting and analytics',
+      'Up to 5 budgets',
+      'Up to 5 corporate cards',
+      'Basic chat and email support',
+    ],
+  },
+  {
+    name: 'Growth plan',
+    cost: '50,000',
+    currency: '₦',
+    users: 'Growing teams up to 25 users.',
+    aboutFeature: 'Everything in <span className="font-semibold">Starter plus....</span>',
+    features: [
+      'Multiple integrations',
+      'Advanced reporting and analytics',
+      'Up to 25 budgets',
+      'Up to 25 corporate cards',
+      'Up to 3 approval levels',
+      'Custom role management',
+      'Priority chat and email support',
+    ],
+  },
+  {
+    name: 'Scale plan',
+    users: 'Advanced features + unlimited users.',
+    aboutFeature: 'Everything in <span className="font-semibold">Growth plus....</span>',
+    features: [
+      'Advanced custom fields',
+      'Unlimited budgets',
+      'Unlimited corporate cards',
+      'Unlimited approval levels',
+      'Custom role management',
+      'Personalised+priotity service',
+    ],
+  },
+]
+
 const PricingSection = () => {
   return (
     <section className="bg-grey-warm-900 px-4 py-20 md:px-0 md:py-37 lg:px-0 lg:py-37">
@@ -32,10 +83,56 @@ const PricingSection = () => {
             Contact Sales
           </span>
         </div>
-        <section className="mt-6 flex w-full flex-col gap-3 md:mt-25 md:flex-row md:gap-5 lg:mt-25 lg:flex-row lg:gap-5">
-          <div className="h-[347px] rounded-lg bg-grey-warm-800 md:h-[680px] md:w-[390px] lg:h-[680px] lg:w-[390px]"></div>
-          <div className="h-[347px] rounded-lg bg-grey-accent md:h-[680px] md:w-[390px] md:scale-[1.05] lg:h-[680px] lg:w-[390px] lg:scale-[1.05]"></div>
-          <div className="h-[347px] rounded-lg bg-grey-warm-800 md:h-[680px] md:w-[390px] lg:h-[680px] lg:w-[390px]"></div>
+        <section className="mt-6 grid w-full gap-10 md:mt-25 md:grid-cols-3">
+          {price.map((item, index) => (
+            <div
+              key={index}
+              className={classNames(
+                'h-full w-full rounded-lg ',
+                index === 1 ? 'bg-grey-accent md:scale-[1.05]' : ' bg-grey-warm-800'
+              )}
+            >
+              <div
+                className={classNames(
+                  'space-y-5 border-b p-10 text-white',
+                  index === 1 ? 'border-[#575855]' : 'border-[#414240]'
+                )}
+              >
+                <h6 className="text-lg font-semibold">{item.name}</h6>
+                <h3 className="mb-2 text-3xl">
+                  {item.currency ? (
+                    <>
+                      {item.currency}
+                      {item.cost} <span className="text-sm font-medium">per month</span>
+                    </>
+                  ) : (
+                    'Custom'
+                  )}
+                </h3>
+                <p>{item.users}</p>
+                <a
+                  href="/"
+                  target="_blank"
+                  className="inline-flex justify-center rounded-lg border-0 bg-accent-green py-3 px-6 text-base font-semibold text-black focus:outline-none md:justify-start lg:justify-start"
+                  rel="noreferrer"
+                >
+                  Get started
+                </a>
+              </div>
+              <div className="p-10">
+                <h2 className="mb-4 text-base font-semibold text-white">FEATURES</h2>
+                <p className="text-base text-white">{HTMLReactParser(item.aboutFeature)}</p>
+                <div className="mt-6 space-y-4">
+                  {item.features.map((feat, idx) => (
+                    <div key={idx} className="flex items-center text-white">
+                      <Image src={checkPricing} alt="icons" className="mr-3" />
+                      <span>{feat}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
         </section>
       </section>
     </section>
