@@ -13,11 +13,11 @@ const HeroWithImages = ({
 }) => {
   const color = bg === 'white' ? 'text-black bg-white' : `text-white bg-${bg}`
   return (
-    <section className={`mx-auto flex items-center ${color}`}>
-      <div className="mb:mt-20 mb:pb-[100px] mb:text-left mt-10 flex-1 px-4 pb-10 text-center md:pl-28 md:pr-30 lg:mt-20 lg:pb-[100px] lg:pl-28 lg:pr-30 lg:text-left">
+    <section className={`mx-auto flex flex-col xl:flex-row xl:items-center ${color}`}>
+      <div className="mb:mt-20 mb:pb-[100px] mt-10 px-4 pb-10 text-center md:pl-28 md:pr-30 md:text-left lg:mt-20 lg:pb-[100px] lg:pl-28 lg:pr-30 xl:flex-1">
         <span className="font-semibold uppercase text-accent-orange">{slug}</span>
         {title}
-        <p className="pb-6 text-center text-base md:pb-10 md:pr-20 md:text-left md:text-xl lg:pb-10 lg:pr-20 lg:text-left lg:text-xl">
+        <p className="pb-6 text-center text-base md:pb-10 md:pr-20 md:text-left md:text-lg lg:pb-10 lg:pr-20 lg:text-left lg:text-xl">
           {body}
         </p>
         <div className="flex flex-col justify-center gap-4 md:flex-row md:justify-start md:gap-0 lg:flex-row lg:justify-start lg:gap-0">
@@ -31,7 +31,7 @@ const HeroWithImages = ({
           )}
         </div>
       </div>
-      <div className="hidden md:flex md:flex-1 lg:flex lg:flex-1">
+      <div className="flex xl:flex-1 ">
         <div className="relative aspect-square h-full w-full shrink-0">
           <Image
             fill

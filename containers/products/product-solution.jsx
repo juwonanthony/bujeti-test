@@ -4,7 +4,7 @@ import React from 'react'
 const ProductSolution = ({ data, productSolution }) => {
   const { feature_list = [] } = productSolution || {}
   return (
-    <section className="container mx-auto py-20 md:py-37 lg:py-37">
+    <section className="container mx-auto px-5 py-16 pb-37 sm:px-0 md:px-16 xl:px-0">
       {feature_list.map((list, i) => {
         return (
           <>

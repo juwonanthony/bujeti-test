@@ -52,7 +52,7 @@ const price = [
 const PricingSection = () => {
   return (
     <section className="bg-grey-warm-900 px-4 py-20 md:px-0 md:py-37 lg:px-0 lg:py-37">
-      <section className="container mx-auto">
+      <section className="container mx-auto  px-4 md:px-14 xl:px-0">
         <div className="md:w-[580px] lg:w-[580px]">
           <span className="flex items-center gap-2 text-base font-medium text-accent-green">
             <svg
@@ -83,7 +83,7 @@ const PricingSection = () => {
             Contact Sales
           </span>
         </div>
-        <section className="mt-6 grid w-full gap-10 md:mt-25 md:grid-cols-3">
+        <section className="mt-6 grid w-full gap-10 md:mt-25 md:grid-cols-2 xl:grid-cols-3">
           {price.map((item, index) => (
             <div
               key={index}
