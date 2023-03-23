@@ -88,8 +88,10 @@ const PricingSection = () => {
             <div
               key={index}
               className={classNames(
-                'h-full w-full rounded-lg ',
-                index === 1 ? 'bg-grey-accent md:scale-[1.05]' : ' bg-grey-warm-800'
+                'h-full w-full rounded-lg border ',
+                index === 1
+                  ? 'border-[#575855] bg-grey-accent md:scale-[1.05]'
+                  : ' border-[#414240] bg-grey-warm-800'
               )}
             >
               <div
