@@ -31,7 +31,7 @@ const usingBujeti = [
 
 const companyLink = [
   { title: 'About Us', link: '/about' },
-  { title: 'Blog', link: '/' },
+  // { title: 'Blog', link: '/' },
   { title: 'Careers', link: '/careers' },
   { title: 'Contact', link: '/contact' },
 ]
@@ -54,6 +54,7 @@ const Footer = ({ footer }) => {
   const year = new Date()
 
   const { address = [], contact, copyright, logo: { filename } = {}, socials = [] } = footer || {}
+
   return (
     <footer className="bg-no-repeat md:bg-footer">
       <div className="container mx-auto py-24 px-6 sm:px-16 xl:px-0">

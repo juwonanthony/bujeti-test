@@ -1,3 +1,4 @@
+import HTMLReactParser from 'html-react-parser'
 import parse from 'html-react-parser'
 import Image from 'next/image'
 import Playicon from '../../assets/icons/play.svg'
@@ -7,7 +8,7 @@ const Hero = ({ hero }) => {
     <section className="container mx-auto flex flex-col items-center px-5 pt-14 md:min-h-[25rem] md:justify-center md:pt-20 lg:min-h-[25rem] lg:justify-center xl:pt-30">
       <div className="w-full max-w-3xl text-center">
         <h1 className="title-font mb-4 text-3xl font-normal text-accent-gray sm:text-4xl lg:text-7xl">
-          {parse(hero?.title)}
+          {HTMLReactParser(hero?.title)}
         </h1>
         <p className="mb-8 font-light leading-relaxed text-accent-gray md:text-xl">
           {hero?.subtitle}

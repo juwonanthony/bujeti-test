@@ -10,7 +10,7 @@ const data = [
   {
     title: 'Our Pricing',
     body: 'Managing expenses can sometimes be insurmountable, whether you’re a small- or large business owner. ',
-    link: '/customers',
+    link: '/pricing',
     linkTitle: 'Learn more',
   },
   {
