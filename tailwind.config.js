@@ -18,6 +18,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         footer: 'url(../assets/image/footer-lines.svg)',
+        bg_overlay: 'url(../assets/image/bg_overlay.svg)',
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
