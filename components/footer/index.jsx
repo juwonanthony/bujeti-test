@@ -153,9 +153,9 @@ const Footer = ({ footer }) => {
           </p>
           <div className="inline-flex w-full justify-center space-x-1 md:w-auto md:justify-start">
             {socials?.map((item, index) => (
-              <Link href={item?.link?.url} target="_blank" key={index}>
+              <a href={item?.link?.url} target="_blank" key={index} rel="noreferrer">
                 <Image src={item?.logo?.filename} alt={item?.filename} height={20} width={20} />
-              </Link>
+              </a>
             ))}
           </div>
         </div>
