@@ -14,11 +14,11 @@ const productLink = [
   { title: 'Reimbursements', link: '/reimbursements' },
   { title: 'Reporting & Insights', link: '/reporting' },
   { title: 'Pricing', link: '/pricing' },
-  { title: 'Get Mobile App', link: '/', icon: true },
+  // { title: 'Get Mobile App', link: '/', icon: true },
 ]
 
 const usingBujeti = [
-  { title: 'For Startups', link: '/startup' },
+  { title: 'For Startups', link: '/startups' },
   { title: 'For Employees', link: '/employees' },
   { title: 'For Financial Services', link: '/finance' },
   { title: 'For Travel & Hospitality', link: '/hospitality' },
@@ -40,7 +40,7 @@ const resourceLink = [
   // { title: 'Help', link: '/' },
   // { title: 'FAQ', link: '/' },
   { title: 'Terms of Use', link: '/terms-of-use' },
-  { title: 'Privacy Policy', link: '/privacy-policy' },
+  { title: 'Privacy Policy', link: '/privacy' },
 ]
 
 const comingSoon = [
