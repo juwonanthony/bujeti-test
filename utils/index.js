@@ -4,8 +4,8 @@ export const dropdownData = {
     description:
       'Best-in-class, fully integrated and easy-to-use accounting and expense management solution for ambitious businesses.',
     links: [
-      { title: 'Customers', to: '/customers' },
-      { title: 'Schedule demo', to: '/demo' },
+      // { title: 'Customers', to: '/customers' },
+      { title: 'Schedule demo', to: '/contact-us' },
     ],
     nav_one: {
       title: 'Using Bujeti',
@@ -33,7 +33,7 @@ export const dropdownData = {
       'Best-in-class, fully integrated and easy-to-use accounting and expense management solution for ambitious businesses.',
     links: [
       { title: 'Pricing', to: '/pricing' },
-      { title: 'Get Mobile App', to: '/demo' },
+      // { title: 'Get Mobile App', to: '/demo' },
     ],
     nav_one: {
       title: 'Solutions',
@@ -73,9 +73,9 @@ export const dropdownData = {
       title: 'Support',
       link: [
         { title: 'Help Center', to: '/help-center', isActive: false },
-        { title: 'Frequently Asked Questions', to: '/faq', isActive: false },
+        // { title: 'Frequently Asked Questions', to: '/faq', isActive: false },
         { title: 'Terms of Use', to: '/terms-of-use', isActive: true },
-        { title: 'Privacy Policy', to: '/privacy-policy', isActive: true },
+        { title: 'Privacy Policy', to: '/privacy', isActive: true },
       ],
     },
   },
