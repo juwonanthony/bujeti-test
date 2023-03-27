@@ -7,6 +7,7 @@ import { toast, ToastContainer } from 'react-toastify'
 
 import 'react-toastify/dist/ReactToastify.css'
 import CustomPhoneNumberInput from 'components/CustomPhoneNumberInput'
+import { isValidPhoneNumber } from 'react-phone-number-input'
 
 const Hero = ({ slug, title, body, bg }) => {
   const color = bg !== 'grey-warm' ? 'text-black bg-white' : `text-black bg-${bg}`
@@ -16,7 +17,14 @@ const Hero = ({ slug, title, body, bg }) => {
   })
   const [reason, setReason] = useState('')
   const [loading, setLoading] = useState(false)
+  const [errors, setError] = useState({})
 
+  const emailReg = new RegExp('^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$', 'ig')
+
+  // const handleClose = () => {
+  //   setError({})
+  //   setData({ internationalFormat: '' })
+  // }
   const onHandleChange = (event) => {
     event.preventDefault()
     setData({
@@ -33,6 +41,54 @@ const Hero = ({ slug, title, body, bg }) => {
       ...data,
       [name]: value,
     })
+  }
+
+  const validateForm = () => {
+    let errors = {}
+    let formIsValid = true
+    if (!data.firstName) {
+      formIsValid = false
+      errors['firstName'] = 'First Name is required'
+    }
+    if (!data.lastName) {
+      formIsValid = false
+      errors['lastName'] = 'Last Name is required'
+    }
+    if (!data.email) {
+      formIsValid = false
+      errors['email'] = 'Email is required'
+    }
+    if (!emailReg.test(data.email)) {
+      formIsValid = false
+      errors['email'] = 'Invalid Email'
+    }
+    if (!data.company) {
+      formIsValid = false
+      errors['company'] = 'Please enter your company name'
+    }
+    if (!data.companySize) {
+      formIsValid = false
+      errors['companySize'] = 'Please enter your company size'
+    }
+    if (!data.website) {
+      formIsValid = false
+      errors['website'] = 'Please enter your website URL'
+    }
+    if (!data.reason) {
+      formIsValid = false
+      errors['reason'] = 'Please select a reason'
+    }
+    if (!data.phoneNumber.localFormat) {
+      formIsValid = false
+      errors['phoneNumber'] = 'Please enter your phone number'
+    }
+    if (!isValidPhoneNumber(data?.internationalFormat)) {
+      formIsValid = false
+      errors['phoneNumber'] = 'Invalid phone number'
+    }
+
+    setError(errors)
+    return formIsValid
   }
 
   const handlePhoneNumberChange = (localFormat, internationalFormat, countryCode) => {
@@ -117,6 +173,16 @@ const Hero = ({ slug, title, body, bg }) => {
                   name="firstName"
                   onChange={onHandleChange}
                 />
+                <span
+                  style={{
+                    color: 'red',
+
+                    top: '2px',
+                    fontSize: '10px',
+                  }}
+                >
+                  {errors['firstName']}
+                </span>
               </div>
               <div className="w-full md:flex-1">
                 <Input
@@ -125,6 +191,16 @@ const Hero = ({ slug, title, body, bg }) => {
                   name="lastName"
                   onChange={onHandleChange}
                 />
+                <span
+                  style={{
+                    color: 'red',
+
+                    top: '2px',
+                    fontSize: '10px',
+                  }}
+                >
+                  {errors['lastName']}
+                </span>
               </div>
             </div>
             <div className="mb-[25px] flex w-full flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
@@ -135,6 +211,16 @@ const Hero = ({ slug, title, body, bg }) => {
                   name="email"
                   onChange={onHandleChange}
                 />
+                <span
+                  style={{
+                    color: 'red',
+
+                    top: '2px',
+                    fontSize: '10px',
+                  }}
+                >
+                  {errors['email']}
+                </span>
               </div>
               <div className="w-full md:flex-1">
                 <CustomPhoneNumberInput
@@ -145,6 +231,16 @@ const Hero = ({ slug, title, body, bg }) => {
                   }
                   value={data?.internationalFormat || data?.phoneNumber?.internationalFormat}
                 />
+                <span
+                  style={{
+                    color: 'red',
+
+                    top: '2px',
+                    fontSize: '10px',
+                  }}
+                >
+                  {errors['phoneNumber']}
+                </span>
               </div>
             </div>
             <div className="mb-[25px] flex w-full flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
@@ -155,7 +251,18 @@ const Hero = ({ slug, title, body, bg }) => {
                   name="company"
                   onChange={onHandleChange}
                 />
+                <span
+                  style={{
+                    color: 'red',
+
+                    top: '2px',
+                    fontSize: '10px',
+                  }}
+                >
+                  {errors['company']}
+                </span>
               </div>
+
               <div className="w-full md:flex-1">
                 <Select
                   label="Company size *"
@@ -164,6 +271,16 @@ const Hero = ({ slug, title, body, bg }) => {
                   name="companySize"
                   onSelect={handleSelect}
                 />
+                <span
+                  style={{
+                    color: 'red',
+
+                    top: '2px',
+                    fontSize: '10px',
+                  }}
+                >
+                  {errors['companySize']}
+                </span>
               </div>
             </div>
             <div className="mb-[25px] flex w-full flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
@@ -174,15 +291,35 @@ const Hero = ({ slug, title, body, bg }) => {
                   onChange={onHandleChange}
                   name="website"
                 />
+                <span
+                  style={{
+                    color: 'red',
+
+                    top: '2px',
+                    fontSize: '10px',
+                  }}
+                >
+                  {errors['website']}
+                </span>
               </div>
               <div className="w-full md:flex-1">
                 <Select
                   label="Why are you contacting us?"
-                  placeholder="Enter phone number"
+                  placeholder="Why are you contacting us?"
                   options={['Demo', 'Pricing', 'Others']}
                   name="reason"
                   onSelect={handleSelect}
                 />
+                <span
+                  style={{
+                    color: 'red',
+
+                    top: '2px',
+                    fontSize: '10px',
+                  }}
+                >
+                  {errors['reason']}
+                </span>
               </div>
             </div>
             <div className="mb-[25px] flex w-full flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
@@ -199,7 +336,11 @@ const Hero = ({ slug, title, body, bg }) => {
               <div className="flex-1">
                 <button
                   className="h-12 w-full rounded-lg bg-black py-3 text-base font-semibold text-accent-green"
-                  onClick={onSave}
+                  onClick={() => {
+                    if (validateForm()) {
+                      onSave()
+                    }
+                  }}
                   disabled={loading}
                 >
                   {loading ? 'Sending message, please wait...' : 'Submit'}
