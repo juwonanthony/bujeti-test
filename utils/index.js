@@ -164,3 +164,24 @@ export const terms = [
     You agree that we will not be liable to you or any third party for any modification, suspension or discontinuance of our website or for any service, content, feature or product offered through our website.`,
   },
 ]
+
+export const getCurrency = (name) => {
+  switch (name) {
+    case 'EUR':
+      return '€'
+    case 'ZAR':
+      return 'R'
+    case 'USD':
+      return '$'
+    case 'RWF':
+      return 'RF'
+    case 'XOF':
+      return 'CFA'
+    case 'NGN':
+      return '₦'
+    case 'GHS':
+      return 'GH¢'
+    case 'KES':
+      return 'K'
+  }
+}
