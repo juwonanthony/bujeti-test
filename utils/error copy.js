@@ -23,7 +23,6 @@ const getErrors = (errorResponse) => {
 }
 
 export const getSimplifiedError = (error, field) => {
-  console.log(error)
   if (error.response?.status === 500) return 'Sorry an unexpected error occurred.'
   const errorResponse = error.response && error.response.data
 

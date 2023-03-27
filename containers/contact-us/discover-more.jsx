@@ -23,16 +23,16 @@ const data = [
 
 const DiscoverMore = () => {
   return (
-    <section className="py-[150px]">
+    <section className="md:py-[150px] lg:py-[150px]">
       <div className="container mx-auto">
-        <h1 className="pb-20 text-6xl">
+        <h1 className="pb-4 text-xl md:pb-20 md:text-6xl lg:pb-20 lg:text-6xl">
           <b>Discover More</b>
         </h1>
-        <div className="flex flex-col items-center justify-between gap-32 md:flex-row lg:flex-row">
+        <div className="justify-betwee flex flex-col items-center gap-6 md:flex-row md:gap-32 lg:flex-row lg:gap-32">
           {data?.map((datum, i) => {
             return (
               <div key={i}>
-                <h1 className="text-2xl font-semibold">{datum.title}</h1>
+                <h1 className="text-xl font-semibold md:text-2xl lg:text-2xl">{datum.title}</h1>
                 <p className="pt-[10px] pb-5 text-[18px] text-grey-deep">{datum.body}</p>
                 <Link
                   href={datum.link}
