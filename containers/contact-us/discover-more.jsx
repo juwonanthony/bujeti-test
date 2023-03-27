@@ -28,7 +28,7 @@ const DiscoverMore = () => {
         <h1 className="pb-20 text-6xl">
           <b>Discover More</b>
         </h1>
-        <div className="flex items-center justify-between gap-32">
+        <div className="flex flex-col items-center justify-between gap-32 md:flex-row lg:flex-row">
           {data?.map((datum, i) => {
             return (
               <div key={i}>
