@@ -50,7 +50,7 @@ const Hero = ({ slug, title, body, bg }) => {
     event.preventDefault()
     const payload = {
       ...data,
-      reason: data?.reason.toLowerCase(),
+      reason: data?.reason?.toLowerCase(),
     }
 
     delete payload.internationalFormat
@@ -98,7 +98,7 @@ const Hero = ({ slug, title, body, bg }) => {
   return (
     <section className={`pt-20 pb-25 md:pt-[100px] lg:pt-[100px] ${color}`}>
       <ToastContainer />
-      <div className="container mx-auto flex flex-col items-center justify-between md:flex-row lg:flex-row">
+      <div className="container mx-auto flex flex-col items-center justify-between px-4 md:flex-row md:px-0 lg:flex-row">
         <div className="flex-1 pb-[100px] pt-10">
           <span className="font-semibold uppercase text-accent-orange">{slug}</span>
           <h1 className="text-2xl md:text-6xl lg:text-6xl">{parse(title)}</h1>
@@ -109,8 +109,8 @@ const Hero = ({ slug, title, body, bg }) => {
             className="rounded-[10px] border-[1px] border-grey-semi bg-white p-[10px] shadow-card md:p-[30px] lg:p-[30px]"
             onSubmit={onSave}
           >
-            <div className="mb-[25px] flex flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
-              <div className="w-full md:flex-1 lg:flex-1">
+            <div className="mb-[25px] flex w-full flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
+              <div className="w-full md:flex-1">
                 <Input
                   label="First Name *"
                   placeholder="Enter first name"
@@ -118,7 +118,7 @@ const Hero = ({ slug, title, body, bg }) => {
                   onChange={onHandleChange}
                 />
               </div>
-              <div className="w-full md:flex-1 lg:flex-1">
+              <div className="w-full md:flex-1">
                 <Input
                   label="Last Name *"
                   placeholder="Enter last name"
@@ -127,8 +127,8 @@ const Hero = ({ slug, title, body, bg }) => {
                 />
               </div>
             </div>
-            <div className="mb-[25px] flex flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
-              <div className="w-full md:flex-1 lg:flex-1">
+            <div className="mb-[25px] flex w-full flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
+              <div className="w-full md:flex-1">
                 <Input
                   label="Email address *"
                   placeholder="Enter email address"
@@ -136,7 +136,7 @@ const Hero = ({ slug, title, body, bg }) => {
                   onChange={onHandleChange}
                 />
               </div>
-              <div className="w-full md:flex-1 lg:flex-1">
+              <div className="w-full md:flex-1">
                 <CustomPhoneNumberInput
                   label="Phone number *"
                   placeholder="Enter your phone number"
@@ -147,8 +147,8 @@ const Hero = ({ slug, title, body, bg }) => {
                 />
               </div>
             </div>
-            <div className="mb-[25px] flex flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
-              <div className="w-full md:flex-1 lg:flex-1">
+            <div className="mb-[25px] flex w-full flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
+              <div className="w-full md:flex-1">
                 <Input
                   label="Company name *"
                   placeholder="Enter your company name"
@@ -156,7 +156,7 @@ const Hero = ({ slug, title, body, bg }) => {
                   onChange={onHandleChange}
                 />
               </div>
-              <div className="w-full md:flex-1 lg:flex-1">
+              <div className="w-full md:flex-1">
                 <Select
                   label="Company size *"
                   placeholder="Select company size"
@@ -166,8 +166,8 @@ const Hero = ({ slug, title, body, bg }) => {
                 />
               </div>
             </div>
-            <div className="mb-[25px] flex flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
-              <div className="w-full md:flex-1 lg:flex-1">
+            <div className="mb-[25px] flex w-full flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
+              <div className="w-full md:flex-1">
                 <Input
                   label="Company Website"
                   placeholder="Company website"
@@ -175,7 +175,7 @@ const Hero = ({ slug, title, body, bg }) => {
                   name="website"
                 />
               </div>
-              <div className="flex-1">
+              <div className="w-full md:flex-1">
                 <Select
                   label="Why are you contacting us?"
                   placeholder="Enter phone number"
@@ -185,8 +185,8 @@ const Hero = ({ slug, title, body, bg }) => {
                 />
               </div>
             </div>
-            <div className="mb-[25px] flex flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
-              <div className="flex-1">
+            <div className="mb-[25px] flex w-full flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
+              <div className="w-full md:flex-1">
                 <Textarea
                   label="Message"
                   placeholder="Enter your message"
@@ -226,7 +226,7 @@ const Input = ({ type, label, placeholder, onChange, name }) => {
         required
         name={name}
         onChange={onChange}
-        className="w-full rounded-lg border-[1px] border-grey-semi py-2 px-3 text-base text-grey-deep shadow-card"
+        className="relative inline-flex w-full rounded-lg border border-gray-300 bg-transparent p-4 text-base leading-none text-gray-700 placeholder-gray-500 transition-colors ease-in-out hover:border-gray-900 focus:border-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-opacity-30"
       />
     </div>
   )
@@ -240,7 +240,7 @@ const Select = ({ label, options, onSelect, name }) => {
       </label>
       <select
         placeholder="Select an option"
-        className="rounded-lg border-[1px] border-grey-semi py-2 px-3 text-base text-grey-deep shadow-card"
+        className="relative inline-flex w-full rounded-lg border border-gray-300 bg-transparent p-4 text-base leading-none text-gray-700 placeholder-gray-500 transition-colors ease-in-out hover:border-gray-900 focus:border-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-opacity-30"
         onChange={onSelect}
         name={name}
       >
@@ -265,7 +265,8 @@ const Textarea = ({ type, label, placeholder, onChange }) => {
         placeholder={placeholder}
         onChange={onChange}
         name="message"
-        className="h-[122px] rounded-lg border-[1px] border-grey-semi py-2 px-3 text-base text-grey-deep shadow-card"
+        rows={5}
+        className="relative inline-flex w-full resize-none appearance-none overflow-auto rounded-lg border border-gray-300 bg-transparent p-3 text-base leading-none text-gray-700 placeholder-gray-500 transition-colors ease-in-out hover:border-gray-900 focus:border-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-opacity-30"
       ></textarea>
     </div>
   )

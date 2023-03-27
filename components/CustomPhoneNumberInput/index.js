@@ -45,7 +45,7 @@ const CustomPhoneNumberInput = ({
         <PhoneInput
           international={false}
           className={cs(
-            'w-full rounded-lg border-[1px] border-grey-semi py-2 px-3 text-base text-grey-deep shadow-card',
+            'relative inline-flex w-full rounded-lg border border-gray-300 bg-transparent p-4 text-base leading-none text-gray-700 placeholder-gray-500 transition-colors ease-in-out hover:border-gray-900 focus:border-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-opacity-30',
             { ['disabled']: disabled }
           )}
           onCountryChange={(value) => setPhoneCountryIso(value)}

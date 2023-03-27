@@ -23,7 +23,7 @@ const data = [
 
 const DiscoverMore = () => {
   return (
-    <section className="md:py-[150px] lg:py-[150px]">
+    <section className="py-20 px-4 md:px-0 md:py-37">
       <div className="container mx-auto">
         <h1 className="pb-4 text-xl md:pb-20 md:text-6xl lg:pb-20 lg:text-6xl">
           <b>Discover More</b>
