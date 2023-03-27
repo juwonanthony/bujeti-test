@@ -4,10 +4,6 @@ import { Page, Text, View, Document, StyleSheet, Image, PDFViewer, Font } from '
 import LogoIcon from '../public/images/Vector.png'
 import FullLogo from '../public/images/Union.png'
 
-{
-  console.log(LogoIcon.src)
-}
-
 import dayjs from 'dayjs'
 
 // Register font

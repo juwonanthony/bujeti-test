@@ -466,7 +466,6 @@ const MobileNavItem = ({
   let dropDownData = dropdownData[text]
   const isActive = router.asPath === href
   const isVisible = here === index
-  console.log(color)
   if (href === '#') {
     return (
       <>
