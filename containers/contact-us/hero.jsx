@@ -6,11 +6,14 @@ import { getSimplifiedError } from '../../utils/error'
 import { toast, ToastContainer } from 'react-toastify'
 
 import 'react-toastify/dist/ReactToastify.css'
+import CustomPhoneNumberInput from 'components/CustomPhoneNumberInput'
 
 const Hero = ({ slug, title, body, bg }) => {
   const color = bg !== 'grey-warm' ? 'text-black bg-white' : `text-black bg-${bg}`
 
-  const [data, setData] = useState({})
+  const [data, setData] = useState({
+    internationalFormat: '',
+  })
   const [reason, setReason] = useState('')
   const [loading, setLoading] = useState(false)
 
@@ -32,11 +35,25 @@ const Hero = ({ slug, title, body, bg }) => {
     })
   }
 
+  const handlePhoneNumberChange = (localFormat, internationalFormat, countryCode) => {
+    setData({
+      ...data,
+      internationalFormat,
+      phoneNumber: {
+        countryCode,
+        localFormat,
+      },
+    })
+  }
+
   const onSave = (event) => {
     event.preventDefault()
     const payload = {
       ...data,
+      reason: data?.reason.toLowerCase(),
     }
+
+    delete payload.internationalFormat
 
     if (reason === 'Demo') {
       delete payload.message
@@ -49,7 +66,7 @@ const Hero = ({ slug, title, body, bg }) => {
             authorization: `Bearer ${API.token}`,
           },
         })
-        .then((responseJson) => {
+        .then(() => {
           setLoading(false)
           toast.success('Request sent successfully. Now you can book a slot!')
           setData({})
@@ -120,11 +137,13 @@ const Hero = ({ slug, title, body, bg }) => {
                 />
               </div>
               <div className="w-full md:flex-1 lg:flex-1">
-                <Input
+                <CustomPhoneNumberInput
                   label="Phone number *"
-                  placeholder="Enter phone number"
-                  name="phoneNumber"
-                  onChange={onHandleChange}
+                  placeholder="Enter your phone number"
+                  onChange={(localFormat, international, countryCode) =>
+                    handlePhoneNumberChange(localFormat, international, countryCode)
+                  }
+                  value={data?.internationalFormat || data?.phoneNumber?.internationalFormat}
                 />
               </div>
             </div>

@@ -871,3 +871,65 @@ body {
   outline: none !important;
   box-shadow: none !important;
 }
+
+.amount {
+  padding-left: 75px !important;
+}
+.hideLabel {
+  top: 16px !important;
+}
+.active-action {
+  background: #e8f0fe;
+}
+.currencySymbol {
+  font-size: 16px !important;
+}
+.amount-icon {
+  position: absolute;
+  top: 55px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  line-height: 20px;
+  color: #606060;
+}
+.amount-icon span {
+  font-size: 12px;
+  margin-top: 4px;
+  margin-left: 6px;
+}
+
+.amount-sign {
+  padding-right: 10px;
+  margin-left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.not-select {
+  cursor: not-allowed;
+}
+.selector {
+  outline: none !important;
+  border-width: 0;
+}
+.selector:focus-visible {
+  outline: none !important;
+}
+
+.PhoneInputInput:focus {
+  outline: none;
+}
+
+.textareaLabel {
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #586068;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
