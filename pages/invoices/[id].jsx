@@ -34,18 +34,6 @@ const InvoiceDetails = () => {
     setIsClient(true)
   }, [])
 
-  useEffect(() => {
-    if (query.id) {
-      getInvoiceDetails(query)
-    }
-  }, [query, getInvoiceDetails])
-
-  const config = {
-    headers: {
-      Authorization: `Bearer ${query?.id}`,
-    },
-  }
-
   const getInvoiceDetails = (query) => {
     setLoading(true)
     axios
@@ -63,6 +51,18 @@ const InvoiceDetails = () => {
           }, 2000)
         }
       })
+  }
+
+  useEffect(() => {
+    if (query.id) {
+      getInvoiceDetails(query)
+    }
+  }, [query])
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${query?.id}`,
+    },
   }
 
   useEffect(() => {
