@@ -201,7 +201,7 @@ const NavItem = ({
                             href={link.to}
                             key={i}
                             className={`flex items-center font-semibold ${textColor}`}
-                            onClick={() => onClick(text)}
+                            onClick={() => onClick('')}
                           >
                             {link.title}
                             <ArrowRightIcon className={`ml-[12px] h-5 w-5 ${textColor}`} />
