@@ -15,7 +15,7 @@ import dayjs from 'dayjs'
 
 import Loading from '../../components/Loading'
 import { getSimplifiedError } from '../../utils/error'
-import { PDFDownloadLink } from '@react-pdf/renderer'
+import { PDFDownloadLink } from '@react-pdf/renderer/lib/react-pdf.browser.es.js'
 // const InvoicePdf = dynamic(() => import('../../components/invoice-pdf'), { ssr: false })
 
 import InvoicePdf from 'components/invoice-pdf'
