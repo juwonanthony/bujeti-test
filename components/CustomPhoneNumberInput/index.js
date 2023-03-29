@@ -55,6 +55,7 @@ const CustomPhoneNumberInput = ({
           onChange={setOnChangeValue}
           limitMaxLength={true}
           {...rest}
+          autoComplete="off"
         />
       </div>
     </div>
