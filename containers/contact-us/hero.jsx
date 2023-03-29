@@ -1,5 +1,5 @@
 import parse from 'html-react-parser'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { API } from 'utils/api.config'
 import axios from 'axios'
 import { getSimplifiedError } from '../../utils/error'
@@ -13,15 +13,16 @@ const Hero = ({ slug, title, body, bg }) => {
   const color = bg !== 'grey-warm' ? 'text-black bg-white' : `text-black bg-${bg}`
 
   const [data, setData] = useState({
-    internationalFormat: null,
+    internationalFormat: '',
     firstName: null,
     lastName: null,
     reason: null,
     website: null,
     companySize: null,
-    phoneNumber: null,
+    phoneNumber: '',
     company: null,
     email: null,
+    message: null,
   })
   const [reason, setReason] = useState('')
   const [loading, setLoading] = useState(false)
@@ -134,15 +135,16 @@ const Hero = ({ slug, title, body, bg }) => {
         setLoading(false)
         toast.success('Request sent successfully. Now you can book a slot!')
         setData({
-          internationalFormat: null,
+          internationalFormat: '',
           firstName: null,
           lastName: null,
           reason: null,
           website: null,
           companySize: null,
-          phoneNumber: null,
+          phoneNumber: '',
           company: null,
           email: null,
+          message: null,
         })
       })
       .catch((error) => {
@@ -163,14 +165,12 @@ const Hero = ({ slug, title, body, bg }) => {
     }
     if (!validateForm()) return toast.error('Some information are required')
     if (reason === 'Demo') {
-      console.log('ggggg')
       delete payload.message
       delete payload.reason
       delete payload.phoneNumber
       setLoading(true)
       contactUs(payload)
     } else {
-      console.log('xdafdfasf')
       setLoading(true)
       contactUs(payload)
     }
@@ -390,8 +390,7 @@ const Input = ({ type, label, placeholder, onChange, name, value }) => {
         placeholder={placeholder}
         name={name}
         onChange={onChange}
-        value={value}
-        autoComplete="offf"
+        value={value === null ? '' : value}
         className="relative inline-flex w-full rounded-lg border border-gray-300 bg-transparent p-4 text-base leading-none text-gray-700 placeholder-gray-500 transition-colors ease-in-out hover:border-gray-900 focus:border-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-opacity-30"
       />
     </div>
@@ -431,7 +430,7 @@ const Textarea = ({ type, label, placeholder, onChange, value }) => {
         placeholder={placeholder}
         onChange={onChange}
         name="message"
-        value={value}
+        value={value === null ? '' : value}
         rows={5}
         className="relative inline-flex w-full resize-none appearance-none overflow-auto rounded-lg border border-gray-300 bg-transparent p-3 text-base leading-none text-gray-700 placeholder-gray-500 transition-colors ease-in-out hover:border-gray-900 focus:border-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-opacity-30"
       ></textarea>
