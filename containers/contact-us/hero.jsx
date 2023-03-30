@@ -135,13 +135,13 @@ const Hero = ({ slug, title, body, bg }) => {
         setLoading(false)
         toast.success('Request sent successfully. Now you can book a slot!')
         setData({
-          internationalFormat: '',
+          internationalFormat: null,
           firstName: null,
           lastName: null,
           reason: null,
           website: null,
           companySize: null,
-          phoneNumber: '',
+          phoneNumber: null,
           company: null,
           email: null,
           message: null,
@@ -247,13 +247,18 @@ const Hero = ({ slug, title, body, bg }) => {
                 </span>
               </div>
               <div className="w-full md:flex-1">
+                {console.log(data)}
                 <CustomPhoneNumberInput
                   label="Phone number *"
                   placeholder="Enter your phone number"
                   onChange={(localFormat, international, countryCode) =>
                     handlePhoneNumberChange(localFormat, international, countryCode)
                   }
-                  value={data?.internationalFormat || data?.phoneNumber?.internationalFormat}
+                  value={
+                    data?.internationalFormat === null
+                      ? ''
+                      : data?.internationalFormat || data?.phoneNumber?.internationalFormat
+                  }
                 />
                 <span
                   style={{
@@ -295,6 +300,7 @@ const Hero = ({ slug, title, body, bg }) => {
                   options={['1-10', '11-50', '51-200', '200+']}
                   name="companySize"
                   onSelect={handleSelect}
+                  data={data}
                 />
                 <span
                   style={{
@@ -311,7 +317,7 @@ const Hero = ({ slug, title, body, bg }) => {
             <div className="mb-[25px] flex w-full flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
               <div className="w-full md:flex-1">
                 <Input
-                  label="Company Website"
+                  label="Company Website *"
                   placeholder="Company website"
                   onChange={onHandleChange}
                   name="website"
@@ -330,11 +336,12 @@ const Hero = ({ slug, title, body, bg }) => {
               </div>
               <div className="w-full md:flex-1">
                 <Select
-                  label="Why are you contacting us?"
+                  label="Why are you contacting us? *"
                   placeholder="Why are you contacting us?"
                   options={['Demo', 'Pricing', 'Others']}
                   name="reason"
                   onSelect={handleSelect}
+                  data={data}
                 />
                 <span
                   style={{
@@ -396,7 +403,8 @@ const Input = ({ type, label, placeholder, onChange, name, value }) => {
   )
 }
 
-const Select = ({ label, options, onSelect, name }) => {
+const Select = ({ label, options, onSelect, name, data }) => {
+  console.log({ [name]: data[name] })
   return (
     <div className="flex flex-col">
       <label htmlFor={label} className="mb-2 text-sm font-bold text-grey-deep">
@@ -407,10 +415,15 @@ const Select = ({ label, options, onSelect, name }) => {
         className="relative inline-flex w-full rounded-lg border border-gray-300 bg-transparent p-4 text-base leading-none text-gray-700 placeholder-gray-500 transition-colors ease-in-out hover:border-gray-900 focus:border-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-opacity-30"
         onChange={onSelect}
         name={name}
+        selected={data[name]}
       >
-        <option selected>Select an option</option>
+        <option selected={data[name] === null ? true : false}>Select an option</option>
         {options.map((option, index) => {
-          return <option key={index}>{option}</option>
+          return (
+            <option key={index} selected={data[name] === option}>
+              {option}
+            </option>
+          )
         })}
       </select>
     </div>
