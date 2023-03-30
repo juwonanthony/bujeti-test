@@ -167,7 +167,6 @@ const Hero = ({ slug, title, body, bg }) => {
     if (reason === 'Demo') {
       delete payload.message
       delete payload.reason
-      delete payload.phoneNumber
       setLoading(true)
       contactUs(payload)
     } else {
