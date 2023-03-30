@@ -159,6 +159,8 @@ const Hero = ({ slug, title, body, bg }) => {
       ...data,
       reason: data?.reason?.toLowerCase(),
     }
+    ;(payload.message === null) | (payload.message === '') && delete payload.message
+
     delete payload.internationalFormat
     if (!reason || reason === 'Select an option') {
       return toast.error('You must select a reason for contacting us')
