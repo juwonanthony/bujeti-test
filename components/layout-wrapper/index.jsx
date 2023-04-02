@@ -18,8 +18,8 @@ const LayoutWrapper = (props) => {
   const { children, navbar, footer, ...customMeta } = props
   const router = useRouter()
   const meta = {
-    title: 'Bujeti - Budgeting and Expense Management software for Africans by Africans',
-    description: `Budgeting and expense management software built for your African realities. It empowers your people to do more. It combines virtual, smart physical credit cards, payments and expenses into one experience powered by Visa Cards, dedicated NUBANs, Mobile Wallets and Faster Payments.`,
+    title: 'Bujeti - Corporate Cards, Budgeting and Expense Management platform for Africa',
+    description: `Corporate Cards, Budgeting and Expense Management software built for your African realities. It empowers your people to do more. It combines virtual, smart physical credit cards, payments and expenses into one experience powered by Visa Cards, dedicated NUBANs, Mobile Wallets and Faster Payments.`,
     image: 'https://bujeti.com/images/bujeti_banner.png',
     type: 'website',
     ...customMeta,
