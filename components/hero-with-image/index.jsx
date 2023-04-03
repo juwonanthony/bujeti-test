@@ -27,7 +27,7 @@ const HeroWithImages = ({
           <Link
             target="_blank"
             href={primaryBtnLink}
-            className="rounded-lg border-0 bg-accent-orange py-3 px-6 text-center text-base font-semibold text-white hover:bg-black focus:outline-none md:inline-flex lg:inline-flex"
+            className="rounded-lg border-0 bg-accent-orange py-3 px-6 text-center text-base font-semibold text-white focus:outline-none md:inline-flex lg:inline-flex"
             rel="noreferrer"
           >
             {primaryBtnLabel}

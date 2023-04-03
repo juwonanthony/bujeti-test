@@ -21,7 +21,7 @@ const Hero = ({ hero }) => {
             <a
               href={hero.primary_btn.url}
               target="_blank"
-              className="inline-flex w-fit items-center justify-center rounded-lg border-0 bg-accent-orange py-3 px-3 text-sm font-semibold text-white hover:bg-black focus:outline-none md:justify-start md:text-base lg:justify-start"
+              className="inline-flex w-fit items-center justify-center rounded-lg border-0 bg-accent-orange py-3 px-3 text-sm font-semibold text-white  focus:outline-none md:justify-start md:text-base lg:justify-start"
               rel="noreferrer"
             >
               {hero?.primary_btn_label}
