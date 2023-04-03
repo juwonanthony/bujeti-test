@@ -43,7 +43,7 @@ const DynamicPages = ({
           <ProductSolution productSolution={productSolution} />
           <ProductInsight productInsight={productInsight} />
           <Faqs faqs={faqs} />
-          <ProductFeatures productFeatures={productFeatures} />
+          {/* <ProductFeatures productFeatures={productFeatures} /> */}
         </>
       ) : null}
     </div>
