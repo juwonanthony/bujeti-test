@@ -1,5 +1,5 @@
 import parse from 'html-react-parser'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { API } from 'utils/api.config'
 import axios from 'axios'
 import { getSimplifiedError } from '../../utils/error'
@@ -14,6 +14,15 @@ const Hero = ({ slug, title, body, bg }) => {
 
   const [data, setData] = useState({
     internationalFormat: '',
+    firstName: null,
+    lastName: null,
+    reason: null,
+    website: null,
+    companySize: null,
+    phoneNumber: '',
+    company: null,
+    email: null,
+    message: null,
   })
   const [reason, setReason] = useState('')
   const [loading, setLoading] = useState(false)
@@ -27,9 +36,14 @@ const Hero = ({ slug, title, body, bg }) => {
   // }
   const onHandleChange = (event) => {
     event.preventDefault()
+    const { name, value } = event.target
     setData({
       ...data,
-      [event.target.name]: event.target.value,
+      [name]: value,
+    })
+    setError({
+      ...errors,
+      [name]: '',
     })
   }
 
@@ -40,6 +54,10 @@ const Hero = ({ slug, title, body, bg }) => {
     setData({
       ...data,
       [name]: value,
+    })
+    setError({
+      ...errors,
+      [name]: '',
     })
   }
 
@@ -86,7 +104,6 @@ const Hero = ({ slug, title, body, bg }) => {
       formIsValid = false
       errors['phoneNumber'] = 'Invalid phone number'
     }
-
     setError(errors)
     return formIsValid
   }
@@ -100,6 +117,40 @@ const Hero = ({ slug, title, body, bg }) => {
         localFormat,
       },
     })
+    setError({
+      ...errors,
+      internationalFormat: '',
+      phoneNumber: '',
+    })
+  }
+
+  const contactUs = (payload) => {
+    axios
+      .post(API.apiUrl, payload, {
+        headers: {
+          authorization: `Bearer ${API.token}`,
+        },
+      })
+      .then(() => {
+        setLoading(false)
+        toast.success('Request sent successfully. Now you can book a slot!')
+        setData({
+          internationalFormat: null,
+          firstName: null,
+          lastName: null,
+          reason: null,
+          website: null,
+          companySize: null,
+          phoneNumber: null,
+          company: null,
+          email: null,
+          message: null,
+        })
+      })
+      .catch((error) => {
+        setLoading(false)
+        toast.error(getSimplifiedError(error))
+      })
   }
 
   const onSave = (event) => {
@@ -108,63 +159,35 @@ const Hero = ({ slug, title, body, bg }) => {
       ...data,
       reason: data?.reason?.toLowerCase(),
     }
+    ;(payload.message === null) | (payload.message === '') && delete payload.message
 
     delete payload.internationalFormat
-
+    if (!reason || reason === 'Select an option') {
+      return toast.error('You must select a reason for contacting us')
+    }
+    if (!validateForm()) return toast.error('Some information are required')
     if (reason === 'Demo') {
       delete payload.message
       delete payload.reason
-      delete payload.phoneNumber
       setLoading(true)
-      axios
-        .post(API.apiUrl, payload, {
-          headers: {
-            authorization: `Bearer ${API.token}`,
-          },
-        })
-        .then(() => {
-          setLoading(false)
-          toast.success('Request sent successfully. Now you can book a slot!')
-          setData({})
-        })
-        .catch((error) => {
-          setLoading(false)
-          toast.error(getSimplifiedError(error))
-        })
+      contactUs(payload)
     } else {
       setLoading(true)
-      axios
-        .post(API.apiUrl, payload, {
-          headers: {
-            authorization: `Bearer ${API.token}`,
-          },
-        })
-        .then(() => {
-          setLoading(false)
-          toast.success('Request sent successfully. Now you can book a slot!')
-          setData({})
-        })
-        .catch((error) => {
-          setLoading(false)
-          toast.error(getSimplifiedError(error))
-        })
+      contactUs(payload)
     }
   }
 
   return (
-    <section className={`pt-20 pb-25 md:pt-[100px] lg:pt-[100px] ${color}`}>
+    <section className={`pt-0 pb-25 md:pt-[50px] lg:pt-[100px] ${color}`}>
       <ToastContainer />
-      <div className="container mx-auto flex flex-col items-center justify-between px-4 md:flex-row md:px-0 lg:flex-row">
-        <div className="flex-1 pb-[100px] pt-10">
+      <div className="container mx-auto flex flex-col items-center justify-between px-4 md:flex-col md:px-0 lg:flex-row">
+        <div className="flex-1 pb-[50px] pt-10 lg:pb-[100px]">
           <span className="font-semibold uppercase text-accent-orange">{slug}</span>
           <h1 className="text-2xl md:text-6xl lg:text-6xl">{parse(title)}</h1>
           <p className="pr-20 pb-10 pt-[30px] text-xl">{parse(body)}</p>
         </div>
         <div className="w-full md:flex-1 lg:flex-1">
-          <form
-            className="rounded-[10px] border-[1px] border-grey-semi bg-white p-[10px] shadow-card md:p-[30px] lg:p-[30px]"
-            onSubmit={onSave}
-          >
+          <form className="rounded-[10px] border-[1px] border-grey-semi bg-white p-[10px] shadow-card md:p-[30px] lg:p-[30px]">
             <div className="mb-[25px] flex w-full flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
               <div className="w-full md:flex-1">
                 <Input
@@ -172,6 +195,7 @@ const Hero = ({ slug, title, body, bg }) => {
                   placeholder="Enter first name"
                   name="firstName"
                   onChange={onHandleChange}
+                  value={data?.firstName}
                 />
                 <span
                   style={{
@@ -190,6 +214,7 @@ const Hero = ({ slug, title, body, bg }) => {
                   placeholder="Enter last name"
                   name="lastName"
                   onChange={onHandleChange}
+                  value={data?.lastName}
                 />
                 <span
                   style={{
@@ -210,6 +235,7 @@ const Hero = ({ slug, title, body, bg }) => {
                   placeholder="Enter email address"
                   name="email"
                   onChange={onHandleChange}
+                  value={data?.email}
                 />
                 <span
                   style={{
@@ -223,13 +249,18 @@ const Hero = ({ slug, title, body, bg }) => {
                 </span>
               </div>
               <div className="w-full md:flex-1">
+                {console.log(data)}
                 <CustomPhoneNumberInput
                   label="Phone number *"
                   placeholder="Enter your phone number"
                   onChange={(localFormat, international, countryCode) =>
                     handlePhoneNumberChange(localFormat, international, countryCode)
                   }
-                  value={data?.internationalFormat || data?.phoneNumber?.internationalFormat}
+                  value={
+                    data?.internationalFormat === null
+                      ? ''
+                      : data?.internationalFormat || data?.phoneNumber?.internationalFormat
+                  }
                 />
                 <span
                   style={{
@@ -250,6 +281,7 @@ const Hero = ({ slug, title, body, bg }) => {
                   placeholder="Enter your company name"
                   name="company"
                   onChange={onHandleChange}
+                  value={data?.company}
                 />
                 <span
                   style={{
@@ -270,6 +302,7 @@ const Hero = ({ slug, title, body, bg }) => {
                   options={['1-10', '11-50', '51-200', '200+']}
                   name="companySize"
                   onSelect={handleSelect}
+                  data={data}
                 />
                 <span
                   style={{
@@ -286,10 +319,11 @@ const Hero = ({ slug, title, body, bg }) => {
             <div className="mb-[25px] flex w-full flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
               <div className="w-full md:flex-1">
                 <Input
-                  label="Company Website"
+                  label="Company Website *"
                   placeholder="Company website"
                   onChange={onHandleChange}
                   name="website"
+                  value={data?.website}
                 />
                 <span
                   style={{
@@ -304,11 +338,12 @@ const Hero = ({ slug, title, body, bg }) => {
               </div>
               <div className="w-full md:flex-1">
                 <Select
-                  label="Why are you contacting us?"
+                  label="Why are you contacting us? *"
                   placeholder="Why are you contacting us?"
                   options={['Demo', 'Pricing', 'Others']}
                   name="reason"
                   onSelect={handleSelect}
+                  data={data}
                 />
                 <span
                   style={{
@@ -329,18 +364,15 @@ const Hero = ({ slug, title, body, bg }) => {
                   placeholder="Enter your message"
                   name="message"
                   onChange={onHandleChange}
+                  value={data?.message}
                 />
               </div>
             </div>
             <div className="mb-[25px] flex flex-col items-center justify-between gap-5 md:flex-row lg:flex-row">
-              <div className="flex-1">
+              <div className="w-full md:flex-1 lg:flex-1">
                 <button
                   className="h-12 w-full rounded-lg bg-black py-3 text-base font-semibold text-accent-green"
-                  onClick={() => {
-                    if (validateForm()) {
-                      onSave()
-                    }
-                  }}
+                  onClick={onSave}
                   disabled={loading}
                 >
                   {loading ? 'Sending message, please wait...' : 'Submit'}
@@ -354,7 +386,7 @@ const Hero = ({ slug, title, body, bg }) => {
   )
 }
 
-const Input = ({ type, label, placeholder, onChange, name }) => {
+const Input = ({ type, label, placeholder, onChange, name, value }) => {
   return (
     <div className="flex flex-col">
       <label htmlFor={label} className="mb-2 text-sm font-bold text-grey-deep">
@@ -364,16 +396,17 @@ const Input = ({ type, label, placeholder, onChange, name }) => {
         type={type}
         label={label}
         placeholder={placeholder}
-        required
         name={name}
         onChange={onChange}
+        value={value === null ? '' : value}
         className="relative inline-flex w-full rounded-lg border border-gray-300 bg-transparent p-4 text-base leading-none text-gray-700 placeholder-gray-500 transition-colors ease-in-out hover:border-gray-900 focus:border-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-opacity-30"
       />
     </div>
   )
 }
 
-const Select = ({ label, options, onSelect, name }) => {
+const Select = ({ label, options, onSelect, name, data }) => {
+  console.log({ [name]: data[name] })
   return (
     <div className="flex flex-col">
       <label htmlFor={label} className="mb-2 text-sm font-bold text-grey-deep">
@@ -384,17 +417,22 @@ const Select = ({ label, options, onSelect, name }) => {
         className="relative inline-flex w-full rounded-lg border border-gray-300 bg-transparent p-4 text-base leading-none text-gray-700 placeholder-gray-500 transition-colors ease-in-out hover:border-gray-900 focus:border-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-opacity-30"
         onChange={onSelect}
         name={name}
+        selected={data[name]}
       >
-        <option selected>Select an option</option>
+        <option selected={data[name] === null ? true : false}>Select an option</option>
         {options.map((option, index) => {
-          return <option key={index}>{option}</option>
+          return (
+            <option key={index} selected={data[name] === option}>
+              {option}
+            </option>
+          )
         })}
       </select>
     </div>
   )
 }
 
-const Textarea = ({ type, label, placeholder, onChange }) => {
+const Textarea = ({ type, label, placeholder, onChange, value }) => {
   return (
     <div className="flex flex-col">
       <label htmlFor={label} className="mb-2 text-sm font-bold text-grey-deep">
@@ -406,6 +444,7 @@ const Textarea = ({ type, label, placeholder, onChange }) => {
         placeholder={placeholder}
         onChange={onChange}
         name="message"
+        value={value === null ? '' : value}
         rows={5}
         className="relative inline-flex w-full resize-none appearance-none overflow-auto rounded-lg border border-gray-300 bg-transparent p-3 text-base leading-none text-gray-700 placeholder-gray-500 transition-colors ease-in-out hover:border-gray-900 focus:border-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-opacity-30"
       ></textarea>
