@@ -34,8 +34,8 @@ const LearnMore = () => {
               <div key={i}>
                 <h1 className="text-2xl font-semibold">{datum.title}</h1>
                 <p className="pt-[10px] pb-5 text-[18px] text-grey-deep">{datum.body}</p>
-                <Link
-                  href={datum.link}
+                <div
+                  // href={datum.link}
                   className="flex items-center gap-2 text-xl font-semibold text-accent-brown"
                 >
                   {datum.linkTitle}{' '}
@@ -54,7 +54,7 @@ const LearnMore = () => {
                       stroke-linejoin="round"
                     />
                   </svg>
-                </Link>
+                </div>
               </div>
             )
           })}

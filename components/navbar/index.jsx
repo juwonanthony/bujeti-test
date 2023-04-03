@@ -48,13 +48,13 @@ const navItem = [
     link: '#',
     isVisible: false,
   },
-  {
-    id: 3,
-    title: 'Pricing',
-    hasIcon: false,
-    link: '/pricing',
-    isVisible: false,
-  },
+  // {
+  //   id: 3,
+  //   title: 'Pricing',
+  //   hasIcon: false,
+  //   link: '/pricing',
+  //   isVisible: false,
+  // },
 ]
 
 const colorListByPage = {

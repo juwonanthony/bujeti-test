@@ -33,7 +33,7 @@ const companyLink = [
   { title: 'About Us', link: '/about' },
   // { title: 'Blog', link: '/' },
   { title: 'Careers', link: '/careers' },
-  { title: 'Contact', link: '/contact' },
+  { title: 'Contact', link: '/contact-us' },
 ]
 
 const resourceLink = [
@@ -104,9 +104,7 @@ const Footer = ({ footer }) => {
               <nav className="mb-10 list-none space-y-2 text-sm font-normal">
                 {comingSoon.map(({ title, link }, index) => (
                   <li key={index}>
-                    <a className="text-gray-400" href={link}>
-                      {title}
-                    </a>
+                    <div className="text-gray-400">{title}</div>
                   </li>
                 ))}
               </nav>

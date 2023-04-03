@@ -32,7 +32,7 @@ export const dropdownData = {
     description:
       'Best-in-class, fully integrated and easy-to-use accounting and expense management solution for ambitious businesses.',
     links: [
-      { title: 'Pricing', to: '/pricing' },
+      // { title: 'Pricing', to: '/pricing' },
       // { title: 'Get Mobile App', to: '/demo' },
     ],
     nav_one: {
@@ -63,16 +63,16 @@ export const dropdownData = {
     nav_one: {
       title: 'Learn',
       link: [
-        { title: 'Blog', to: '/blog', isActive: false },
+        // { title: 'Blog', to: '/blog', isActive: false },
         { title: 'Careers', to: '/careers', isActive: true },
-        { title: 'Events', to: '/events', isActive: false },
+        // { title: 'Events', to: '/events', isActive: false },
         { title: 'Contact us', to: '/contact-us', isActive: true },
       ],
     },
     nav_two: {
       title: 'Support',
       link: [
-        { title: 'Help Center', to: '/help-center', isActive: false },
+        // { title: 'Help Center', to: '/help-center', isActive: false },
         // { title: 'Frequently Asked Questions', to: '/faq', isActive: false },
         { title: 'Terms of Use', to: '/terms-of-use', isActive: true },
         { title: 'Privacy Policy', to: '/privacy', isActive: true },

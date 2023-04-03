@@ -1,6 +1,7 @@
 import { phone_card } from 'assets/image'
 import HTMLReactParser from 'html-react-parser'
 import Image from 'next/image'
+import Link from 'next/link'
 
 function CtaBanner({ ctaBanner }) {
   const {
@@ -28,22 +29,21 @@ function CtaBanner({ ctaBanner }) {
             </h1>
             <p className="mb-8 leading-relaxed">{sub_text}</p>
             <div className="flex items-center space-x-4 pb-5 text-sm font-medium lg:text-[14px] xl:flex-row">
-              <a
+              <Link
                 href={primaryLink}
                 target="_blank"
                 className="flex h-11 items-center justify-center rounded-lg bg-black px-6 text-center font-semibold text-white"
                 rel="noreferrer"
               >
                 {primary_btn_label}
-              </a>
-              <a
+              </Link>
+              <Link
                 href={secondaryLink}
-                target="_blank"
                 className="flex h-11 items-center justify-center rounded-lg border  border-gray-200 bg-white px-6 font-semibold text-black "
                 rel="noreferrer"
               >
                 {secondary_btn_label}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

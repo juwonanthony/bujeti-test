@@ -23,9 +23,9 @@ const IndustryHero = ({ hero }) => {
       image={heroImg}
       bg="secondary-900"
       primaryBtnLabel={primary_btn_label}
-      primaryBtnLink={secondaryUrl}
+      primaryBtnLink={primaryUrl}
       secondaryBtnLabel={secondary_btn_label}
-      secondaryBtnLink={primaryUrl}
+      secondaryBtnLink={secondaryUrl}
     />
   )
 }

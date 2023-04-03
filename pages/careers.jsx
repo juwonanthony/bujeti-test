@@ -26,7 +26,7 @@ const Careers = (careers) => {
       <CareerUsp />
       <Values />
       <CareerBenefits benefits={benefits} />
-      <CareerLists jobs={jobs} />
+      {/* <CareerLists jobs={jobs} /> */}
     </LayoutWrapper>
   )
 }
