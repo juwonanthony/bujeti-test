@@ -9,9 +9,9 @@ const HeroWithImages = ({
   image,
   bg,
   primaryBtnLabel,
-  primaryBtnLink,
+  primaryBtnLink = '/',
   secondaryBtnLabel,
-  secondaryBtnLink,
+  secondaryBtnLink = '/',
 }) => {
   const color = bg === 'white' ? 'text-black bg-white' : `text-white bg-${bg}`
 
