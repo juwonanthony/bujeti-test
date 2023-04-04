@@ -146,6 +146,7 @@ const Hero = ({ slug, title, body, bg }) => {
           email: null,
           message: null,
         })
+        window.location.replace('https://calendly.com/demo-bujeti/book-a-demo?back=1&month=2023-04')
       })
       .catch((error) => {
         setLoading(false)
@@ -159,8 +160,9 @@ const Hero = ({ slug, title, body, bg }) => {
       ...data,
       reason: data?.reason?.toLowerCase(),
     }
-    ;(payload.message === null) | (payload.message === '') && delete payload.message
-
+    if (payload.message === null || payload.message === '') {
+      delete payload.message
+    }
     delete payload.internationalFormat
     if (!reason || reason === 'Select an option') {
       return toast.error('You must select a reason for contacting us')
@@ -178,13 +180,13 @@ const Hero = ({ slug, title, body, bg }) => {
   }
 
   return (
-    <section className={`pt-0 pb-25 md:pt-[50px] lg:pt-[100px] ${color}`}>
+    <section className={`pb-25 pt-0 md:pt-[50px] lg:pt-[100px] ${color}`}>
       <ToastContainer />
       <div className="container mx-auto flex flex-col items-center justify-between px-4 md:flex-col md:px-0 lg:flex-row">
         <div className="flex-1 pb-[50px] pt-10 lg:pb-[100px]">
           <span className="font-semibold uppercase text-accent-orange">{slug}</span>
           <h1 className="text-2xl md:text-6xl lg:text-6xl">{parse(title)}</h1>
-          <p className="pr-20 pb-10 pt-[30px] text-xl">{parse(body)}</p>
+          <p className="pb-10 pr-20 pt-[30px] text-xl">{parse(body)}</p>
         </div>
         <div className="w-full md:flex-1 lg:flex-1">
           <form className="rounded-[10px] border-[1px] border-grey-semi bg-white p-[10px] shadow-card md:p-[30px] lg:p-[30px]">
