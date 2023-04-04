@@ -23,7 +23,7 @@ const data = [
 
 const DiscoverMore = () => {
   return (
-    <section className="py-20 px-4 md:px-0 md:py-37">
+    <section className="px-4 py-20 md:px-0 md:py-37">
       <div className="container mx-auto">
         <h1 className="pb-4 text-xl md:pb-20 md:text-6xl lg:pb-20 lg:text-6xl">
           <b>Discover More</b>
@@ -33,7 +33,7 @@ const DiscoverMore = () => {
             return (
               <div key={i}>
                 <h1 className="text-xl font-semibold md:text-2xl lg:text-2xl">{datum.title}</h1>
-                <p className="pt-[10px] pb-5 text-[18px] text-grey-deep">{datum.body}</p>
+                <p className="pb-5 pt-[10px] text-[18px] text-grey-deep">{datum.body}</p>
                 <Link
                   href={datum.link}
                   className="flex items-center gap-2 text-xl font-semibold text-accent-brown"

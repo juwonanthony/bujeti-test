@@ -22,7 +22,7 @@ const ProductFeatures = ({ productFeatures }) => {
           {title}
         </h1>
         <p className="mb-7 text-accent-gray">{subtitle}</p>
-        <button className="inline-flex rounded-lg bg-accent-gray py-2 px-6 text-base font-medium text-white focus:outline-none">
+        <button className="inline-flex rounded-lg bg-accent-gray px-6 py-2 text-base font-medium text-white focus:outline-none">
           {primary_btn_label}
         </button>
       </div>

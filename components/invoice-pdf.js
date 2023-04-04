@@ -1,6 +1,6 @@
 import React from 'react'
 import { Page, Text, View, Document, StyleSheet, Image, Font } from '@react-pdf/renderer'
-import { PDFViewer } from '@react-pdf/renderer/lib/react-pdf.browser.es.js'
+import { PDFViewer } from '@react-pdf/renderer'
 
 import LogoIcon from '../public/images/Vector.png'
 import FullLogo from '../public/images/Union.png'

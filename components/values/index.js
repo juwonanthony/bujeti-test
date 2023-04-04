@@ -29,7 +29,7 @@ const data = [
 
 const Values = () => {
   return (
-    <section className="w-full bg-grey-warm-900 px-4 py-[52px] md:py-37 md:px-0 lg:py-37 lg:px-0">
+    <section className="w-full bg-grey-warm-900 px-4 py-[52px] md:px-0 md:py-37 lg:px-0 lg:py-37">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row md:justify-between lg:flex-row lg:justify-between">
           <div className="w-full md:w-[580px] lg:w-[580px]">

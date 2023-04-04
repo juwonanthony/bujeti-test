@@ -97,7 +97,7 @@ const ProductSlider = ({ products }) => {
             {title}
           </h5>
           <p className="text-2xl text-support md:text-4xl lg:text-4xl">{description}</p>
-          <div className="flex items-center pt-7 pb-10 md:pb-20">
+          <div className="flex items-center pb-10 pt-7 md:pb-20">
             <Link className="text-lg md:text-2xl lg:text-2xl" href="/">
               Discover more
             </Link>

@@ -10,7 +10,7 @@ const QuestionBar = () => {
           Our friendly team are always ready to help.
         </p>
         <Image src={question_avatar} alt={question_avatar} className="m-auto mb-8" />
-        <button className="inline-flex rounded-lg bg-accent-green py-2 px-6 text-base font-semibold text-black focus:outline-none">
+        <button className="inline-flex rounded-lg bg-accent-green px-6 py-2 text-base font-semibold text-black focus:outline-none">
           Start a chat now
         </button>
       </div>

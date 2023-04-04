@@ -56,7 +56,7 @@ const CaseStudies = ({ title, slug, bg, type, data }) => {
             )
           })}
         </main>
-        <div className="mt-20 mb-20 h-[1px] w-full bg-grey-stroke"></div>
+        <div className="mb-20 mt-20 h-[1px] w-full bg-grey-stroke"></div>
       </section>
       <ShowMoreButton title={`More ${slug}`} />
     </section>

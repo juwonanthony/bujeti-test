@@ -375,6 +375,7 @@ body {
   background-color: #f4f4f5;
   padding-top: 45px;
   padding-bottom: 45px;
+  height: 100vh;
 }
 
 .preview-header {

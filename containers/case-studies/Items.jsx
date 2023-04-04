@@ -26,7 +26,7 @@ const Items = ({ data, type }) => {
               viewBox="0 0 80 80"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="absolute top-0 left-0 right-0 mx-auto mt-[35%]"
+              className="absolute left-0 right-0 top-0 mx-auto mt-[35%]"
             >
               <path
                 opacity="0.5"
@@ -42,7 +42,7 @@ const Items = ({ data, type }) => {
           <h4 className="text-lg font-semibold  text-textBaseColor md:text-3xl lg:text-3xl">
             {data.title}
           </h4>
-          <p className="pt-2 pb-8 text-sm font-normal text-grey-deep md:text-2xl md:leading-8 lg:text-2xl lg:leading-8">
+          <p className="pb-8 pt-2 text-sm font-normal text-grey-deep md:text-2xl md:leading-8 lg:text-2xl lg:leading-8">
             {data.description}
           </p>
         </div>

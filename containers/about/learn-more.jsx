@@ -33,7 +33,7 @@ const LearnMore = () => {
             return (
               <div key={i}>
                 <h1 className="text-2xl font-semibold">{datum.title}</h1>
-                <p className="pt-[10px] pb-5 text-[18px] text-grey-deep">{datum.body}</p>
+                <p className="pb-5 pt-[10px] text-[18px] text-grey-deep">{datum.body}</p>
                 <div
                   // href={datum.link}
                   className="flex items-center gap-2 text-xl font-semibold text-accent-brown"

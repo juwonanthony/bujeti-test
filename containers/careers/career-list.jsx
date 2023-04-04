@@ -54,7 +54,7 @@ const Header = ({ departments, active, toggleActive }) => {
           <input
             type="text"
             placeholder="Quick search"
-            className="w-full rounded-lg bg-white py-2 px-3 text-base text-grey-deep outline-none"
+            className="w-full rounded-lg bg-white px-3 py-2 text-base text-grey-deep outline-none"
           />
           <span className="pr-[14px]">
             <svg

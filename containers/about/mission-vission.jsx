@@ -34,7 +34,7 @@ const MisionVision = () => {
                   </svg>
                   {datum.type}
                 </span>
-                <h1 className="pt-[10px] pb-4 text-lg font-semibold md:pb-[20px] md:text-4xl md:leading-[44px] lg:pb-[20px] lg:text-4xl lg:leading-[44px]">
+                <h1 className="pb-4 pt-[10px] text-lg font-semibold md:pb-[20px] md:text-4xl md:leading-[44px] lg:pb-[20px] lg:text-4xl lg:leading-[44px]">
                   {datum.title}
                 </h1>
                 <p className="text-sm text-grey-deep md:text-xl md:leading-[30px] lg:text-xl lg:leading-[30px]">

@@ -31,7 +31,7 @@ const Integration = ({ integration }) => {
           {url != '/' && (
             <Link
               href={url}
-              className="inline-flex rounded-lg border border-gray-200 bg-white py-2 px-6 text-base font-semibold text-black focus:outline-none"
+              className="inline-flex rounded-lg border border-gray-200 bg-white px-6 py-2 text-base font-semibold text-black focus:outline-none"
             >
               {btn_label}
             </Link>

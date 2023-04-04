@@ -76,7 +76,7 @@ const PricingSection = () => {
             With over 100 apps available in our directory, your team’s favourite tolls are just a
             click away.
           </p>
-          <button className="mt-[25px] inline-flex rounded-lg border-0 bg-accent-green py-3 px-6 text-base font-semibold text-black focus:outline-none">
+          <button className="mt-[25px] inline-flex rounded-lg border-0 bg-accent-green px-6 py-3 text-base font-semibold text-black focus:outline-none">
             Start Now
           </button>
           <span className="ml-[28px] mt-[25px] inline-flex rounded-lg text-base font-semibold text-white focus:outline-none">
@@ -115,7 +115,7 @@ const PricingSection = () => {
                 <a
                   href="/"
                   target="_blank"
-                  className="inline-flex justify-center rounded-lg border-0 bg-accent-green py-3 px-6 text-base font-semibold text-black focus:outline-none md:justify-start lg:justify-start"
+                  className="inline-flex justify-center rounded-lg border-0 bg-accent-green px-6 py-3 text-base font-semibold text-black focus:outline-none md:justify-start lg:justify-start"
                   rel="noreferrer"
                 >
                   Get started

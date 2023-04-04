@@ -26,14 +26,14 @@ const HeroWithImages = ({
         <div className="flex flex-col justify-center gap-4 md:flex-row md:justify-start md:gap-0 lg:flex-row lg:justify-start lg:gap-0">
           <a
             href={primaryBtnLink}
-            className="rounded-lg border-0 bg-accent-orange py-3 px-6 text-center text-base font-semibold text-white focus:outline-none md:inline-flex lg:inline-flex"
+            className="rounded-lg border-0 bg-accent-orange px-6 py-3 text-center text-base font-semibold text-white focus:outline-none md:inline-flex lg:inline-flex"
           >
             {primaryBtnLabel}
           </a>
           {secondaryBtnLabel && (
             <a
               href={secondaryBtnLink}
-              className="ml-0 items-center rounded-lg border-2 border-gray-200 bg-white py-3 px-6 text-center text-base font-semibold text-gray-700 hover:bg-gray-200 focus:outline-none md:ml-4 md:inline-flex lg:ml-4 lg:inline-flex"
+              className="ml-0 items-center rounded-lg border-2 border-gray-200 bg-white px-6 py-3 text-center text-base font-semibold text-gray-700 hover:bg-gray-200 focus:outline-none md:ml-4 md:inline-flex lg:ml-4 lg:inline-flex"
             >
               {secondaryBtnLabel}
             </a>

@@ -21,7 +21,7 @@ const Hero = ({ hero }) => {
             <a
               href={hero.primary_btn.url}
               target="_blank"
-              className="inline-flex w-fit items-center justify-center rounded-lg border-0 bg-accent-orange py-3 px-3 text-sm font-semibold text-white  focus:outline-none md:justify-start md:text-base lg:justify-start"
+              className="inline-flex w-fit items-center justify-center rounded-lg border-0 bg-accent-orange px-3 py-3 text-sm font-semibold text-white  focus:outline-none md:justify-start md:text-base lg:justify-start"
               rel="noreferrer"
             >
               {hero?.primary_btn_label}
@@ -29,7 +29,7 @@ const Hero = ({ hero }) => {
             <a
               href={hero.secondary_btn.url}
               target="_blank"
-              className="inline-flex w-fit items-center justify-center rounded-lg border-2 border-gray-200 bg-white py-3 px-3 text-sm font-semibold text-gray-700 hover:bg-gray-200 focus:outline-none md:ml-4 md:justify-start md:text-base lg:ml-4 lg:justify-start"
+              className="inline-flex w-fit items-center justify-center rounded-lg border-2 border-gray-200 bg-white px-3 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-200 focus:outline-none md:ml-4 md:justify-start md:text-base lg:ml-4 lg:justify-start"
               rel="noreferrer"
             >
               Contact sales

@@ -124,7 +124,7 @@ const Testimonials = ({ testimonials }) => {
           ))}
         </Swiper>
 
-        <div className="flex flex-col justify-between py-7 px-4 pr-10 pl-10 leading-normal md:py-20 lg:py-20 xl:pr-28 xl:pl-28">
+        <div className="flex flex-col justify-between px-4 py-7 pl-10 pr-10 leading-normal md:py-20 lg:py-20 xl:pl-28 xl:pr-28">
           {/* <Image src={changeText.logo} alt="" className="mb-10" /> */}
           <div className="relative mb-10 aspect-[4/1] h-[45px] w-fit shrink-0 overflow-hidden">
             <Image fill objectFit="contain" src={logo} alt="logo" className="w-full" />

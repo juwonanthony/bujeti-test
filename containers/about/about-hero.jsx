@@ -14,7 +14,7 @@ const AboutHero = ({ hero, bg }) => {
             {parse(hero?.title)}
           </h1>
           <p className="mb-8 font-light leading-[30px] text-support md:text-xl">{hero?.subtitle}</p>
-          <div className="mt-10 -mb-10 flex justify-center md:mt-20 lg:mt-20">
+          <div className="-mb-10 mt-10 flex justify-center md:mt-20 lg:mt-20">
             <Image
               src={aboutUs}
               alt={Playicon}

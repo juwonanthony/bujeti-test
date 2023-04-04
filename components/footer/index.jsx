@@ -57,7 +57,7 @@ const Footer = ({ footer }) => {
 
   return (
     <footer className="bg-no-repeat md:bg-footer">
-      <div className="container mx-auto py-24 px-6 sm:px-16 xl:px-0">
+      <div className="container mx-auto px-6 py-24 sm:px-16 xl:px-0">
         <div className="flex flex-wrap justify-between">
           <div className="space-y-4 md:w-4/12">
             <Link href="/">

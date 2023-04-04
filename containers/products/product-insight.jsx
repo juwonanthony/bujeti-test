@@ -23,7 +23,7 @@ const ProductInsight = ({ productInsight }) => {
               {HTMLReactParser(title)}
             </h1>
             <p className="text-lg text-white md:text-xl lg:text-xl">{HTMLReactParser(sub_title)}</p>
-            <button className="mt-[25px] inline-flex rounded-lg border-0 bg-accent-green py-3 px-6 text-base font-semibold text-black focus:outline-none">
+            <button className="mt-[25px] inline-flex rounded-lg border-0 bg-accent-green px-6 py-3 text-base font-semibold text-black focus:outline-none">
               {primary_btn_label}
             </button>
           </div>

@@ -128,7 +128,7 @@ const NavItem = ({
 
           <div
             className={cn(
-              'fixed top-0 left-0 bottom-0 right-0 z-10 mt-9 hidden  h-fit w-full bg-transparent transition-all duration-500',
+              'fixed bottom-0 left-0 right-0 top-0 z-10 mt-9 hidden  h-fit w-full bg-transparent transition-all duration-500',
               { ['group-hover:flex']: isVisible }
             )}
           >
@@ -140,7 +140,7 @@ const NavItem = ({
                   <h1 className="text-3xl font-semibold text-textBaseColor">
                     {dropDownData?.title}
                   </h1>
-                  <p className="pt-5 pb-10 text-lg text-grey-deep">{dropDownData?.description}</p>
+                  <p className="pb-10 pt-5 text-lg text-grey-deep">{dropDownData?.description}</p>
 
                   <div className="flex flex-col gap-5">
                     {dropDownData?.links.map((link, i) => {
@@ -299,7 +299,7 @@ const Navbar = ({ bg }) => {
   return (
     <>
       <header
-        className={`${color} !md:hidden sticky top-0 left-0 right-0 z-50 !flex justify-center py-4 px-6 lg:py-4 lg:px-25`}
+        className={`${color} !md:hidden sticky left-0 right-0 top-0 z-50 !flex justify-center px-6 py-4 lg:px-25 lg:py-4`}
       >
         <nav className="flex w-screen max-w-[110rem] flex-row items-center">
           <div className="z-50 flex w-full items-center justify-between md:block md:w-fit ">
@@ -372,7 +372,7 @@ const Navbar = ({ bg }) => {
               animate={click ? 'open' : 'closed'}
               variants={variants}
               className={cn(
-                `absolute top-0 left-0 right-0 bottom-0 block h-screen  md:hidden`,
+                `absolute bottom-0 left-0 right-0 top-0 block h-screen  md:hidden`,
                 color
               )}
             >
@@ -400,7 +400,7 @@ const Navbar = ({ bg }) => {
                     })}
                   </ul>
                 </div>
-                <div className="px-6 pt-4 pb-14 text-sm font-medium">
+                <div className="px-6 pb-14 pt-4 text-sm font-medium">
                   <Link
                     href="/contact-us"
                     onClick={() => setClick(false)}
@@ -499,7 +499,7 @@ const MobileNavItem = ({
         >
           <div className="w-full bg-gray-100 p-6">
             <h4 className="text-xl font-semibold">{dropDownData?.title}</h4>
-            <p className="mt-2 mb-3 text-sm">{dropDownData?.description}</p>
+            <p className="mb-3 mt-2 text-sm">{dropDownData?.description}</p>
             {dropDownData?.links.map((link, i) => {
               return (
                 <Link

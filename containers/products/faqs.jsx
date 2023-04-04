@@ -77,7 +77,7 @@ const Faqs = ({ faqs }) => {
             <div className="relative m-auto mb-8 aspect-[4/1] w-40 shrink-0 overflow-hidden">
               <Image fill src={filename} alt="faq img" className="h-full w-full" />
             </div>
-            <button className="inline-flex rounded-lg bg-accent-gray py-2 px-6 text-base font-semibold text-white focus:outline-none">
+            <button className="inline-flex rounded-lg bg-accent-gray px-6 py-2 text-base font-semibold text-white focus:outline-none">
               {footer_btn_label}
             </button>
           </div>
